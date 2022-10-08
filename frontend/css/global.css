@@ -1,0 +1,82 @@
+/** Type scale System */
+/** 38px, 30px, 24px, 19px, 15px, 12.5px, 10px, 8px, 6px, 5px  */
+
+/** Spacing System */
+/** 80px, 64px, 48px, 40px, 32px, 24px, 16px, 12px, 8px, 4px, 2px */
+
+/* Global Format rules */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all .3s;
+}
+
+/* Global font size */
+:root {
+    font-size: 62.5%;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Global color variables */
+:root {
+    --color-primary: #023E8A;
+    --color-primary-dark: #02387c;
+    --color-primary-light: #1b5196;
+    --color-primary-light-transparent: #6f89ab9d;
+    --color-secondary: #01569D;
+    --color-secondary-dark: #014d8d;
+    --color-secondary-light: #1a67a7;
+    --text-color-light: #90E0EF;
+
+}
+
+/* Global type scale variables*/
+:root {
+    --fs-38px: 3.8rem;
+    --fs-35px: 3.5rem;
+    --fs-30px: 3rem;
+    --fs-24px: 2.4rem;
+    --fs-19px: 1.9rem;
+    --fs-15px: 1.5rem;
+    --fs-12px: 1.25rem;
+    --fs-10px: 1rem;
+    --fs-8px: .8rem;
+    --fs-6px: .6rem;
+    --fs-5px: .5rem;
+}
+
+/* Global space system variables */
+:root {
+    --spacing-80px: 8rem;
+    --spacing-64px: 6.4rem;
+    --spacing-48px: 4.8rem;
+    --spacing-40px: 4rem;
+    --spacing-32px: 3.2rem;
+    --spacing-24px: 2.4rem;
+    --spacing-16px: 1.6rem;
+    --spacing-12px: 1.2rem;
+    --spacing-8px: .8rem;
+    --spacing-4px: .4rem;
+    --spacing-2px: .2rem;
+}
+
+/* btn class rules */
+.btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: var(--fs-12px);
+}
+
+.section-headings {
+    font-size: var(--fs-24px);
+    color: var(--color-primary);
+}

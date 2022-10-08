@@ -1,0 +1,11 @@
+/* Navbar starts */
+
+.navbar__search-container [type='submit']:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+.navbar__links-bookmarks:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+/* Navbar ends */

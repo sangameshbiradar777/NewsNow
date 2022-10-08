@@ -1,0 +1,83 @@
+/** Type scale System */
+/** 38px, 30px, 24px, 19px, 15px, 12.5px, 10px, 8px, 6px, 5px  */
+
+/** Spacing System */
+/** 80px, 64px, 48px, 40px, 32px, 24px, 16px, 12px, 8px, 4px, 2px */
+
+/* Navbar Starts */
+.navbar {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-color-light);
+  background-color: var(--color-primary);
+}
+
+.navbar__logo {
+  font-size: var(--fs-30px);
+  font-family: "Playfair Display SC", serif;
+}
+
+.navbar__search-container {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  background-color: var(--color-primary-dark);
+}
+
+.navbar__search-icon {
+    font-size: var(--fs-15px);
+    padding-left: var(--spacing-12px);
+    color: var(--color-secondary-light);
+}
+
+.navbar__search-container [type="search"],
+.navbar__search-container [type="submit"] {
+  font-family: inherit;
+  font-size: var(--fs-15px);
+  outline: none;
+  border: none;
+  padding: var(--spacing-8px) var(--spacing-12px);
+  font-weight: 500;
+}
+
+.navbar__search-container [type="search"] {
+  flex-grow: 3;
+  color: inherit;
+  background-color: var(--color-primary-dark);
+}
+
+.navbar__search-container [type="submit"] {
+  flex-grow: 2;
+  background-color: var(--color-primary-light);
+  color: inherit;
+}
+
+.navbar__links {
+  display: flex;
+  gap: var(--spacing-32px);
+}
+
+.navbar__links > * {
+  color: inherit;
+  font-size: var(--fs-15px);
+}
+
+.navbar__links .btn-categories,
+.navbar__links-bookmarks {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4px);
+}
+
+.navbar__links-bookmarks {
+  text-decoration: none;
+  background-color: var(--color-secondary);
+  padding: var(--spacing-8px) var(--spacing-12px);
+  gap: var(--spacing-8px);
+}
+
+
+
+/* Navbar ends */
