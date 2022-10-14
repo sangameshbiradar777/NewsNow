@@ -9,3 +9,12 @@
 }
 
 /* Navbar ends */
+
+
+/* Trending section starts */
+
+.trending-section__card__title:hover {
+  text-decoration: underline;
+}
+
+/* Trending section ends */
