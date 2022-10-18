@@ -1,151 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NewsNow | News from all over the world</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./frontend/css/global.css" />
+    <link rel="stylesheet" href="./frontend/css/homepage/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="./frontend/css/homepage/trending-section.css"
+    />
+    <link rel="stylesheet" href="./frontend/css/states.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NewsNow | News from all over the world</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Raleway:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./frontend/css/global.css" />
-  <link rel="stylesheet" href="./frontend/css/homepage/navbar.css" />
-  <link rel="stylesheet" href="./frontend/css/homepage/trending-section.css" />
-  <link rel="stylesheet" href="./frontend/css/states.css" />
-</head>
-
-<body>
-  <div class="page">
-    <!-- Navbar starts -->
-    <nav class="navbar">
-      <h1 class="navbar__logo">NewsNow</h1>
-      <form class="navbar__search-container">
-        <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
-        <input type="search" placeholder="Search any topic" />
-        <button type="submit" class="btn">Search</button>
-      </form>
-      <div class="navbar__links">
-        <button class="btn btn-categories">
-          Categories
-          <ion-icon class="icon navbar__links-icon" name="chevron-down-outline"></ion-icon>
-        </button>
-        <a href="frontend/pages/bookmarks/bookmarks.html" class="navbar__links-bookmarks">
-          Bookmarks
-          <ion-icon class="icon navbar__links-icon" name="bookmarks"></ion-icon>
-        </a>
-      </div>
-    </nav>
-    <!-- Navbar ends -->
-
-    <!-- Main section starts -->
-    <main>
-      <!-- Header starts -->
-      <header class="section trending-section">
-        <h2 class="section-heading">Trending</h2>
-        <div class="trending-section__grid">
-          <div class="trending-section__grid__item carousel grid-col-span-2 grid-row-span-2">
-            <a class="trending-section__grid__item__link"
-              href="https://www.telegraph.co.uk/business/2022/10/06/ftse-100-markets-live-news-energy-pound-budget-chancellor/">
-              <figure class="trending-section__card trending-section__card--carousel">
-                <img
-                  src="https://images.pexels.com/photos/13820499/pexels-photo-13820499.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-                  alt="Trending news image" />
-
-                <div class="trending-section__card__text-container trending-section__card__text-container--carousel">
-                  <span class="trending-section__card__author trending-section__card__author--carousel">Telegraph.co.uk, 2h ago</span>
-                  <h2 class="trending-section__card__title trending-section__card__title--carousel mt-2">
-                    Pound holds steady after Fitch drops UK credit outlook to
-                    'negative' - live updates - The Telegraph
-                  </h2>
-                </div>
-              </figure>
-            </a>
-          </div>
-          <div class="trending-section__grid__item">
-            <a class="trending-section__grid__item__link"
-              href="https://www.telegraph.co.uk/business/2022/10/06/ftse-100-markets-live-news-energy-pound-budget-chancellor/">
-              <figure class="trending-section__card">
-                <img
-                  src="https://www.telegraph.co.uk/content/dam/business/2022/10/06/TELEMMGLPICT000311534674_trans_NvBQzQNjv4BqgsaO8O78rhmZrDxTlQBjdGLvJF5WfpqnBZShRL_tOZw.jpeg?impolicy=logo-overlay"
-                  alt="Trending news image" />
-
-                <div class="trending-section__card__text-container">
-                  <span class="trending-section__card__author">Telegraph.co.uk, 2h ago</span>
-                  <h2 class="trending-section__card__title">
-                    Pound holds steady after Fitch drops UK credit outlook to
-                    'negative' - live updates - The Telegraph
-                  </h2>
-                </div>
-              </figure>
-            </a>
-          </div>
-          <div class="trending-section__grid__item">
-            <a class="trending-section__grid__item__link"
-              href="https://www.telegraph.co.uk/business/2022/10/06/ftse-100-markets-live-news-energy-pound-budget-chancellor/">
-              <figure class="trending-section__card">
-                <img
-                  src="https://www.telegraph.co.uk/content/dam/business/2022/10/06/TELEMMGLPICT000311534674_trans_NvBQzQNjv4BqgsaO8O78rhmZrDxTlQBjdGLvJF5WfpqnBZShRL_tOZw.jpeg?impolicy=logo-overlay"
-                  alt="Trending news image" />
-
-                <div class="trending-section__card__text-container">
-                  <span class="trending-section__card__author">Telegraph.co.uk, 2h ago</span>
-                  <h2 class="trending-section__card__title">
-                    Pound holds steady after Fitch drops UK credit outlook to
-                    'negative' - live updates - The Telegraph
-                  </h2>
-                </div>
-              </figure>
-            </a>
-          </div>
-          <div class="trending-section__grid__item">
-            <a class="trending-section__grid__item__link"
-              href="https://www.telegraph.co.uk/business/2022/10/06/ftse-100-markets-live-news-energy-pound-budget-chancellor/">
-              <figure class="trending-section__card">
-                <img
-                  src="https://www.telegraph.co.uk/content/dam/business/2022/10/06/TELEMMGLPICT000311534674_trans_NvBQzQNjv4BqgsaO8O78rhmZrDxTlQBjdGLvJF5WfpqnBZShRL_tOZw.jpeg?impolicy=logo-overlay"
-                  alt="Trending news image" />
-
-                <div class="trending-section__card__text-container">
-                  <span class="trending-section__card__author">Telegraph.co.uk, 2h ago</span>
-                  <h2 class="trending-section__card__title">
-                    Pound holds steady after Fitch drops UK credit outlook to
-                    'negative' - live updates - The Telegraph
-                  </h2>
-                </div>
-              </figure>
-            </a>
-          </div>
-          <div class="trending-section__grid__item">
-            <a class="trending-section__grid__item__link"
-              href="https://www.telegraph.co.uk/business/2022/10/06/ftse-100-markets-live-news-energy-pound-budget-chancellor/">
-              <figure class="trending-section__card">
-                <img
-                  src="https://www.telegraph.co.uk/content/dam/business/2022/10/06/TELEMMGLPICT000311534674_trans_NvBQzQNjv4BqgsaO8O78rhmZrDxTlQBjdGLvJF5WfpqnBZShRL_tOZw.jpeg?impolicy=logo-overlay"
-                  alt="Trending news image" />
-
-                <div class="trending-section__card__text-container">
-                  <span class="trending-section__card__author">Telegraph.co.uk, 2h ago</span>
-                  <h2 class="trending-section__card__title mt-2">
-                    Pound holds steady after Fitch drops UK credit outlook to
-                    'negative' - live updates - The Telegraph
-                  </h2>
-                </div>
-              </figure>
-            </a>
-          </div>
+  <body>
+    <div class="page">
+      <!-- Navbar starts -->
+      <nav class="navbar">
+        <h1 class="navbar__logo">NewsNow</h1>
+        <form class="navbar__search-container">
+          <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
+          <input type="search" placeholder="Search any topic" />
+          <button type="submit" class="btn">Search</button>
+        </form>
+        <div class="navbar__links">
+          <button class="btn btn-categories">
+            Categories
+            <ion-icon
+              class="icon navbar__links-icon"
+              name="chevron-down-outline"
+            ></ion-icon>
+          </button>
+          <a
+            href="frontend/pages/bookmarks/bookmarks.html"
+            class="navbar__links-bookmarks"
+          >
+            Bookmarks
+            <ion-icon
+              class="icon navbar__links-icon"
+              name="bookmarks"
+            ></ion-icon>
+          </a>
         </div>
-      </header>
-      <!-- Header ends -->
-    </main>
-    <!-- Main section ends -->
-  </div>
+      </nav>
+      <!-- Navbar ends -->
 
-  <!-- Ion icons scripts starts -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <!-- Ion icons scripts ends -->
-</body>
+      <!-- Main section starts -->
+      <main>
+        <!-- Header starts -->
+        <header class="section trending-section">
+          <h2 class="section-heading">Trending</h2>
+          <div class="trending-section__grid"></div>
+        </header>
+        <!-- Header ends -->
+      </main>
+      <!-- Main section ends -->
+    </div>
 
+    <!-- Ion icons scripts starts -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- Ion icons scripts ends -->
+
+    <!-- page script starts -->
+    <script
+      type="module"
+      src="./frontend/modules/homepage/trending-section.js"
+    ></script>
+    <!-- page script ends -->
+  </body>
 </html>
