@@ -1,0 +1,73 @@
+/** Type scale System */
+/** 38px, 30px, 24px, 19px, 15px, 12.5px, 10px, 8px, 6px, 5px  */
+
+/** Spacing System */
+/** 160px, 96px, 80px, 64px, 48px, 40px, 32px, 24px, 16px, 12px, 8px, 4px, 2px */
+
+/* Carousel starts */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel__inner {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__item {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-38px);
+  background-color: var(--color-white-transparent-light);
+  border-radius: 50%;
+}
+
+.carousel__btn--left {
+  left: 2%;
+}
+
+.carousel__btn--right {
+  right: 2%;
+}
+
+.carousel__btn__icon {
+  background-color: var(--color-white-transparent-light);
+  color: var(--text-color-dark);
+  border-radius: 50%;
+}
+
+.carousel__nav {
+  position: absolute;
+  bottom: 3%;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  width: var(--spacing-8px);
+  height: var(--spacing-8px);
+  border-radius: 50%;
+  background-color: var(--color-white-transparent-light);
+  margin-right: var(--spacing-8px);
+}
+
+.dot.active {
+  background-color: var(--color-white-transparent-bright);
+}
+
+/* Carousel ends */

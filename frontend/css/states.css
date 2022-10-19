@@ -1,7 +1,7 @@
 /* Navbar starts */
 
-.navbar__search-container [type='submit']:hover {
-    background-color: var(--color-secondary-dark);
+.navbar__search-container [type="submit"]:hover {
+  background-color: var(--color-secondary-dark);
 }
 
 .navbar__links-bookmarks:hover {
@@ -10,7 +10,6 @@
 
 /* Navbar ends */
 
-
 /* Trending section starts */
 
 .trending-section__card__title:hover {
@@ -18,3 +17,19 @@
 }
 
 /* Trending section ends */
+
+/* Carousel starts */
+
+.carousel__btn:hover .carousel__btn__icon {
+  background-color: var(--color-white-transparent-bright);
+}
+
+.carousel__btn:focus .carousel__btn__icon {
+  background-color: var(--color-white-transparent-bright);
+}
+
+.carousel__btn:focus {
+  box-shadow: 0 0 0 var(--spacing-4px) var(--color-white-transparent-light);
+}
+
+/* Carousel ends */

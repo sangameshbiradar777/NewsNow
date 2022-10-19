@@ -11,138 +11,146 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 /* Global font size */
 :root {
-    font-size: 62.5%;
-    font-family: 'Raleway', sans-serif;
+  font-size: 62.5%;
+  font-family: "Raleway", sans-serif;
 }
 
 /* Global color variables */
 :root {
-    --color-primary: #023E8A;
-    --color-primary-dark: #02387c;
-    --color-primary-light: #1b5196;
-    --color-primary-light-transparent: #6f89ab9d;
-    --color-secondary: #01569D;
-    --color-secondary-dark: #014d8d;
-    --color-secondary-light: #1a67a7;
-    --text-color-light: #90E0EF;
-    --text-color-white: #eee;
-    --text-color-white-light: #ccc;
-
+  --color-primary: #023e8a;
+  --color-primary-dark: #02387c;
+  --color-primary-light: #1b5196;
+  --color-primary-light-transparent: #6f89ab9d;
+  --color-secondary: #01569d;
+  --color-secondary-dark: #014d8d;
+  --color-secondary-light: #1a67a7;
+  --color-white-transparent-bright: #eeeeee;
+  --color-white-transparent-light: #eeeeee63;
+  --text-color-light: #90e0ef;
+  --text-color-white: #eee;
+  --text-color-white-light: #ccc;
+  --text-color-dark: #333;
 }
 
 /* Global type scale variables*/
 :root {
-    --fs-38px: 3.8rem;
-    --fs-35px: 3.5rem;
-    --fs-30px: 3rem;
-    --fs-24px: 2.4rem;
-    --fs-19px: 1.9rem;
-    --fs-15px: 1.5rem;
-    --fs-12px: 1.25rem;
-    --fs-10px: 1rem;
-    --fs-8px: .8rem;
-    --fs-6px: .6rem;
-    --fs-5px: .5rem;
+  --fs-38px: 3.8rem;
+  --fs-35px: 3.5rem;
+  --fs-30px: 3rem;
+  --fs-24px: 2.4rem;
+  --fs-19px: 1.9rem;
+  --fs-15px: 1.5rem;
+  --fs-12px: 1.25rem;
+  --fs-10px: 1rem;
+  --fs-8px: 0.8rem;
+  --fs-6px: 0.6rem;
+  --fs-5px: 0.5rem;
 }
 
 /* Global space system variables */
 :root {
-    --spacing-160px: 16rem;
-    --spacing-96px: 9.6rem;
-    --spacing-80px: 8rem;
-    --spacing-64px: 6.4rem;
-    --spacing-48px: 4.8rem;
-    --spacing-40px: 4rem;
-    --spacing-32px: 3.2rem;
-    --spacing-24px: 2.4rem;
-    --spacing-16px: 1.6rem;
-    --spacing-12px: 1.2rem;
-    --spacing-8px: .8rem;
-    --spacing-4px: .4rem;
-    --spacing-2px: .2rem;
+  --spacing-160px: 16rem;
+  --spacing-96px: 9.6rem;
+  --spacing-80px: 8rem;
+  --spacing-64px: 6.4rem;
+  --spacing-48px: 4.8rem;
+  --spacing-40px: 4rem;
+  --spacing-32px: 3.2rem;
+  --spacing-24px: 2.4rem;
+  --spacing-16px: 1.6rem;
+  --spacing-12px: 1.2rem;
+  --spacing-8px: 0.8rem;
+  --spacing-4px: 0.4rem;
+  --spacing-2px: 0.2rem;
 }
 
 /* Utility classes starts */
 
 .mb-1 {
-    margin-bottom: var(--spacing-2px);
+  margin-bottom: var(--spacing-2px);
 }
 
 .mb-2 {
-    margin-bottom: var(--spacing-4px);
+  margin-bottom: var(--spacing-4px);
 }
 
 .mb-3 {
-    margin-bottom: var(--spacing-8px);
+  margin-bottom: var(--spacing-8px);
 }
 
 .mb-4 {
-    margin-bottom: var(--spacing-12px);
+  margin-bottom: var(--spacing-12px);
 }
 
 .mb-5 {
-    margin-bottom: var(--spacing-16px);
+  margin-bottom: var(--spacing-16px);
 }
 
 .mt-1 {
-    margin-top: var(--spacing-2px);
+  margin-top: var(--spacing-2px);
 }
 
 .mt-2 {
-    margin-top: var(--spacing-4px);
+  margin-top: var(--spacing-4px);
 }
 
 .mt-3 {
-    margin-top: var(--spacing-8px);
+  margin-top: var(--spacing-8px);
 }
 
 .mt-4 {
-    margin-top: var(--spacing-12px);
+  margin-top: var(--spacing-12px);
 }
 
 .mt-5 {
-    margin-top: var(--spacing-16px);
+  margin-top: var(--spacing-16px);
 }
 
 /* Utility classes ends */
 
 /* Global rules */
 .btn {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-family: inherit;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .icon {
-    font-size: var(--fs-12px);
+  font-size: var(--fs-12px);
 }
 
 .section-heading {
-    font-size: var(--fs-24px);
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-24px);
+  font-size: var(--fs-24px);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-24px);
 }
 
 main {
-    max-width: 1400px;
-    margin: 0 auto;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .section {
-    padding: var(--spacing-24px) var(--spacing-32px);
+  padding: var(--spacing-24px) var(--spacing-32px);
 }
 
 .grid-col-span-2 {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
 .grid-row-span-2 {
-    grid-row: span 2;
+  grid-row: span 2;
 }

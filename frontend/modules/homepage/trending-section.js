@@ -1,4 +1,7 @@
 import { trendingNewsURL } from "../config.js";
+import initCarousel from "../homepage/carousel.js";
+
+console.log(initCarousel);
 
 // Implementation of the function fetchTrendingNews
 async function fetchTrendingNews(trendingNewsURL) {
@@ -41,33 +44,72 @@ function addTrendingNewsCarouselToDOM(trendingNewsObjects) {
 
   trendingNewsGridItemElement.setAttribute(
     "class",
-    "trending-section__grid__item carousel grid-col-span-2 grid-row-span-2"
+    "trending-section__grid__item grid-col-span-2 grid-row-span-2"
   );
 
-  // Create a carousel inner element
-  const carouselInnerElement = document.createElement("div");
+  trendingNewsGridItemElement.innerHTML = `
+    <div class="carousel">
+        <div class="carousel__inner">
+            ${getCarouselItemElements(trendingNewsObjects).innerHTML}
+        </div>
+        <button class="btn carousel__btn carousel__btn--left hidden">
+            <ion-icon class="carousel__btn__icon" name="chevron-back-circle"></ion-icon>
+        </button>
+        <button class="btn carousel__btn carousel__btn--right">
+            <ion-icon class="carousel__btn__icon" name="chevron-forward-circle"></ion-icon>
+        </button>
 
-  carouselInnerElement.setAttribute("class", "carousel-inner");
-
-  // Loop over the trending news objects and add them to coraousel
-  trendingNewsObjects.forEach((trendingNewsObject) => {
-    // Create a carousel item
-    const carouselItemElement = document.createElement("div");
-
-    carouselItemElement.setAttribute("class", "carousel-item");
-
-    carouselItemElement.innerHTML =
-      getTrendingNewsItemInner(trendingNewsObject);
-
-    // Append the carousel item to carousel inner element
-    carouselInnerElement.append(carouselItemElement);
-  });
-
-  // Append the carousel inner element to trending news grid item element
-  trendingNewsGridItemElement.append(carouselInnerElement);
+        <div class="carousel__nav">
+          ${getCarouselNavItems(trendingNewsObjects).innerHTML}
+        </div>
+    </div>
+  `;
 
   // Append the trending news grid item element to trending news grid item
   trendingNewsGridElement.append(trendingNewsGridItemElement);
+}
+
+// Implementation of the function getCarouselNavItems
+function getCarouselNavItems(trendingNewsObjects) {
+  // Create a carousel nav element
+  const carouselNavElement = document.createElement("div");
+
+  // For each trending news object create a dot(carousel nav)
+  trendingNewsObjects.forEach((_, index) => {
+    // Create a dot
+    const dotElement = document.createElement("div");
+
+    const className = index === 0 ? "dot active" : "dot";
+    dotElement.setAttribute("class", className);
+
+    // Append the dot element to carousel nav element
+    carouselNavElement.append(dotElement);
+  });
+
+  console.log(carouselNavElement);
+
+  return carouselNavElement;
+}
+
+// Implementation of the function getCarouselItemElements
+function getCarouselItemElements(trendingNewsObjects) {
+  const carouselInnerElement = document.createElement("div");
+
+  trendingNewsObjects.forEach((trendingNewsObject, index) => {
+    const carouselItemElement = document.createElement("div");
+
+    const className = index === 0 ? "carousel__item active" : "carousel__item";
+    carouselItemElement.setAttribute("class", className);
+
+    carouselItemElement.innerHTML = getTrendingNewsItemInner(
+      trendingNewsObject,
+      true
+    );
+
+    carouselInnerElement.append(carouselItemElement);
+  });
+
+  return carouselInnerElement;
 }
 
 // Implementation of the function addTrendingNewsToDOM
@@ -125,12 +167,24 @@ function getTrendingNewsItemInner(newsObject, forCarousel = false) {
                         ? "trending-section__card__title--carousel mt-2"
                         : ""
                     }">
-                        ${newsObject.title}
+                        ${limitText(newsObject.title, forCarousel)}
                     </h2>
                 </div>
             </figure>
         </a>
     `;
+}
+
+// Implementation of the function limit text
+function limitText(text, forCarousel) {
+  if (forCarousel) {
+    const words = text.split(" ");
+    return words.length > 20
+      ? `${words.slice(0, 20).join(" ")}...`
+      : words.join(" ");
+  }
+
+  return text.split(" ").slice(0, 10).join(" ").concat("...");
 }
 
 function getNewsAuthor(newsObject) {
@@ -175,6 +229,9 @@ async function initTrendingSection() {
 
   // Add the trending news Carousel to DOM
   addTrendingNewsCarouselToDOM(top10TrendingNews);
+
+  // Initialize carousel
+  initCarousel();
 
   // Add the trending news to DOM
   addTrendingNewsToDOM(next4TrendingNews);
