@@ -33,3 +33,15 @@
 }
 
 /* Carousel ends */
+
+/* Top news starts */
+
+.top-news__card:hover .top-news__card__img-container .top-news__card__img {
+  filter: brightness(60%);
+}
+
+.top-news__card:hover .top-news__card__title {
+  text-decoration: underline;
+}
+
+/* Top news ends */

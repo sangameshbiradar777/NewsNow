@@ -55,8 +55,10 @@
 
 /* Global space system variables */
 :root {
+  --spacing-400px: 40rem;
   --spacing-300px: 30rem;
   --spacing-160px: 16rem;
+  --spacing-120px: 12rem;
   --spacing-96px: 9.6rem;
   --spacing-80px: 8rem;
   --spacing-64px: 6.4rem;

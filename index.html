@@ -17,7 +17,7 @@
       href="./frontend/css/homepage/trending-section.css"
     />
     <link rel="stylesheet" href="./frontend/css/homepage/carousel.css" />
-    <link rel="stylesheet" href="./frontend/css/homepage/top-news.css" />
+    <link rel="stylesheet" href="./frontend/css/homepage/news-sections.css" />
     <link rel="stylesheet" href="./frontend/css/states.css" />
   </head>
 
@@ -63,119 +63,18 @@
         <!-- Header ends -->
 
         <!-- Top news section starts -->
-        <section class="section top-news-section">
-          <h2 class="section-heading">Top News</h2>
-          <div class="top-news">
-            <div class="top-news__card">
-              <div class="top-news__card__img-container">
-                <img
-                  src="https://newsinfo.inquirer.net/files/2021/04/000_98G46V-620x413.jpg"
-                  alt="News image"
-                />
-              </div>
-              <div class="top-news__card__text-container">
-                <span class="top-news__card__author">John Eric Mendoza</span>
-                <h3 class="top-news__card__title">
-                  DND: No French submarine bid for PH water exploration; buying
-                  sub not priority for now - INQUIRER.net
-                </h3>
-                <p class="top-news__card__description">
-                  MANILA, Philippines — The Department of National Defense (DND)
-                  on Wednesday said France had not offered submarines &quot;in
-                  exchange for permission&quot; to survey Philippine waters. It
-                  also...
-                </p>
-              </div>
-            </div>
-            <div class="top-news__card">
-              <div class="top-news__card__img-container">
-                <img
-                  src="https://newsinfo.inquirer.net/files/2021/04/000_98G46V-620x413.jpg"
-                  alt="News image"
-                />
-              </div>
-              <div class="top-news__card__text-container">
-                <span class="top-news__card__author"
-                  >John Eric Mendoza, 1h ago</span
-                >
-                <h3 class="top-news__card__title">
-                  DND: No French submarine bid for PH water exploration; buying
-                  sub not priority for now - INQUIRER.net
-                </h3>
-                <p class="top-news__card__description">
-                  MANILA, Philippines — The Department of National Defense (DND)
-                  on Wednesday said France had not offered submarines &quot;in
-                  exchange for permission&quot; to survey Philippine waters. It
-                  also...
-                </p>
-              </div>
-            </div>
-            <div class="top-news__card">
-              <div class="top-news__card__img-container">
-                <img
-                  src="https://newsinfo.inquirer.net/files/2021/04/000_98G46V-620x413.jpg"
-                  alt="News image"
-                />
-              </div>
-              <div class="top-news__card__text-container">
-                <span class="top-news__card__author">John Eric Mendoza</span>
-                <h3 class="top-news__card__title">
-                  DND: No French submarine bid for PH water exploration; buying
-                  sub not priority for now - INQUIRER.net
-                </h3>
-                <p class="top-news__card__description">
-                  MANILA, Philippines — The Department of National Defense (DND)
-                  on Wednesday said France had not offered submarines &quot;in
-                  exchange for permission&quot; to survey Philippine waters. It
-                  also...
-                </p>
-              </div>
-            </div>
-            <div class="top-news__card">
-              <div class="top-news__card__img-container">
-                <img
-                  src="https://newsinfo.inquirer.net/files/2021/04/000_98G46V-620x413.jpg"
-                  alt="News image"
-                />
-              </div>
-              <div class="top-news__card__text-container">
-                <span class="top-news__card__author">John Eric Mendoza</span>
-                <h3 class="top-news__card__title">
-                  DND: No French submarine bid for PH water exploration; buying
-                  sub not priority for now - INQUIRER.net
-                </h3>
-                <p class="top-news__card__description">
-                  MANILA, Philippines — The Department of National Defense (DND)
-                  on Wednesday said France had not offered submarines &quot;in
-                  exchange for permission&quot; to survey Philippine waters. It
-                  also...
-                </p>
-              </div>
-            </div>
-            <div class="top-news__card">
-              <div class="top-news__card__img-container">
-                <img
-                  src="https://newsinfo.inquirer.net/files/2021/04/000_98G46V-620x413.jpg"
-                  alt="News image"
-                />
-              </div>
-              <div class="top-news__card__text-container">
-                <span class="top-news__card__author">John Eric Mendoza</span>
-                <h3 class="top-news__card__title">
-                  DND: No French submarine bid for PH water exploration; buying
-                  sub not priority for now - INQUIRER.net
-                </h3>
-                <p class="top-news__card__description">
-                  MANILA, Philippines — The Department of National Defense (DND)
-                  on Wednesday said France had not offered submarines &quot;in
-                  exchange for permission&quot; to survey Philippine waters. It
-                  also...
-                </p>
-              </div>
-            </div>
-          </div>
+        <section class="section section--top-news">
+          <h2 class="section-heading section-heading--top-news">Top News</h2>
+          <div class="news news--top-news"></div>
         </section>
         <!-- Top news section ends -->
+
+        <!-- Technology news section starts -->
+        <section class="section section--technology-news">
+          <h2 class="section-heading">Technology</h2>
+          <div class="news news--technology-news"></div>
+        </section>
+        <!-- Technology news section ends -->
       </main>
       <!-- Main section ends -->
     </div>
@@ -202,7 +101,7 @@
     ></script>
     <script
       type="module"
-      src="./frontend/modules/homepage/top-news-section.js"
+      src="./frontend/modules/homepage/news-sections.js"
     ></script>
     <!-- page script ends -->
   </body>
