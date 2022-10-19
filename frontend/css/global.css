@@ -35,6 +35,7 @@
   --text-color-white: #eee;
   --text-color-white-light: #ccc;
   --text-color-dark: #333;
+  --text-color-black-light: #666;
 }
 
 /* Global type scale variables*/
@@ -54,6 +55,7 @@
 
 /* Global space system variables */
 :root {
+  --spacing-300px: 30rem;
   --spacing-160px: 16rem;
   --spacing-96px: 9.6rem;
   --spacing-80px: 8rem;
@@ -109,6 +111,10 @@
 
 .mt-5 {
   margin-top: var(--spacing-16px);
+}
+
+.text-muted {
+  color: var(--text-color-black-light);
 }
 
 /* Utility classes ends */

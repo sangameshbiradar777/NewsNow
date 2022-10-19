@@ -25,7 +25,6 @@ function goToNextCarouselItem(carouselInnerElement) {
     // Get the current carousel item
     const currentCarouselItemElement =
       carouselInnerElement.querySelector(".active");
-    console.dir(currentCarouselItemElement);
 
     // Get the next carousel item
     const targetCarouselItemElement =

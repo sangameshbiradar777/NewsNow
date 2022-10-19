@@ -1,24 +1,6 @@
 import { trendingNewsURL } from "../config.js";
+import { fetchNews } from "./helper.js";
 import initCarousel from "../homepage/carousel.js";
-
-console.log(initCarousel);
-
-// Implementation of the function fetchTrendingNews
-async function fetchTrendingNews(trendingNewsURL) {
-  try {
-    const trendingNewsURLResponse = await fetch(trendingNewsURL);
-
-    if (trendingNewsURLResponse.ok) {
-      const trendingNews = await trendingNewsURLResponse.json();
-      return trendingNews.articles;
-    } else {
-      const errorMessage = `⚡⚡An unknown error occurred with a status code of ${trendingNewsURLResponse.status}⚡⚡`;
-      throw new Error(errorMessage);
-    }
-  } catch (error) {
-    console.log(error.message);
-  }
-}
 
 // Implementation of the function getTop10TrendingNews
 function getTop10TrendingNews(trendingNews) {
@@ -86,8 +68,6 @@ function getCarouselNavItems(trendingNewsObjects) {
     carouselNavElement.append(dotElement);
   });
 
-  console.log(carouselNavElement);
-
   return carouselNavElement;
 }
 
@@ -118,8 +98,6 @@ function addTrendingNewsToDOM(trendingNewsObjects) {
   const trendingNewsGridElement = document.querySelector(
     ".trending-section__grid"
   );
-
-  console.log(trendingNewsGridElement);
 
   // Loop over the trending news objects and add them to DOM
   trendingNewsObjects.forEach((trendingNewsObject, index) => {
@@ -217,9 +195,8 @@ function getPublishedTime(date) {
 
 async function initTrendingSection() {
   // Get the trending news
-  const trendingNews = await fetchTrendingNews(trendingNewsURL);
-
-  console.log(trendingNews);
+  const trendingNewsResponse = await fetchNews(trendingNewsURL);
+  const trendingNews = trendingNewsResponse.articles;
 
   // Get the top 10 news from trending news
   const top10TrendingNews = getTop10TrendingNews(trendingNews);
