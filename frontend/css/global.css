@@ -121,6 +121,27 @@
 
 /* Utility classes ends */
 
+/* Custom scrollbar starts */
+
+::-webkit-scrollbar {
+  width: var(--spacing-12px);
+}
+
+::-webkit-scrollbar-track {
+  width: var(--spacing-8px);
+  background-color: #bbb;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #777;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #444;
+}
+
+/* Curstom scrollbar ends */
+
 /* Global rules */
 .btn {
   background-color: transparent;
@@ -128,6 +149,12 @@
   outline: none;
   font-family: inherit;
   cursor: pointer;
+}
+
+.btn__icon {
+  background-color: var(--color-white-transparent-light);
+  color: var(--text-color-dark);
+  border-radius: 50%;
 }
 
 .hidden {
@@ -153,6 +180,7 @@ main {
 
 .section {
   padding: var(--spacing-24px) var(--spacing-32px);
+  position: relative;
 }
 
 .grid-col-span-2 {

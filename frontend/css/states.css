@@ -18,29 +18,33 @@
 
 /* Trending section ends */
 
-/* Carousel starts */
+/* Button states starts */
 
-.carousel__btn:hover .carousel__btn__icon {
+.btn:hover .btn__icon {
   background-color: var(--color-white-transparent-bright);
 }
 
-.carousel__btn:focus .carousel__btn__icon {
+.btn:focus .btn__icon {
   background-color: var(--color-white-transparent-bright);
 }
 
-.carousel__btn:focus {
+.btn:focus {
   box-shadow: 0 0 0 var(--spacing-4px) var(--color-white-transparent-light);
 }
 
-/* Carousel ends */
+.news__btn:focus {
+  box-shadow: 0 0 0 var(--spacing-4px) var(--color-primary-light-transparent);
+}
+
+/* Button states ends */
 
 /* Top news starts */
 
-.top-news__card:hover .top-news__card__img-container .top-news__card__img {
+.news-card:hover .news-card__img-container .news-card__img {
   filter: brightness(60%);
 }
 
-.top-news__card:hover .top-news__card__title {
+.news-card:hover .news-card__title {
   text-decoration: underline;
 }
 

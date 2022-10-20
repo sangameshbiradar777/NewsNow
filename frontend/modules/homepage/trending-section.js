@@ -40,10 +40,10 @@ function addTrendingNewsCarouselToDOM(trendingNewsObjects) {
             ${getCarouselItemElements(trendingNewsObjects).innerHTML}
         </div>
         <button class="btn carousel__btn carousel__btn--left hidden">
-            <ion-icon class="carousel__btn__icon" name="chevron-back-circle"></ion-icon>
+            <ion-icon class="btn__icon" name="chevron-back-circle"></ion-icon>
         </button>
         <button class="btn carousel__btn carousel__btn--right">
-            <ion-icon class="carousel__btn__icon" name="chevron-forward-circle"></ion-icon>
+            <ion-icon class="btn__icon" name="chevron-forward-circle"></ion-icon>
         </button>
 
         <div class="carousel__nav">

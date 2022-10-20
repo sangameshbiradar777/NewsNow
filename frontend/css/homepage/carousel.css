@@ -44,12 +44,6 @@
   right: 2%;
 }
 
-.carousel__btn__icon {
-  background-color: var(--color-white-transparent-light);
-  color: var(--text-color-dark);
-  border-radius: 50%;
-}
-
 .carousel__nav {
   position: absolute;
   bottom: 3%;

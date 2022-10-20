@@ -11,9 +11,12 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: var(--spacing-12px);
+  /* height: var(--spacing-400px); */
 }
 
 .trending-section__grid__item {
+  width: 100%;
+  height: 100%;
   background-color: rgb(58, 52, 52);
 }
 
