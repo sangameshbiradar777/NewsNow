@@ -10,15 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Raleway:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./frontend/css/global.css" />
-    <link rel="stylesheet" href="./frontend/css/homepage/navbar.css" />
-    <link
-      rel="stylesheet"
-      href="./frontend/css/homepage/trending-section.css"
-    />
-    <link rel="stylesheet" href="./frontend/css/homepage/carousel.css" />
-    <link rel="stylesheet" href="./frontend/css/homepage/news-sections.css" />
-    <link rel="stylesheet" href="./frontend/css/states.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/homepage/navbar.css" />
+    <link rel="stylesheet" href="./css/homepage/trending-section.css" />
+    <link rel="stylesheet" href="./css/homepage/carousel.css" />
+    <link rel="stylesheet" href="./css/homepage/news-sections.css" />
+    <link rel="stylesheet" href="./css/states.css" />
   </head>
 
   <body>
@@ -28,8 +25,18 @@
         <h1 class="navbar__logo">NewsNow</h1>
         <form class="navbar__search-container">
           <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
-          <input type="search" placeholder="Search any topic" />
-          <button type="submit" class="btn">Search</button>
+          <input
+            type="text"
+            name="search-text"
+            autocomplete="off"
+            placeholder="Search any topic"
+            required
+          />
+          <ion-icon
+            class="navbar__search__clear-icon hide-clear-icon"
+            name="close-outline"
+          ></ion-icon>
+          <button type="submit" class="btn btn--disabled">Search</button>
         </form>
         <div class="navbar__links">
           <button class="btn btn-categories">
@@ -65,28 +72,36 @@
         <!-- Top news section starts -->
         <section class="section section--top-news">
           <h2 class="section-heading section-heading--top-news">Top News</h2>
-          <div class="news news--top-news"></div>
+          <div class="news-container">
+            <div class="news news--top-news"></div>
+          </div>
         </section>
         <!-- Top news section ends -->
 
         <!-- Technology news section starts -->
         <section class="section section--technology-news">
           <h2 class="section-heading">Technology</h2>
-          <div class="news news--technology-news"></div>
+          <div class="news-container">
+            <div class="news news--technology-news"></div>
+          </div>
         </section>
         <!-- Technology news section ends -->
 
         <!-- Sports news section starts -->
         <section class="section section--sports-news">
           <h2 class="section-heading">Sports</h2>
-          <div class="news news--sports-news"></div>
+          <div class="news-container">
+            <div class="news news--sports-news"></div>
+          </div>
         </section>
         <!-- Sports news section ends -->
 
         <!-- Entertainment news section starts -->
         <section class="section section--entertainment-news">
           <h2 class="section-heading">Entertainment</h2>
-          <div class="news news--entertainment-news"></div>
+          <div class="news-container">
+            <div class="news news--entertainment-news"></div>
+          </div>
         </section>
         <!-- Entertainment news section ends -->
       </main>
@@ -105,18 +120,24 @@
     <!-- Ion icons scripts ends -->
 
     <!-- page script starts -->
-    <script
-      type="module"
-      src="./frontend/modules/homepage/trending-section.js"
-    ></script>
-    <script
-      type="module"
-      src="./frontend/modules/homepage/carousel.js"
-    ></script>
-    <script
-      type="module"
-      src="./frontend/modules/homepage/news-sections.js"
-    ></script>
+    <script type="module">
+      import initTrendingSection from "./modules/homepage/trending-section.js";
+      import initNewsSections from "./modules/homepage/news-sections.js";
+      import initSearch from "./modules/homepage/search.js";
+
+      function init() {
+        // Initialize trending section
+        initTrendingSection();
+
+        // Initialize news sections
+        initNewsSections();
+
+        // Initialize search functionality
+        initSearch();
+      }
+
+      init();
+    </script>
     <!-- page script ends -->
   </body>
 </html>

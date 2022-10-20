@@ -180,4 +180,4 @@ async function initTrendingSection() {
   addTrendingNewsToDOM(next4TrendingNews);
 }
 
-initTrendingSection();
+export default initTrendingSection;

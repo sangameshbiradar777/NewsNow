@@ -157,6 +157,10 @@
   border-radius: 50%;
 }
 
+.btn--disabled {
+  cursor: not-allowed;
+}
+
 .hidden {
   opacity: 0;
   visibility: hidden;
@@ -180,7 +184,6 @@ main {
 
 .section {
   padding: var(--spacing-24px) var(--spacing-32px);
-  position: relative;
 }
 
 .grid-col-span-2 {

@@ -51,6 +51,37 @@ function getScrollerButtons() {
   return [scrollerBtnLeft, scrollerBtnRight];
 }
 
+// Implementation of the function scrollRight
+function scrollOnBtnClick() {
+  // Get the right scroll btn
+  const scrollBtns = document.querySelectorAll(".news__btn");
+
+  // Loop over all the scroll btns and add event listeners to them
+  scrollBtns.forEach((scrollBtn) => {
+    scrollBtn.addEventListener("click", function () {
+      // Get the closest news element
+      const newsElement = this.closest(".news");
+
+      // Get the width of any card inside the news element
+      let newsCardWidth = newsElement.children[0].getBoundingClientRect().width;
+
+      // If the clicked element is left scrll btn add negative sign to the newsCardWidth
+      if (this.classList.contains("news__btn--left"))
+        newsCardWidth = -newsCardWidth;
+
+      // Scroll Options
+      const scrollOptions = {
+        top: 0,
+        left: newsCardWidth,
+        behavior: "smooth",
+      };
+
+      // Scroll the news element by newsCardwidth pixels
+      newsElement.scrollBy(scrollOptions);
+    });
+  });
+}
+
 // Implementation of the function getTopNewsCardInnerHTML
 function getNewsCardInnerHTML(newsObject) {
   return `
@@ -82,7 +113,7 @@ function getNewsCardInnerHTML(newsObject) {
 }
 
 // Initiator function
-async function initTopNews() {
+async function initNewsSections() {
   // Get all the news element from DOM
   const topNewsElement = document.querySelector(".news--top-news");
   const technologyNewsElement = document.querySelector(
@@ -120,6 +151,9 @@ async function initTopNews() {
 
   // Add Sports news cards to DOM
   addNewsCardsToDOM(entertainmentNewsElement, entertainmentNews);
+
+  // Scroll on button click
+  scrollOnBtnClick();
 }
 
-initTopNews();
+export default initNewsSections;

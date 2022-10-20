@@ -9,6 +9,10 @@
 
 /* Top news section starts */
 
+.news-container {
+  position: relative;
+}
+
 .news {
   display: flex;
   width: 100%;
@@ -102,7 +106,6 @@
 .news__btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,17 +114,19 @@
   border-radius: 50%;
 }
 
-.news--btn.btn-icon {
+.news__btn .btn__icon {
   background-color: var(--text-color-white-light);
   color: var(--text-color-black-light);
 }
 
 .news__btn--left {
-  left: 1%;
+  left: 0;
+  transform: translate(-50%, -50%);
 }
 
 .news__btn--right {
-  right: 1%;
+  right: 0;
+  transform: translate(50%, -50%);
 }
 
 /* Top news section ends */

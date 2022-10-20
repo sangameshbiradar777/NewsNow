@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search resutls | NewsNow</title>
+  </head>
+  <body>
+    <!-- Navbar starts -->
+    <nav class="navbar">
+      <h1 class="navbar__logo">NewsNow</h1>
+      <form class="navbar__search-container">
+        <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
+        <input
+          type="text"
+          name="search-text"
+          autocomplete="off"
+          placeholder="Search any topic"
+          required
+        />
+        <ion-icon
+          class="navbar__search__clear-icon hide-clear-icon"
+          name="close-outline"
+        ></ion-icon>
+        <button type="submit" class="btn btn--disabled">Search</button>
+      </form>
+      <div class="navbar__links">
+        <button class="btn btn-categories">
+          Categories
+          <ion-icon
+            class="icon navbar__links-icon"
+            name="chevron-down-outline"
+          ></ion-icon>
+        </button>
+        <a
+          href="frontend/pages/bookmarks/bookmarks.html"
+          class="navbar__links-bookmarks"
+        >
+          Bookmarks
+          <ion-icon class="icon navbar__links-icon" name="bookmarks"></ion-icon>
+        </a>
+      </div>
+    </nav>
+    <!-- Navbar ends -->
+
+    <main>
+      <section class="section section--search-results">
+        <h1 class="search-text-heading">
+          Showing results for <span class="search-text">Bitcoin</span>
+        </h1>
+        <h2>About <span class="search-results">233</span> results</h2>
+      </section>
+    </main>
+  </body>
+</html>
