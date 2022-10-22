@@ -1,277 +1,285 @@
 const topHeadlines = {
   status: "ok",
-  totalResults: 424,
+  totalResults: 432,
   articles: [
     {
-      source: { id: null, name: "CNBC" },
-      author: "Jesse Pound, Alex Harring",
+      source: { id: null, name: "The Sun" },
+      author: "Louis Allwood",
       title:
-        "Dow rises 200 points as short-term yields fall on potential for Fed to slow rate hikes - CNBC",
+        "Cost of Living LATEST: Martin Lewis reveals how to get free £200 as rising food prices push UK inflation... - The Sun",
       description:
-        "The major averages were struggling to hold on to their gains for the week.",
-      url: "https://www.cnbc.com/2022/10/20/nasdaq-100-futures-slide-after-major-averages-register-two-days-of-losses.html",
+        "BRITS could be given more money for using appliances outside of peak hours after the National Grid raised the discount it will offer. The discount for avoiding using energy during off-peak hours ha…",
+      url: "https://www.thesun.co.uk/money/20143509/cost-of-living-payment-news-martin-lewis-savings/",
       urlToImage:
-        "https://image.cncfm.com/api/v1/image/107136692-166611629542-gettyimages-1434437067-img_1655_ca440779-7b5a-404e-aa22-c4cb25d5ed02.jpeg?v=1666358556&w=1920&h=1080",
-      publishedAt: "2022-10-21T14:40:00Z",
+        "https://www.thesun.co.uk/wp-content/uploads/2022/10/Plain-no-tabbing-68-1.jpg?strip=all&quality=100&w=1920&h=1080&crop=1",
+      publishedAt: "2022-10-22T14:40:56Z",
       content:
-        "After slipping nearly 54% year to date, Moderna is in a good place for investors to take note and watch for a compelling entry point, according to SVB Securities. \r\nThe firm upgraded the pharmaceutic… [+1477 chars]",
+        "Five payments could hit your bank account before Xmas\r\nMillions of Brits may be eligible for up to five payments paid into their bank accounts BEFORE Xmas amid the soaring cost of living.\r\nFirstly, t… [+510 chars]",
     },
     {
-      source: { id: null, name: "YouTube" },
-      author: null,
+      source: { id: null, name: "The Sun" },
+      author: "Kiro Evans",
       title:
-        "Watch: James Webb Space Telescope captures iconic Pillars of Creation #shorts #nasa - DNAIndiaNews",
+        "Man Utd news LIVE: Gakpo ‘considering’ Red Devils transfer, Cristiano Ronaldo WORST EVER Ballon d’Or finis... - The Sun",
       description:
-        "Watch: James Webb Space Telescope captures iconic Pillars of Creation #shorts  #nasa #jameswebbtelescope",
-      url: "https://www.youtube.com/watch?v=yeYci86s_5M",
-      urlToImage: "https://i.ytimg.com/vi/yeYci86s_5M/maxresdefault.jpg",
-      publishedAt: "2022-10-21T14:31:59Z",
+        "CRISTIANO RONALDO could leave Manchester United for free in January, it’s been reported. The Portuguese forward has been dropped by manager Erik Ten Hag for United’s game with Chelsea t…",
+      url: "https://www.thesun.co.uk/sport/19994861/man-utd-news-live-cristiano-ronaldo-breaks-silence-martial-chelsea/",
+      urlToImage:
+        "https://www.thesun.co.uk/wp-content/uploads/2022/10/SunSport-off-platform-templates-70.png?strip=all&quality=100&w=1920&h=1080&crop=1",
+      publishedAt: "2022-10-22T14:37:34Z",
+      content:
+        "Good morning Man Utd fans\r\nCristiano Ronaldo is set to face fan backlash following his mutiny against Tottenham.\r\nMan United boss Erik ten Hag confirmed earlier today that Ronaldo REFUSED to come on … [+1580 chars]",
+    },
+    {
+      source: { id: null, name: "The Philadelphia Inquirer" },
+      author:
+        "Rob Tornoe, Scott Lauber, Alex Coffey, Matt Breen, David Murphy, Matt Mullin and Isabella DiAmore",
+      title:
+        "Phillies-Padres news: Two wins away from the World Series, Philly turns to an unlikely starter for Game 4 - The Philadelphia Inquirer",
+      description:
+        "The Phillies lead the Padres 2-1 with two more games to play at Citizens Bank Park.",
+      url: "https://www.inquirer.com/phillies/live/phillies-game-4-san-diego-padres-nlcs-today-mlb-playoffs-live-updates-20221022.html",
+      urlToImage:
+        "https://www.inquirer.com/resizer/OqrxbTAk20cHqc8LoGkh4MXXs-8=/760x507/smart/filters:format(webp)/cloudfront-us-east-1.images.arcpublishing.com/pmn/3NS3R424ZVEXBHZNPKRX47NUJA.jpg",
+      publishedAt: "2022-10-22T14:34:22Z",
       content: null,
     },
     {
-      source: { id: null, name: "The Guardian" },
-      author: "Guardian staff reporter",
+      source: { id: "the-washington-post", name: "The Washington Post" },
+      author: "Perry Stein, Devlin Barrett",
       title:
-        "Former world No 1 Simona Halep suspended after positive doping test - The Guardian",
+        "While Dearie oversees document review, FBI appears to be building obstruction case, experts say - The Washington Post",
       description:
-        "Simona Halep, the former world No 1 and multiple grand slam champion, has been provisionally suspended after testing positive for Roxadustat in a sample provided at the US Open",
-      url: "https://www.theguardian.com/sport/2022/oct/21/simona-halep-suspended-doping-test-wimbledon-champion-tennis",
+        "The special master is the most visible, but likely not the most important, aspect of the investigation into Donald Trump's possession of government papers.",
+      url: "https://www.washingtonpost.com/national-security/2022/10/22/trump-documents-dearie-fbi/",
       urlToImage:
-        "https://i.guim.co.uk/img/media/ee0c35d264403f0a7a362f9b25ebfd17e9422718/254_784_3334_2001/master/3334.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=5c769b06e517e6afac1356fb4e4529dd",
-      publishedAt: "2022-10-21T14:14:00Z",
+        "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FGQLY36BFOS3GSGE2FGIXNZFPY.jpg&w=1440",
+      publishedAt: "2022-10-22T14:31:43Z",
       content:
-        "The two-time grand slam champion Simona Halep failed a doping test at the US Open, the International Tennis Integrity Agency has announced. The world No 9 tested positive for the anti-anaemia drug Ro… [+1182 chars]",
+        "Comment on this story\r\nThe FBIs unprecedented criminal probe of a former president has unfolded on two tracks in the 11 weeks since agents searched Donald Trumps Florida residence and club one mostly… [+8949 chars]",
     },
     {
-      source: { id: "cnn", name: "CNN" },
-      author: "Jackie Wattles",
+      source: { id: null, name: "Forbes" },
+      author: "Lea Lane",
       title:
-        "Hubble shows view of 'unexpected' twin tail created by NASA spacecraft slamming into asteroid - CNN",
+        "See The November 8 Blood Moon, Camping Under Dark, Starry Skies - Forbes",
       description:
-        "The Hubble Space Telescope captured the most detailed look yet at a twin tail coming off the asteroid system targeted by NASA's DART mission slamming into an asteroid.",
-      url: "https://www.cnn.com/2022/10/20/world/hubble-dart-twin-tail-image-scn/index.html",
+        "There seems to be increasing awe about the sky's wonders, and more interest in traveling to dark-sky sites to appreciate them.",
+      url: "https://www.forbes.com/sites/lealane/2022/10/22/see-the-november-8-blood-moon-camping-under-dark-starry-skies/",
       urlToImage:
-        "https://media.cnn.com/api/v1/images/stellar/prod/221020112005-aftermath-asteroid-impacted-by-dart-1020.jpg?c=16x9&q=w_800,c_fill",
-      publishedAt: "2022-10-21T14:13:00Z",
+        "https://imageio.forbes.com/specials-images/imageserve/634468d8842014b938aa3149/0x0.jpg?format=jpg&width=1200",
+      publishedAt: "2022-10-22T14:20:42Z",
       content:
-        "Sign up for CNNs Wonder Theory science newsletter. Explore the universe with news on fascinating discoveries, scientific advancements and more.\r\nThe Hubble Space Telescope captured a new snapshot of … [+2204 chars]",
+        "A Blood Moon rises. During the period of totality during thr eclipse, the Earth's shadow is directly ... [+] across the moon.\r\nGetty Images\r\nSince the pandemic I sense an increased awe about the sky,… [+3014 chars]",
     },
     {
-      source: { id: null, name: "Uoguelph.ca" },
+      source: { id: null, name: "Nature.com" },
       author: null,
       title:
-        "Rest Your Body to Benefit Your Heart: U of G Study - University of Guelph News",
+        "Potential effects of metal ion induced two-state allostery on the regulatory mechanism of add adenine riboswitch | Communications Biology - Nature.com",
       description:
-        "Plenty of patients have had a doctor tell them to get some rest. But what does that mean? In what Dr. Tami Martino calls the beginnings of a brand-new research field, University of Guelph researchers…",
-      url: "https://news.uoguelph.ca/2022/10/rest-your-body-to-benefit-your-heart-u-of-g-study/",
+        "Molecular dynamic simulations are employed to assess the influence of metal ions on riboswitch structure and dynamics, suggesting a conformational control of riboswitch aptamers by metal ions before ligand binding.",
+      url: "https://www.nature.com/articles/s42003-022-04096-z",
       urlToImage:
-        "https://news.uoguelph.ca/wp-content/uploads/2022/10/840135-e1666360494333.jpg",
-      publishedAt: "2022-10-21T14:00:26Z",
+        "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs42003-022-04096-z/MediaObjects/42003_2022_4096_Fig1_HTML.png",
+      publishedAt: "2022-10-22T14:14:42Z",
       content:
-        "Plenty of patients have had a doctor tell them to get some rest. But what does that mean? In what Dr. Tami Martino calls the beginnings of a brand-new research field, University of Guelph researchers… [+4314 chars]",
+        "The influence of metal ions on the global structure of AARA\r\nThe calculations of rd(Pi, Pj) clearly show several regions of AARA have undergone great structural changes at different ionic conditions … [+34706 chars]",
     },
     {
-      source: { id: null, name: "Newswise" },
-      author: "Space Telescope Science Institute (STScI)",
+      source: { id: null, name: "Telegraph.co.uk" },
+      author: null,
       title:
-        "NASA’s Webb Takes Star-Filled Portrait of Pillars of Creation - Newswise",
-      description:
-        "This glittering view of the Pillars of Creation was delivered by NASA’s James Webb Space Telescope’s Near-Infrared Camera – and it begs to be examined pix",
-      url: "https://www.newswise.com/articles/nasa-s-webb-takes-star-filled-portrait-of-pillars-of-creation",
-      urlToImage:
-        "https://www.newswise.com/legacy/image.php?image=/images/uploads/2022/10/18/634ef5ca31e43_STScI-01GF42D0KV99R21EAD1RAZ3JB7.png&width=600&height=600",
-      publishedAt: "2022-10-21T14:00:00Z",
-      content:
-        "Newswise — NASA’s James Webb Space Telescope has captured a lush, highly detailed landscape – the iconic Pillars of Creation – where new stars are forming within dense clouds of gas and dust. The thr… [+2967 chars]",
-    },
-    {
-      source: { id: null, name: "Sky.com" },
-      author: "Thomas Moore",
-      title:
-        "COVID infections in UK rise to two million - but may be nearing peak, data suggests - Sky News",
+        "Nottingham Forest cut short Liverpool's revival with shock win - The Telegraph",
       description: "",
-      url: "https://news.sky.com/story/covid-infections-in-uk-rise-to-two-million-but-may-be-nearing-peak-data-suggests-12726350",
+      url: "https://www.telegraph.co.uk/football/2022/10/22/nottingham-forest-vs-liverpool-live-score-latest-updates-premier",
       urlToImage:
-        "https://e3.365dm.com/22/04/1600x900/skynews-covid-test-lateral-flow_5752800.jpg?20220427081401",
-      publishedAt: "2022-10-21T13:52:30Z",
+        "https://www.telegraph.co.uk/content/dam/football/2022/10/22/TELEMMGLPICT000313625113_trans_NvBQzQNjv4Bqek9vKm18v_rkIPH9w2GMNpPHkRvugymKLtqq96r_VP8.jpeg?impolicy=logo-overlay",
+      publishedAt: "2022-10-22T14:02:28Z",
       content:
-        "COVID-19 cases are continuing to rise, but could be nearing a peak, the latest data suggest.\r\nThe weekly infection survey from the Office for National Statistics shows an estimated 2,012,400 people h… [+2380 chars]",
+        "Liverpool manager Jurgen Klopp admits he had to tweak their system in order to improve results as he felt familiarity with his methods had dulled the players' focus.\r\nThe German switched from his tri… [+1755 chars]",
     },
     {
-      source: { id: null, name: "Daily Post Nigeria" },
-      author: "Racheal Ayodele",
+      source: { id: null, name: "GSMArena.com" },
+      author: "Victor",
       title:
-        "EndSARS memorial: Lekki Tollgate is a cemetery – BBNaija star, Tega Dominic - Daily Post Nigeria",
+        "Three Asus ROG Phone 6 models put to test - which one is the fastest? - GSMArena.com news - GSMArena.com",
       description:
-        "Former Big Brother Naija (BBNaija) housemate, Tega Dominic, has tagged the Lekki Tollgate as a cemetery. According to her, the memories of 2020 Lekki Tollgate victims will remain in the hearts of Nigerians, especially the families whose loved ones have become…",
-      url: "https://dailypost.ng/2022/10/21/endsars-memorial-lekki-tollgate-is-a-cemetery-bbnaija-star-tega-dominic/",
+        "We put ROG Phone 6, the ROG Phone 6D Ultimate and the vanilla ROG Phone 6D head to head to see which is the best-performing ROG Phone this year.",
+      url: "https://www.gsmarena.com/fastest_asus_rog_phone_6_test-news-56149.php",
       urlToImage:
-        "https://dailypost.ng/wp-content/uploads/2022/10/Tega-Dominic.jpeg",
-      publishedAt: "2022-10-21T13:47:06Z",
+        "https://fdn.gsmarena.com/imgroot/news/22/10/rog-phone-6d-benchmarks/-952x498w6/gsmarena_002.jpg",
+      publishedAt: "2022-10-22T14:00:01Z",
       content:
-        "Former Big Brother Naija (BBNaija) housemate, Tega Dominic, has tagged the Lekki Tollgate as a cemetery.\r\nAccording to her, the memories of 2020 Lekki Tollgate victims will remain in the hearts of Ni… [+1134 chars]",
+        "Introduction\r\nWe've recently reviewed both the ROG Phone 6 Pro and the ROG Phone 6D Ultimate. As you might already know, the former of the two is based around Qualcomm's Snapdragon 8+ Gen 1 chipset, … [+13736 chars]",
     },
     {
-      source: { id: null, name: "Ajmc.com" },
-      author: "AJMC Staff",
+      source: { id: null, name: "Seacoastonline.com" },
+      author: "Carrie Jose, Portsmouth Herald",
       title:
-        "Endometriosis Has Quality of Life Impacts, Great Economic Burden, Dr Soyini Hawkins Says - AJMC.com Managed Markets Network",
+        "Health and Wellness: Knee surgery gone wrong? It's more common than you think - Seacoastonline.com",
       description:
-        "Endometriosis can have a long timeline from onset of symptoms to diagnosis, and in later stages it can affect organs other than the uterus, explained Soyini Hawkins, MD, gynecologist at Fibroid and Pelvic Wellness Center of Georgia.",
-      url: "https://www.ajmc.com/view/endometriosis-has-quality-of-life-impacts-great-economic-burden-dr-soyini-hawkins-says",
+        "Dr. Carrie Jose, in her latest health and wellness column, discusses how something going wrong in knee surgery is more common than one would think.",
+      url: "https://www.seacoastonline.com/story/lifestyle/health-fitness/2022/10/22/knee-surgery-gone-wrong-its-more-common-than-you-think-carrie-jose/10551237002/",
       urlToImage:
-        "https://cdn.sanity.io/images/0vv8moc6/ajmc/b3a745f88945a70aca7d474c7f69ecb7480f588e-300x375.jpg?fit=crop&auto=format",
-      publishedAt: "2022-10-21T13:46:33Z",
+        "https://www.gannett-cdn.com/presto/2021/04/30/NPOH/bc314d88-ad0e-488d-9c0b-b3384e84c530-CarrieJose.jpg?auto=webp&crop=658,371,x1,y0&format=pjpg&width=1200",
+      publishedAt: "2022-10-22T13:59:49Z",
       content:
-        "Diagnosis if endometriosis can take, on average, 7 to 12 years from the time of symptom onset, explained Soyini Hawkins, MD, gynecologist at Fibroid and Pelvic Wellness Center of Georgia. However, th… [+9032 chars]",
+        "Arthroscopic knee surgery is one of the most common surgeries performed - despite research telling us that it’s not nearly as effective as most people are led to believe. Furthermore, the science tel… [+4048 chars]",
     },
     {
-      source: { id: null, name: "CBS Sports" },
-      author: "",
+      source: { id: null, name: "Universe Today" },
+      author: "Paul M. Sutter",
       title:
-        "Fantasy Football: Christian McCaffrey trade fallout; what it means for 49ers and Panthers - CBS Sports",
+        "Chandra's X-ray Vision Combined With JWST Reveals Even More Details About the Universe - Universe Today",
       description:
-        "McCaffrey is on the move and here's what it means for your Fantasy rosters",
-      url: "https://www.cbssports.com/fantasy/football/news/fantasy-football-christian-mccaffrey-trade-fallout-what-it-means-for-49ers-and-panthers/",
+        "NASA scientist have released images combining the early data from the James Webb Space Telescope with X-ray data taken with the Chandra Observatory. Besides their beauty, the images offer insights into the inner workings of some of the most complex astrophysi…",
+      url: "https://www.universetoday.com/158093/chandras-x-ray-vision-combined-with-jwst-reveals-even-more-details-about-the-universe/",
       urlToImage:
-        "https://sportshub.cbsistatic.com/i/r/2022/10/20/a6829dd4-8ade-48b4-a7b3-d4038f3804e6/thumbnail/1200x675/b9f586758cbfaa788405bc1a40116426/christian-mccaffrey-getty.jpg",
-      publishedAt: "2022-10-21T13:38:00Z",
+        "https://www.universetoday.com/wp-content/uploads/2022/10/chandrawebb_cartwheel_comp.jpeg",
+      publishedAt: "2022-10-22T13:55:00Z",
       content:
-        "Rumors have swirled around All-Pro running back Christian McCaffrey over the past few weeks, and the San Francisco 49ers swung a massive trade to acquire him from the Carolina Panthers Thursday eveni… [+6287 chars]",
+        "NASA scientist have released images combining the early data from the James Webb Space Telescope with X-ray data taken with the Chandra Observatory. Besides their beauty, the images offer insights in… [+1937 chars]",
+    },
+    {
+      source: { id: "associated-press", name: "Associated Press" },
+      author: "Andrew Meldrum",
+      title:
+        "Russian-installed authorities order evacuation of Kherson - The Associated Press",
+      description:
+        "KYIV, Ukraine (AP) — Russian-installed authorities ordered all residents of the southern Ukrainian city of Kherson to leave “immediately” Saturday ahead of an expected advance by Ukrainian troops  waging a counteroffensive to recapture one of the first urban …",
+      url: "https://apnews.com/article/russia-ukraine-kyiv-europe-power-outages-e64ad07feb99a59d5187c5a0572eb8b9",
+      urlToImage:
+        "https://storage.googleapis.com/afs-prod/media/0b714509d47443b688083f912fae09f0/3000.jpeg",
+      publishedAt: "2022-10-22T13:55:00Z",
+      content:
+        "KYIV, Ukraine (AP) Russian-installed authorities ordered all residents of the southern Ukrainian city of Kherson to leave immediately Saturday ahead of an expected advance by Ukrainian troops waging … [+6407 chars]",
+    },
+    {
+      source: { id: null, name: "Premium Times" },
+      author: "Agency Report",
+      title:
+        "2023: Youths march for Tinubu, Sanwo-Olu in Lagos - Premium Times",
+      description:
+        "The News Agency of Nigeria (NAN) reports that the Eko Youth Walk, organised by Tinubu support groups, began from Maryland...",
+      url: "https://www.premiumtimesng.com/regional/ssouth-west/561089-2023-youths-march-for-tinubu-sanwo-olu-in-lagos.html",
+      urlToImage:
+        "https://media.premiumtimesng.com/wp-content/files/2022/10/Ffqw96DXgAATShW.jpg",
+      publishedAt: "2022-10-22T13:49:58Z",
+      content:
+        "The Lagos State chapter of All Progressives Congress (APC) on Saturday commended the youth for their massive turnout at the rally in support of the partys Presidential Candidate, Bola Tinubu and his … [+2519 chars]",
     },
     {
       source: { id: null, name: "NDTV News" },
       author: null,
       title:
-        '"Act Or Face Contempt": Supreme Court To Government On Hate Speech - NDTV',
+        'Jacqueline Fernandez "Never Asked For Anything But...": Jailed Conman Defends Her In Letter - NDTV',
       description:
-        "The court was hearing a petition that called for an urgent intervention to stop hate speeches against the Muslim community.",
-      url: "https://www.ndtv.com/india-news/supreme-court-on-hate-speeches-this-is-21st-century-where-have-we-reached-in-the-name-of-religion-3452203",
+        '"We were in a relationship and if I have given her and her family gifts, what\'s their fault," says Sukesh Chandrashekhar in letter released via lawyer',
+      url: "https://www.ndtv.com/india-news/jailed-conman-sukesh-chandrashekhar-defends-jacqueline-fernandez-she-never-asked-for-anything-but-love-3455472",
       urlToImage:
-        "https://c.ndtvimg.com/2022-02/a1ooga8_supreme-court-of-india_650x400_14_February_22.jpg",
-      publishedAt: "2022-10-21T13:23:00Z",
+        "https://c.ndtvimg.com/2022-10/35m6pq1o_actor-jacqueline-fernandez_625x300_22_October_22.jpg",
+      publishedAt: "2022-10-22T13:49:19Z",
       content:
-        "The plea in the Supreme Court seeks credible probes into hate crimes and speeches. (File)\r\nNew Delhi: Two days after United Nations Secretary-General Antonio Guterres criticised India over its human … [+3497 chars]",
+        "Actor Jacqueline Fernandez at a Delhi court for bail hearing on October 22.\r\nNew Delhi: Investigators claim actor Jacqueline Fernandez tried to flee India after being named in a Rs 200-crore extortio… [+2808 chars]",
     },
     {
-      source: { id: null, name: "Hindustan Times" },
-      author: "HT News Desk",
+      source: { id: null, name: "Crictracker.com" },
+      author: "CricTracker Staff",
       title:
-        "Google tries to troll Apple’s Tim Cook, gets roasted on social media - Hindustan Times",
+        "T20 World Cup 2022: Match 13, AUS vs NZ Match Prediction – Who will win today’s T20 WC match between AUS vs NZ? - CricTracker",
       description:
-        "To post the tweet, Google did not utilise the Pixel phone, but it made fun of Apple CEO Tim Cook by using an iPhone. In the comments, it is evident that Twitterati did not like this.",
-      url: "https://www.hindustantimes.com/technology/google-tries-to-troll-apple-s-tim-cook-gets-roasted-on-social-media-101666355660979.html",
+        "After some entertaining and dramatic matches in the first round, the action now shifts to Sydney as Australia and New Zealand gear up for the first match of Super 12s of the T20 World Cup 2022. T",
+      url: "https://www.crictracker.com/cricket-match-predictions/t20-world-cup-2022-nz-vs-aus-match-prediction-who-will-win-todays-t20-world-cup-match-between-new-zealand-vs-australia/",
       urlToImage:
-        "https://images.hindustantimes.com/img/2022/10/21/1600x900/APPLE-IPHONE-USA-26_1664883749966_1664883749966_1666356468394_1666356468394.JPG",
-      publishedAt: "2022-10-21T13:19:46Z",
+        "https://media.crictracker.com/media/featureimage/WI-VS-NZ.jpg",
+      publishedAt: "2022-10-22T13:46:32Z",
       content:
-        "Smartphone industry titans are frequently spotted criticising one another on social media. However, this time, when Google poked fun at Apple CEO Tim Cook, it took an unexpected embarrassing turn for… [+1533 chars]",
+        "After some entertaining and dramatic matches in the first round, the action now shifts to Sydney as Australia and New Zealand gear up for the first match of Super 12s of the T20 World Cup 2022. \r\nThe… [+1888 chars]",
     },
     {
-      source: { id: null, name: "The Punch" },
+      source: { id: null, name: "The Guardian" },
+      author: "Sarah Haque",
+      title:
+        "Priti Patel backs Boris Johnson for Tory leadership - The Guardian",
+      description:
+        "Patel says Johnson has mandate to deliver manifesto and ‘proven track record getting the big decisions right’",
+      url: "https://www.theguardian.com/politics/2022/oct/22/priti-patel-backs-boris-johnson-for-tory-leadership",
+      urlToImage:
+        "https://i.guim.co.uk/img/media/ce8870016ccede7c9293d5c1066fa7bb72f7d032/0_86_2389_1433/master/2389.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=f35b391f381830dcbd7e65cb6872c3e0",
+      publishedAt: "2022-10-22T13:39:00Z",
+      content:
+        "Priti Patel has announced she is backing Boris Johnson in the Conservative leadership contest.\r\nThe former home secretary is the latest MP to come out in favour of Johnsons expected bid to return to … [+4592 chars]",
+    },
+    {
+      source: { id: null, name: "Thecable.ng" },
+      author: "by  Vivian Chime",
+      title:
+        "UNICEF: Over 1.5m children at risk of devastating floods in Nigeria - TheCable",
+      description:
+        "The United Nations International Children’s Emergency Fund (UNICEF) says more than 1.5 million Nigerian children are at risk of flood disaster.  In a statement on Friday, the UN agency said",
+      url: "https://www.thecable.ng/flood-1-5m-children-at-risk-says-unicef",
+      urlToImage:
+        "https://f5p3e9e4.stackpathcdn.com/wp-content/uploads/2022/09/20220912_113636-scaled.jpg",
+      publishedAt: "2022-10-22T13:37:00Z",
+      content:
+        "The United Nations International Children’s Emergency Fund (UNICEF) says more than 1.5 million Nigerian children are at risk of flood disaster. \r\nIn a statement on Friday, the UN agency said out of t… [+2589 chars]",
+    },
+    {
+      source: { id: null, name: "ESPN" },
       author: null,
       title:
-        "Flooding: King Charles III writes Buhari, expresses sadness - Punch Newspapers",
+        "Nottingham Forest vs. Liverpool - Football Match Report - October 22, 2022 - ESPN",
       description:
-        'King Charles III of England has written to the president, Major General Muhammadu Buhari (retd.), concerning the "devastating floods" bedeviling most states of the federation.',
-      url: "https://punchng.com/flooding-king-charles-iii-writes-buhari-expresses-sadness/",
+        "Get a report of the Nottingham Forest vs. Liverpool 2022-23 English Premier League football match.",
+      url: "https://www.espn.com/soccer/report/_/gameId/637943",
       urlToImage:
-        "https://cdn.punchng.com/wp-content/uploads/2022/09/09152934/Britains-King-Charles-III.jpg",
-      publishedAt: "2022-10-21T13:15:08Z",
+        "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2022%2F1022%2Fr1079453_1296x729_16%2D9.jpg",
+      publishedAt: "2022-10-22T13:35:27Z",
       content:
-        "King Charles III of England has written to the president, Major General Muhammadu Buhari (retd.), concerning the “devastating floods” bedeviling most states of the federation.\r\nIn the open letter sig… [+1021 chars]",
+        "Taiwo Awoniyi scored the winner for Forest. Michael Regan/Getty Images\r\nNottingham Forest stunned Liverpool as Taiwo Awoniyi sealed a 1-0 win with a second-half goal to lift them off the bottom of th… [+2961 chars]",
     },
     {
-      source: { id: "business-insider", name: "Business Insider" },
-      author: "Kate Duffy",
+      source: { id: null, name: "The Guardian" },
+      author: "Andrew Anthony",
       title:
-        "Biden could kill Musk's Twitter deal if US does security review - Business Insider",
+        "From fighter to quitter: the ‘weird’ rise and fall of Liz Truss - The Guardian",
       description:
-        "President Biden has the ability to cancel the Twitter deal if it's subject to a national security review. Elon Musk has tried to back out of the deal.",
-      url: "https://www.businessinsider.com/biden-elon-musk-twitter-deal-government-national-security-review-report-2022-10",
+        "After the shortest-ever term as Britain’s prime minister, how did a politician who spent 12 years in government, including in many key roles, make such a historic mess of the top job?",
+      url: "https://www.theguardian.com/politics/2022/oct/22/from-fighter-to-quitter-the-weird-rise-and-fall-of-liz-truss",
       urlToImage:
-        "https://i.insider.com/63525d97ffcac3001876aacf?width=1200&format=jpeg",
-      publishedAt: "2022-10-21T13:12:27Z",
+        "https://i.guim.co.uk/img/media/af02972fca30f3c6039cb23182427ac3e8595c51/0_44_1680_1008/master/1680.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdG8tZGVmYXVsdC5wbmc&enable=upscale&s=b364b2097ef3011d8ec15d705e43492c",
+      publishedAt: "2022-10-22T13:34:00Z",
       content:
-        "The US government is considering national security reviews of some of Elon Musk's ventures, including his Twitter takeover deal, Bloomberg reported Thursday, citing people with knowledge of the matte… [+2680 chars]",
+        "It may not have been the most troubling feature of Liz Trusss premiership but the need to check whether she was still in office was a gathering distraction for anyone, including her cabinet colleague… [+20236 chars]",
     },
     {
-      source: { id: null, name: "The Manila Times" },
-      author: "Franco Jose C. Baroña",
+      source: { id: null, name: "Digital Trends" },
+      author: "Tyler Lacoma",
       title:
-        "SC gives Comelec 15 days to identify 'reasonable period' for Barangay, Youth polls - The Manila Times",
+        "Best outdoor projectors 2022: for backyards, camping, and more - Digital Trends",
       description:
-        "THE Supreme Court gave the Commission on Elections (Comelec) 15 days to identify a 'reasonable period' during which the Barangay and Sangguniang Kabataan elections (BSKE) can be...",
-      url: "https://www.manilatimes.net/2022/10/21/news/sc-gives-comelec-15-days-to-identify-reasonable-period-for-barangay-youth-polls/1863168",
+        "Not all home projectors can handle outside use. Here are the best and most portable projector models made for backyard movies, camping trips, and more.",
+      url: "https://www.digitaltrends.com/home-theater/the-best-outdoor-projectors-2/",
       urlToImage:
-        "https://www.manilatimes.net/manilatimes/uploads/images/2022/10/21/119124.jpg",
-      publishedAt: "2022-10-21T13:10:13Z",
+        "https://www.digitaltrends.com/wp-content/uploads/2022/06/BenQ-GS50.jpg?p=1",
+      publishedAt: "2022-10-22T13:30:41Z",
       content:
-        'THE Supreme Court gave the Commission on Elections (Comelec) 15 days to identify a "reasonable period" during which the Barangay and Sangguniang Kabataan elections (BSKE) can be successfully carried … [+4797 chars]',
+        "The best home theater projectors specialize in delivering a cinematic experience in your living room, but some models have an added talent offering portable ways to easily share movies or shows outdo… [+8711 chars]",
     },
     {
-      source: { id: null, name: "Leadership.ng" },
-      author: "Emmanuel Mgheahurike",
+      source: { id: null, name: "TheJournal.ie" },
+      author: "Emer Moreau",
       title:
-        "Ohakim To Buhari: Direct Malami To Withdraw Suit Against Nnamdi Kalu - Leadership News",
+        "'I had people fighting for me': PJ Gallagher opens up about his experience with mental illness - TheJournal.ie",
       description:
-        "The former Governor of Imo State, Chief Ikedi Ohakim, has reacted to the Federal Government’s appeal against the release of Nnamdi Kanu, leader of the",
-      url: "https://leadership.ng/ohakim-to-buhari-direct-malami-to-withdraw-suit-against-nnamdi-kalu/",
+        "The actor and comedian spent several months in hospital last year after experiencing debilitating anxiety.",
+      url: "https://www.thejournal.ie/pj-gallagher-late-late-show-mental-health-5900263-Oct2022/",
       urlToImage:
-        "https://leadership.ng/wp-content/uploads/2022/07/pres-Buhari.jpg",
-      publishedAt: "2022-10-21T13:09:31Z",
-      content: null,
-    },
-    {
-      source: { id: "cnn", name: "CNN" },
-      author: "Lisa Respers France",
-      title: "James Corden breaks his silence about that restaurant ban - CNN",
-      description:
-        'When it comes to all that drama surrounding being temporarily banned from a famous New York City restaurant, James Corden finds it all "so silly."',
-      url: "https://www.cnn.com/2022/10/21/entertainment/james-corden-restaurant-ban/index.html",
-      urlToImage:
-        "https://media.cnn.com/api/v1/images/stellar/prod/221021053413-01-james-corden-restaurant-ban.jpg?c=16x9&q=w_800,c_fill",
-      publishedAt: "2022-10-21T13:06:00Z",
+        "https://img2.thejournal.ie/article/5900263/river/?height=400&version=5900270",
+      publishedAt: "2022-10-22T13:25:34Z",
       content:
-        "When it comes to all that drama surrounding being temporarily banned from a famous New York City restaurant, James Corden finds it all so silly.\r\nIn an interview with the New York Times to promote hi… [+1331 chars]",
-    },
-    {
-      source: { id: null, name: "BBC News" },
-      author: "https://www.facebook.com/bbcnews",
-      title: "Tesco raises meal deal price as food costs soar - BBC",
-      description:
-        "It is the first time in 10 years the popular lunch choice has gone up for all customers.",
-      url: "https://www.bbc.com/news/business-63346320",
-      urlToImage:
-        "https://ichef.bbci.co.uk/news/1024/branded_news/9F4A/production/_127287704_2ca97ww.jpg",
-      publishedAt: "2022-10-21T13:02:39Z",
-      content:
-        "Tesco has raised the price of its meal deal as food costs soar.\r\nThe sandwich, snack and drink deal will jump to more than £3 for the first time in 10 years to £3.40 for Tesco Clubcard members, and f… [+2269 chars]",
-    },
-    {
-      source: { id: null, name: "Space.com" },
-      author: "Mike Wall",
-      title:
-        "Mars rover Perseverance gearing up to cache samples for future return to Earth - Space.com",
-      description:
-        "Perseverance will likely drop half of its rock samples in a depot in November or December.",
-      url: "https://www.space.com/perseverance-mars-rover-cache-samples-soon",
-      urlToImage:
-        "https://cdn.mos.cms.futurecdn.net/yy8oKFZouTeWaYaJ47VchN-1200-80.jpg",
-      publishedAt: "2022-10-21T13:00:54Z",
-      content:
-        "NASA's Perseverance rover is getting set to lighten its load a little on the Red Planet.\r\nPerseverance\r\n landed inside Mars' Jezero Crater in February 2021 to hunt for signs of ancient Red Planet lif… [+3483 chars]",
-    },
-    {
-      source: { id: null, name: "YouTube" },
-      author: null,
-      title: "Pokemon Scarlet and Violet Hands-On Preview - IGN",
-      description:
-        "Pokemon Scarlet and Pokemon Violet are less than a month away, and we were lucky enough to go hands-on with a special demo build. In this preview, we cover t...",
-      url: "https://www.youtube.com/watch?v=-s6JnJXFEzM",
-      urlToImage: "https://i.ytimg.com/vi/-s6JnJXFEzM/hqdefault.jpg",
-      publishedAt: "2022-10-21T13:00:41Z",
-      content: null,
+        "ACTOR AND COMEDIAN PJ Gallagher has opened up about his experience with mental illness, including his time spent in hospital last year.\r\nSpeaking on The Late Late Show last night, Gallagher said he s… [+2540 chars]",
     },
   ],
 };

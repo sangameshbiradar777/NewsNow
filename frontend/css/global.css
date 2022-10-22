@@ -39,7 +39,8 @@
   --text-primary: #fdf0d5;
   --text-secondary: #c1121f;
   --text-dark: #003049;
-  --text-muted: #999;
+  --text-muted: #444;
+  --text-dark-grey: #333;
 
   /* Tints and shades */
   --bg-primary-tint: #d45962;

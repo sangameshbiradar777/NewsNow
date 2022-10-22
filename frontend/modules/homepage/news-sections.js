@@ -59,16 +59,22 @@ function scrollOnBtnClick() {
       const newsElement = this.closest(".news");
 
       // Get the width of any card inside the news element
-      let newsCardWidth = newsElement.children[0].getBoundingClientRect().width;
+      // let newsCardWidth = newsElement.children[0].getBoundingClientRect().width;
+
+      // Get the width of newsElement
+      const newsElementWidth = newsElement.getBoundingClientRect().width;
+
+      // Scroll half the sixe of newsElementWidth
+      let amountToScroll = Math.floor(newsElementWidth / 2);
 
       // If the clicked element is left scrll btn, add negative sign to the newsCardWidth
       if (this.classList.contains("news__btn--left"))
-        newsCardWidth = -newsCardWidth;
+        amountToScroll = -amountToScroll;
 
       // Scroll Options
       const scrollOptions = {
         top: 0,
-        left: newsCardWidth,
+        left: amountToScroll,
         behavior: "smooth",
       };
 
@@ -104,6 +110,63 @@ function getNewsCardInnerHTML(newsObject) {
       </div>
     </a> 
   `;
+}
+
+function observeNewsSectons() {
+  // Get all the news elements
+  const newsElements = document.querySelectorAll('.news');
+
+  // Loop over all the newsElments and observer for intersections
+  newsElements.forEach(newsElement => {
+    // Create a new observer
+    const observer = new IntersectionObserver((intersectionEntries) => {
+      showOrHideScrollerBtns(intersectionEntries, newsElement);
+    }, {
+      root: newsElement,
+      threshold: 1
+    });
+
+    // Get the first news card element
+    const firstNewsCardElement = newsElement.querySelector(".news-card");
+    firstNewsCardElement.setAttribute("id", "first-news-card");
+
+    // Olbsever first news card for intersections
+    observer.observe(firstNewsCardElement);
+
+    // Get the last news card element of the news element
+    const newsCardElements = newsElement.querySelectorAll('.news-card')
+    const lastNewsCardElement = newsCardElements[newsCardElements.length - 1];
+    lastNewsCardElement.setAttribute('id', 'last-news-card')
+
+    // Observer the last news card for intersections
+    observer.observe(lastNewsCardElement);
+  })
+}
+
+function showOrHideScrollerBtns(intersectionEntries, newsElement) {
+  console.log(intersectionEntries, newsElement)
+  const interSectionEntry = intersectionEntries[0];
+
+  // Get the forward and backward buttons
+  const btnBackward = newsElement.querySelector(".news__btn--left");
+  const btnForward = newsElement.querySelector(".news__btn--right");
+
+  // Check for which card the intersection has fired
+  if (interSectionEntry.target.id === "first-news-card") {
+    if (interSectionEntry.isIntersecting) {
+      btnBackward.style.display = "none";
+    } else {
+      btnBackward.style.display = "block";
+    }
+  } 
+  
+  if(interSectionEntry.target.id === "last-news-card") {
+    if (interSectionEntry.isIntersecting) {
+      btnForward.style.display = "none";
+    } else {
+      btnForward.style.display = "block";
+    }
+  }
 }
 
 // Initiator function
@@ -160,6 +223,9 @@ async function initNewsSections() {
 
   // Scroll on button click
   scrollOnBtnClick();
+
+  // Intersection observer
+  observeNewsSectons();
 }
 
 export default initNewsSections;
