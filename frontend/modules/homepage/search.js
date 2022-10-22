@@ -4,9 +4,6 @@ const searchFormElement = document.querySelector(".navbar__search-container");
 // Get the search input from DOM
 const searchElement = document.querySelector('[name="search-text"]');
 
-// Get the search button from DOM
-const searchBtn = document.querySelector('[type="submit"]');
-
 // Get the clear icon
 const clearButton = document.querySelector(".navbar__search__clear-icon");
 
@@ -26,10 +23,8 @@ function clearSearchText() {
   searchElement.addEventListener("input", function () {
     if (this.value) {
       clearButton.classList.remove("hide-clear-icon");
-      searchBtn.classList.remove("btn--disabled");
     } else {
       clearButton.classList.add("hide-clear-icon");
-      searchBtn.classList.add("btn--disabled");
     }
   });
 
@@ -43,10 +38,23 @@ function clearSearchText() {
 
     // Focus the search element
     searchElement.focus();
-
-    // Disable search button
-    searchBtn.classList.add("btn--disabled");
   });
+}
+
+function changeOnFocus() {
+  searchElement.addEventListener("focus", function () {
+    searchFormElement.classList.add("navbar-search-focus");
+  });
+
+  searchElement.addEventListener("blur", function () {
+    searchFormElement.classList.remove("navbar-search-focus");
+  });
+}
+
+function focusOnFormClick() {
+  searchFormElement.addEventListener('click', function() {
+    searchElement.focus();
+  })
 }
 
 function initSearch() {
@@ -55,6 +63,12 @@ function initSearch() {
 
   // clear search text
   clearSearchText();
+
+  // Change visuals on focus
+  changeOnFocus();
+
+  // Focus on form click
+  focusOnFormClick();
 }
 
 export default initSearch;

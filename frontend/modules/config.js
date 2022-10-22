@@ -5,10 +5,17 @@ const technologyNewsURL = `https://newsapi.org/v2/top-headlines?category=technol
 const sportsNewsURL = `https://newsapi.org/v2/top-headlines?category=sports&language=en&apiKey=${NEWSAPIKEY}`;
 const entertainmentNewsURL = `https://newsapi.org/v2/top-headlines?category=entertainment&language=en&apiKey=${NEWSAPIKEY}`;
 
+const CONTENTCHARACTERLIMIT = 150;
+const AUTHORCHARACHTERLIMIT = 20;
+const MAXCHARACTERLIMIT = 200; 
+
 export {
   trendingNewsURL,
   topNewsURL,
   technologyNewsURL,
   sportsNewsURL,
   entertainmentNewsURL,
+  CONTENTCHARACTERLIMIT,
+  AUTHORCHARACHTERLIMIT,
+  MAXCHARACTERLIMIT
 };

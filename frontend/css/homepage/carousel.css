@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   font-size: var(--fs-38px);
-  background-color: var(--color-white-transparent-light);
+  background-color: var(--bg-secondary-shade);
   border-radius: 50%;
 }
 
@@ -56,12 +56,14 @@
   width: var(--spacing-8px);
   height: var(--spacing-8px);
   border-radius: 50%;
-  background-color: var(--color-white-transparent-light);
+  background-color: #656055;
   margin-right: var(--spacing-8px);
 }
 
 .dot.active {
-  background-color: var(--color-white-transparent-bright);
+  background-color: var(--bg-secondary-tint);
 }
+
+
 
 /* Carousel ends */

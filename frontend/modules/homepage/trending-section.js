@@ -1,10 +1,8 @@
 import { trendingNewsURL } from "../config.js";
 import {
   fetchNews,
-  limitText,
-  getNewsAuthor,
-  getPublishedTime,
 } from "./helper.js";
+import {getProcessedData, compressText} from "../data-processor.js";
 import initCarousel from "../homepage/carousel.js";
 
 // Implementation of the function getTop10TrendingNews
@@ -124,37 +122,37 @@ function addTrendingNewsToDOM(trendingNewsObjects) {
 
 function getTrendingNewsItemInner(newsObject, forCarousel = false) {
   return `
-        <a class="trending-section__grid__item__link"
-            href="${newsObject.url}">
-            <figure class="trending-section__card ${
-              forCarousel ? "trending-section__card--carousel" : ""
-            }">
-                <img
-                    src="${newsObject.urlToImage}"
-                    alt="Trending news image" />
-
-                <div class="trending-section__card__text-container ${
-                  forCarousel
-                    ? "trending-section__card__text-container--carousel"
-                    : ""
-                }">
-                    <span class="trending-section__card__author ${
-                      forCarousel
-                        ? "trending-section__card__author--carousel"
-                        : ""
-                    }">${getNewsAuthor(newsObject)}, ${getPublishedTime(
-    newsObject.publishedAt
-  )}</span>
-                    <h2 class="trending-section__card__title ${
-                      forCarousel
-                        ? "trending-section__card__title--carousel mt-2"
-                        : ""
-                    }">
-                        ${limitText(newsObject.title, forCarousel)}
-                    </h2>
-                </div>
-            </figure>
-        </a>
+      <a class="trending-section__grid__item__link" href="${newsObject.URL}">
+        <figure class="trending-section__card ${
+          forCarousel ? "trending-section__card--carousel" : ""
+        }">
+          ${
+            newsObject.imageURL
+              ? `<img
+                src="${newsObject.imageURL}"
+                alt="Trending news image" />`
+              : `<div class="news-card__img-fallback"></div>`
+          }
+          <div class="trending-section__card__text-container ${
+            forCarousel
+              ? "trending-section__card__text-container--carousel"
+              : ""
+          }">
+              <span class="trending-section__card__author ${
+                forCarousel ? "trending-section__card__author--carousel" : ""
+              }">
+                ${newsObject.author}, ${newsObject.publishedAt}
+              </span>
+              <h2 class="trending-section__card__title ${
+                forCarousel
+                  ? "trending-section__card__title--carousel mt-2"
+                  : ""
+              }">
+                  ${forCarousel ? compressText(newsObject.title, 100): compressText(newsObject.title, 60)}
+              </h2>
+          </div>
+        </figure>
+      </a>
     `;
 }
 
@@ -162,22 +160,37 @@ function getTrendingNewsItemInner(newsObject, forCarousel = false) {
 async function initTrendingSection() {
   // Get the trending news
   const trendingNewsResponse = await fetchNews(trendingNewsURL);
+
   const trendingNews = trendingNewsResponse.articles;
 
   // Get the top 10 news from trending news
-  const top10TrendingNews = getTop10TrendingNews(trendingNews);
+  const top10TrendingNewsRaw = getTop10TrendingNews(trendingNews);
 
-  // Get the next trending news
-  const next4TrendingNews = getNext4TrendingNews(trendingNews);
+  // Get the clean version of top10trendingnews( without falsy values),
+  // The response may have some irregular data so using this fucntion we can make
+  // out data consistent
+  const processedTop10TrendingNews = await getProcessedData(
+    top10TrendingNewsRaw
+  );
+
+  console.log(processedTop10TrendingNews);
 
   // Add the trending news Carousel to DOM
-  addTrendingNewsCarouselToDOM(top10TrendingNews);
+  addTrendingNewsCarouselToDOM(processedTop10TrendingNews);
+
+  // Get the next trending news
+  const next4TrendingNewsRaw = getNext4TrendingNews(trendingNews);
+
+  // Get processed next4Trendingnews
+  const processedNext4TrendingNews = await getProcessedData(
+    next4TrendingNewsRaw
+  );
 
   // Initialize carousel
   initCarousel();
 
   // Add the trending news to DOM
-  addTrendingNewsToDOM(next4TrendingNews);
+  addTrendingNewsToDOM(processedNext4TrendingNews);
 }
 
 export default initTrendingSection;

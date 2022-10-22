@@ -4,12 +4,8 @@ import {
   sportsNewsURL,
   entertainmentNewsURL,
 } from "../config.js";
-import {
-  fetchNews,
-  limitTopNewsCardText,
-  getNewsAuthor,
-  getPublishedTime,
-} from "./helper.js";
+import {fetchNews} from "./helper.js";
+import {getProcessedData, compressText} from "../data-processor.js";
 
 // Implementation of the function addTopNewsCardsToDOM
 function addNewsCardsToDOM(elementToAppend, newsObjects) {
@@ -65,7 +61,7 @@ function scrollOnBtnClick() {
       // Get the width of any card inside the news element
       let newsCardWidth = newsElement.children[0].getBoundingClientRect().width;
 
-      // If the clicked element is left scrll btn add negative sign to the newsCardWidth
+      // If the clicked element is left scrll btn, add negative sign to the newsCardWidth
       if (this.classList.contains("news__btn--left"))
         newsCardWidth = -newsCardWidth;
 
@@ -85,27 +81,25 @@ function scrollOnBtnClick() {
 // Implementation of the function getTopNewsCardInnerHTML
 function getNewsCardInnerHTML(newsObject) {
   return `
-    <a href="${newsObject.url}">
+    <a href="${newsObject.URL}">
       <div class="news-card__img-container">
         ${
-          newsObject.urlToImage
+          newsObject.imageURL
             ? `<img
           class="news-card__img"
-          src="${newsObject.urlToImage}"
+          src="${newsObject.imageURL}"
           alt="News image"
           />`
             : `<div class="news-card__img-fallback"></div>`
         }
       </div>
       <div class="news-card__text-container">
-        <span class="news-card__author">${getNewsAuthor(
-          newsObject
-        )}, ${getPublishedTime(newsObject.publishedAt)}</span>
+        <span class="news-card__author">${newsObject.author}, ${newsObject.publishedAt}</span>
         <h3 class="news-card__title">
-          ${limitTopNewsCardText(newsObject.title, true)}
+          ${compressText(newsObject.title, 50)}
         </h3>
         <p class="news-card__description">
-          ${limitTopNewsCardText(newsObject.description)}
+          ${newsObject.content}
         </p>
       </div>
     </a> 
@@ -128,29 +122,41 @@ async function initNewsSections() {
   const topNewsResponse = await fetchNews(topNewsURL);
   const topNews = topNewsResponse.articles;
 
+  // Get processed top news
+  const processedTopNews = await getProcessedData(topNews);
+
   // Add top news cards to DOM
-  addNewsCardsToDOM(topNewsElement, topNews);
+  addNewsCardsToDOM(topNewsElement, processedTopNews);
 
   // Get technology news
   const technologyNewsResponse = await fetchNews(technologyNewsURL);
   const technologyNews = technologyNewsResponse.articles;
 
+  // Get processed technology news
+  const processedTechnologyNews = await getProcessedData(technologyNews);
+
   // Add technology news cards to DOM
-  addNewsCardsToDOM(technologyNewsElement, technologyNews);
+  addNewsCardsToDOM(technologyNewsElement, processedTechnologyNews);
 
   // Get sports news
   const sportsNewsResponse = await fetchNews(sportsNewsURL);
   const sportsNews = sportsNewsResponse.articles;
 
+  // Get processed sports news
+  const processedSportsNews = await getProcessedData(sportsNews);
+
   // Add Sports news cards to DOM
-  addNewsCardsToDOM(sportsNewsElement, sportsNews);
+  addNewsCardsToDOM(sportsNewsElement, processedSportsNews);
 
   // Get Entertainment news
   const entertainmentNewsResponse = await fetchNews(entertainmentNewsURL);
   const entertainmentNews = entertainmentNewsResponse.articles;
 
+  // Get processed entertainment news
+  const processedEntertainmentNews = await getProcessedData(entertainmentNews);
+
   // Add Sports news cards to DOM
-  addNewsCardsToDOM(entertainmentNewsElement, entertainmentNews);
+  addNewsCardsToDOM(entertainmentNewsElement, processedEntertainmentNews);
 
   // Scroll on button click
   scrollOnBtnClick();

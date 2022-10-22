@@ -1,7 +1,13 @@
 /* Navbar starts */
 
-.navbar__search-container [type="submit"]:hover {
-  background-color: var(--color-secondary-dark);
+.navbar__search-container:hover {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 0 var(--spacing-4px) var(--bg-secondary-shade);
+}
+
+.navbar-search-focus {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 0 var(--spacing-4px) var(--bg-secondary-shade);
 }
 
 .navbar__links-bookmarks:hover {
@@ -9,7 +15,17 @@
 }
 
 .navbar__search__clear-icon:hover {
-  color: var(--color-primary-light-transparent);
+  color: var(--bg-primary-shade);
+}
+
+.navbar__links > *:hover {
+  color: var(--text-primary);
+}
+
+.navbar__links > *:focus {
+  border-radius: var(--spacing-4px);
+  box-shadow: 0 0 0 var(--spacing-4px) var(--bg-secondary-shade);
+  outline: none;
 }
 
 /* Navbar ends */
@@ -22,6 +38,22 @@
 
 /* Trending section ends */
 
+/* Carousel starts */
+
+.carousel__btn:hover {
+  background-color: var(--bg-secondary);
+}
+
+.carousel__btn:focus .btn__icon {
+  box-shadow: 0 0 0 var(--spacing-4px) var(--bg-secondary-shade);
+}
+
+.carousel__btn:focus {
+  background-color: var(--bg-secondary);
+}
+
+/* Carousel ends */
+
 /* Button states starts */
 
 .btn:hover .btn__icon {
@@ -30,10 +62,6 @@
 
 .btn:focus .btn__icon {
   background-color: var(--color-white-transparent-bright);
-}
-
-.btn:focus {
-  box-shadow: 0 0 0 var(--spacing-4px) var(--color-white-transparent-light);
 }
 
 .news__btn:focus {
