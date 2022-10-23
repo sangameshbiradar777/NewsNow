@@ -11,7 +11,7 @@ const topHeadlines = {
         "BRITS could be given more money for using appliances outside of peak hours after the National Grid raised the discount it will offer. The discount for avoiding using energy during off-peak hours ha…",
       url: "https://www.thesun.co.uk/money/20143509/cost-of-living-payment-news-martin-lewis-savings/",
       urlToImage:
-        "https://www.thesun.co.uk/wp-content/uploads/2022/10/Plain-no-tabbing-68-1.jpg?strip=all&quality=100&w=1920&h=1080&crop=1",
+        "https://www.thsun.co.uk/wp-content/uploads/2022/10/Plain-no-tabbing-68-1.jpg?strip=all&quality=100&w=1920&h=1080&crop=1",
       publishedAt: "2022-10-22T14:40:56Z",
       content:
         "Five payments could hit your bank account before Xmas\r\nMillions of Brits may be eligible for up to five payments paid into their bank accounts BEFORE Xmas amid the soaring cost of living.\r\nFirstly, t… [+510 chars]",
@@ -24,8 +24,7 @@ const topHeadlines = {
       description:
         "CRISTIANO RONALDO could leave Manchester United for free in January, it’s been reported. The Portuguese forward has been dropped by manager Erik Ten Hag for United’s game with Chelsea t…",
       url: "https://www.thesun.co.uk/sport/19994861/man-utd-news-live-cristiano-ronaldo-breaks-silence-martial-chelsea/",
-      urlToImage:
-        "https://www.thesun.co.uk/wp-content/uploads/2022/10/SunSport-off-platform-templates-70.png?strip=all&quality=100&w=1920&h=1080&crop=1",
+      urlToImage: null,
       publishedAt: "2022-10-22T14:37:34Z",
       content:
         "Good morning Man Utd fans\r\nCristiano Ronaldo is set to face fan backlash following his mutiny against Tottenham.\r\nMan United boss Erik ten Hag confirmed earlier today that Ronaldo REFUSED to come on … [+1580 chars]",

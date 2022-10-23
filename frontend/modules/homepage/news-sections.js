@@ -3,6 +3,10 @@ import {
   technologyNewsURL,
   sportsNewsURL,
   entertainmentNewsURL,
+  businessNewsURL,
+  healthNewsURL,
+  scienceNewsURL,
+  newsImageFallbackURL
 } from "../config.js";
 import {fetchNews} from "./helper.js";
 import {getProcessedData, compressText} from "../data-processor.js";
@@ -34,15 +38,15 @@ function addNewsCardsToDOM(elementToAppend, newsObjects) {
 function getScrollerButtons() {
   // Create a scroller button parent element
   const scrollerBtnLeft = document.createElement("button");
-  scrollerBtnLeft.setAttribute("class", "btn news__btn news__btn--left");
+  scrollerBtnLeft.setAttribute("class", "btn news__btn news__btn--left hidden");
 
-  scrollerBtnLeft.innerHTML = `<ion-icon class="btn__icon" name="chevron-back-circle"></ion-icon>`;
+  scrollerBtnLeft.innerHTML = `<ion-icon class="btn__icon" name="chevron-back"></ion-icon>`;
 
   // Create a scroller button parent element
   const scrollerBtnRight = document.createElement("button");
   scrollerBtnRight.setAttribute("class", "btn news__btn news__btn--right");
 
-  scrollerBtnRight.innerHTML = `<ion-icon class="btn__icon" name="chevron-forward-circle"></ion-icon>`;
+  scrollerBtnRight.innerHTML = `<ion-icon class="btn__icon" name="chevron-forward"></ion-icon>`;
 
   return [scrollerBtnLeft, scrollerBtnRight];
 }
@@ -65,7 +69,7 @@ function scrollOnBtnClick() {
       const newsElementWidth = newsElement.getBoundingClientRect().width;
 
       // Scroll half the sixe of newsElementWidth
-      let amountToScroll = Math.floor(newsElementWidth / 2);
+      let amountToScroll = Math.floor(newsElementWidth / 1.5);
 
       // If the clicked element is left scrll btn, add negative sign to the newsCardWidth
       if (this.classList.contains("news__btn--left"))
@@ -87,7 +91,7 @@ function scrollOnBtnClick() {
 // Implementation of the function getTopNewsCardInnerHTML
 function getNewsCardInnerHTML(newsObject) {
   return `
-    <a href="${newsObject.URL}">
+    <a href="${newsObject.URL}" target="_blank">
       <div class="news-card__img-container">
         ${
           newsObject.imageURL
@@ -95,12 +99,15 @@ function getNewsCardInnerHTML(newsObject) {
           class="news-card__img"
           src="${newsObject.imageURL}"
           alt="News image"
+          onerror="this.src='${newsImageFallbackURL}'"
           />`
             : `<div class="news-card__img-fallback"></div>`
         }
       </div>
       <div class="news-card__text-container">
-        <span class="news-card__author">${newsObject.author}, ${newsObject.publishedAt}</span>
+        <span class="news-card__author">${newsObject.author}, ${
+    newsObject.publishedAt
+  }</span>
         <h3 class="news-card__title">
           ${compressText(newsObject.title, 50)}
         </h3>
@@ -154,17 +161,17 @@ function showOrHideScrollerBtns(intersectionEntries, newsElement) {
   // Check for which card the intersection has fired
   if (interSectionEntry.target.id === "first-news-card") {
     if (interSectionEntry.isIntersecting) {
-      btnBackward.style.display = "none";
+      btnBackward.classList.add('hidden');
     } else {
-      btnBackward.style.display = "block";
+      btnBackward.classList.remove('hidden');
     }
   } 
   
   if(interSectionEntry.target.id === "last-news-card") {
     if (interSectionEntry.isIntersecting) {
-      btnForward.style.display = "none";
+      btnForward.classList.add("hidden");
     } else {
-      btnForward.style.display = "block";
+      btnForward.classList.remove("hidden");
     }
   }
 }
@@ -180,13 +187,16 @@ async function initNewsSections() {
   const entertainmentNewsElement = document.querySelector(
     ".news--entertainment-news"
   );
+  const businessNewsElement = document.querySelector(".news--business-news");
+  const healthNewsElement = document.querySelector(".news--health-news");
+  const scienceNewsElement = document.querySelector(".news--science-news");
 
   // Get top news
   const topNewsResponse = await fetchNews(topNewsURL);
   const topNews = topNewsResponse.articles;
 
   // Get processed top news
-  const processedTopNews = await getProcessedData(topNews);
+  const processedTopNews = getProcessedData(topNews);
 
   // Add top news cards to DOM
   addNewsCardsToDOM(topNewsElement, processedTopNews);
@@ -196,7 +206,7 @@ async function initNewsSections() {
   const technologyNews = technologyNewsResponse.articles;
 
   // Get processed technology news
-  const processedTechnologyNews = await getProcessedData(technologyNews);
+  const processedTechnologyNews = getProcessedData(technologyNews);
 
   // Add technology news cards to DOM
   addNewsCardsToDOM(technologyNewsElement, processedTechnologyNews);
@@ -206,7 +216,7 @@ async function initNewsSections() {
   const sportsNews = sportsNewsResponse.articles;
 
   // Get processed sports news
-  const processedSportsNews = await getProcessedData(sportsNews);
+  const processedSportsNews = getProcessedData(sportsNews);
 
   // Add Sports news cards to DOM
   addNewsCardsToDOM(sportsNewsElement, processedSportsNews);
@@ -216,10 +226,40 @@ async function initNewsSections() {
   const entertainmentNews = entertainmentNewsResponse.articles;
 
   // Get processed entertainment news
-  const processedEntertainmentNews = await getProcessedData(entertainmentNews);
+  const processedEntertainmentNews = getProcessedData(entertainmentNews);
 
   // Add Sports news cards to DOM
   addNewsCardsToDOM(entertainmentNewsElement, processedEntertainmentNews);
+
+  // Get Business news
+  const businessNewsResponse = await fetchNews(businessNewsURL);
+  const businessNews = businessNewsResponse.articles;
+
+  // Get processed Business news
+  const processedBusinessNews = getProcessedData(businessNews);
+
+  // Add Business news cards to DOM
+  addNewsCardsToDOM(businessNewsElement, processedBusinessNews);
+
+  // Get Health news
+  const healthNewsResponse = await fetchNews(healthNewsURL);
+  const healthNews = healthNewsResponse.articles;
+
+  // Get processed Health news
+  const processedHealthNews = getProcessedData(healthNews);
+
+  // Add Health news cards to DOM
+  addNewsCardsToDOM(healthNewsElement, processedHealthNews);
+
+  // Get Science news
+  const scienceNewsResponse = await fetchNews(scienceNewsURL);
+  const scienceNews = scienceNewsResponse.articles;
+
+  // Get processed Science news
+  const processedScienceNews = getProcessedData(scienceNews);
+
+  // Add Sports news cards to DOM
+  addNewsCardsToDOM(scienceNewsElement, processedScienceNews);
 
   // Scroll on button click
   scrollOnBtnClick();

@@ -63,15 +63,25 @@ function processURL(URL) {
   return '#';
 }
 
-function processImageURL(imageURL) {
-  // Create a new image
-  const image = new Image()
-  image.src = imageURL;
+// ! THIS FUNCTION IS NOT USED TO VERIFY THE IMAGE URL,
+// ! BECAUSE IT COUNSUMES A LOT OF TIME
+// function processImageURL(imageURL) {
+//   // Create a new image
+//   const image = new Image()
+//   image.src = imageURL;
 
-  return new Promise((resolve, reject) => {
-    image.onload = () => resolve(true);
-    image.onerror = () => reject(false);
-  })
+//   return new Promise((resolve, reject) => {
+//     image.onload = () => resolve(true);
+//     image.onerror = () => reject(false);
+//   })
+// }
+
+function processImageURL(imageURL) {
+  // If url is not null return image url
+  if (imageURL) return imageURL;
+
+  // Else return empty string ""
+  return "";
 }
 
 function compressText(text, amountOfChar = MAXCHARACTERLIMIT) {
@@ -83,9 +93,12 @@ function compressText(text, amountOfChar = MAXCHARACTERLIMIT) {
   // Remove unwanted spaces from text
   const trimmedText = removeExtraSpaces(textWithoutLineBreaks);
 
-  return trimmedText.split("").length > amountOfChar
-    ? trimmedText.split("").slice(0, amountOfChar).join("").trim().concat("...")
-    : trimmedText;
+  // If there extists any html tags in the string remove them
+  const finalText = trimmedText.replace(/<\/?[^>]+(>|$)/g, "");
+
+  return finalText.split("").length > amountOfChar
+    ? finalText.split("").slice(0, amountOfChar).join("").trim().concat("...")
+    : finalText;
 }
 
 function removeExtraSpaces(text) {
@@ -152,13 +165,12 @@ function formatTime(hours, minutes) {
   return 'just now';
 }
 
-async function getProcessedData(rawData) {
+function getProcessedData(rawData) {
   // Create object to store the processed data
   const processedData = [];
 
   // Loop over the raw data and process
-  for(const data of rawData) {
-
+  rawData.forEach(data => {
     // Create object for each object
     const newData = {};
 
@@ -171,27 +183,19 @@ async function getProcessedData(rawData) {
     // Process time
     newData.publishedAt = processTime(data.publishedAt);
 
-    // Process title 
+    // Process title
     newData.title = processTitle(data);
 
     // Process url
     newData.URL = processURL(data.url);
 
-    // Process image
-    try {
-      const isWorkingURL = await processImageURL(data.urlToImage);
+    // Process image url
+    newData.imageURL = processImageURL(data.urlToImage);
 
-      if(isWorkingURL) newData.imageURL = data.urlToImage;
-    }
-    catch(error) {
-      console.log(error);
-      newData.imageURL = "";
-    }
-
-    // Push the news object to 
+    // Push the news object to
     processedData.push(newData);
-  };
-
+  })  
+  
   // Return the processed data
   return processedData;
 }

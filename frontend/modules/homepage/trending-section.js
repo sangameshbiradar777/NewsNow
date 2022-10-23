@@ -1,4 +1,4 @@
-import { trendingNewsURL } from "../config.js";
+import { trendingNewsURL, newsImageFallbackURL } from "../config.js";
 import {
   fetchNews,
 } from "./helper.js";
@@ -122,17 +122,18 @@ function addTrendingNewsToDOM(trendingNewsObjects) {
 
 function getTrendingNewsItemInner(newsObject, forCarousel = false) {
   return `
-      <a class="trending-section__grid__item__link" href="${newsObject.URL}">
+      <a class="trending-section__grid__item__link" href="${
+        newsObject.URL
+      }" target="_blank">
         <figure class="trending-section__card ${
           forCarousel ? "trending-section__card--carousel" : ""
         }">
-          ${
-            newsObject.imageURL
-              ? `<img
+          ${`<img
                 src="${newsObject.imageURL}"
-                alt="Trending news image" />`
-              : `<div class="news-card__img-fallback"></div>`
-          }
+                alt="Trending news image" 
+                onerror="this.src='${newsImageFallbackURL}'"
+                />`
+            }
           <div class="trending-section__card__text-container ${
             forCarousel
               ? "trending-section__card__text-container--carousel"
@@ -148,7 +149,11 @@ function getTrendingNewsItemInner(newsObject, forCarousel = false) {
                   ? "trending-section__card__title--carousel mt-2"
                   : ""
               }">
-                  ${forCarousel ? compressText(newsObject.title, 100): compressText(newsObject.title, 60)}
+                  ${
+                    forCarousel
+                      ? compressText(newsObject.title, 100)
+                      : compressText(newsObject.title, 60)
+                  }
               </h2>
           </div>
         </figure>
