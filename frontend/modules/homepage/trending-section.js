@@ -1,8 +1,6 @@
 import { trendingNewsURL, newsImageFallbackURL } from "../config.js";
-import {
-  fetchNews,
-} from "./helper.js";
-import {getProcessedData, compressText} from "../data-processor.js";
+import { fetchNews } from "./helper.js";
+import { getProcessedData, compressText } from "../data-processor.js";
 import initCarousel from "../homepage/carousel.js";
 
 // Implementation of the function getTop10TrendingNews
@@ -132,8 +130,7 @@ function getTrendingNewsItemInner(newsObject, forCarousel = false) {
                 src="${newsObject.imageURL}"
                 alt="Trending news image" 
                 onerror="this.src='${newsImageFallbackURL}'"
-                />`
-            }
+                />`}
           <div class="trending-section__card__text-container ${
             forCarousel
               ? "trending-section__card__text-container--carousel"
@@ -152,7 +149,7 @@ function getTrendingNewsItemInner(newsObject, forCarousel = false) {
                   ${
                     forCarousel
                       ? compressText(newsObject.title, 100)
-                      : compressText(newsObject.title, 60)
+                      : compressText(newsObject.title, 50)
                   }
               </h2>
           </div>

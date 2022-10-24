@@ -23,39 +23,44 @@
     <!-- Navbar starts -->
     <nav class="navbar">
       <h1 class="navbar__logo">NewsNow</h1>
-      <form class="navbar__search-container">
-        <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
-        <input
-          type="text"
-          name="search-text"
-          autocomplete="off"
-          placeholder="Search any topic"
-          required
-        />
-        <ion-icon
-          class="navbar__search__clear-icon hide-clear-icon"
-          name="close-outline"
-        ></ion-icon>
-        <button type="submit" class="btn btn--disabled">Search</button>
-      </form>
-      <div class="navbar__links">
-        <button class="btn btn-categories">
-          Categories
+      <div class="navbar__datetime">
+        <span class="navbar__date">Tuesday, Oct 2022</span>
+        <span class="navbar__time">10:24 AM</span>
+      </div>
+      <div class="navbar__items">
+        <form class="navbar__search-container">
+          <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
+          <input
+            type="text"
+            name="search-text"
+            autocomplete="off"
+            placeholder="Search"
+            required
+          />
           <ion-icon
-            class="icon navbar__links-icon"
-            name="chevron-down-outline"
+            class="navbar__search__clear-icon hide-clear-icon"
+            name="close-outline"
           ></ion-icon>
-        </button>
-        <a
-          href="frontend/pages/bookmarks/bookmarks.html"
-          class="navbar__links-bookmarks"
-        >
-          Bookmarks
-          <ion-icon class="icon navbar__links-icon" name="bookmarks"></ion-icon>
-        </a>
+        </form>
+        <div class="navbar__links">
+          <button class="btn btn--navbar-link">Categories</button>
+          <a
+            href="frontend/pages/bookmarks/bookmarks.html"
+            class="navbar__bookmarks-link"
+          >
+            Bookmarks
+          </a>
+        </div>
       </div>
     </nav>
     <!-- Navbar ends -->
+
+    <header class="search-section">
+      <form action="" class="search__container">
+        <ion-icon class="icon search__icon" name="search"></ion-icon>
+        <input type="text" class="search__input" placeholder="Search..." />
+      </form>
+    </header>
 
     <main>
       <section class="section section--search-results">
@@ -315,9 +320,13 @@
 
     <!-- page script starts -->
     <script type="module">
+      import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
       import initSearch from "../../modules/homepage/search.js";
 
       function init() {
+        // Add date and time to navbar
+        addDateTimeToNavbar();
+
         // Initialize search functionality
         initSearch();
       }

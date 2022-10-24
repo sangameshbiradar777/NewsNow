@@ -1,6 +1,5 @@
 import topHeadlines from "../../../backend/top-headlines.js";
 
-
 // Implementation of the function fetchTrendingNews
 async function fetchNews(newsURL) {
   // try {
@@ -21,6 +20,4 @@ async function fetchNews(newsURL) {
   return topHeadlines;
 }
 
-export {
-  fetchNews
-};
+export { fetchNews };

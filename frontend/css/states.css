@@ -22,6 +22,10 @@
   color: var(--text-primary);
 }
 
+.navbar__datetime:hover {
+  color: var(--text-primary);
+}
+
 .navbar__links > *:focus {
   border-radius: var(--spacing-4px);
   box-shadow: 0 0 0 var(--spacing-4px) var(--bg-secondary-shade);

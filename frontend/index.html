@@ -28,6 +28,10 @@
       <!-- Navbar starts -->
       <nav class="navbar">
         <h1 class="navbar__logo">NewsNow</h1>
+        <div class="navbar__datetime">
+          <span class="navbar__date">Tuesday, Oct 2022</span>
+          <span class="navbar__time">10:24 AM</span>
+        </div>
         <div class="navbar__items">
           <form class="navbar__search-container">
             <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
@@ -68,7 +72,7 @@
         <!-- Top news section starts -->
         <section class="section section--top-news">
           <h2 class="section-heading section-heading--top-news">Top News</h2>
-          <div class="news-container">
+          <div class="news-container news-container--top-news">
             <div class="news news--top-news"></div>
           </div>
         </section>
@@ -144,11 +148,15 @@
 
     <!-- page script starts -->
     <script type="module">
+      import { addDateTimeToNavbar } from "./modules/addDateTimeToNavbar.js";
       import initTrendingSection from "./modules/homepage/trending-section.js";
       import initNewsSections from "./modules/homepage/news-sections.js";
       import initSearch from "./modules/homepage/search.js";
 
       function init() {
+        // Add date and time to navbar
+        addDateTimeToNavbar();
+
         // Initialize trending section
         initTrendingSection();
 

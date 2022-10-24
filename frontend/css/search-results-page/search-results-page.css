@@ -6,6 +6,52 @@
 
 /* Search results page starts */
 
+.search-section {
+  height: var(--spacing-160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.search-section::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #f3f3f4;
+}
+
+.search__container {
+  background-color: #fff;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-16px) var(--spacing-24px);
+  border-radius: var(--spacing-4px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  z-index: 1;
+}
+
+.search__input {
+  font-size: var(--fs-19px);
+  border: none;
+  outline: none;
+  color: var(--text-dark);
+}
+
+.search__input:placeholder {
+  color: #666;
+}
+
+.search__icon {
+  font-size: var(--fs-19px);
+  margin-right: var(--spacing-16px);
+  color: #666;
+}
+
 .search-results-container {
   display: grid;
   gap: var(--spacing-24px);
