@@ -7,11 +7,15 @@
     <title>Search resutls | NewsNow</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Raleway:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../css/global.css" />
     <link rel="stylesheet" href="../../css/homepage/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="../../css/search-results-page/search-bar.css"
+    />
     <link rel="stylesheet" href="../../css/states.css" />
     <link
       rel="stylesheet"
@@ -24,8 +28,8 @@
     <nav class="navbar">
       <h1 class="navbar__logo">NewsNow</h1>
       <div class="navbar__datetime">
-        <span class="navbar__date">Tuesday, Oct 2022</span>
-        <span class="navbar__time">10:24 AM</span>
+        <span class="navbar__date"></span>
+        <span class="navbar__time"></span>
       </div>
       <div class="navbar__items">
         <form class="navbar__search-container">
@@ -56,251 +60,54 @@
     <!-- Navbar ends -->
 
     <header class="search-section">
-      <form action="" class="search__container">
-        <ion-icon class="icon search__icon" name="search"></ion-icon>
-        <input type="text" class="search__input" placeholder="Search..." />
-      </form>
+      <div class="search__items">
+        <form action="" class="search__container">
+          <ion-icon class="icon search__icon" name="search"></ion-icon>
+          <input type="text" class="search__input" placeholder="Search..." />
+        </form>
+      </div>
+      <h1 class="search__text-heading">
+        Showing results for <span class="search-text">Bitcoin</span>
+      </h1>
+      <span class="search__results-text">
+        About <span class="search-results">233</span> results
+      </span>
     </header>
 
     <main>
       <section class="section section--search-results">
-        <h1 class="search-text-heading">
-          Showing results for <span class="search-text">Bitcoin</span>
-        </h1>
-        <h2 class="search-results-text">
-          About <span class="search-results">233</span> results
-        </h2>
+        <div class="search-content-grid">
+          <div class="filters"></div>
 
-        <div class="search-results-container">
-          <div class="search-result-card">
-            <div class="search-result-card__img-container">
-              <img
-                src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
-                alt="Search result image"
-              />
-            </div>
-            <div class="search-result-card__text-container">
-              <span class="search-result-card__author"
-                >By Richard Lawler, 2h ago</span
-              >
-              <h3 class="search-result-card__title">
-                Former Uber security chief found guilty of covering up massive
-                2016 data breach
-              </h3>
-              <p class="search-result-card__description">
-                Uber paid two hackers $100,000 in Bitcoin to keep a 2016 data
-                breach quiet, and now a jury has convicted former chief security
-                officer Joe Sullivan on two charges for not reporting the
-                incident to authorities.
-              </p>
-              <a
-                href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
-                class="search-result-card__link"
-                >View more</a
-              >
-            </div>
-          </div>
+          <div class="search-results">
+            <div class="search-results__card">
+              <div class="search-resuls__card__img-container">
+                <img
+                  src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
+                  alt="Search result image"
+                />
+              </div>
 
-          <div class="search-result-card">
-            <div class="search-result-card__img-container">
-              <img
-                src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
-                alt="Search result image"
-              />
-            </div>
-            <div class="search-result-card__text-container">
-              <span class="search-result-card__author"
-                >By Richard Lawler, 2h ago</span
-              >
-              <h3 class="search-result-card__title">
-                Former Uber security chief found guilty of covering up massive
-                2016 data breach
-              </h3>
-              <p class="search-result-card__description">
-                Uber paid two hackers $100,000 in Bitcoin to keep a 2016 data
-                breach quiet, and now a jury has convicted former chief security
-                officer Joe Sullivan on two charges for not reporting the
-                incident to authorities.
-              </p>
-              <a
-                href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
-                class="search-result-card__link"
-                >View more</a
-              >
-            </div>
-          </div>
-
-          <div class="search-result-card">
-            <div class="search-result-card__img-container">
-              <img
-                src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
-                alt="Search result image"
-              />
-            </div>
-            <div class="search-result-card__text-container">
-              <span class="search-result-card__author"
-                >By Richard Lawler, 2h ago</span
-              >
-              <h3 class="search-result-card__title">
-                Former Uber security chief found guilty of covering up massive
-                2016 data breach
-              </h3>
-              <p class="search-result-card__description">
-                Uber paid two hackers $100,000 in Bitcoin to keep a 2016 data
-                breach quiet, and now a jury has convicted former chief security
-                officer Joe Sullivan on two charges for not reporting the
-                incident to authorities.
-              </p>
-              <a
-                href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
-                class="search-result-card__link"
-                >View more</a
-              >
-            </div>
-          </div>
-
-          <div class="search-result-card">
-            <div class="search-result-card__img-container">
-              <img
-                src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
-                alt="Search result image"
-              />
-            </div>
-            <div class="search-result-card__text-container">
-              <span class="search-result-card__author"
-                >By Richard Lawler, 2h ago</span
-              >
-              <h3 class="search-result-card__title">
-                Former Uber security chief found guilty of covering up massive
-                2016 data breach
-              </h3>
-              <p class="search-result-card__description">
-                Uber paid two hackers $100,000 in Bitcoin to keep a 2016 data
-                breach quiet, and now a jury has convicted former chief security
-                officer Joe Sullivan on two charges for not reporting the
-                incident to authorities.
-              </p>
-              <a
-                href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
-                class="search-result-card__link"
-                >View more</a
-              >
-            </div>
-          </div>
-
-          <div class="search-result-card">
-            <div class="search-result-card__img-container">
-              <img
-                src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
-                alt="Search result image"
-              />
-            </div>
-            <div class="search-result-card__text-container">
-              <span class="search-result-card__author"
-                >By Richard Lawler, 2h ago</span
-              >
-              <h3 class="search-result-card__title">
-                Former Uber security chief found guilty of covering up massive
-                2016 data breach
-              </h3>
-              <p class="search-result-card__description">
-                Uber paid two hackers $100,000 in Bitcoin to keep a 2016 data
-                breach quiet, and now a jury has convicted former chief security
-                officer Joe Sullivan on two charges for not reporting the
-                incident to authorities.
-              </p>
-              <a
-                href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
-                class="search-result-card__link"
-                >View more</a
-              >
-            </div>
-          </div>
-
-          <div class="search-result-card">
-            <div class="search-result-card__img-container">
-              <img
-                src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
-                alt="Search result image"
-              />
-            </div>
-            <div class="search-result-card__text-container">
-              <span class="search-result-card__author"
-                >By Richard Lawler, 2h ago</span
-              >
-              <h3 class="search-result-card__title">
-                Former Uber security chief found guilty of covering up massive
-                2016 data breach
-              </h3>
-              <p class="search-result-card__description">
-                Uber paid two hackers $100,000 in Bitcoin to keep a 2016 data
-                breach quiet, and now a jury has convicted former chief security
-                officer Joe Sullivan on two charges for not reporting the
-                incident to authorities.
-              </p>
-              <a
-                href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
-                class="search-result-card__link"
-                >View more</a
-              >
-            </div>
-          </div>
-
-          <div class="search-result-card">
-            <div class="search-result-card__img-container">
-              <img
-                src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
-                alt="Search result image"
-              />
-            </div>
-            <div class="search-result-card__text-container">
-              <span class="search-result-card__author"
-                >By Richard Lawler, 2h ago</span
-              >
-              <h3 class="search-result-card__title">
-                Former Uber security chief found guilty of covering up massive
-                2016 data breach
-              </h3>
-              <p class="search-result-card__description">
-                Uber paid two hackers $100,000 in Bitcoin to keep a 2016 data
-                breach quiet, and now a jury has convicted former chief security
-                officer Joe Sullivan on two charges for not reporting the
-                incident to authorities.
-              </p>
-              <a
-                href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
-                class="search-result-card__link"
-                >View more</a
-              >
-            </div>
-          </div>
-
-          <div class="search-result-card">
-            <div class="search-result-card__img-container">
-              <img
-                src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
-                alt="Search result image"
-              />
-            </div>
-            <div class="search-result-card__text-container">
-              <span class="search-result-card__author"
-                >By Richard Lawler, 2h ago</span
-              >
-              <h3 class="search-result-card__title">
-                Former Uber security chief found guilty of covering up massive
-                2016 data breach
-              </h3>
-              <p class="search-result-card__description">
-                Uber paid two hackers $100,000 in Bitcoin to keep a 2016 data
-                breach quiet, and now a jury has convicted former chief security
-                officer Joe Sullivan on two charges for not reporting the
-                incident to authorities.
-              </p>
-              <a
-                href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
-                class="search-result-card__link"
-                >View more</a
-              >
+              <div class="search-resuls__card__text-container">
+                <span class="search-resuls__card__author"
+                  >By Richard Lawler, 2h ago</span
+                >
+                <h3 class="search-resuls__card__title">
+                  Former Uber security chief found guilty of covering up massive
+                  2016 data breach
+                </h3>
+                <p class="search-resuls__card__description">
+                  Uber paid two hackers $100,000 in Bitcoin to keep a 2016 data
+                  breach quiet, and now a jury has convicted former chief
+                  security officer Joe Sullivan on two charges for not reporting
+                  the incident to authorities.
+                </p>
+                <a
+                  href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
+                  class="search-result-card__link"
+                  >View more</a
+                >
+              </div>
             </div>
           </div>
         </div>
