@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: -3.2rem;
+  margin-bottom: -2.4rem;
 }
 
 .search__items::before {
@@ -53,14 +53,19 @@
 }
 
 .search__text-heading {
-  font-size: var(--fs-38px);
-  margin-bottom: var(--spacing-4px);
+  font-size: var(--fs-30px);
+  margin-bottom: var(--spacing-8px);
   color: #333;
 }
 
 .search__results-text {
-  font-size: var(--fs-24px);
-  color: #444;
+  font-size: var(--fs-19px);
+  color: #555;
+  font-weight: 500;
+}
+
+.search__text {
+  color: var(--bg-primary-tint);
 }
 
 /* Search bar styles ends */

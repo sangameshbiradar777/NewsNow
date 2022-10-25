@@ -1,284 +1,277 @@
 const topHeadlines = {
   status: "ok",
-  totalResults: 432,
+  totalResults: 414,
   articles: [
     {
-      source: { id: null, name: "The Sun" },
-      author: "Louis Allwood",
+      source: { id: null, name: "Football.London" },
+      author: "Sam Hill, Luke Thrower",
       title:
-        "Cost of Living LATEST: Martin Lewis reveals how to get free £200 as rising food prices push UK inflation... - The Sun",
+        "Arsenal injury news and return dates ahead of PSV clash: Granit Xhaka, Bukayo Saka, Zinchenko - Football.London",
       description:
-        "BRITS could be given more money for using appliances outside of peak hours after the National Grid raised the discount it will offer. The discount for avoiding using energy during off-peak hours ha…",
-      url: "https://www.thesun.co.uk/money/20143509/cost-of-living-payment-news-martin-lewis-savings/",
+        "The Gunners have a few injury issues ahead of their Europa League clash against PSV Eindhoven",
+      url: "https://www.football.london/arsenal-fc/news/arsenal-injury-news-return-dates-25337053",
       urlToImage:
-        "https://www.thsun.co.uk/wp-content/uploads/2022/10/Plain-no-tabbing-68-1.jpg?strip=all&quality=100&w=1920&h=1080&crop=1",
-      publishedAt: "2022-10-22T14:40:56Z",
+        "https://i2-prod.football.london/incoming/article25346573.ece/ALTERNATES/s1200/0_GettyImages-1435951636.jpg",
+      publishedAt: "2022-10-25T04:30:00Z",
       content:
-        "Five payments could hit your bank account before Xmas\r\nMillions of Brits may be eligible for up to five payments paid into their bank accounts BEFORE Xmas amid the soaring cost of living.\r\nFirstly, t… [+510 chars]",
-    },
-    {
-      source: { id: null, name: "The Sun" },
-      author: "Kiro Evans",
-      title:
-        "Man Utd news LIVE: Gakpo ‘considering’ Red Devils transfer, Cristiano Ronaldo WORST EVER Ballon d’Or finis... - The Sun",
-      description:
-        "CRISTIANO RONALDO could leave Manchester United for free in January, it’s been reported. The Portuguese forward has been dropped by manager Erik Ten Hag for United’s game with Chelsea t…",
-      url: "https://www.thesun.co.uk/sport/19994861/man-utd-news-live-cristiano-ronaldo-breaks-silence-martial-chelsea/",
-      urlToImage: null,
-      publishedAt: "2022-10-22T14:37:34Z",
-      content:
-        "Good morning Man Utd fans\r\nCristiano Ronaldo is set to face fan backlash following his mutiny against Tottenham.\r\nMan United boss Erik ten Hag confirmed earlier today that Ronaldo REFUSED to come on … [+1580 chars]",
-    },
-    {
-      source: { id: null, name: "The Philadelphia Inquirer" },
-      author:
-        "Rob Tornoe, Scott Lauber, Alex Coffey, Matt Breen, David Murphy, Matt Mullin and Isabella DiAmore",
-      title:
-        "Phillies-Padres news: Two wins away from the World Series, Philly turns to an unlikely starter for Game 4 - The Philadelphia Inquirer",
-      description:
-        "The Phillies lead the Padres 2-1 with two more games to play at Citizens Bank Park.",
-      url: "https://www.inquirer.com/phillies/live/phillies-game-4-san-diego-padres-nlcs-today-mlb-playoffs-live-updates-20221022.html",
-      urlToImage:
-        "https://www.inquirer.com/resizer/OqrxbTAk20cHqc8LoGkh4MXXs-8=/760x507/smart/filters:format(webp)/cloudfront-us-east-1.images.arcpublishing.com/pmn/3NS3R424ZVEXBHZNPKRX47NUJA.jpg",
-      publishedAt: "2022-10-22T14:34:22Z",
-      content: null,
-    },
-    {
-      source: { id: "the-washington-post", name: "The Washington Post" },
-      author: "Perry Stein, Devlin Barrett",
-      title:
-        "While Dearie oversees document review, FBI appears to be building obstruction case, experts say - The Washington Post",
-      description:
-        "The special master is the most visible, but likely not the most important, aspect of the investigation into Donald Trump's possession of government papers.",
-      url: "https://www.washingtonpost.com/national-security/2022/10/22/trump-documents-dearie-fbi/",
-      urlToImage:
-        "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/FGQLY36BFOS3GSGE2FGIXNZFPY.jpg&w=1440",
-      publishedAt: "2022-10-22T14:31:43Z",
-      content:
-        "Comment on this story\r\nThe FBIs unprecedented criminal probe of a former president has unfolded on two tracks in the 11 weeks since agents searched Donald Trumps Florida residence and club one mostly… [+8949 chars]",
-    },
-    {
-      source: { id: null, name: "Forbes" },
-      author: "Lea Lane",
-      title:
-        "See The November 8 Blood Moon, Camping Under Dark, Starry Skies - Forbes",
-      description:
-        "There seems to be increasing awe about the sky's wonders, and more interest in traveling to dark-sky sites to appreciate them.",
-      url: "https://www.forbes.com/sites/lealane/2022/10/22/see-the-november-8-blood-moon-camping-under-dark-starry-skies/",
-      urlToImage:
-        "https://imageio.forbes.com/specials-images/imageserve/634468d8842014b938aa3149/0x0.jpg?format=jpg&width=1200",
-      publishedAt: "2022-10-22T14:20:42Z",
-      content:
-        "A Blood Moon rises. During the period of totality during thr eclipse, the Earth's shadow is directly ... [+] across the moon.\r\nGetty Images\r\nSince the pandemic I sense an increased awe about the sky,… [+3014 chars]",
-    },
-    {
-      source: { id: null, name: "Nature.com" },
-      author: null,
-      title:
-        "Potential effects of metal ion induced two-state allostery on the regulatory mechanism of add adenine riboswitch | Communications Biology - Nature.com",
-      description:
-        "Molecular dynamic simulations are employed to assess the influence of metal ions on riboswitch structure and dynamics, suggesting a conformational control of riboswitch aptamers by metal ions before ligand binding.",
-      url: "https://www.nature.com/articles/s42003-022-04096-z",
-      urlToImage:
-        "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs42003-022-04096-z/MediaObjects/42003_2022_4096_Fig1_HTML.png",
-      publishedAt: "2022-10-22T14:14:42Z",
-      content:
-        "The influence of metal ions on the global structure of AARA\r\nThe calculations of rd(Pi, Pj) clearly show several regions of AARA have undergone great structural changes at different ionic conditions … [+34706 chars]",
-    },
-    {
-      source: { id: null, name: "Telegraph.co.uk" },
-      author: null,
-      title:
-        "Nottingham Forest cut short Liverpool's revival with shock win - The Telegraph",
-      description: "",
-      url: "https://www.telegraph.co.uk/football/2022/10/22/nottingham-forest-vs-liverpool-live-score-latest-updates-premier",
-      urlToImage:
-        "https://www.telegraph.co.uk/content/dam/football/2022/10/22/TELEMMGLPICT000313625113_trans_NvBQzQNjv4Bqek9vKm18v_rkIPH9w2GMNpPHkRvugymKLtqq96r_VP8.jpeg?impolicy=logo-overlay",
-      publishedAt: "2022-10-22T14:02:28Z",
-      content:
-        "Liverpool manager Jurgen Klopp admits he had to tweak their system in order to improve results as he felt familiarity with his methods had dulled the players' focus.\r\nThe German switched from his tri… [+1755 chars]",
-    },
-    {
-      source: { id: null, name: "GSMArena.com" },
-      author: "Victor",
-      title:
-        "Three Asus ROG Phone 6 models put to test - which one is the fastest? - GSMArena.com news - GSMArena.com",
-      description:
-        "We put ROG Phone 6, the ROG Phone 6D Ultimate and the vanilla ROG Phone 6D head to head to see which is the best-performing ROG Phone this year.",
-      url: "https://www.gsmarena.com/fastest_asus_rog_phone_6_test-news-56149.php",
-      urlToImage:
-        "https://fdn.gsmarena.com/imgroot/news/22/10/rog-phone-6d-benchmarks/-952x498w6/gsmarena_002.jpg",
-      publishedAt: "2022-10-22T14:00:01Z",
-      content:
-        "Introduction\r\nWe've recently reviewed both the ROG Phone 6 Pro and the ROG Phone 6D Ultimate. As you might already know, the former of the two is based around Qualcomm's Snapdragon 8+ Gen 1 chipset, … [+13736 chars]",
-    },
-    {
-      source: { id: null, name: "Seacoastonline.com" },
-      author: "Carrie Jose, Portsmouth Herald",
-      title:
-        "Health and Wellness: Knee surgery gone wrong? It's more common than you think - Seacoastonline.com",
-      description:
-        "Dr. Carrie Jose, in her latest health and wellness column, discusses how something going wrong in knee surgery is more common than one would think.",
-      url: "https://www.seacoastonline.com/story/lifestyle/health-fitness/2022/10/22/knee-surgery-gone-wrong-its-more-common-than-you-think-carrie-jose/10551237002/",
-      urlToImage:
-        "https://www.gannett-cdn.com/presto/2021/04/30/NPOH/bc314d88-ad0e-488d-9c0b-b3384e84c530-CarrieJose.jpg?auto=webp&crop=658,371,x1,y0&format=pjpg&width=1200",
-      publishedAt: "2022-10-22T13:59:49Z",
-      content:
-        "Arthroscopic knee surgery is one of the most common surgeries performed - despite research telling us that it’s not nearly as effective as most people are led to believe. Furthermore, the science tel… [+4048 chars]",
-    },
-    {
-      source: { id: null, name: "Universe Today" },
-      author: "Paul M. Sutter",
-      title:
-        "Chandra's X-ray Vision Combined With JWST Reveals Even More Details About the Universe - Universe Today",
-      description:
-        "NASA scientist have released images combining the early data from the James Webb Space Telescope with X-ray data taken with the Chandra Observatory. Besides their beauty, the images offer insights into the inner workings of some of the most complex astrophysi…",
-      url: "https://www.universetoday.com/158093/chandras-x-ray-vision-combined-with-jwst-reveals-even-more-details-about-the-universe/",
-      urlToImage:
-        "https://www.universetoday.com/wp-content/uploads/2022/10/chandrawebb_cartwheel_comp.jpeg",
-      publishedAt: "2022-10-22T13:55:00Z",
-      content:
-        "NASA scientist have released images combining the early data from the James Webb Space Telescope with X-ray data taken with the Chandra Observatory. Besides their beauty, the images offer insights in… [+1937 chars]",
-    },
-    {
-      source: { id: "associated-press", name: "Associated Press" },
-      author: "Andrew Meldrum",
-      title:
-        "Russian-installed authorities order evacuation of Kherson - The Associated Press",
-      description:
-        "KYIV, Ukraine (AP) — Russian-installed authorities ordered all residents of the southern Ukrainian city of Kherson to leave “immediately” Saturday ahead of an expected advance by Ukrainian troops  waging a counteroffensive to recapture one of the first urban …",
-      url: "https://apnews.com/article/russia-ukraine-kyiv-europe-power-outages-e64ad07feb99a59d5187c5a0572eb8b9",
-      urlToImage:
-        "https://storage.googleapis.com/afs-prod/media/0b714509d47443b688083f912fae09f0/3000.jpeg",
-      publishedAt: "2022-10-22T13:55:00Z",
-      content:
-        "KYIV, Ukraine (AP) Russian-installed authorities ordered all residents of the southern Ukrainian city of Kherson to leave immediately Saturday ahead of an expected advance by Ukrainian troops waging … [+6407 chars]",
-    },
-    {
-      source: { id: null, name: "Premium Times" },
-      author: "Agency Report",
-      title:
-        "2023: Youths march for Tinubu, Sanwo-Olu in Lagos - Premium Times",
-      description:
-        "The News Agency of Nigeria (NAN) reports that the Eko Youth Walk, organised by Tinubu support groups, began from Maryland...",
-      url: "https://www.premiumtimesng.com/regional/ssouth-west/561089-2023-youths-march-for-tinubu-sanwo-olu-in-lagos.html",
-      urlToImage:
-        "https://media.premiumtimesng.com/wp-content/files/2022/10/Ffqw96DXgAATShW.jpg",
-      publishedAt: "2022-10-22T13:49:58Z",
-      content:
-        "The Lagos State chapter of All Progressives Congress (APC) on Saturday commended the youth for their massive turnout at the rally in support of the partys Presidential Candidate, Bola Tinubu and his … [+2519 chars]",
+        "Arsenal returned to Premier League action at the weekend but weren't able to extend their impressive winning run as they drew 1-1 against Southampton at St. Mary's.\r\nGranit Xhaka opened the scoring j… [+4344 chars]",
     },
     {
       source: { id: null, name: "NDTV News" },
       author: null,
       title:
-        'Jacqueline Fernandez "Never Asked For Anything But...": Jailed Conman Defends Her In Letter - NDTV',
+        "Akshata Murty, Rishi Sunak's Billionaire Fashion Designer Wife - A Profile - NDTV",
       description:
-        '"We were in a relationship and if I have given her and her family gifts, what\'s their fault," says Sukesh Chandrashekhar in letter released via lawyer',
-      url: "https://www.ndtv.com/india-news/jailed-conman-sukesh-chandrashekhar-defends-jacqueline-fernandez-she-never-asked-for-anything-but-love-3455472",
+        "Akshata Murty, the Indian wife of Britain's next Prime Minister Rishi Sunak, is fabulously rich thanks to her billionaire father, a fortune that is attracting controversy as ordinary people reel from a cost-of-living crisis.",
+      url: "https://www.ndtv.com/world-news/prada-and-pools-rishi-sunaks-mega-wealthy-wife-and-in-laws-3459511",
       urlToImage:
-        "https://c.ndtvimg.com/2022-10/35m6pq1o_actor-jacqueline-fernandez_625x300_22_October_22.jpg",
-      publishedAt: "2022-10-22T13:49:19Z",
+        "https://i.ndtvimg.com/i/2018-01/rishi-sunak-akshata-murthy-facebook_650x400_61515555153.jpg",
+      publishedAt: "2022-10-25T04:23:00Z",
       content:
-        "Actor Jacqueline Fernandez at a Delhi court for bail hearing on October 22.\r\nNew Delhi: Investigators claim actor Jacqueline Fernandez tried to flee India after being named in a Rs 200-crore extortio… [+2808 chars]",
+        "New Delhi: Akshata Murty, the Indian wife of Britain's next Prime Minister Rishi Sunak, is fabulously rich thanks to her billionaire father, a fortune that is attracting controversy as ordinary peopl… [+3897 chars]",
     },
     {
-      source: { id: null, name: "Crictracker.com" },
-      author: "CricTracker Staff",
-      title:
-        "T20 World Cup 2022: Match 13, AUS vs NZ Match Prediction – Who will win today’s T20 WC match between AUS vs NZ? - CricTracker",
-      description:
-        "After some entertaining and dramatic matches in the first round, the action now shifts to Sydney as Australia and New Zealand gear up for the first match of Super 12s of the T20 World Cup 2022. T",
-      url: "https://www.crictracker.com/cricket-match-predictions/t20-world-cup-2022-nz-vs-aus-match-prediction-who-will-win-todays-t20-world-cup-match-between-new-zealand-vs-australia/",
-      urlToImage:
-        "https://media.crictracker.com/media/featureimage/WI-VS-NZ.jpg",
-      publishedAt: "2022-10-22T13:46:32Z",
-      content:
-        "After some entertaining and dramatic matches in the first round, the action now shifts to Sydney as Australia and New Zealand gear up for the first match of Super 12s of the T20 World Cup 2022. \r\nThe… [+1888 chars]",
-    },
-    {
-      source: { id: null, name: "The Guardian" },
-      author: "Sarah Haque",
-      title:
-        "Priti Patel backs Boris Johnson for Tory leadership - The Guardian",
-      description:
-        "Patel says Johnson has mandate to deliver manifesto and ‘proven track record getting the big decisions right’",
-      url: "https://www.theguardian.com/politics/2022/oct/22/priti-patel-backs-boris-johnson-for-tory-leadership",
-      urlToImage:
-        "https://i.guim.co.uk/img/media/ce8870016ccede7c9293d5c1066fa7bb72f7d032/0_86_2389_1433/master/2389.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=f35b391f381830dcbd7e65cb6872c3e0",
-      publishedAt: "2022-10-22T13:39:00Z",
-      content:
-        "Priti Patel has announced she is backing Boris Johnson in the Conservative leadership contest.\r\nThe former home secretary is the latest MP to come out in favour of Johnsons expected bid to return to … [+4592 chars]",
-    },
-    {
-      source: { id: null, name: "Thecable.ng" },
-      author: "by  Vivian Chime",
-      title:
-        "UNICEF: Over 1.5m children at risk of devastating floods in Nigeria - TheCable",
-      description:
-        "The United Nations International Children’s Emergency Fund (UNICEF) says more than 1.5 million Nigerian children are at risk of flood disaster.  In a statement on Friday, the UN agency said",
-      url: "https://www.thecable.ng/flood-1-5m-children-at-risk-says-unicef",
-      urlToImage:
-        "https://f5p3e9e4.stackpathcdn.com/wp-content/uploads/2022/09/20220912_113636-scaled.jpg",
-      publishedAt: "2022-10-22T13:37:00Z",
-      content:
-        "The United Nations International Children’s Emergency Fund (UNICEF) says more than 1.5 million Nigerian children are at risk of flood disaster. \r\nIn a statement on Friday, the UN agency said out of t… [+2589 chars]",
-    },
-    {
-      source: { id: null, name: "ESPN" },
+      source: { id: null, name: "Nature.com" },
       author: null,
       title:
-        "Nottingham Forest vs. Liverpool - Football Match Report - October 22, 2022 - ESPN",
+        "Loss of Mst1/2 activity promotes non-mitotic hair cell generation in the neonatal organ of Corti | npj Regenerative Medicine - Nature.com",
       description:
-        "Get a report of the Nottingham Forest vs. Liverpool 2022-23 English Premier League football match.",
-      url: "https://www.espn.com/soccer/report/_/gameId/637943",
+        "npj Regenerative Medicine - Loss of Mst1/2 activity promotes non-mitotic hair cell generation in the neonatal organ of Corti",
+      url: "https://www.nature.com/articles/s41536-022-00261-4",
       urlToImage:
-        "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2022%2F1022%2Fr1079453_1296x729_16%2D9.jpg",
-      publishedAt: "2022-10-22T13:35:27Z",
+        "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41536-022-00261-4/MediaObjects/41536_2022_261_Fig1_HTML.png",
+      publishedAt: "2022-10-25T04:15:11Z",
       content:
-        "Taiwo Awoniyi scored the winner for Forest. Michael Regan/Getty Images\r\nNottingham Forest stunned Liverpool as Taiwo Awoniyi sealed a 1-0 win with a second-half goal to lift them off the bottom of th… [+2961 chars]",
+        "Hippo signaling was involved in the regeneration process in damaged cochleae in vitro\r\nAminoglycoside antibiotics (such as neomycin) are known toxins to cochlear HCs, and progressive HC loss was foun… [+28243 chars]",
     },
     {
-      source: { id: null, name: "The Guardian" },
-      author: "Andrew Anthony",
+      source: { id: null, name: "CNBC" },
+      author: "Abigail Ng",
       title:
-        "From fighter to quitter: the ‘weird’ rise and fall of Liz Truss - The Guardian",
+        "Hong Kong markets rebound slightly after plunge, Asia-Pacific markets rise - CNBC",
       description:
-        "After the shortest-ever term as Britain’s prime minister, how did a politician who spent 12 years in government, including in many key roles, make such a historic mess of the top job?",
-      url: "https://www.theguardian.com/politics/2022/oct/22/from-fighter-to-quitter-the-weird-rise-and-fall-of-liz-truss",
+        "Hong Kong stocks were volatile and mainland China markets continued to slide Tuesday, while other major Asian markets rose.",
+      url: "https://www.cnbc.com/2022/10/25/asia-markets-japanese-yen-stocks-currencies-economic-data.html",
       urlToImage:
-        "https://i.guim.co.uk/img/media/af02972fca30f3c6039cb23182427ac3e8595c51/0_44_1680_1008/master/1680.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdG8tZGVmYXVsdC5wbmc&enable=upscale&s=b364b2097ef3011d8ec15d705e43492c",
-      publishedAt: "2022-10-22T13:34:00Z",
+        "https://image.cnbcfm.com/api/v1/image/106731261-1601965681026-gettyimages-1228102589-364102131_1-2.jpeg?v=1666662493&w=1920&h=1080",
+      publishedAt: "2022-10-25T04:12:00Z",
       content:
-        "It may not have been the most troubling feature of Liz Trusss premiership but the need to check whether she was still in office was a gathering distraction for anyone, including her cabinet colleague… [+20236 chars]",
+        "Wall Street's top strategist Marko Kolanovic believes the sell-off in Chinese stocks is disconnected from fundamentals, presenting a buying opportunity. \r\n\"China growth data surprised positively over… [+695 chars]",
+    },
+    {
+      source: { id: null, name: "profootballrumors.com" },
+      author: null,
+      title:
+        "Jaguars To Trade RB James Robinson To Jets - profootballrumors.com",
+      description:
+        "Hours after learning Breece Hall will be lost for the season, the Jets are making a move to replace him. &hellip;",
+      url: "https://www.profootballrumors.com/2022/10/jaguars-to-trade-rb-james-robinson-to-jets",
+      urlToImage:
+        "https://cdn.profootballrumors.com/files/2020/12/USATSI_15343533-1024x756.jpg",
+      publishedAt: "2022-10-25T04:10:00Z",
+      content:
+        "Hours after learning Breece Hall will be lost for the season, the Jets are making a move to replace him. They are trading for Jaguars running back James Robinson, Ian Rapoport of NFL.com reports (on … [+2466 chars]",
+    },
+    {
+      source: { id: null, name: "CNA" },
+      author: null,
+      title:
+        "Woman admits repeatedly punching maid until she went blind and sustained a deformed ear - CNA",
+      description:
+        "Ummi Kalsum Ali repeatedly assaulted the 51-year-old maid until she became blind. The victim was left in a wheelchair at the airport to find her own way home.",
+      url: "https://www.channelnewsasia.com/singapore/woman-repeatedly-punched-maid-until-she-was-blind-both-eyes-gets-jail-ummi-kalsum-ali-3023966",
+      urlToImage:
+        "https://onecms-res.cloudinary.com/image/upload/s--5S7K6Tnr--/f_auto,q_auto/c_fill,g_auto,h_676,w_1200/crime-generic--1----2477204_0.png?itok=NlVQL6y8",
+      publishedAt: "2022-10-25T04:00:00Z",
+      content:
+        "SINGAPORE: After blinding her domestic helper in one eye by punching her repeatedly, a woman refused to let her receive medical treatment. She kept assaulting the maid until the victim eventually los… [+4598 chars]",
+    },
+    {
+      source: { id: null, name: "Telangana Today" },
+      author: "IANS",
+      title:
+        "Apple to roll out iOS 16 to iPad soon with Stage Manager - Telangana Today",
+      description:
+        "The update supported 'Matter', a new smart home connectivity standard that enabled compatible accessories to work together seamlessly, across platforms.",
+      url: "https://telanganatoday.com/apple-to-roll-out-ios-16-to-ipad-soon-with-stage-manager",
+      urlToImage:
+        "https://cdn.telanganatoday.com/wp-content/uploads/2022/10/apple-3.jpg",
+      publishedAt: "2022-10-25T03:57:30Z",
+      content: null,
     },
     {
       source: { id: null, name: "Digital Trends" },
-      author: "Tyler Lacoma",
+      author: "Trevor Mogg",
       title:
-        "Best outdoor projectors 2022: for backyards, camping, and more - Digital Trends",
+        "Space station forced to dodge orbital debris on Monday night - Digital Trends",
       description:
-        "Not all home projectors can handle outside use. Here are the best and most portable projector models made for backyard movies, camping trips, and more.",
-      url: "https://www.digitaltrends.com/home-theater/the-best-outdoor-projectors-2/",
+        "The International Space Station has maneuvered out of the way of debris that was expected to come close to the orbital outpost on Monday night.",
+      url: "https://www.digitaltrends.com/space/space-station-forced-to-dodge-orbital-debris-on-monday-night/",
       urlToImage:
-        "https://www.digitaltrends.com/wp-content/uploads/2022/06/BenQ-GS50.jpg?p=1",
-      publishedAt: "2022-10-22T13:30:41Z",
+        "https://www.digitaltrends.com/wp-content/uploads/2021/08/e65_eva77_solar_array_augmentation_plan_4a_irosa_10801.jpg?p=1",
+      publishedAt: "2022-10-25T03:50:59Z",
       content:
-        "The best home theater projectors specialize in delivering a cinematic experience in your living room, but some models have an added talent offering portable ways to easily share movies or shows outdo… [+8711 chars]",
+        "The International Space Station (ISS) has maneuvered out of the way of debris that was expected to come close to the orbital outpost on Monday night.\r\nThe ISS fired its Progress 81 thrusters fired fo… [+2602 chars]",
     },
     {
-      source: { id: null, name: "TheJournal.ie" },
-      author: "Emer Moreau",
+      source: { id: null, name: "The Straits Times" },
+      author: "cue",
       title:
-        "'I had people fighting for me': PJ Gallagher opens up about his experience with mental illness - TheJournal.ie",
+        "Apple users urged to update firmware to fix critical flaws - The Straits Times",
       description:
-        "The actor and comedian spent several months in hospital last year after experiencing debilitating anxiety.",
-      url: "https://www.thejournal.ie/pj-gallagher-late-late-show-mental-health-5900263-Oct2022/",
+        "SINGAPORE - Users of Apple products are once again urged to update the firmware on their devices to the latest iOS 16.1 and iPadOS 16 to fix a critical flaw, the ninth critical vulnerability reported since the start of 2022.\n Read more at straitstimes.com.",
+      url: "https://www.straitstimes.com/tech/tech-news/apple-users-urged-to-update-firmware-to-fix-critical-flaws",
       urlToImage:
-        "https://img2.thejournal.ie/article/5900263/river/?height=400&version=5900270",
-      publishedAt: "2022-10-22T13:25:34Z",
+        "https://static1.straitstimes.com.sg/s3fs-public/styles/large30x20/public/articles/2022/10/25/BEN0767_5.JPG?VersionId=ejNTM1lnSAijO6hWagjsmxS4MqfJlV1b",
+      publishedAt: "2022-10-25T03:47:06Z",
       content:
-        "ACTOR AND COMEDIAN PJ Gallagher has opened up about his experience with mental illness, including his time spent in hospital last year.\r\nSpeaking on The Late Late Show last night, Gallagher said he s… [+2540 chars]",
+        "SINGAPORE - Users of Apple products are once again urged to update the firmware on their devices to the latest iOS 16.1 and iPadOS 16 to fix a critical flaw, the ninth critical vulnerability reported… [+1136 chars]",
+    },
+    {
+      source: { id: null, name: "New Zealand Herald" },
+      author: null,
+      title:
+        "Former TVNZ CEO Kevin Kenrick pocketed nearly $2.1m after final eight months - New Zealand Herald",
+      description: "More than half of it was a performance incentive.",
+      url: "https://www.nzherald.co.nz/business/former-tvnz-ceo-kevin-kenrick-pocketed-nearly-21-million-after-final-eight-months-at-state-broadcaster/4IM5XQEAFH3DPMOIZVMPWOSIO4/",
+      urlToImage:
+        "https://www.nzherald.co.nz/resizer/INZbTnoY1uS7o0EENG7WXodsvSM=/1200x675/filters:quality(70)/cloudfront-ap-southeast-2.images.arcpublishing.com/nzme/2PBTBFYAG2Y2V3K6TYY7T6LKHY.jpg",
+      publishedAt: "2022-10-25T03:41:25Z",
+      content:
+        "Former TVNZ CEO Kevin Kenrick. Photo / SuppliedFormer TVNZ chief executive Kevin Kenrick pocketed nearly $2.1 million after his final eight months in the job.\r\nThe state broadcaster's annual report r… [+1264 chars]",
+    },
+    {
+      source: { id: null, name: "YouTube" },
+      author: null,
+      title:
+        "DART mission was successful experiment in changing orbit of asteroid - CBS 17",
+      description:
+        "DART mission was successful experiment in changing orbit of asteroid",
+      url: "https://www.youtube.com/watch?v=3LzNTVH1KeY",
+      urlToImage: "https://i.ytimg.com/vi/3LzNTVH1KeY/maxresdefault.jpg",
+      publishedAt: "2022-10-25T03:40:00Z",
+      content: null,
+    },
+    {
+      source: { id: "news24", name: "News24" },
+      author: "Marvin Charles",
+      title:
+        "Stellenbosch deaths: Family loses 'light of life' after horror discovery of capsized car in quarry - News24",
+      description:
+        "The heartbroken families of Leila Lees and Ethan Kirkland were clinging onto one another when the couple's lifeless bodies were retrieved from a quarry in Stellenbosch.",
+      url: "https://www.news24.com/news24/southafrica/news/stellenbosch-deaths-family-loses-light-of-life-after-horror-discovery-of-capsized-car-in-quarry-20221025-2",
+      urlToImage:
+        "https://cdn.24.co.za/files/Cms/General/d/7206/9721047dc38f4ba5b45bb51c0a3b22b8.jpg",
+      publishedAt: "2022-10-25T03:34:02Z",
+      content:
+        "The heartbroken families of Leila Lees and Ethan Kirkland were clinging onto one another when the couple's lifeless bodies were retrieved from a quarry in Stellenbosch. The pair went missing over the… [+233 chars]",
+    },
+    {
+      source: { id: null, name: "YouTube" },
+      author: null,
+      title:
+        "Chicago Bears vs. New England Patriots | 2022 Week 7 Highlights - NFL",
+      description:
+        "Check out our other channels:NFL Mundo https://www.youtube.com/mundonflNFL Brasil https://www.youtube.com/c/NFLBrasilOficialNFL UK https://www.youtube.com/ch...",
+      url: "https://www.youtube.com/watch?v=_jeFstz0Ba8",
+      urlToImage: "https://i.ytimg.com/vi/_jeFstz0Ba8/maxresdefault.jpg",
+      publishedAt: "2022-10-25T03:29:25Z",
+      content: null,
+    },
+    {
+      source: { id: null, name: "Sky.com" },
+      author: "Sophie Morris",
+      title:
+        "Rishi Sunak urged to overhaul the cabinet as he begins his first day as PM - Sky News",
+      description: "",
+      url: "https://news.sky.com/story/rishi-sunak-urged-to-overhaul-the-cabinet-as-he-begins-his-first-day-as-pm-12729509",
+      urlToImage:
+        "https://e3.365dm.com/22/10/1600x900/skynews-rishi-sunak-leadership_5942487.jpg?20221025042854",
+      publishedAt: "2022-10-25T03:25:03Z",
+      content:
+        "Rishi Sunak is being urged to overhaul the cabinet on his first day as prime minister.\r\nForeign Secretary James Cleverly told Sky News that the new PM's government should feature the best ministers a… [+4737 chars]",
+    },
+    {
+      source: { id: "abc-news-au", name: "ABC News (AU)" },
+      author: "Velvet Winter",
+      title:
+        "New details have emerged about the Medibank security breach. Who is at risk and what should customers do? - ABC News",
+      description:
+        "More Medibank customers could be at risk of having their information stolen after the company reveals the cyber breach extends to their flagship brand.",
+      url: "https://www.abc.net.au/news/2022-10-25/medibank-breach-ahm-osho-cyber-attack-data-what-to-do/101574200",
+      urlToImage:
+        "https://live-production.wcms.abc-cdn.net.au/0423b718fa6a1890345fbd01ee31bc60?impolicy=wcms_crop_resize&cropH=1407&cropW=2500&xPos=0&yPos=0&width=862&height=485",
+      publishedAt: "2022-10-25T03:21:43Z",
+      content:
+        "More Medibank customers may have had their information stolen after the health insurance provider revealed that the cyber attack on the company was wider than originally thought.\r\nHere is what we kno… [+4612 chars]",
+    },
+    {
+      source: { id: null, name: "NASA" },
+      author: null,
+      title:
+        "X-Ray Vision and Polarized Glasses Unite to Uncover Mysteries of the Universe - Teachable Moments | NASA/JPL Edu - NASA Jet Propulsion Laboratory",
+      description:
+        "A NASA space telescope mission is giving astronomers a whole new way to peer into the universe, allowing us to uncover long-standing mysteries surrounding objects such as black holes. Find out how it works and how to engage students in the science behind the …",
+      url: "https://www.jpl.nasa.gov/edu/news/2022/10/24/x-ray-vision-and-polarized-glasses-unite-to-uncover-mysteries-of-the-universe/",
+      urlToImage: "https://www.jpl.nasa.gov/edu/images/news/ixpe.jpg",
+      publishedAt: "2022-10-25T03:15:14Z",
+      content:
+        "A NASA space telescope mission is giving astronomers a whole new way to peer into the universe, allowing us to uncover long-standing mysteries surrounding objects such as black holes. Find out how it… [+9897 chars]",
+    },
+    {
+      source: { id: null, name: "Malaysiakini" },
+      author: "Malaysiakini Team",
+      title:
+        "Prison Dept: Najib's appearance on TV1 travel show pre-recorded - Malaysiakini",
+      description: "'No footage involving Najib has been done in prison.'",
+      url: "https://www.malaysiakini.com/news/640944",
+      urlToImage:
+        "https://i.newscdn.net/publisher-c1a3f893382d2b2f8a9aa22a654d9c97/2022/10/7f72df2e45441e67267afcf8006b2fbb.jpg",
+      publishedAt: "2022-10-25T03:14:38Z",
+      content:
+        "Social media was abuzz yesterday over allegations that jailed former prime minister Najib Abdul Razak was on TV1 - with some claiming that he was campaigning.\r\nHowever, checks by Malaysiakini that ha… [+180 chars]",
+    },
+    {
+      source: { id: null, name: "NDTV News" },
+      author: null,
+      title:
+        "Video: UK Activists Throw Cake On King Charles' Wax Statue At London's Madame Tussauds - NDTV",
+      description:
+        "Climate activists vandalised King Charles III's waxwork statue at London's Madame Tussauds. Video footage posted on the internet showed the two protesters wearing Just Stop Oil T-shirts smearing cake over the lifelike model of the British monarch.",
+      url: "https://www.ndtv.com/world-news/video-uk-activists-throw-cake-on-king-charles-wax-statue-at-londons-madame-tussauds-3459995",
+      urlToImage:
+        "https://c.ndtvimg.com/2022-10/lph425r_climate-activist-in-uk_625x300_25_October_22.jpg",
+      publishedAt: "2022-10-25T03:12:00Z",
+      content:
+        '"The demand is simple. Just Stop Oil is a piece of cake," the activists said.\r\nTwo climate activists on Monday vandalised King Charles III\'s waxwork statue at Madame Tussauds in London. Video footage… [+2532 chars]',
+    },
+    {
+      source: { id: null, name: "CNBC" },
+      author: "Evelyn Cheng",
+      title:
+        "Investor fears about Xi's new leadership team 'may be misguided' - CNBC",
+      description:
+        'Newly promoted Chinese President Xi Jinping loyalists previously led "rich provinces where economic growth is still the top priority," Teneo analysts said.',
+      url: "https://www.cnbc.com/2022/10/25/investor-fears-about-xis-new-leadership-team-may-be-misguided.html",
+      urlToImage:
+        "https://image.cnbcfm.com/api/v1/image/107139977-1666664115264-gettyimages-1220789027-CHINA_LUJIAZUI_FORUM.jpeg?v=1666667481&w=1920&h=1080",
+      publishedAt: "2022-10-25T03:11:00Z",
+      content:
+        "Li Qiang, likely to become the next premier, is pictured here speaking at a major annual financial conference in Shanghai in 2020.\r\nBEIJING Chinese stocks' plunge on Monday over fears about China's n… [+4144 chars]",
+    },
+    {
+      source: { id: null, name: "Abplive.com" },
+      author: "ABP News Bureau",
+      title:
+        "Proud Of Him, Says Infosys Co-Founder Narayana Murthy As Son-In-Law Rishi Sunak Becomes Next UK PM - ABP Live",
+      description:
+        "Infosys co-founder Narayana Murthy said he was proud of his son-in-law Rishi Sunak who is set to become the next UK PM.",
+      url: "https://news.abplive.com/news/india/proud-of-him-infosys-co-founder-narayana-murthy-son-in-law-rishi-sunak-next-uk-pm-1559768",
+      urlToImage:
+        "https://feeds.abplive.com/onecms/images/uploaded-images/2022/10/25/fed9a9bdb9707b5e6849ebd829e652201666667081249583_original.jpg?impolicy=abp_cdn&imwidth=1200&imheight=628",
+      publishedAt: "2022-10-25T03:06:24Z",
+      content:
+        "Infosys co-founder Narayana Murthy said he was proud of his son-in-law Rishi Sunak who is set to become the next Prime Minister of the United Kingdom. Sunak will be the UK's first Prime Minister of I… [+1682 chars]",
     },
   ],
 };

@@ -6,6 +6,12 @@
 
 /* Search results page starts */
 
+.search-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--spacing-32px);
+}
+
 .search-results__card {
   display: flex;
 }
