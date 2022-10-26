@@ -33,15 +33,14 @@
 
 .filters__btn {
   font-size: var(--fs-15px);
-  border: 1px solid var(--bg-primary);
   padding: var(--spacing-4px) var(--spacing-12px);
   text-transform: lowercase;
   border-radius: var(--spacing-4px);
-  color: var(--text-secondary);
+  color: #666;
 }
 
 .filters__body {
-  padding: var(--spacing-16px) 0;
+  margin: var(--spacing-16px) 0;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8px);
@@ -52,10 +51,52 @@
   gap: var(--spacing-8px);
   grid-template-columns: 1em auto;
   font-size: var(--spacing-16px);
+  cursor: pointer;
+}
+
+.filters__section--date .filters__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12px);
+}
+
+.filter--date {
+  grid-template-columns: auto;
+  grid-template-rows: max-content max-content;
+  gap: var(--spacing-4px);
 }
 
 .filter__text {
   font-size: var(--fs-15px);
+}
+
+.filters__body::-webkit-scrollbar {
+  width: 0;
+}
+
+.filters__section--sources .filters__body {
+  max-height: var(--spacing-300px);
+  overflow: auto;
+}
+
+input[type="date"] {
+  font-family: inherit;
+  padding: var(--spacing-8px) var(--spacing-12px);
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  color: #888;
+  border-radius: var(--spacing-4px);
+  cursor: pointer;
+}
+
+.filter__date-btn {
+  color: var(--text-primary);
+  background-color: var(--bg-primary-tint);
+  font-size: var(--fs-19px);
+  padding: var(--spacing-8px) 0;
+  margin-top: var(--spacing-8px);
+  border-radius: var(--spacing-4px);
 }
 
 /* Filters style ends */

@@ -68,10 +68,10 @@
         </form>
       </div>
       <h1 class="search__text-heading">
-        Showing results for <span class="search__text">Bitcoin</span>
+        Showing results for <span class="search__text"></span>
       </h1>
       <span class="search__results-text">
-        About <span class="search__results-number">233</span> results
+        About <span class="search__results-number">0</span> results
       </span>
     </header>
 
@@ -82,16 +82,41 @@
             <div class="filters__section filters__section--header">
               <div class="filters__header">
                 <h2 class="filters__header__heading">Filters</h2>
-                <button class="btn filters__btn filters__btn--reset">
+                <button class="btn filters__btn filters__btn--reset-all">
+                  Reset all
+                </button>
+              </div>
+            </div>
+
+            <div class="filters__section filters__section--date">
+              <div class="filters__header">
+                <h2 class="filter__heading">Date</h2>
+                <button class="btn filters__btn filters__btn--reset-date">
                   Reset
                 </button>
+              </div>
+
+              <div class="filters__body">
+                <label for="filter-from" class="filter filter--date">
+                  From
+                  <input id="filter-from" type="date" />
+                </label>
+
+                <label for="filter-to" class="filter filter--date">
+                  To
+                  <input id="filter-to" type="date" />
+                </label>
+
+                <button class="btn filter__date-btn">Go</button>
               </div>
             </div>
 
             <div class="filters__section filters__section--sort-by">
               <div class="filters__header">
                 <h2 class="filter__heading">Sort by</h2>
-                <button class="filters__btn filters__btn-sort-by">hide</button>
+                <button class="btn filters__btn filters__btn--reset-sort-by">
+                  Reset
+                </button>
               </div>
 
               <div class="filters__body">
@@ -115,25 +140,12 @@
             <div class="filters__section filters__section--sources">
               <div class="filters__header">
                 <h2 class="filter__heading">Sources</h2>
-                <button class="filters__btn filters__btn-sources">hide</button>
+                <button class="btn filters__btn filters__btn--reset-sources">
+                  Reset
+                </button>
               </div>
 
-              <div class="filters__body">
-                <label for="filter-techcrunch" class="filter">
-                  <input id="filter-techcrunch" type="checkbox" />
-                  Techcruch
-                </label>
-
-                <label for="filter-telegraph" class="filter">
-                  <input id="filter-telegraph" type="checkbox" />
-                  Telegraph
-                </label>
-
-                <label for="filter-bbc" class="filter">
-                  <input id="filter-bbc" type="checkbox" />
-                  bbc
-                </label>
-              </div>
+              <div class="filters__body"></div>
             </div>
           </div>
 
@@ -141,24 +153,18 @@
             <div class="search-results__card">
               <a
                 href="href=https://www.theverge.com/2022/10/5/23390063/uber-security-chief-convicted-hack-cover-up-bounty-payment"
-                class="search-result-card__link"
+                class="search-results__card__link"
               >
-                <div class="search-resuls__card__text-container">
-                  <span class="search-resuls__card__author"
+                <div class="search-results__card__text-container">
+                  <span class="search-results__card__author"
                     >By Richard Lawler, 2h ago</span
                   >
-                  <h3 class="search-resuls__card__title">
+                  <h3 class="search-results__card__title">
                     Former Uber security chief found guilty of covering up
                     massive 2016 data breach
                   </h3>
-                  <p class="search-resuls__card__description">
-                    Uber paid two hackers $100,000 in Bitcoin to keep a 2016
-                    data breach quiet, and now a jury has convicted former chief
-                    security officer Joe Sullivan on two charges for not
-                    reporting the incident to authorities.
-                  </p>
                 </div>
-                <div class="search-resuls__card__img-container">
+                <div class="search-results__card__img-container">
                   <img
                     src="https://cdn.vox-cdn.com/thumbor/lh2YBh8cWvn3ARrenXxjolBte4o=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23932655/acastro_STK106__01.jpg"
                     alt="Search result image"
@@ -186,6 +192,9 @@
     <script type="module">
       import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
       import initSearch from "../../modules/homepage/search.js";
+      import initFilters from "../../modules/search-results-page/filters.js";
+      import { addSearchTextToDom } from "../../modules/search-results-page/search-bar.js";
+      import initSearchResults from "../../modules/search-results-page/search-results.js";
 
       function init() {
         // Add date and time to navbar
@@ -193,6 +202,15 @@
 
         // Initialize search functionality
         initSearch();
+
+        // Initialize filters
+        initFilters();
+
+        // Add search text to dom
+        addSearchTextToDom();
+
+        // Initialixe search results
+        initSearchResults();
       }
 
       init();
