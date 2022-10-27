@@ -7,10 +7,21 @@
 /* Filters style starts */
 
 .filters__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2px;
+  padding: var(--spacing-24px) 0;
+  border-radius: var(--spacing-4px);
+}
+
+.filters__section--date {
   padding: var(--spacing-24px);
   background-color: #f3f3f4;
-  margin-bottom: 2px;
-  border-radius: var(--spacing-4px);
+}
+
+.filters__section:last-child {
+  padding: 0;
 }
 
 .filters__header {
@@ -20,14 +31,14 @@
 }
 
 .filters__header__heading {
-  font-size: var(--fs-24px);
+  font-size: var(--fs-19px);
   font-weight: 600;
   color: #333;
 }
 
 .filter__heading {
   font-size: var(--fs-19px);
-  font-weight: 600;
+  font-weight: 500;
   color: #333;
 }
 
@@ -71,12 +82,20 @@
 }
 
 .filters__body::-webkit-scrollbar {
-  width: 0;
+  width: var(--spacing-8px);
+}
+
+.filters__body::-webkit-scrollbar-track {
+  border-radius: var(--spacing-2px);
+}
+
+.filters__body::-webkit-scrollbar-thumb {
+  border-radius: var(--spacing-2px);
 }
 
 .filters__section--sources .filters__body {
   max-height: var(--spacing-300px);
-  overflow: auto;
+  overflow: hidden;
 }
 
 input[type="date"] {

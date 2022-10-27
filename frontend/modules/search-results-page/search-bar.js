@@ -22,10 +22,12 @@ function addSearchTextToDom() {
 function addSearchResultsCountToDom(resultsCount) {
   // Get the number of results element from DOM
   const searchResultsCountElement = document.querySelector(
-    ".search__results--number"
+    ".search__results-number"
   );
 
   searchResultsCountElement.textContent = resultsCount;
 }
+
+function initSearchBar() {}
 
 export { getSearchText, addSearchTextToDom, addSearchResultsCountToDom };

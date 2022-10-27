@@ -5,8 +5,11 @@ function addDateTimeToNavbar() {
   // Get the time element from the DOM
   const timeElement = document.querySelector(".navbar__time");
 
-  const formattedDate = new Intl.DateTimeFormat('en-IN', { weekday: 'long', month: 'long', day: 'numeric' }).format(new Date());
-  console.log(formattedDate)
+  const formattedDate = new Intl.DateTimeFormat("en-IN", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  }).format(new Date());
 
   dateElement.innerHTML = formattedDate;
 

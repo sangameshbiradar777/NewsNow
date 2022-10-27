@@ -27,6 +27,11 @@
   font-weight: 700;
 }
 
+.navbar__logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .navbar__datetime {
   position: absolute;
   top: 50%;

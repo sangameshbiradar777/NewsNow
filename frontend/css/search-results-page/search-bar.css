@@ -37,6 +37,7 @@
 
 .search__input {
   font-size: var(--fs-19px);
+  font-family: inherit;
   border: none;
   outline: none;
   color: var(--text-dark);
@@ -66,6 +67,7 @@
 
 .search__text {
   color: var(--bg-primary-tint);
+  text-transform: capitalize;
 }
 
 /* Search bar styles ends */

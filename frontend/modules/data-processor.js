@@ -1,4 +1,8 @@
-import {AUTHORCHARACHTERLIMIT, CONTENTCHARACTERLIMIT, MAXCHARACTERLIMIT} from "./config.js";
+import {
+  AUTHORCHARACHTERLIMIT,
+  CONTENTCHARACTERLIMIT,
+  MAXCHARACTERLIMIT,
+} from "./config.js";
 
 function processAuthor(data) {
   // If author is not null return limited author
@@ -14,6 +18,23 @@ function processAuthor(data) {
   }
 
   // If no author and no source return 'unkonwn'
+  return "unknown";
+}
+
+function processSource(data) {
+  // If source is not null return source
+  const { name: source } = data.source;
+  if (source) {
+    return getUniformText(source, AUTHORCHARACHTERLIMIT);
+  }
+
+  // If source is null return author
+  const { author } = data;
+  if (author) {
+    return getUniformText(author, AUTHORCHARACHTERLIMIT);
+  }
+
+  // If no author and source return 'unkown'
   return "unknown";
 }
 
@@ -37,17 +58,17 @@ function processContent(data) {
 function processTitle(data) {
   // If title is not null return compressed title
   const title = data.title;
-  if(title) {
+  if (title) {
     return compressText(title);
   }
 
   // If there is no title return compressed description
-  if(data.description) {
+  if (data.description) {
     return processContent(data);
   }
 
   // If there is no description return compressed content
-  if(data.content) {
+  if (data.content) {
     return processContent(data);
   }
 
@@ -57,10 +78,23 @@ function processTitle(data) {
 
 function processURL(URL) {
   // If url is not empty return url
-  if(URL) return URL;
+  if (URL) return URL;
 
   // If there is no URL return #
-  return '#';
+  return "#";
+}
+
+function processDate(date) {
+  // If date is not there return empty string
+  if (!date) return "";
+
+  const formattedDate = new Intl.DateTimeFormat("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(date));
+
+  return formattedDate;
 }
 
 // ! THIS FUNCTION IS NOT USED TO VERIFY THE IMAGE URL,
@@ -117,16 +151,13 @@ function removeLineBreaks(text) {
 
 function getUniformText(text, characterLimit) {
   // Limit the text to character limit
-  const uniformText = compressText(
-    text,
-    characterLimit
-  );
+  const uniformText = compressText(text, characterLimit);
 
   return uniformText;
 }
 
 function processTime(date) {
-  if(!date) return "";
+  if (!date) return "";
 
   // Get current time
   const currentTime = new Date();
@@ -150,19 +181,19 @@ function processTime(date) {
 }
 
 function formatTime(hours, minutes) {
-  if(hours && minutes) {
+  if (hours && minutes) {
     return `${hours}h ${minutes}min ago`;
   }
 
-  if(hours) {
+  if (hours) {
     return `${hours}h ago`;
   }
 
-  if(minutes) {
+  if (minutes) {
     return `${minutes}min ago`;
   }
 
-  return 'just now';
+  return "just now";
 }
 
 function getProcessedData(rawData) {
@@ -170,18 +201,24 @@ function getProcessedData(rawData) {
   const processedData = [];
 
   // Loop over the raw data and process
-  rawData.forEach(data => {
+  rawData.forEach((data) => {
     // Create object for each object
     const newData = {};
 
     // Process author
     newData.author = processAuthor(data);
 
+    // Process source
+    newData.source = processSource(data);
+
     // Process content
     newData.content = processContent(data);
 
     // Process time
     newData.publishedAt = processTime(data.publishedAt);
+
+    // Process date
+    newData.date = processDate(data.publishedAt);
 
     // Process title
     newData.title = processTitle(data);
@@ -194,11 +231,10 @@ function getProcessedData(rawData) {
 
     // Push the news object to
     processedData.push(newData);
-  })  
-  
+  });
+
   // Return the processed data
   return processedData;
 }
 
-
-export {getProcessedData, compressText};
+export { getProcessedData, compressText };

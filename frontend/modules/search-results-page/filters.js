@@ -41,8 +41,6 @@ async function initFilters() {
 
   const sources = sourcesResponse.sources;
 
-  console.log(sources);
-
   // Add sources to DOM
   addSourcesToDOM(sources);
 }

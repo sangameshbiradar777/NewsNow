@@ -62,8 +62,8 @@
 
 .dot.active {
   background-color: var(--bg-secondary-tint);
+  width: var(--spacing-24px);
+  border-radius: var(--spacing-8px);
 }
-
-
 
 /* Carousel ends */
