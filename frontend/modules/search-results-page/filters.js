@@ -26,6 +26,17 @@ function addSourcesToDOM(sources) {
   });
 }
 
+function changeColorOfDateOnChange() {
+  const filterDateElements = document.querySelectorAll(".filter-date-input");
+
+  filterDateElements.forEach((filterDateElement) => {
+    console.log(filterDateElement);
+    filterDateElement.addEventListener("change", function () {
+      this.style.color = "#444";
+    });
+  });
+}
+
 async function initFilters() {
   // Get all the filters body
   const filterSortByElement = document.querySelector(
@@ -43,6 +54,9 @@ async function initFilters() {
 
   // Add sources to DOM
   addSourcesToDOM(sources);
+
+  // Change color of the date picker on change
+  changeColorOfDateOnChange();
 }
 
 export default initFilters;

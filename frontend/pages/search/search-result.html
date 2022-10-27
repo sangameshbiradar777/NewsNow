@@ -35,7 +35,7 @@
         <span class="navbar__time"></span>
       </div>
       <div class="navbar__items">
-        <form class="navbar__search-container">
+        <form class="navbar__search-container search-form">
           <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
           <input
             type="text"
@@ -45,7 +45,7 @@
             required
           />
           <ion-icon
-            class="navbar__search__clear-icon hide-clear-icon"
+            class="navbar__search__clear-icon search__clear-icon hide-clear-icon"
             name="close-outline"
           ></ion-icon>
         </form>
@@ -64,9 +64,20 @@
 
     <header class="search-section">
       <div class="search__items">
-        <form action="" class="search__container">
+        <form action="" class="search__container search-form">
           <ion-icon class="icon search__icon" name="search"></ion-icon>
-          <input type="text" class="search__input" placeholder="Search..." />
+          <input
+            type="text"
+            required
+            autocomplete="off"
+            class="search__input"
+            name="search-text"
+            placeholder="Search..."
+          />
+          <ion-icon
+            class="icon search__clear-icon"
+            name="close-circle"
+          ></ion-icon>
         </form>
       </div>
       <h1 class="search__text-heading">
@@ -89,19 +100,24 @@
                 </button>
               </div>
 
-              <div class="filters__body">
+              <form action="#" class="filters__body">
                 <label for="filter-from" class="filter filter--date">
                   From
-                  <input id="filter-from" type="date" />
+                  <input
+                    id="filter-from"
+                    class="filter-date-input"
+                    required
+                    type="date"
+                  />
                 </label>
 
                 <label for="filter-to" class="filter filter--date">
                   To
-                  <input id="filter-to" type="date" />
+                  <input id="filter-to" class="filter-date-input" type="date" />
                 </label>
 
-                <button class="btn filter__date-btn">Go</button>
-              </div>
+                <button type="submit" class="btn filter__date-btn">Go</button>
+              </form>
             </div>
 
             <div class="filters__section filters__section--sort-by">

@@ -36,6 +36,7 @@
 }
 
 .search__input {
+  flex-grow: 3;
   font-size: var(--fs-19px);
   font-family: inherit;
   border: none;
@@ -51,6 +52,12 @@
   font-size: var(--fs-19px);
   margin-right: var(--spacing-16px);
   color: #666;
+}
+
+.search__clear-icon {
+  font-size: var(--fs-19px);
+  color: #666;
+  cursor: pointer;
 }
 
 .search__text-heading {

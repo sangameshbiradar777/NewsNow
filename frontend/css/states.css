@@ -175,4 +175,10 @@ input[type="date"]:focus {
   color: var(--text-primary);
   box-shadow: 0 0 0 var(--spacing-4px) var(--bg-secondary-shade);
 }
+
+.search__clear-icon:hover,
+.search__clear-icon:active,
+.search__clear-icon:focus {
+  color: #333;
+}
 /* Search results styles ends */

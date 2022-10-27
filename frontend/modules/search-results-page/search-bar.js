@@ -28,6 +28,4 @@ function addSearchResultsCountToDom(resultsCount) {
   searchResultsCountElement.textContent = resultsCount;
 }
 
-function initSearchBar() {}
-
 export { getSearchText, addSearchTextToDom, addSearchResultsCountToDom };

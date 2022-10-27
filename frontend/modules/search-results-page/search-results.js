@@ -43,26 +43,60 @@ function getSearchResultCardHTML(searchResult) {
   `;
 }
 
+function getFilterDates() {
+  const fromDate = document.querySelector("#filter-from").value;
+  const toDate = document.querySelector("#filter-to").value;
+
+  return [fromDate, toDate];
+}
+
+function getSortByFilters() {
+  const sortByFilterElement = document.querySelector(
+    ".filters__section--sort-by .filters__body"
+  );
+
+  const sortByCheckBoxes = sortByFilterElement.children;
+
+  console.log(sortByCheckBoxes);
+}
+
+function getSearchURL(searchText) {
+  const searchURL = `${baseURL}q=${searchText}`;
+  // Get the dates to filter the search
+  const [fromDate, toDate] = getFilterDates();
+
+  // Apeend from date and to date to search URL
+  if (fromDate && toDate) {
+    searchURL.concat(`&from=${fromDate}&to=${toDate}`);
+  } else if (fromDate) {
+    searchURL.concat(`&from=${fromDate}`);
+  }
+
+  // Get the sortby filters
+  const sortByFilters = getSortByFilters();
+}
+
 async function initSearchResults() {
   // Get the search text
   const searchText = getSearchText();
 
   // Create a search url
-  const searchURL = `${baseURL}q=${searchText}&apiKey=${NEWSAPIKEY}`;
-  console.log(searchURL);
+  // const searchURL = `${baseURL}q=${searchText}&apiKey=${NEWSAPIKEY}`;
+
+  const searchURL = getSearchURL(searchText);
 
   // Fetch search results
-  const { totalResults: searchResultsCount, articles: searchResultsRaw } =
-    await fetchURL(searchURL);
+  // const { totalResults: searchResultsCount, articles: searchResultsRaw } =
+  //   await fetchURL(searchURL);
 
-  // Add search results count to DOM
-  addSearchResultsCountToDom(searchResultsCount);
+  // // Add search results count to DOM
+  // addSearchResultsCountToDom(searchResultsCount);
 
-  // Process search results
-  const searchResults = getProcessedData(searchResultsRaw);
+  // // Process search results
+  // const searchResults = getProcessedData(searchResultsRaw);
 
-  // Add search results to DOM
-  addSearchResultsToDOM(searchResults);
+  // // Add search results to DOM
+  // addSearchResultsToDOM(searchResults);
 }
 
 export default initSearchResults;
