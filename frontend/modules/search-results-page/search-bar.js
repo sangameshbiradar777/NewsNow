@@ -22,7 +22,7 @@ function addSearchTextToDom() {
   searchTextElement.textContent = searchText;
 }
 
-function addSearchResultsCountToDom(resultsCount) {
+function addSearchResultsCountToDom(resultsCount = 0) {
   // Get the number of results element from DOM
   const searchResultsCountElement = document.querySelector(
     ".search__results-number"

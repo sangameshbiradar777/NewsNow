@@ -115,6 +115,16 @@ function getSourceFilters() {
 
 function getSearchURL(searchText) {
   let searchURL = `${baseURL}q=${searchText}`;
+
+  // Get the language to filter the search results based on language
+  const selectedLanguage = document.querySelector(
+    ".language-filter__selected"
+  ).id;
+
+  searchURL = searchURL.concat(`&language=${selectedLanguage}`);
+
+  console.log(selectedLanguage);
+
   // Get the dates to filter the search
   const [fromDate, toDate] = getFilterDates();
 
@@ -185,7 +195,6 @@ function searchByDateRange(searchText) {
 }
 
 function addNumberOfSourceSelectedToDOM(sourcesSelectedCount) {
-  console.log(sourcesSelectedCount);
   // Get the number of source filters selected element
   const numberOfSourceSelectedElement = document.querySelector(
     ".number-of-source-selected"
@@ -222,6 +231,40 @@ async function filterSearchResultsAndUpdateDOM(searchText) {
   addSearchResultsToDOM(filteredSearchResults);
 }
 
+function resetFilters() {
+  // Get all the reset btns
+  const dateResetBtn = document.querySelector(".filters__btn--reset-date");
+  const sortByResetBtn = document.querySelector(".filters__btn--reset-sort-by");
+  const sourcesResetBtn = document.querySelector(
+    ".filters__btn--reset-sources"
+  );
+
+  dateResetBtn.addEventListener("click", function () {
+    document.querySelector("#filter-from").value = "";
+    document.querySelector("#filter-to").value = "";
+  });
+
+  function resetInputs() {
+    const filtersSection = this.closest(".filters__section");
+
+    const inputElements = filtersSection.querySelectorAll(
+      ".filters__body input"
+    );
+
+    // Loop over all the input elements and un select then
+    inputElements.forEach((inputElement) => {
+      inputElement.checked = false;
+    });
+
+    // If the clicked button is source reset btn hide number of source selected element
+    addNumberOfSourceSelectedToDOM(0);
+  }
+
+  sortByResetBtn.addEventListener("click", resetInputs);
+
+  sourcesResetBtn.addEventListener("click", resetInputs);
+}
+
 async function initSearchResults() {
   // Get the search text
   const searchText = getSearchText();
@@ -246,6 +289,9 @@ async function initSearchResults() {
 
   // Update search results when ever any filters are selected or disselected
   updateSearchResultsOnFilterChange(searchText);
+
+  // Reset filters
+  resetFilters();
 }
 
-export default initSearchResults;
+export { initSearchResults, filterSearchResultsAndUpdateDOM };

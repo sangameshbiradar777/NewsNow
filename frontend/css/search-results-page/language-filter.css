@@ -41,7 +41,7 @@
 
 .language-filter__dropdown {
   position: absolute;
-  top: 105%;
+  top: 115%;
   display: flex;
   flex-direction: column;
   background-color: #fff;

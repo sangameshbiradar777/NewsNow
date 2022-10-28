@@ -1,3 +1,6 @@
+import { filterSearchResultsAndUpdateDOM } from "./search-results.js";
+import { getSearchText } from "./search-bar.js";
+
 // Get the language filter dropdown
 const languageFilterDropDownElement = document.querySelector(
   ".language-filter__dropdown"
@@ -39,8 +42,6 @@ function changeLanguage() {
       }
     );
 
-    console.log(prevSelectedLanguageElement);
-
     // Remove the selected class on prev selected language element
     prevSelectedLanguageElement.classList.remove(
       "language-filter__dropdown__item--selected"
@@ -59,6 +60,12 @@ function changeLanguage() {
     languageFilterDropDownElement.classList.add(
       "language-filter__dropdown--hidden"
     );
+
+    // Get search text
+    const searchText = getSearchText();
+
+    // update search results based on selected language
+    filterSearchResultsAndUpdateDOM(searchText);
   });
 }
 
