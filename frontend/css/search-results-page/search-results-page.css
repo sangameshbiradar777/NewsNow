@@ -66,4 +66,20 @@
   margin-bottom: var(--spacing-4px);
 }
 
+.filter__heading--sources {
+  display: grid;
+  place-items: center;
+  grid-template-columns: auto auto;
+}
+
+.number-of-source-selected {
+  display: inline-block;
+  font-size: var(--fs-12px);
+  background-color: var(--bg-primary-tint);
+  color: var(--text-primary);
+  padding: var(--spacing-2px) var(--spacing-8px);
+  border-radius: var(--spacing-4px);
+  margin-left: var(--spacing-4px);
+}
+
 /* Search results page ends */

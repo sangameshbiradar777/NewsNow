@@ -182,3 +182,28 @@ input[type="date"]:focus {
   color: #333;
 }
 /* Search results styles ends */
+
+/* Language filters styles starts */
+
+.language-filter__selected:hover,
+.language-filter__selected:active,
+.language-filter__selected:focus {
+  background-color: #e9eff2;
+  color: #333;
+}
+
+.language-filter__selected:active {
+  background-color: #e9eff2;
+  transform: translateY(1px) scale(0.95);
+}
+
+.language-filter__selected:focus {
+  box-shadow: 0 0 0 var(--spacing-4px) var(--bg-secondary-shade);
+}
+
+.language-filter__dropdown__item:hover {
+  background-color: #e9eff2;
+  color: #444;
+}
+
+/* Language filters styles ends */

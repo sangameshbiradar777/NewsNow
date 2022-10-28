@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="../../css/search-results-page/filters.css" />
     <link
       rel="stylesheet"
+      href="../../css/search-results-page/language-filter.css"
+    />
+    <link
+      rel="stylesheet"
       href="../../css/search-results-page/search-results-page.css"
     />
   </head>
@@ -89,6 +93,157 @@
     </header>
 
     <main>
+      <div class="section section--language-filter">
+        <h3 class="language-filter__heading">
+          <ion-icon name="language-outline"></ion-icon>
+          Language
+        </h3>
+        <div class="language-filter__body">
+          <button class="btn language-filter__selected" id="en">
+            <span class="language-filter__selected__text">English</span>
+            <ion-icon
+              class="language-filter__dropdown-icon"
+              name="caret-down-outline"
+            ></ion-icon>
+          </button>
+          <div
+            class="language-filter__dropdown language-filter__dropdown--hidden"
+          >
+            <button
+              class="btn language-filter__dropdown__item"
+              name="Arabic"
+              id="ar"
+            >
+              Arabic
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="German"
+              id="de"
+            >
+              German
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="Spanish"
+              id="es"
+            >
+              Spanish
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="French"
+              id="fr"
+            >
+              French
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item language-filter__dropdown__item--selected"
+              name="Engish"
+              id="en"
+            >
+              Engish
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="Hebrew"
+              id="he"
+            >
+              Hebrew
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="Italian"
+              id="it"
+            >
+              Italian
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="Dutch"
+              id="nl"
+            >
+              Dutch
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="Norwegian"
+              id="no"
+            >
+              Norwegian
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="Russian"
+              id="ru"
+            >
+              Russian
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="Swedish"
+              id="sv"
+            >
+              Swedish
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+            <button
+              class="btn language-filter__dropdown__item"
+              name="Chinese"
+              id="zh"
+            >
+              Chinese
+              <ion-icon
+                class="language-filter__selected-icon"
+                name="checkbox-outline"
+              ></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
       <section class="section section--search-results">
         <div class="search-content-grid">
           <div class="filters">
@@ -100,7 +255,7 @@
                 </button>
               </div>
 
-              <form action="#" class="filters__body">
+              <form action="#" class="filters__body search-by-date-form">
                 <label for="filter-from" class="filter filter--date">
                   From
                   <input
@@ -130,17 +285,32 @@
 
               <div class="filters__body">
                 <label for="filter-relevency" class="filter">
-                  <input id="filter-relevency" type="checkbox" />
+                  <input
+                    id="filter-relevency"
+                    type="radio"
+                    name="sort-by"
+                    data-sort-by="relevency"
+                  />
                   Relevency
                 </label>
 
                 <label for="filter-popularity" class="filter">
-                  <input id="filter-popularity" type="checkbox" />
+                  <input
+                    id="filter-popularity"
+                    type="radio"
+                    name="sort-by"
+                    data-sort-by="popularity"
+                  />
                   Popularity
                 </label>
 
                 <label for="filter-publishedat" class="filter">
-                  <input id="filter-publishedat" type="checkbox" />
+                  <input
+                    id="filter-publishedat"
+                    type="radio"
+                    name="sort-by"
+                    data-sort-by="publishedat"
+                  />
                   Newest first
                 </label>
               </div>
@@ -148,7 +318,9 @@
 
             <div class="filters__section filters__section--sources">
               <div class="filters__header">
-                <h2 class="filter__heading">Sources</h2>
+                <h2 class="filter__heading filter__heading--sources">
+                  Sources <span class="number-of-source-selected">0</span>
+                </h2>
                 <button class="btn filters__btn filters__btn--reset-sources">
                   Reset
                 </button>
@@ -179,6 +351,7 @@
       import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
       import initSearch from "../../modules/homepage/search.js";
       import initFilters from "../../modules/search-results-page/filters.js";
+      import initLanguageFilter from "../../modules/search-results-page/language-filter.js";
       import { addSearchTextToDom } from "../../modules/search-results-page/search-bar.js";
       import initSearchResults from "../../modules/search-results-page/search-results.js";
 
@@ -191,6 +364,9 @@
 
         // Initialize filters
         initFilters();
+
+        // Initialize language filters
+        initLanguageFilter();
 
         // Add search text to dom
         addSearchTextToDom();

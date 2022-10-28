@@ -1,0 +1,93 @@
+/** Type scale System */
+/** 38px, 30px, 24px, 19px, 15px, 12.5px, 10px, 8px, 6px, 5px  */
+
+/** Spacing System */
+/** 400px, 350px, 300px, 160px, 120px, 96px, 80px, 64px, 48px, 40px, 32px, 24px, 16px, 12px, 8px, 4px, 2px */
+
+.section--language-filter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-16px);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.language-filter__heading {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4px);
+  font-size: var(--fs-19px);
+  font-weight: 500;
+  color: #444;
+}
+
+.language-filter__body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.language-filter__selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-15px);
+  padding: var(--spacing-8px) var(--spacing-16px);
+  border: 1px solid var(--bg-secondary-shade);
+  border-radius: var(--spacing-4px);
+  cursor: pointer;
+}
+
+.language-filter__dropdown {
+  position: absolute;
+  top: 105%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid var(--bg-secondary-shade);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  border-radius: var(--spacing-4px);
+  max-height: var(--spacing-300px);
+  overflow: auto;
+}
+
+.language-filter__dropdown::-webkit-scrollbar {
+  width: var(--spacing-2px);
+}
+
+.language-filter__dropdown__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-15px);
+  padding: var(--spacing-8px) var(--spacing-16px);
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.language-filter__selected-icon {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.language-filter__dropdown-icon {
+  margin-left: var(--spacing-24px);
+}
+
+.language-filter__dropdown__item--selected {
+  background-color: #ddd;
+}
+
+.language-filter__dropdown__item--selected .language-filter__selected-icon {
+  opacity: 1;
+  visibility: visible;
+}
+
+.language-filter__dropdown--hidden {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}

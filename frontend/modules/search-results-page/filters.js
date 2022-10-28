@@ -17,7 +17,7 @@ function addSourcesToDOM(sources) {
 
     // Add the HTML to label element
     labelElement.innerHTML = `
-      <input id="${source.id}" type="checkbox" />
+      <input id="${source.id}" type="checkbox" name=${source.id} />
         ${source.name}
     `;
 
@@ -30,7 +30,6 @@ function changeColorOfDateOnChange() {
   const filterDateElements = document.querySelectorAll(".filter-date-input");
 
   filterDateElements.forEach((filterDateElement) => {
-    console.log(filterDateElement);
     filterDateElement.addEventListener("change", function () {
       this.style.color = "#444";
     });

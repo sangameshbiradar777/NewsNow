@@ -5,7 +5,10 @@ function getSearchText() {
   // Extract the search text
   const searchText = urlParams.get("search") || "Nothing";
 
-  return searchText;
+  // Remove all the spaces search text
+  const compressedSearchText = searchText.replaceAll(" ", "");
+
+  return compressedSearchText;
 }
 
 function addSearchTextToDom() {
@@ -24,6 +27,9 @@ function addSearchResultsCountToDom(resultsCount) {
   const searchResultsCountElement = document.querySelector(
     ".search__results-number"
   );
+
+  // Empty the search results count element
+  searchResultsCountElement.innerHTML = "";
 
   searchResultsCountElement.textContent = resultsCount;
 }

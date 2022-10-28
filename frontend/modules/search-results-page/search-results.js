@@ -8,6 +8,9 @@ function addSearchResultsToDOM(searchResults) {
   // Get the search results element from the DOM
   const searchResultsElement = document.querySelector(".search-results");
 
+  // Set the search results to empty
+  searchResultsElement.innerHTML = "";
+
   // Loop over the search results and add them to DOM
   searchResults.forEach((searchResult) => {
     // Create a search result card
@@ -50,30 +53,173 @@ function getFilterDates() {
   return [fromDate, toDate];
 }
 
+function getSelectedCheckBoxes(filterElement) {
+  // Get all the check boxes in the parent element and convert them to array
+  const allCheckBoxes = Array.from(filterElement.querySelectorAll("input"));
+
+  // Loop over all the check boxes and get the selected check boxes
+  const selectedCheckBoxes = allCheckBoxes
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.name);
+
+  return selectedCheckBoxes;
+}
+
 function getSortByFilters() {
-  const sortByFilterElement = document.querySelector(
-    ".filters__section--sort-by .filters__body"
+  // Get all the radio buttons with name sort-by
+  const sortByRadioBtns = document.getElementsByName("sort-by");
+
+  let selectedSortByRadioBtn;
+
+  sortByRadioBtns.forEach((sortByRadioBtn, index) => {
+    if (sortByRadioBtn.checked) {
+      selectedSortByRadioBtn = sortByRadioBtn.dataset.sortBy;
+    }
+  });
+
+  // If none of the radio buttons are selected just return empty string
+  if (!selectedSortByRadioBtn) return "";
+
+  return `&sortBy=${selectedSortByRadioBtn}`;
+}
+
+function getSourceFilters() {
+  // Get the source filter element from the DOM
+  const sourceFilterElement = document.querySelector(
+    ".filters__section--sources .filters__body"
   );
 
-  const sortByCheckBoxes = sortByFilterElement.children;
+  // Get all the selected source filters inside the source filter element
+  const selectedSources = getSelectedCheckBoxes(sourceFilterElement);
 
-  console.log(sortByCheckBoxes);
+  addNumberOfSourceSelectedToDOM(selectedSources.length);
+
+  // If there are no filters selected return empty string
+  if (!selectedSources.length) return "";
+
+  // Construct the final source filter string
+  const finalSourceFiltersString = selectedSources.reduce(
+    (sourceFilterString, source, index, selectedSourcesArray) => {
+      let filterString = `${source}`;
+
+      if (index !== selectedSourcesArray.length - 1)
+        filterString = filterString.concat(",");
+
+      return sourceFilterString.concat(filterString);
+    },
+    "&sources="
+  );
+
+  return finalSourceFiltersString;
 }
 
 function getSearchURL(searchText) {
-  const searchURL = `${baseURL}q=${searchText}`;
+  let searchURL = `${baseURL}q=${searchText}`;
   // Get the dates to filter the search
   const [fromDate, toDate] = getFilterDates();
 
   // Apeend from date and to date to search URL
   if (fromDate && toDate) {
-    searchURL.concat(`&from=${fromDate}&to=${toDate}`);
+    searchURL = searchURL.concat(`&from=${fromDate}&to=${toDate}`);
   } else if (fromDate) {
-    searchURL.concat(`&from=${fromDate}`);
+    searchURL = searchURL.concat(`&from=${fromDate}`);
   }
 
   // Get the sortby filters
   const sortByFilters = getSortByFilters();
+
+  // Concat the sort by filters to search url
+  searchURL = searchURL.concat(sortByFilters);
+
+  // Get the source filters
+  const sourceFilters = getSourceFilters();
+
+  // Concat the source filters to search url
+  searchURL = searchURL.concat(sourceFilters);
+
+  // Finally concat the api key to the search url
+  return searchURL.concat(`&apiKey=${NEWSAPIKEY}`);
+}
+
+function updateSearchResultsOnFilterChange(searchText) {
+  // Get all the input filters
+  let filters = [];
+
+  const sortByFilters = Array.from(
+    document.querySelectorAll(".filters__section--sort-by .filters__body input")
+  );
+  filters.push(sortByFilters);
+
+  const sourceFilters = Array.from(
+    document.querySelectorAll(".filters__section--sources .filters__body input")
+  );
+  filters.push(sourceFilters);
+
+  // Flatten the array
+  filters = filters.flat();
+
+  filters.forEach((filter) => {
+    filter.addEventListener("click", (e) => {
+      filterSearchResultsAndUpdateDOM(searchText);
+    });
+  });
+
+  // searchByDate
+  searchByDateRange(searchText);
+}
+
+function searchByDateRange(searchText) {
+  // Get the search be date form
+  const searchByDateFormElement = document.querySelector(
+    ".search-by-date-form"
+  );
+
+  searchByDateFormElement.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get the search url
+    const searchURL = getSearchURL(searchText);
+
+    filterSearchResultsAndUpdateDOM(searchText);
+  });
+}
+
+function addNumberOfSourceSelectedToDOM(sourcesSelectedCount) {
+  console.log(sourcesSelectedCount);
+  // Get the number of source filters selected element
+  const numberOfSourceSelectedElement = document.querySelector(
+    ".number-of-source-selected"
+  );
+
+  if (sourcesSelectedCount) {
+    numberOfSourceSelectedElement.textContent = sourcesSelectedCount;
+    numberOfSourceSelectedElement.classList.remove("hidden");
+    return;
+  }
+
+  numberOfSourceSelectedElement.classList.add("hidden");
+}
+
+async function filterSearchResultsAndUpdateDOM(searchText) {
+  // Get the filtered search URL
+  const filteredSearchURL = getSearchURL(searchText);
+
+  console.log(filteredSearchURL);
+
+  // Get the filteres search results
+  const filteredSearchResultsResponse = await fetchURL(filteredSearchURL);
+
+  const filteredSearchResultsCount = filteredSearchResultsResponse.totalResults;
+  const filteredSearchResultsRaw = filteredSearchResultsResponse.articles;
+
+  // Process the filtered search results
+  const filteredSearchResults = getProcessedData(filteredSearchResultsRaw);
+
+  // Update search results count
+  addSearchResultsCountToDom(filteredSearchResultsCount);
+
+  // Add filtered search results to DOM
+  addSearchResultsToDOM(filteredSearchResults);
 }
 
 async function initSearchResults() {
@@ -86,17 +232,20 @@ async function initSearchResults() {
   const searchURL = getSearchURL(searchText);
 
   // Fetch search results
-  // const { totalResults: searchResultsCount, articles: searchResultsRaw } =
-  //   await fetchURL(searchURL);
+  const { totalResults: searchResultsCount, articles: searchResultsRaw } =
+    await fetchURL(searchURL);
 
-  // // Add search results count to DOM
-  // addSearchResultsCountToDom(searchResultsCount);
+  // Add search results count to DOM
+  addSearchResultsCountToDom(searchResultsCount);
 
-  // // Process search results
-  // const searchResults = getProcessedData(searchResultsRaw);
+  // Process search results
+  const searchResults = getProcessedData(searchResultsRaw);
 
-  // // Add search results to DOM
-  // addSearchResultsToDOM(searchResults);
+  // Add search results to DOM
+  addSearchResultsToDOM(searchResults);
+
+  // Update search results when ever any filters are selected or disselected
+  updateSearchResultsOnFilterChange(searchText);
 }
 
 export default initSearchResults;
