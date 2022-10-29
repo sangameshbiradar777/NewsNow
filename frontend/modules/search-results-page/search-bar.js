@@ -5,10 +5,14 @@ function getSearchText() {
   // Extract the search text
   const searchText = urlParams.get("search") || "Nothing";
 
-  // Remove all the spaces search text
-  const compressedSearchText = searchText.replaceAll(" ", "");
+  // Change the document title
+  document.title = `${capitalizeText(searchText)} - NewsNow`;
 
-  return compressedSearchText;
+  return searchText;
+}
+
+function capitalizeText(text) {
+  return `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
 }
 
 function addSearchTextToDom() {

@@ -32,6 +32,10 @@
   outline: none;
 }
 
+.category-list__item__link:hover {
+  transform: scale(1.05);
+}
+
 /* Navbar ends */
 
 /* Trending section starts */
@@ -207,3 +211,31 @@ input[type="date"]:focus {
 }
 
 /* Language filters styles ends */
+
+/* Pagination styles starts */
+
+.pagination__pages__list__item:hover,
+.pagination__pages__item:hover {
+  background-color: var(--bg-primary-tint);
+  color: var(--text-primary);
+}
+
+.pagination__pages__list__item:hover {
+  transform: scale(1.1);
+}
+
+.pagination__pages__item:focus {
+  background-color: var(--bg-primary-tint);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 var(--spacing-4px) var(--bg-secondary-shade);
+  border: none;
+}
+
+.pagination__pages--disabled:hover,
+.pagination__pages--disabled:focus {
+  background-color: #ddd;
+  color: #999;
+  box-shadow: none;
+}
+
+/* Pagination styles ends */

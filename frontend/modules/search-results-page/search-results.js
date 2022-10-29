@@ -1,8 +1,15 @@
-import { baseURL, NEWSAPIKEY } from "../config.js";
+import {
+  baseURL,
+  NEWSAPIKEY,
+  newsImageFallbackURL,
+  searchResultsToDisplayPerPage,
+} from "../config.js";
 import { fetchURL } from "../homepage/helper.js";
 import { getSearchText, addSearchResultsCountToDom } from "./search-bar.js";
 import { getProcessedData, compressText } from "../data-processor.js";
-import { newsImageFallbackURL } from "../config.js";
+import initPagination from "../search-results-page/pagination.js";
+
+let searchResultsCount;
 
 function addSearchResultsToDOM(searchResults) {
   // Get the search results element from the DOM
@@ -113,8 +120,8 @@ function getSourceFilters() {
   return finalSourceFiltersString;
 }
 
-function getSearchURL(searchText) {
-  let searchURL = `${baseURL}q=${searchText}`;
+function getSearchURL(searchText, pageNumber = 1) {
+  let searchURL = `${baseURL}q=${searchText}&searchIn=title`;
 
   // Get the language to filter the search results based on language
   const selectedLanguage = document.querySelector(
@@ -122,8 +129,6 @@ function getSearchURL(searchText) {
   ).id;
 
   searchURL = searchURL.concat(`&language=${selectedLanguage}`);
-
-  console.log(selectedLanguage);
 
   // Get the dates to filter the search
   const [fromDate, toDate] = getFilterDates();
@@ -147,6 +152,13 @@ function getSearchURL(searchText) {
   // Concat the source filters to search url
   searchURL = searchURL.concat(sourceFilters);
 
+  // Concatt the page number and pageSize to search url
+  searchURL = searchURL.concat(
+    `&page=${pageNumber}&pageSize=${searchResultsToDisplayPerPage}`
+  );
+
+  console.log(searchURL);
+
   // Finally concat the api key to the search url
   return searchURL.concat(`&apiKey=${NEWSAPIKEY}`);
 }
@@ -169,8 +181,15 @@ function updateSearchResultsOnFilterChange(searchText) {
   filters = filters.flat();
 
   filters.forEach((filter) => {
-    filter.addEventListener("click", (e) => {
-      filterSearchResultsAndUpdateDOM(searchText);
+    filter.addEventListener("click", async (e) => {
+      const filteredSearchResultsCount = await filterSearchResultsAndUpdateDOM(
+        searchText
+      );
+
+      console.log(e.target);
+
+      // Initialize pagination
+      initPagination(filteredSearchResultsCount);
     });
   });
 
@@ -184,13 +203,18 @@ function searchByDateRange(searchText) {
     ".search-by-date-form"
   );
 
-  searchByDateFormElement.addEventListener("submit", function (e) {
+  searchByDateFormElement.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     // Get the search url
     const searchURL = getSearchURL(searchText);
 
-    filterSearchResultsAndUpdateDOM(searchText);
+    const filteredSearchResultsCount = await filterSearchResultsAndUpdateDOM(
+      searchText
+    );
+
+    // Initialize pagination
+    initPagination(filteredSearchResultsCount);
   });
 }
 
@@ -209,9 +233,9 @@ function addNumberOfSourceSelectedToDOM(sourcesSelectedCount) {
   numberOfSourceSelectedElement.classList.add("hidden");
 }
 
-async function filterSearchResultsAndUpdateDOM(searchText) {
+async function filterSearchResultsAndUpdateDOM(searchText, pageNumber) {
   // Get the filtered search URL
-  const filteredSearchURL = getSearchURL(searchText);
+  const filteredSearchURL = getSearchURL(searchText, pageNumber);
 
   console.log(filteredSearchURL);
 
@@ -229,9 +253,11 @@ async function filterSearchResultsAndUpdateDOM(searchText) {
 
   // Add filtered search results to DOM
   addSearchResultsToDOM(filteredSearchResults);
+
+  return filteredSearchResultsCount;
 }
 
-function resetFilters() {
+function resetFilters(searchText) {
   // Get all the reset btns
   const dateResetBtn = document.querySelector(".filters__btn--reset-date");
   const sortByResetBtn = document.querySelector(".filters__btn--reset-sort-by");
@@ -239,12 +265,22 @@ function resetFilters() {
     ".filters__btn--reset-sources"
   );
 
-  dateResetBtn.addEventListener("click", function () {
+  dateResetBtn.addEventListener("click", async function () {
     document.querySelector("#filter-from").value = "";
     document.querySelector("#filter-to").value = "";
+
+    // Update search results
+    // Update search results
+    const filteredSearchResultsCount = await filterSearchResultsAndUpdateDOM(
+      searchText
+    );
+
+    // Initialize pagination
+    initPagination(filteredSearchResultsCount);
   });
 
-  function resetInputs() {
+  async function resetInputs(searchText) {
+    console.log(this);
     const filtersSection = this.closest(".filters__section");
 
     const inputElements = filtersSection.querySelectorAll(
@@ -258,25 +294,35 @@ function resetFilters() {
 
     // If the clicked button is source reset btn hide number of source selected element
     addNumberOfSourceSelectedToDOM(0);
+
+    // Update search results
+    const filteredSearchResultsCount = await filterSearchResultsAndUpdateDOM(
+      searchText
+    );
+
+    // Initialize pagination
+    initPagination(filteredSearchResultsCount);
   }
 
-  sortByResetBtn.addEventListener("click", resetInputs);
+  sortByResetBtn.addEventListener("click", function () {
+    resetInputs.call(this, searchText);
+  });
 
-  sourcesResetBtn.addEventListener("click", resetInputs);
+  sourcesResetBtn.addEventListener("click", function () {
+    resetInputs.call(this, searchText);
+  });
 }
 
 async function initSearchResults() {
   // Get the search text
   const searchText = getSearchText();
 
-  // Create a search url
-  // const searchURL = `${baseURL}q=${searchText}&apiKey=${NEWSAPIKEY}`;
-
   const searchURL = getSearchURL(searchText);
 
   // Fetch search results
-  const { totalResults: searchResultsCount, articles: searchResultsRaw } =
-    await fetchURL(searchURL);
+  const searchResultsResponse = await fetchURL(searchURL);
+  searchResultsCount = searchResultsResponse.totalResults;
+  const searchResultsRaw = searchResultsResponse.articles;
 
   // Add search results count to DOM
   addSearchResultsCountToDom(searchResultsCount);
@@ -291,7 +337,11 @@ async function initSearchResults() {
   updateSearchResultsOnFilterChange(searchText);
 
   // Reset filters
-  resetFilters();
+  resetFilters(searchText);
 }
 
-export { initSearchResults, filterSearchResultsAndUpdateDOM };
+export {
+  initSearchResults,
+  filterSearchResultsAndUpdateDOM,
+  searchResultsCount,
+};

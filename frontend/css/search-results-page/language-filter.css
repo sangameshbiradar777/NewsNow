@@ -28,6 +28,11 @@
   position: relative;
 }
 
+.language-filter__body:has(.language-filter__dropdown--hidden)
+  .language-filter__dropdown-icon {
+  transform: rotate(0);
+}
+
 .language-filter__selected {
   display: flex;
   align-items: center;
@@ -74,6 +79,7 @@
 
 .language-filter__dropdown-icon {
   margin-left: var(--spacing-24px);
+  transform: rotate(180deg);
 }
 
 .language-filter__dropdown__item--selected {

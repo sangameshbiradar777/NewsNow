@@ -22,6 +22,10 @@
   font-family: "Inter Tight", sans-serif;
 }
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 /* 
 * Color pallet
 * Primary color - #C1121F;
@@ -140,6 +144,9 @@
 }
 
 /* Utility classes ends */
+
+
+
 
 /* Custom scrollbar starts */
 

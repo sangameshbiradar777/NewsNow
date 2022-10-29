@@ -1,172 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NewsNow | News from all over the world</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700&display=swap"
-      rel="stylesheet"
-    />
 
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/homepage/navbar.css" />
-    <link rel="stylesheet" href="./css/homepage/trending-section.css" />
-    <link rel="stylesheet" href="./css/homepage/carousel.css" />
-    <link rel="stylesheet" href="./css/homepage/news-sections.css" />
-    <link rel="stylesheet" href="./css/states.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewsNow | News from all over the world</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <div class="page">
-      <!-- Navbar starts -->
-      <nav class="navbar">
-        <h1 class="navbar__logo">
-          <a href="/frontend/">NewsNow</a>
-        </h1>
-        <div class="navbar__datetime">
-          <span class="navbar__date"></span>
-          <span class="navbar__time"></span>
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/homepage/navbar.css" />
+  <link rel="stylesheet" href="./css/homepage/trending-section.css" />
+  <link rel="stylesheet" href="./css/homepage/carousel.css" />
+  <link rel="stylesheet" href="./css/homepage/news-sections.css" />
+  <link rel="stylesheet" href="./css/states.css" />
+</head>
+
+<body>
+  <div class="page">
+    <!-- Navbar starts -->
+    <nav class="navbar">
+      <h1 class="navbar__logo">
+        <a href="/frontend/">NewsNow</a>
+      </h1>
+      <div class="navbar__datetime">
+        <span class="navbar__date"></span>
+        <span class="navbar__time"></span>
+      </div>
+      <div class="navbar__items">
+        <form class="navbar__search-container search-form">
+          <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
+          <input type="text" name="search-text" autocomplete="off" placeholder="Search" required />
+          <ion-icon class="navbar__search__clear-icon search__clear-icon hide-clear-icon" name="close-outline">
+          </ion-icon>
+        </form>
+        <div class="navbar__links">
+          <button class="btn btn--navbar-link btn--navbar-link--categories">Categories</button>
+          <ul class="navbar__links__category-list category-list--hidden">
+            <li class="category-list__item category-list__item--top-news">
+              <a href="#top-news-section" class="category-list__item__link">Top News</a>
+            </li>
+            <li class="category-list__item category-list__item--technology">
+              <a href="#technology-section" class="category-list__item__link">Technology</a>
+            </li>
+            <li class="category-list__item category-list__item--sports">
+              <a href="#sports-section" class="category-list__item__link">Sports</a>
+            </li>
+            <li class="category-list__item category-list__item--entertainment">
+              <a href="#entertainment-section" class="category-list__item__link">Entertainment</a>
+            </li>
+            <li class="category-list__item category-list__item--business">
+              <a href="#business-section" class="category-list__item__link">Business</a>
+            </li>
+            <li class="category-list__item category-list__item--health">
+              <a href="#health-section" class="category-list__item__link">Health</a>
+            </li>
+            <li class="category-list__item category-list__item--science">
+              <a href="#science-section" class="category-list__item__link">Science</a>
+            </li>
+          </ul>
+          <a href="frontend/pages/bookmarks/bookmarks.html" class="navbar__bookmarks-link">
+            Bookmarks
+          </a>
         </div>
-        <div class="navbar__items">
-          <form class="navbar__search-container search-form">
-            <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
-            <input
-              type="text"
-              name="search-text"
-              autocomplete="off"
-              placeholder="Search"
-              required
-            />
-            <ion-icon
-              class="navbar__search__clear-icon search__clear-icon hide-clear-icon"
-              name="close-outline"
-            ></ion-icon>
-          </form>
-          <div class="navbar__links">
-            <button class="btn btn--navbar-link">Categories</button>
-            <a
-              href="frontend/pages/bookmarks/bookmarks.html"
-              class="navbar__bookmarks-link"
-            >
-              Bookmarks
-            </a>
-          </div>
+      </div>
+    </nav>
+    <!-- Navbar ends -->
+
+    <!-- Main section starts -->
+    <main>
+      <!-- Header starts -->
+      <header class="section trending-section">
+        <h2 class="section-heading">Trending</h2>
+        <div class="trending-section__grid"></div>
+      </header>
+      <!-- Header ends -->
+
+      <!-- Top news section starts -->
+      <section id="top-news-section" class="section section--top-news">
+        <h2 class="section-heading section-heading--top-news">Top News</h2>
+        <div class="news-container news-container--top-news">
+          <div class="news news--top-news"></div>
         </div>
-      </nav>
-      <!-- Navbar ends -->
+      </section>
+      <!-- Top news section ends -->
 
-      <!-- Main section starts -->
-      <main>
-        <!-- Header starts -->
-        <header class="section trending-section">
-          <h2 class="section-heading">Trending</h2>
-          <div class="trending-section__grid"></div>
-        </header>
-        <!-- Header ends -->
+      <!-- Technology news section starts -->
+      <section id="technology-section" class="section section--technology-news">
+        <h2 class="section-heading">Technology</h2>
+        <div class="news-container">
+          <div class="news news--technology-news"></div>
+        </div>
+      </section>
+      <!-- Technology news section ends -->
 
-        <!-- Top news section starts -->
-        <section class="section section--top-news">
-          <h2 class="section-heading section-heading--top-news">Top News</h2>
-          <div class="news-container news-container--top-news">
-            <div class="news news--top-news"></div>
-          </div>
-        </section>
-        <!-- Top news section ends -->
+      <!-- Sports news section starts -->
+      <section id="sports-section" class="section section--sports-news">
+        <h2 class="section-heading">Sports</h2>
+        <div class="news-container">
+          <div class="news news--sports-news"></div>
+        </div>
+      </section>
+      <!-- Sports news section ends -->
 
-        <!-- Technology news section starts -->
-        <section class="section section--technology-news">
-          <h2 class="section-heading">Technology</h2>
-          <div class="news-container">
-            <div class="news news--technology-news"></div>
-          </div>
-        </section>
-        <!-- Technology news section ends -->
+      <!-- Entertainment news section starts -->
+      <section id="entertainment-section" class="section section--entertainment-news">
+        <h2 class="section-heading">Entertainment</h2>
+        <div class="news-container">
+          <div class="news news--entertainment-news"></div>
+        </div>
+      </section>
+      <!-- Entertainment news section ends -->
 
-        <!-- Sports news section starts -->
-        <section class="section section--sports-news">
-          <h2 class="section-heading">Sports</h2>
-          <div class="news-container">
-            <div class="news news--sports-news"></div>
-          </div>
-        </section>
-        <!-- Sports news section ends -->
+      <!-- Business news section starts -->
+      <section id="business-section" class="section section--business-news">
+        <h2 class="section-heading">Business</h2>
+        <div class="news-container">
+          <div class="news news--business-news"></div>
+        </div>
+      </section>
+      <!-- Business news section ends -->
 
-        <!-- Entertainment news section starts -->
-        <section class="section section--entertainment-news">
-          <h2 class="section-heading">Entertainment</h2>
-          <div class="news-container">
-            <div class="news news--entertainment-news"></div>
-          </div>
-        </section>
-        <!-- Entertainment news section ends -->
+      <!-- Health news section starts -->
+      <section id="health-section" class="section section--health-news">
+        <h2 class="section-heading">Health</h2>
+        <div class="news-container">
+          <div class="news news--health-news"></div>
+        </div>
+      </section>
+      <!-- Health news section ends -->
 
-        <!-- Business news section starts -->
-        <section class="section section--business-news">
-          <h2 class="section-heading">Business</h2>
-          <div class="news-container">
-            <div class="news news--business-news"></div>
-          </div>
-        </section>
-        <!-- Business news section ends -->
+      <!-- Science news section starts -->
+      <section id="science-section" class="section section--science-news">
+        <h2 class="section-heading">Science</h2>
+        <div class="news-container">
+          <div class="news news--science-news"></div>
+        </div>
+      </section>
+      <!-- Science news section ends -->
+    </main>
+    <!-- Main section ends -->
+  </div>
 
-        <!-- Health news section starts -->
-        <section class="section section--health-news">
-          <h2 class="section-heading">Health</h2>
-          <div class="news-container">
-            <div class="news news--health-news"></div>
-          </div>
-        </section>
-        <!-- Health news section ends -->
+  <!-- Ion icons scripts starts -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- Ion icons scripts ends -->
 
-        <!-- Science news section starts -->
-        <section class="section section--science-news">
-          <h2 class="section-heading">Science</h2>
-          <div class="news-container">
-            <div class="news news--science-news"></div>
-          </div>
-        </section>
-        <!-- Science news section ends -->
-      </main>
-      <!-- Main section ends -->
-    </div>
+  <!-- page script starts -->
+  <script type="module">
+    import { addDateTimeToNavbar } from "./modules/addDateTimeToNavbar.js";
+    import initTrendingSection from "./modules/homepage/trending-section.js";
+    import initNewsSections from "./modules/homepage/news-sections.js";
+    import initSearch from "./modules/homepage/search.js";
+    import initCategories from './modules/homepage/navbar.js';
 
-    <!-- Ion icons scripts starts -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-    <!-- Ion icons scripts ends -->
+    function init() {
+      // Add date and time to navbar
+      addDateTimeToNavbar();
 
-    <!-- page script starts -->
-    <script type="module">
-      import { addDateTimeToNavbar } from "./modules/addDateTimeToNavbar.js";
-      import initTrendingSection from "./modules/homepage/trending-section.js";
-      import initNewsSections from "./modules/homepage/news-sections.js";
-      import initSearch from "./modules/homepage/search.js";
+      // Initialize trending section
+      initTrendingSection();
 
-      function init() {
-        // Add date and time to navbar
-        addDateTimeToNavbar();
+      // Initialize news sections
+      initNewsSections();
 
-        // Initialize trending section
-        initTrendingSection();
+      // Initialize search functionality
+      initSearch();
 
-        // Initialize news sections
-        initNewsSections();
+      // Initialize categories
+      initCategories();
+    }
 
-        // Initialize search functionality
-        initSearch();
-      }
+    init();
+  </script>
+  <!-- page script ends -->
+</body>
 
-      init();
-    </script>
-    <!-- page script ends -->
-  </body>
 </html>

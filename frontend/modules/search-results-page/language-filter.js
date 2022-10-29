@@ -1,5 +1,6 @@
 import { filterSearchResultsAndUpdateDOM } from "./search-results.js";
 import { getSearchText } from "./search-bar.js";
+import initPagination from "./pagination.js";
 
 // Get the language filter dropdown
 const languageFilterDropDownElement = document.querySelector(
@@ -23,11 +24,21 @@ function toggleLanguageFilterDropDown() {
       "language-filter__dropdown--hidden"
     );
   });
+
+  document.body.addEventListener('click', function(e) {
+    if(e.target === languageFilterSelectBtn) return "";
+
+    console.log('click')
+
+    if(!languageFilterDropDownElement.classList.contains('.language-filter__dropdown--hidden')) {
+      languageFilterDropDownElement.classList.add('language-filter__dropdown--hidden');
+    }
+  })
 }
 
 function changeLanguage() {
   // Listen for click event on language filter drop down
-  languageFilterDropDownElement.addEventListener("click", function (e) {
+  languageFilterDropDownElement.addEventListener("click", async function (e) {
     // If the clicked item is not dropdown item just return
     if (!e.target.classList.contains("language-filter__dropdown__item")) return;
 
@@ -65,7 +76,12 @@ function changeLanguage() {
     const searchText = getSearchText();
 
     // update search results based on selected language
-    filterSearchResultsAndUpdateDOM(searchText);
+    const filteredSearchResultsCount = await filterSearchResultsAndUpdateDOM(
+      searchText
+    );
+
+    // Initialize pagination
+    initPagination(filteredSearchResultsCount);
   });
 }
 

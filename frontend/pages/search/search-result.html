@@ -26,6 +26,10 @@
       rel="stylesheet"
       href="../../css/search-results-page/search-results-page.css"
     />
+    <link
+      rel="stylesheet"
+      href="../../css/search-results-page/pagination.css"
+    />
   </head>
 
   <body>
@@ -66,7 +70,7 @@
     </nav>
     <!-- Navbar ends -->
 
-    <header class="search-section">
+    <header id="search-container" class="search-section">
       <div class="search__items">
         <form action="" class="search__container search-form">
           <ion-icon class="icon search__icon" name="search"></ion-icon>
@@ -244,6 +248,7 @@
           </div>
         </div>
       </div>
+
       <section class="section section--search-results">
         <div class="search-content-grid">
           <div class="filters">
@@ -335,6 +340,28 @@
       </section>
     </main>
 
+    <section class="section section--pagination">
+      <div class="pagination">
+        <div class="pagination__pages">
+          <button
+            class="btn pagination__pages__item pagination__pages__prev pagination__pages--disabled"
+          >
+            <ion-icon
+              class="pagination__icon-prev"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </button>
+          <ul class="pagination__pages__list"></ul>
+          <button class="btn pagination__pages__next pagination__pages__item">
+            <ion-icon
+              class="pagination__icon-next"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- Ion icons scripts starts -->
     <script
       type="module"
@@ -354,8 +381,9 @@
       import initLanguageFilter from "../../modules/search-results-page/language-filter.js";
       import { addSearchTextToDom } from "../../modules/search-results-page/search-bar.js";
       import { initSearchResults } from "../../modules/search-results-page/search-results.js";
+      import initPaginaiton from "../../modules/search-results-page/pagination.js";
 
-      function init() {
+      async function init() {
         // Add date and time to navbar
         addDateTimeToNavbar();
 
@@ -371,8 +399,11 @@
         // Add search text to dom
         addSearchTextToDom();
 
-        // Initialixe search results
-        initSearchResults();
+        // Initialize search results
+        await initSearchResults();
+
+        // Initialize pagination
+        initPaginaiton();
       }
 
       init();

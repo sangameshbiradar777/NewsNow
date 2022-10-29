@@ -1,0 +1,62 @@
+/** Type scale System */
+/** 38px, 30px, 24px, 19px, 15px, 12.5px, 10px, 8px, 6px, 5px  */
+
+/** Spacing System */
+/** 400px, 350px, 300px, 160px, 120px, 96px, 80px, 64px, 48px, 40px, 32px, 24px, 16px, 12px, 8px, 4px, 2px */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  color: #444;
+}
+
+.pagination__pages {
+  display: flex;
+  list-style-type: none;
+  gap: var(--spacing-4px);
+}
+
+.pagination__pages__list {
+  display: flex;
+  list-style-type: none;
+  gap: var(--spacing-4px);
+}
+
+.pagination__pages__item {
+  display: flex;
+  align-items: center;
+  font-size: var(--fs-19px);
+  padding: var(--spacing-8px) var(--spacing-16px);
+  border: 1px solid #ddd;
+  border-radius: var(--spacing-4px);
+  cursor: pointer;
+}
+
+.pagination__pages__list__item {
+  font-size: var(--fs-19px);
+  padding: var(--spacing-8px) var(--spacing-16px);
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: var(--spacing-4px);
+}
+
+.pagination__current-page {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: none;
+}
+
+.pagination__icon-prev {
+  margin-right: var(--spacing-2px);
+  transition: none;
+}
+
+.pagination__icon-next {
+  margin-left: var(--spacing-2px);
+  transition: none;
+}
+
+.pagination__pages--disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}

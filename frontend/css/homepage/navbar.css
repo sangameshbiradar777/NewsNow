@@ -92,6 +92,7 @@
   display: flex;
   gap: var(--spacing-24px);
   align-items: center;
+  position: relative;
 }
 
 .navbar__links > * {
@@ -105,5 +106,73 @@
 .navbar__bookmarks-link {
   text-decoration: none;
 }
+
+/* Categories style starts */
+
+.navbar__links__category-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8px);
+  padding: var(--spacing-8px);
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: var(--bg-secondary-tint);
+  z-index: 10;
+  border-radius: var(--spacing-4px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.category-list__item__link {
+  color: var(--text-primary);
+  text-decoration: none;
+  display: inline-block;
+  padding: var(--spacing-8px) var(--spacing-16px);
+}
+
+.category-list__item--top-news {
+  background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0,0,0, .5)), url('https://images.pexels.com/photos/242492/pexels-photo-242492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+}
+
+.category-list__item--technology {
+  background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0,0,0, .5)), url('https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg');
+}
+
+.category-list__item--sports {
+  background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0,0,0, .5)), url('https://cdn.pixabay.com/photo/2016/11/23/15/28/architecture-1853520_1280.jpg');
+}
+
+.category-list__item--entertainment {
+  background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0,0,0, .5)), url('https://images.pexels.com/photos/2034851/pexels-photo-2034851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+}
+
+.category-list__item--business {
+  background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0,0,0, .5)), url('https://images.pexels.com/photos/1737957/pexels-photo-1737957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+}
+
+.category-list__item--health {
+  background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0,0,0, .5)), url('https://cdn.pixabay.com/photo/2017/04/22/10/15/woman-2250970_1280.jpg');
+}
+
+.category-list__item--science {
+  background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0,0,0, .5)), url('https://cdn.pixabay.com/photo/2017/10/17/19/11/fantasy-2861815_1280.jpg');
+}
+
+.category-list__item {
+  list-style-type: none;
+  text-align: center;
+  border-radius: var(--spacing-4px);
+  background-size: cover;
+  background-position: center;
+}
+
+.category-list--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10%);
+}
+
+/* Categories style ends */
 
 /* Navbar ends */

@@ -1,4 +1,4 @@
-const NEWSAPIKEY = `bcc447f10d124229935dceeae5858aad`;
+const NEWSAPIKEY = `b720fe057ca34e46809d9e53a42ac6bd`;
 const baseURL = `https://newsapi.org/v2/everything?`;
 const trendingNewsURL = `https://newsapi.org/v2/top-headlines?language=en&apiKey=${NEWSAPIKEY}`;
 const topNewsURL = `https://newsapi.org/v2/top-headlines?country=in&language=en&apiKey=${NEWSAPIKEY}`;
@@ -12,6 +12,11 @@ const sourcesURL = `https://newsapi.org/v2/top-headlines/sources?language=en&api
 const CONTENTCHARACTERLIMIT = 150;
 const AUTHORCHARACHTERLIMIT = 20;
 const MAXCHARACTERLIMIT = 200;
+
+const searchResultsToDisplayPerPage = 10;
+
+// For developer/free plan only 100 search results are allowed
+const maximumSearchResultsAllowed = 100;
 
 const newsImageFallbackURL = `https://images.pexels.com/photos/10464454/pexels-photo-10464454.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`;
 
@@ -31,4 +36,6 @@ export {
   newsImageFallbackURL,
   NEWSAPIKEY,
   baseURL,
+  searchResultsToDisplayPerPage,
+  maximumSearchResultsAllowed,
 };
