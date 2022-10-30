@@ -4,6 +4,8 @@ import topHeadlines from "../../../backend/top-headlines.js";
 let newsURLResponse;
 async function fetchNews(newsURL) {
   try {
+    newsURL = 'https://guarded-beach-97677.herokuapp.com/' + newsURL;
+    console.log(newsURL)
     newsURLResponse = await fetch(newsURL);
 
     if (newsURLResponse.ok) {
