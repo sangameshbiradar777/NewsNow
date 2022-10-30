@@ -18,13 +18,43 @@ let maximumSearchResults;
 const searchText = getSearchText();
 
 // Get the page numbers list
-const pageNumbersListElement = document.querySelector(
-  ".pagination__pages__list"
-);
+let pageNumbersListElement;
 
 // Get prev and next page elements
-const prevPageElement = document.querySelector(".pagination__pages__prev");
-const nextPageElement = document.querySelector(".pagination__pages__next");
+let prevPageElement;
+let nextPageElement;
+
+function addPaginationToDOM() {
+  // Get the pagination element
+  const paginationElement = document.querySelector('.pagination');
+
+  paginationElement.innerHTML = `
+    <div class="pagination__pages">
+      <button
+        class="btn pagination__pages__item pagination__pages__prev pagination__pages--disabled"
+      >
+        <ion-icon
+          class="pagination__icon-prev"
+          name="chevron-back-outline"
+        ></ion-icon>
+      </button>
+      <ul class="pagination__pages__list"></ul>
+      <button class="btn pagination__pages__next pagination__pages__item">
+        <ion-icon
+          class="pagination__icon-next"
+          name="chevron-forward-outline"
+        ></ion-icon>
+      </button>
+    </div>
+  `;
+
+  pageNumbersListElement = document.querySelector(
+    ".pagination__pages__list"
+  );
+
+  prevPageElement = document.querySelector(".pagination__pages__prev");
+  nextPageElement = document.querySelector(".pagination__pages__next");
+}
 
 function addPageNumbersToDom(currentPageNumber) {
   // Empty the page number list element
@@ -165,8 +195,12 @@ function initPagination(filteredSearchResults = searchResultsCount) {
   resultsCount = filteredSearchResults;
   currentPageNumber = 1;
 
+  // If there are no results just return
+  if(resultsCount === 0) return;
+
   console.log(resultsCount);
-  console.log("currentpage", currentPageNumber);
+
+  addPaginationToDOM();
 
   // Add page numbers to dom
   addPageNumbersToDom(currentPageNumber);

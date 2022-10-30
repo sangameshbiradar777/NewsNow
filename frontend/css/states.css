@@ -29,6 +29,7 @@
 .navbar__links > *:focus {
   border-radius: var(--spacing-4px);
   box-shadow: 0 0 0 var(--spacing-4px) var(--bg-secondary-shade);
+  color: var(--text-primary);
   outline: none;
 }
 

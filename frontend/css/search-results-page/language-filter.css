@@ -28,9 +28,9 @@
   position: relative;
 }
 
-.language-filter__body:has(.language-filter__dropdown--hidden)
+.language-filter__body:not(:has(.language-filter__dropdown--hidden))
   .language-filter__dropdown-icon {
-  transform: rotate(0);
+  transform: rotate(180deg);
 }
 
 .language-filter__selected {
@@ -79,7 +79,6 @@
 
 .language-filter__dropdown-icon {
   margin-left: var(--spacing-24px);
-  transform: rotate(180deg);
 }
 
 .language-filter__dropdown__item--selected {

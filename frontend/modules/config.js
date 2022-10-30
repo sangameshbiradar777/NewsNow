@@ -1,4 +1,4 @@
-const NEWSAPIKEY = `b720fe057ca34e46809d9e53a42ac6bd`;
+const NEWSAPIKEY = `f8020bac276b4c698fc5282bb4e2b702`;
 const baseURL = `https://newsapi.org/v2/everything?`;
 const trendingNewsURL = `https://newsapi.org/v2/top-headlines?language=en&apiKey=${NEWSAPIKEY}`;
 const topNewsURL = `https://newsapi.org/v2/top-headlines?country=in&language=en&apiKey=${NEWSAPIKEY}`;

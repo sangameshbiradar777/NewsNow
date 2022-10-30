@@ -239,20 +239,44 @@ async function filterSearchResultsAndUpdateDOM(searchText, pageNumber) {
 
   console.log(filteredSearchURL);
 
+  let filteredSearchResultsResponse;
+
   // Get the filteres search results
-  const filteredSearchResultsResponse = await fetchURL(filteredSearchURL);
+  try {
+    // Fetch search results
+    filteredSearchResultsResponse = await fetchURL(filteredSearchURL);
+
+    // Check if the response is successful or not
+    if (filteredSearchResultsResponse.status !== "ok") {
+      const errorMessage =
+        "Server is experiencing high traffic. Please try again later.";
+      throw new Error(errorMessage);
+    }
+  } catch (error) {
+    console.log(error.message);
+
+    // Add error message to dom
+    addErrorMessageToDOM(error.message);
+
+    return;
+  }
 
   const filteredSearchResultsCount = filteredSearchResultsResponse.totalResults;
-  const filteredSearchResultsRaw = filteredSearchResultsResponse.articles;
 
-  // Process the filtered search results
-  const filteredSearchResults = getProcessedData(filteredSearchResultsRaw);
+  if (filteredSearchResultsCount) {
+    const filteredSearchResultsRaw = filteredSearchResultsResponse.articles;
+
+    // Process the filtered search results
+    const filteredSearchResults = getProcessedData(filteredSearchResultsRaw);
+
+    // Add filtered search results to DOM
+    addSearchResultsToDOM(filteredSearchResults);
+  } else {
+    addNoResultsFoundMessageToDOM(true);
+  }
 
   // Update search results count
   addSearchResultsCountToDom(filteredSearchResultsCount);
-
-  // Add filtered search results to DOM
-  addSearchResultsToDOM(filteredSearchResults);
 
   return filteredSearchResultsCount;
 }
@@ -313,15 +337,118 @@ function resetFilters(searchText) {
   });
 }
 
+function hideSearchAndPaginationElements() {
+  // Hide the search text elements
+  document.querySelector(".search__text-heading").style.display = "none";
+  document.querySelector(".search__results-text").style.display = "none";
+  document.querySelector(".section--pagination").style.display = "none";
+}
+
+function addErrorMessageToDOM(errorMessage) {
+  // Get the main element
+  const mainElement = document.querySelector("main");
+
+  // Set the inner html of main element to empty
+  mainElement.innerHTML = "";
+
+  hideSearchAndPaginationElements();
+
+  // Create an error message element
+  const errorMessageElement = document.createElement("div");
+  errorMessageElement.setAttribute("class", "error-container");
+
+  errorMessageElement.innerHTML = `
+    <p class="error__heading">Error: Too many requests</p>
+    <div class="error__img-container">
+      <img class="error__img" src="/frontend/src/images/error-image.png" alt="Error image">
+    </div>
+    <h3 class="error__message">${errorMessage}</h3>
+  `;
+
+  mainElement.append(errorMessageElement);
+}
+
+function addNoResultsFoundMessageToDOM(forFilterResults = false) {
+  const searchText = getSearchText();
+
+  const noResultsFoudElement = document.createElement("div");
+  const className = forFilterResults ? 'no-results-container no-results-container--filters' : 'no-results-container';
+  noResultsFoudElement.setAttribute("class", className);
+
+  noResultsFoudElement.innerHTML = `
+    <div class="no-results__img-container">
+      <img class="no-results__img" src="/frontend/src/images/no-results.webp" alt="Error image">
+    </div>
+    <h3 class="no-results__message">
+      Sorry we coudn't find any results for ${
+        forFilterResults ? "this filter." : `<span>${searchText}</span>`
+      }
+    </h3>
+    <p class="no-results__description">
+      ${
+        forFilterResults
+          ? "Try changing the filter"
+          : "Try searching with another term"
+      }
+    </p>
+  `;
+
+  if (!forFilterResults) {
+    // Get the main element
+    const mainElement = document.querySelector("main");
+
+    // Set the inner html of main element to empty
+    mainElement.innerHTML = "";
+
+    hideSearchAndPaginationElements();
+
+    mainElement.append(noResultsFoudElement);
+
+    return;
+  }
+
+  // If the function is called for filter results empty the search results container
+  const searchResultsElement = document.querySelector(".search-results");
+  searchResultsElement.innerHTML = "";
+
+  // Empty pagination
+  document.querySelector('.pagination').innerHTML = "";
+
+  searchResultsElement.append(noResultsFoudElement);
+}
+
 async function initSearchResults() {
   // Get the search text
   const searchText = getSearchText();
 
   const searchURL = getSearchURL(searchText);
 
-  // Fetch search results
-  const searchResultsResponse = await fetchURL(searchURL);
+  let searchResultsResponse;
+
+  try {
+    // Fetch search results
+    searchResultsResponse = await fetchURL(searchURL);
+
+    console.log(searchResultsResponse);
+
+    // Check if the response is successful or not
+    if (searchResultsResponse.status !== "ok") {
+      const errorMessage =
+        "Server is experiencing high traffic. Please try again later.";
+      throw new Error(errorMessage);
+    }
+  } catch (error) {
+    console.log(error.message);
+
+    // Add error message to dom
+    addErrorMessageToDOM(error.message);
+
+    return;
+  }
+
   searchResultsCount = searchResultsResponse.totalResults;
+
+  if (searchResultsCount === 0) addNoResultsFoundMessageToDOM();
   const searchResultsRaw = searchResultsResponse.articles;
 
   // Add search results count to DOM

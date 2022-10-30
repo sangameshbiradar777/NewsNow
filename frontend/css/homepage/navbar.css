@@ -173,6 +173,21 @@
   transform: translateY(-10%);
 }
 
+.btn--navbar-link--categories {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4px);
+  justify-content: space-between;
+}
+
+/* .btn--navbar-link--categories__icon {
+  
+} */
+
+.navbar__links:not(:has(.category-list--hidden)) .btn--navbar-link--categories__icon {
+  transform: rotate(180deg);
+}
+
 /* Categories style ends */
 
 /* Navbar ends */

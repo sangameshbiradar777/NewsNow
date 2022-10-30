@@ -26,9 +26,9 @@ function toggleLanguageFilterDropDown() {
   });
 
   document.body.addEventListener('click', function(e) {
-    if(e.target === languageFilterSelectBtn) return "";
+    if(e.target.closest('.language-filter__selected') === languageFilterSelectBtn) return "";
 
-    console.log('click')
+    console.log(e.target)
 
     if(!languageFilterDropDownElement.classList.contains('.language-filter__dropdown--hidden')) {
       languageFilterDropDownElement.classList.add('language-filter__dropdown--hidden');

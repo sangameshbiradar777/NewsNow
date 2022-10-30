@@ -18,7 +18,9 @@ function hideCategoryList() {
   })
 
   document.body.addEventListener('click', function(e) {
-    if(e.target == categoriesBtn) return;
+    if(e.target.closest('.btn--navbar-link--categories') === categoriesBtn) return;
+
+    console.log(e.target)
 
     if(!categoryListElement.classList.contains('category-list--hidden')) {
       categoryListElement.classList.add('category-list--hidden');
