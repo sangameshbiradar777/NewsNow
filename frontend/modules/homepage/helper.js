@@ -1,4 +1,4 @@
-import topHeadlines from "../../../backend/top-headlines.js";
+
 
 // Implementation of the function fetchTrendingNews
 let newsURLResponse;
