@@ -24,7 +24,7 @@ function addSearchFunctionality() {
 
       const searchText = searchElements[index].value;
 
-      window.location.href = `../../../frontend/pages/search/search-result.html?search=${searchText}`;
+      window.location.href = `../../pages/search/search-result.html?search=${searchText}`;
     });
   });
 }
