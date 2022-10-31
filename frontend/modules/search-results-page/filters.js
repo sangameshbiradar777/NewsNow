@@ -1,4 +1,3 @@
-import sourcesStatic from "../../../backend/sources.js";
 import { sourcesURL } from "../config.js";
 import { fetchURL } from "../homepage/helper.js";
 
@@ -43,11 +42,7 @@ async function initFilters() {
   );
 
   // Get sources using API
-  // const sourcesResponse = await fetchURL(sourcesURL);
-
-  // ! Temporary
-  const sourcesResponse = sourcesStatic;
-  // ! Temporary
+  const sourcesResponse = await fetchURL(sourcesURL);
 
   const sources = sourcesResponse.sources;
 
