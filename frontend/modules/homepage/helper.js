@@ -4,7 +4,7 @@
 let newsURLResponse;
 async function fetchNews(newsURL) {
   try {
-    newsURL = 'https://newsnow-api.herokuapp.com/getnews/' + newsURL;
+    newsURL = 'https://newsnow-api.herokuapp.com/getnews/' + encodeURIComponent(newsURL);
     console.log(newsURL)
     newsURLResponse = await fetch(newsURL);
 
