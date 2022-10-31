@@ -360,7 +360,7 @@ function addErrorMessageToDOM(errorMessage) {
   errorMessageElement.innerHTML = `
     <p class="error__heading">Error: Too many requests</p>
     <div class="error__img-container">
-      <img class="error__img" src="/frontend/src/images/error-image.png" alt="Error image">
+      <img class="error__img" src="../../src/images/error-image.png" alt="Error image">
     </div>
     <h3 class="error__message">${errorMessage}</h3>
   `;
@@ -377,7 +377,7 @@ function addNoResultsFoundMessageToDOM(forFilterResults = false) {
 
   noResultsFoudElement.innerHTML = `
     <div class="no-results__img-container">
-      <img class="no-results__img" src="/frontend/src/images/no-results.webp" alt="Error image">
+      <img class="no-results__img" src="../../src/images/no-results.webp" alt="Error image">
     </div>
     <h3 class="no-results__message">
       Sorry we coudn't find any results for ${
