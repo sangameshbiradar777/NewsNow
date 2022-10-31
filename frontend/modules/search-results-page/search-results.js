@@ -1,6 +1,5 @@
 import {
   baseURL,
-  NEWSAPIKEY,
   newsImageFallbackURL,
   searchResultsToDisplayPerPage,
 } from "../config.js";
@@ -159,8 +158,10 @@ function getSearchURL(searchText, pageNumber = 1) {
 
   console.log(searchURL);
 
-  // Finally concat the api key to the search url
-  return searchURL.concat(`&apiKey=${NEWSAPIKEY}`);
+  // // Finally concat the api key to the search url
+  // return searchURL.concat(`&apiKey=${NEWSAPIKEY}`);
+
+  return searchURL;
 }
 
 function updateSearchResultsOnFilterChange(searchText) {
