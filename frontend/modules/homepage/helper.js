@@ -1,10 +1,11 @@
 
+
 // Implementation of the function fetchTrendingNews
 let newsURLResponse;
 async function fetchNews(newsURL) {
   try {
-    newsURL = 'https://newsnow-api.herokuapp.com/getnews/' + encodeURIComponent(newsURL);
-    console.log(newsURL);
+    newsURL = 'https://guarded-beach-97677.herokuapp.com/' + newsURL;
+    console.log(newsURL)
     newsURLResponse = await fetch(newsURL);
 
     if (newsURLResponse.ok) {
