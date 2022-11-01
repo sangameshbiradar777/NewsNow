@@ -11,7 +11,7 @@ console.log(`Working API key - 🔑${APIKey}🔑`);
 async function fetchNews(newsURL) {
   try {
     console.log(newsURL);
-    
+
     // Create a url object to update api key
     newsURL = new URL(newsURL);
 
@@ -74,6 +74,8 @@ async function getWorkingAPIKey(APIKeys) {
         // Conver the response to json
         const sourceData = await APIResponse.json();
 
+        console.log(sourceData);
+
         // If we get the source date from the API that mean this api key is working,
         // So return this api key
         if(sourceData.status == 'ok') {
@@ -96,4 +98,14 @@ async function fetchURL(URL) {
   return await fetchNews(URL);
 }
 
-export { fetchNews, fetchURL };
+function hideLoaderAndDisplayContent() {
+  // Get the loader element
+  const loaderElement = document.querySelector('.loader-container');
+  const pageElement = document.querySelector('.page');
+      
+  // On page load hide the loader and show body
+  loaderElement.style.display = 'none';
+  pageElement.style.display = 'block';
+}
+
+export { fetchNews, fetchURL, hideLoaderAndDisplayContent };

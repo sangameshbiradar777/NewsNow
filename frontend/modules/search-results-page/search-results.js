@@ -345,6 +345,16 @@ function hideSearchAndPaginationElements() {
   document.querySelector(".section--pagination").style.display = "none";
 }
 
+function hideLoaderAndDisplaySearchResults() {
+  // Get the loader element
+  const loaderElement = document.querySelector('.loader-container');
+  const searchResultsElement = document.querySelector('.search-results');
+      
+  // On page load hide the loader and show body
+  loaderElement.style.display = 'none';
+  searchResultsElement.style.display = 'flex';
+}
+
 function addErrorMessageToDOM(errorMessage) {
   // Get the main element
   const mainElement = document.querySelector("main");
@@ -429,8 +439,6 @@ async function initSearchResults() {
   try {
     // Fetch search results
     searchResultsResponse = await fetchURL(searchURL);
-
-    console.log(searchResultsResponse);
 
     // Check if the response is successful or not
     if (searchResultsResponse.status !== "ok") {

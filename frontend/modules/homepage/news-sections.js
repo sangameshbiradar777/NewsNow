@@ -91,6 +91,14 @@ function scrollOnBtnClick() {
 // Implementation of the function getTopNewsCardInnerHTML
 function getNewsCardInnerHTML(newsObject) {
   return `
+    <div class="action-container">
+      <button class="btn action__btn action__btn--share">
+        <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
+      </button>
+      <button class="btn action__btn action__btn--bookmark">
+        <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
+      </button>
+    </div>
     <a href="${newsObject.URL}" target="_blank">
       <div class="news-card__img-container">
         ${
@@ -151,7 +159,6 @@ function observeNewsSectons() {
 }
 
 function showOrHideScrollerBtns(intersectionEntries, newsElement) {
-  console.log(intersectionEntries, newsElement)
   const interSectionEntry = intersectionEntries[0];
 
   // Get the forward and backward buttons

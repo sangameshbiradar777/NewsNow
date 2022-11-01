@@ -41,6 +41,12 @@
 
 /* Trending section starts */
 
+.trending-section__grid__item:hover .action-container {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
 .trending-section__card__title:hover {
   text-decoration: underline;
 }
@@ -82,7 +88,13 @@
 /* Top news starts */
 
 .news-card:hover .news-card__img-container .news-card__img {
-  filter: brightness(60%);
+  filter: brightness(70%);
+}
+
+.news-card:hover .action-container {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
 }
 
 .news-card:hover .news-card__title {
@@ -240,3 +252,17 @@ input[type="date"]:focus {
 }
 
 /* Pagination styles ends */
+
+/* Action btn styles starts */
+
+.action__btn:hover {
+  background-color: var(--bg-primary);
+}
+
+.action__btn:active,
+.action__btn:focus {
+  background-color: var(--bg-primary);
+  box-shadow: 0 0 0 var(--spacing-2px) var(--bg-secondary-shade);
+}
+
+/* Action btn styles ends */

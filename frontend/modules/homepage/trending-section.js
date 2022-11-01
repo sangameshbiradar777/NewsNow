@@ -1,5 +1,5 @@
 import { trendingNewsURL, newsImageFallbackURL } from "../config.js";
-import { fetchNews } from "./helper.js";
+import { fetchNews, hideLoaderAndDisplayContent } from "./helper.js";
 import { getProcessedData, compressText } from "../data-processor.js";
 import initCarousel from "../homepage/carousel.js";
 
@@ -120,6 +120,14 @@ function addTrendingNewsToDOM(trendingNewsObjects) {
 
 function getTrendingNewsItemInner(newsObject, forCarousel = false) {
   return `
+      <div class="action-container">
+        <button class="btn action__btn action__btn--share">
+          <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
+        </button>
+        <button class="btn action__btn action__btn--bookamark">
+          <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
+        </button>
+      </div>
       <a class="trending-section__grid__item__link" href="${
         newsObject.URL
       }" target="_blank">
@@ -158,11 +166,52 @@ function getTrendingNewsItemInner(newsObject, forCarousel = false) {
     `;
 }
 
+function addErrorMessageToDOM(errorMessage) {
+  // Get the main element
+  const mainElement = document.querySelector('main');
+
+  // Set the main element to empty
+  mainElement.innerHTML = "";
+
+  // Create an error message element
+  const errorMessageElement = document.createElement("div");
+  errorMessageElement.setAttribute("class", "error-container error-container--homepage");
+
+  errorMessageElement.innerHTML = `
+    <p class="error__heading">Error: Too many requests</p>
+    <div class="error__img-container">
+      <img class="error__img" src="/frontend/src/images/error-image.png" alt="Error image">
+    </div>
+    <h3 class="error__message">${errorMessage}</h3>
+  `;
+
+  mainElement.append(errorMessageElement);
+}
+
 // Initiator function
 async function initTrendingSection() {
-  // Get the trending news
-  const trendingNewsResponse = await fetchNews(trendingNewsURL);
 
+  let trendingNewsResponse;
+
+  try {
+    // Get the trending news
+    trendingNewsResponse = await fetchNews(trendingNewsURL);
+
+    console.log(trendingNewsResponse)
+
+    // If the status is not ok throw a new error
+    if(trendingNewsResponse.status !== 'ok') {
+      const errorMessage = 'Server is experiencing high traffic. Please try again later.'
+      throw new Error(errorMessage);
+    }
+  }
+  catch(error) {
+    console.log(error.message);
+    addErrorMessageToDOM(error.message);
+
+    return;
+  }
+  
   const trendingNews = trendingNewsResponse.articles;
 
   // Get the top 10 news from trending news
@@ -171,11 +220,9 @@ async function initTrendingSection() {
   // Get the clean version of top10trendingnews( without falsy values),
   // The response may have some irregular data so using this fucntion we can make
   // out data consistent
-  const processedTop10TrendingNews = await getProcessedData(
+  const processedTop10TrendingNews = getProcessedData(
     top10TrendingNewsRaw
   );
-
-  console.log(processedTop10TrendingNews);
 
   // Add the trending news Carousel to DOM
   addTrendingNewsCarouselToDOM(processedTop10TrendingNews);
@@ -188,11 +235,16 @@ async function initTrendingSection() {
     next4TrendingNewsRaw
   );
 
+   // After getting the articles hide loader and display content
+   hideLoaderAndDisplayContent();
+
   // Initialize carousel
   initCarousel();
 
   // Add the trending news to DOM
   addTrendingNewsToDOM(processedNext4TrendingNews);
+
+ 
 }
 
 export default initTrendingSection;
