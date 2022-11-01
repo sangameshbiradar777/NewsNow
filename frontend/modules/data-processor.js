@@ -4,6 +4,16 @@ import {
   MAXCHARACTERLIMIT,
 } from "./config.js";
 
+// Create an array to store all the news articles present on the page
+const newsArticles = [];
+
+function guid() {
+  const S4 = function() {
+     return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+  };
+  return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
+
 function processAuthor(data) {
   // If author is not null return limited author
   const { author } = data;
@@ -229,12 +239,18 @@ function getProcessedData(rawData) {
     // Process image url
     newData.imageURL = processImageURL(data.urlToImage);
 
+    // Add unique id to the object
+    newData.id = guid();
+
     // Push the news object to
     processedData.push(newData);
+
+    // Push the data to global news object
+    newsArticles.push(newData);
   });
 
   // Return the processed data
   return processedData;
 }
 
-export { getProcessedData, compressText };
+export { getProcessedData, compressText, newsArticles};

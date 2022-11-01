@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search resutls | NewsNow</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/homepage/navbar.css" />
+  <link rel="stylesheet" href="../../css/bookmarks/bookmarks.css">
+  <link rel="stylesheet" href="../../css/states.css" />
+
+</head>
+
+<body>
+
+  <div class="page">
+    <!-- Navbar starts -->
+    <nav class="navbar">
+      <h1 class="navbar__logo">
+        <a href="/frontend/">NewsNow</a>
+      </h1>
+      <div class="navbar__datetime">
+        <span class="navbar__date"></span>
+        <span class="navbar__time"></span>
+      </div>
+      <div class="navbar__items">
+        <form class="navbar__search-container search-form">
+          <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
+          <input type="text" name="search-text" autocomplete="off" placeholder="Search" required />
+          <ion-icon class="navbar__search__clear-icon search__clear-icon hide-clear-icon" name="close-outline">
+          </ion-icon>
+        </form>
+        <div class="navbar__links">
+          <a href="frontend/pages/bookmarks/bookmarks.html" class="navbar__bookmarks-link">
+            Bookmarks
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar ends -->
+
+    <div class="page">
+      <main>
+        <section class="section section--bookmarks">
+          <h1 class="section__bookmarks-title">Your Bookmarks</h1>
+
+          <div class="bookmarks">
+
+          </div>
+
+        </section>
+      </main>
+    </div>
+
+    <!-- Ion icons scripts starts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Ion icons scripts ends -->
+
+    <script type="module">
+      import initBookmarks from '../../modules/bookmarks.js';
+
+      initBookmarks();
+    </script>
+
+</body>
+
+</html>

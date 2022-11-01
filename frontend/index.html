@@ -166,8 +166,9 @@
     import initNewsSections from "./modules/homepage/news-sections.js";
     import initSearch from "./modules/homepage/search.js";
     import initCategories from './modules/homepage/navbar.js';
+    import initShareNews from './modules/share-news.js';
 
-    function init() {
+    async function init() {
       // Add date and time to navbar
       addDateTimeToNavbar();
 
@@ -182,6 +183,9 @@
 
       // Initialize categories
       initCategories();
+
+      // Initialize share news 
+      initShareNews();
     }
 
     init();

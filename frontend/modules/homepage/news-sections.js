@@ -92,10 +92,10 @@ function scrollOnBtnClick() {
 function getNewsCardInnerHTML(newsObject) {
   return `
     <div class="action-container">
-      <button class="btn action__btn action__btn--share">
+      <button id="${newsObject.id}" class="btn action__btn action__btn--share">
         <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
       </button>
-      <button class="btn action__btn action__btn--bookmark">
+      <button id="${newsObject.id}" class="btn action__btn action__btn--bookmark">
         <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
       </button>
     </div>

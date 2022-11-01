@@ -10,8 +10,6 @@ console.log(`Working API key - 🔑${APIKey}🔑`);
 
 async function fetchNews(newsURL) {
   try {
-    console.log(newsURL);
-
     // Create a url object to update api key
     newsURL = new URL(newsURL);
 
@@ -27,11 +25,8 @@ async function fetchNews(newsURL) {
 
     newsURLResponse = await fetch(newsURL);
 
-    console.log(newsURLResponse);
-
     if (newsURLResponse.ok) {
       const news = await newsURLResponse.json();
-      console.log(news)
       return news;
     } else {
       const errorMessage = `⚡⚡An unknown error occurred with a status code of ${newsURLResponse.status}⚡⚡`;
@@ -73,8 +68,6 @@ async function getWorkingAPIKey(APIKeys) {
       if(APIResponse.ok) {
         // Conver the response to json
         const sourceData = await APIResponse.json();
-
-        console.log(sourceData);
 
         // If we get the source date from the API that mean this api key is working,
         // So return this api key

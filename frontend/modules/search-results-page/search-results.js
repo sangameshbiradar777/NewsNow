@@ -235,10 +235,11 @@ function addNumberOfSourceSelectedToDOM(sourcesSelectedCount) {
 }
 
 async function filterSearchResultsAndUpdateDOM(searchText, pageNumber) {
+  // Add loader to DOM
+  addLoaderToDom();
+
   // Get the filtered search URL
   const filteredSearchURL = getSearchURL(searchText, pageNumber);
-
-  console.log(filteredSearchURL);
 
   let filteredSearchResultsResponse;
 
@@ -353,6 +354,16 @@ function hideLoaderAndDisplaySearchResults() {
   // On page load hide the loader and show body
   loaderElement.style.display = 'none';
   searchResultsElement.style.display = 'flex';
+}
+
+function addLoaderToDom() {
+  const searchResultsElement = document.querySelector('.search-results');
+  searchResultsElement.innerHTML = `
+    <div class="loader-container loader-container--search">
+      <span class="loader "></span>
+      <span class="loader__text">Filtering Resutls...</span>
+    </div>
+  `;
 }
 
 function addErrorMessageToDOM(errorMessage) {

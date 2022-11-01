@@ -121,10 +121,10 @@ function addTrendingNewsToDOM(trendingNewsObjects) {
 function getTrendingNewsItemInner(newsObject, forCarousel = false) {
   return `
       <div class="action-container">
-        <button class="btn action__btn action__btn--share">
+        <button id="${newsObject.id}" class="btn action__btn action__btn--share">
           <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
         </button>
-        <button class="btn action__btn action__btn--bookamark">
+        <button id="${newsObject.id}" class="btn action__btn action__btn--bookmark">
           <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
         </button>
       </div>
@@ -196,8 +196,6 @@ async function initTrendingSection() {
   try {
     // Get the trending news
     trendingNewsResponse = await fetchNews(trendingNewsURL);
-
-    console.log(trendingNewsResponse)
 
     // If the status is not ok throw a new error
     if(trendingNewsResponse.status !== 'ok') {
