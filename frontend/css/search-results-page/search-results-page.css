@@ -18,7 +18,6 @@
   position: relative;
   gap: var(--spacing-16px);
   justify-content: flex-start;
-  align-items: center;
 }
 
 .search-results__card {

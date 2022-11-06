@@ -186,9 +186,7 @@ function updateSearchResultsOnFilterChange(searchText) {
       const filteredSearchResultsCount = await filterSearchResultsAndUpdateDOM(
         searchText
       );
-
-      console.log(e.target);
-
+      
       // Initialize pagination
       initPagination(filteredSearchResultsCount);
     });
@@ -235,6 +233,8 @@ function addNumberOfSourceSelectedToDOM(sourcesSelectedCount) {
 }
 
 async function filterSearchResultsAndUpdateDOM(searchText, pageNumber) {
+  console.log('filtering');
+
   // Add loader to DOM
   addLoaderToDom();
 
@@ -360,7 +360,17 @@ function addLoaderToDom() {
   const searchResultsElement = document.querySelector('.search-results');
   searchResultsElement.innerHTML = `
     <div class="loader-container loader-container--search">
-      <span class="loader "></span>
+      <div class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube9"></div>
+    </div>
       <span class="loader__text">Filtering Resutls...</span>
     </div>
   `;

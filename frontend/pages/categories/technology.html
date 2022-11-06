@@ -11,12 +11,14 @@
     href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="./css/global.css" />
-  <link rel="stylesheet" href="./css/homepage/navbar.css" />
-  <link rel="stylesheet" href="./css/homepage/trending-section.css" />
-  <link rel="stylesheet" href="./css/homepage/carousel.css" />
-  <link rel="stylesheet" href="./css/homepage/news-sections.css" />
-  <link rel="stylesheet" href="./css/states.css" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/homepage/navbar.css" />
+  <link rel="stylesheet" href="../../css/homepage/trending-section.css" />
+  <link rel="stylesheet" href="../../css/homepage/carousel.css" />
+  <link rel="stylesheet" href="../../css/homepage/news-sections.css" />
+  <link rel="stylesheet" href="../../css/categories/category-template.css">
+  <link rel="stylesheet" href="../../css/categories/aside.css">
+  <link rel="stylesheet" href="../../css/states.css" />
 </head>
 
 <body>
@@ -24,7 +26,7 @@
   <!-- Loader -->
   <div class="loader-container">
     <!-- <span class="loader"></span> -->
-    <div class="sk-cube-grid">
+    <!-- <div class="sk-cube-grid">
       <div class="sk-cube sk-cube1"></div>
       <div class="sk-cube sk-cube2"></div>
       <div class="sk-cube sk-cube3"></div>
@@ -35,10 +37,11 @@
       <div class="sk-cube sk-cube8"></div>
       <div class="sk-cube sk-cube9"></div>
     </div>
-    <span class="loader__text">Getting news for you...</span>
+    <span class="loader__text">Getting news for you...</span> -->
   </div>
-  
-  <div class="page" style="display: none;">
+
+
+  <div class="page">
     <!-- Navbar starts -->
     <nav class="navbar">
       <div class="navbar__top">
@@ -69,7 +72,7 @@
           <li class="category-list__item category-list__item--home">
             <a href="./index.html" class="category-list__item__link">Home</a>
           </li>
-          <li class="category-list__item category-list__item--technology">
+          <li class="category-list__item category-list__item--technology category-list__item--active">
             <a href="./pages/categories/technology.html" class="category-list__item__link">Technology</a>
           </li>
           <li class="category-list__item category-list__item--sports">
@@ -104,83 +107,21 @@
           </li>
         </ul>
       </div>
-      
+
     </nav>
     <!-- Navbar ends -->
 
-    <!-- Main section starts -->
-    <main>
-      <!-- Header starts -->
-      <header class="section trending-section">
-        <h2 class="section-heading">Trending</h2>
-        <div class="trending-section__grid"></div>
-      </header>
-      <!-- Header ends -->
+    <div class="main-grid">
+      <main>
 
-      <!-- Top news section starts -->
-      <section id="top-news-section" class="section section--top-news">
-        <h2 class="section-heading section-heading--top-news">Top News</h2>
-        <div class="news-container news-container--top-news">
-          <div class="news news--top-news"></div>
-        </div>
-      </section>
-      <!-- Top news section ends -->
+      </main>
 
-      <!-- Technology news section starts -->
-      <section id="technology-section" class="section section--technology-news">
-        <h2 class="section-heading">Technology</h2>
-        <div class="news-container">
-          <div class="news news--technology-news"></div>
-        </div>
-      </section>
-      <!-- Technology news section ends -->
+      <aside>
+        
+      </aside>
 
-      <!-- Sports news section starts -->
-      <section id="sports-section" class="section section--sports-news">
-        <h2 class="section-heading">Sports</h2>
-        <div class="news-container">
-          <div class="news news--sports-news"></div>
-        </div>
-      </section>
-      <!-- Sports news section ends -->
+    </div>
 
-      <!-- Entertainment news section starts -->
-      <section id="entertainment-section" class="section section--entertainment-news">
-        <h2 class="section-heading">Entertainment</h2>
-        <div class="news-container">
-          <div class="news news--entertainment-news"></div>
-        </div>
-      </section>
-      <!-- Entertainment news section ends -->
-
-      <!-- Business news section starts -->
-      <section id="business-section" class="section section--business-news">
-        <h2 class="section-heading">Business</h2>
-        <div class="news-container">
-          <div class="news news--business-news"></div>
-        </div>
-      </section>
-      <!-- Business news section ends -->
-
-      <!-- Health news section starts -->
-      <section id="health-section" class="section section--health-news">
-        <h2 class="section-heading">Health</h2>
-        <div class="news-container">
-          <div class="news news--health-news"></div>
-        </div>
-      </section>
-      <!-- Health news section ends -->
-
-      <!-- Science news section starts -->
-      <section id="science-section" class="section section--science-news">
-        <h2 class="section-heading">Science</h2>
-        <div class="news-container">
-          <div class="news news--science-news"></div>
-        </div>
-      </section>
-      <!-- Science news section ends -->
-    </main>
-    <!-- Main section ends -->
   </div>
 
   <!-- Ion icons scripts starts -->
@@ -190,31 +131,16 @@
 
   <!-- page script starts -->
   <script type="module">
-    import { addDateTimeToNavbar } from "./modules/addDateTimeToNavbar.js";
-    import initTrendingSection from "./modules/homepage/trending-section.js";
-    import initNewsSections from "./modules/homepage/news-sections.js";
-    import initSearch from "./modules/homepage/search.js";
-    import initCategories from './modules/homepage/navbar.js';
-    import {initShareNews} from './modules/share-news.js';
+    import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
+    import initTechnologyCategory from "../../modules/categories/technology-category.js";
 
     async function init() {
       // Add date and time to navbar
       addDateTimeToNavbar();
 
-      // Initialize trending section
-      initTrendingSection();
+      // Initialize technology category
+      initTechnologyCategory();
 
-      // Initialize news sections
-      initNewsSections();
-
-      // Initialize search functionality
-      initSearch();
-
-      // Initialize categories
-      initCategories();
-
-      // Initialize share news 
-      initShareNews();
     }
 
     init();

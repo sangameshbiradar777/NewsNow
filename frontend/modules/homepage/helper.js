@@ -43,6 +43,8 @@ async function fetchNews(newsURL) {
 
 async function getWorkingAPIKey(APIKeys) {
 
+  console.log("Im called")
+
   for(let APIKey = 0; APIKey < APIKeys.length; APIKey++) {
     // Create a news url object
     let newsURL = new URL(`https://newsapi.org/v2/sources`);
@@ -91,14 +93,6 @@ async function fetchURL(URL) {
   return await fetchNews(URL);
 }
 
-function hideLoaderAndDisplayContent() {
-  // Get the loader element
-  const loaderElement = document.querySelector('.loader-container');
-  const pageElement = document.querySelector('.page');
-      
-  // On page load hide the loader and show body
-  loaderElement.style.display = 'none';
-  pageElement.style.display = 'block';
-}
 
-export { fetchNews, fetchURL, hideLoaderAndDisplayContent };
+
+export { fetchNews, fetchURL };

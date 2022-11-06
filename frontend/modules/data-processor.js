@@ -191,6 +191,12 @@ function processTime(date) {
 }
 
 function formatTime(hours, minutes) {
+  if(hours >= 24) {
+    // Get number of days
+    const days = Math.floor(hours / 24);
+    return `${days} day${days > 1 ? 's' : ''} ago`;
+  }
+
   if (hours && minutes) {
     return `${hours}h ${minutes}min ago`;
   }
@@ -253,4 +259,4 @@ function getProcessedData(rawData) {
   return processedData;
 }
 
-export { getProcessedData, compressText, newsArticles};
+export { getProcessedData, compressText, newsArticles, processDate, processTime};

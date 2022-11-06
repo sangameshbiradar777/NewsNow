@@ -1,4 +1,4 @@
-import { newsArticles } from "./data-processor.js";
+import { newsArticles, processDate } from "./data-processor.js";
 
 // Create a array to store the bookmarks
 let bookmarks = [];
@@ -40,6 +40,9 @@ function addBookmarkEventListener() {
 
     // Get the targetNewsObject
     const newsArticle = getTargetNewsArticle(targetId);
+
+    // Add the bookmarked time
+    newsArticle.bookmarkedOn = processDate(new Date());
 
     // Share the news
     bookmarkArticle(newsArticle);
@@ -95,4 +98,4 @@ function initShareNews() {
   addBookmarkEventListener();
 }
 
-export default initShareNews;
+export {initShareNews, shareNewsArticle, addBookmarksToLocalStorage};

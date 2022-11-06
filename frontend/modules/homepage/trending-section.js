@@ -1,7 +1,8 @@
 import { trendingNewsURL, newsImageFallbackURL } from "../config.js";
-import { fetchNews, hideLoaderAndDisplayContent } from "./helper.js";
+import { fetchNews} from "./helper.js";
 import { getProcessedData, compressText } from "../data-processor.js";
 import initCarousel from "../homepage/carousel.js";
+import {hideLoaderAndDisplayContent, addErrorMessageToDOM} from '../dom-helper.js';
 
 // Implementation of the function getTop10TrendingNews
 function getTop10TrendingNews(trendingNews) {
@@ -166,28 +167,6 @@ function getTrendingNewsItemInner(newsObject, forCarousel = false) {
     `;
 }
 
-function addErrorMessageToDOM(errorMessage) {
-  // Get the main element
-  const mainElement = document.querySelector('main');
-
-  // Set the main element to empty
-  mainElement.innerHTML = "";
-
-  // Create an error message element
-  const errorMessageElement = document.createElement("div");
-  errorMessageElement.setAttribute("class", "error-container error-container--homepage");
-
-  errorMessageElement.innerHTML = `
-    <p class="error__heading">Error: Too many requests</p>
-    <div class="error__img-container">
-      <img class="error__img" src="/frontend/src/images/error-image.png" alt="Error image">
-    </div>
-    <h3 class="error__message">${errorMessage}</h3>
-  `;
-
-  mainElement.append(errorMessageElement);
-}
-
 // Initiator function
 async function initTrendingSection() {
 
@@ -241,8 +220,6 @@ async function initTrendingSection() {
 
   // Add the trending news to DOM
   addTrendingNewsToDOM(processedNext4TrendingNews);
-
- 
 }
 
 export default initTrendingSection;

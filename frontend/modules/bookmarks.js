@@ -1,3 +1,5 @@
+import { newsImageFallbackURL } from "./config.js";
+import { shareNewsArticle, addBookmarksToLocalStorage } from "./share-news.js";
 
 function getBookmarksFromLocalStorage() {
   if(!localStorage.getItem('bookmarks')) {
@@ -8,8 +10,15 @@ function getBookmarksFromLocalStorage() {
 }
 
 function addBookmarksToDOM(bookmarks) {
+  if(bookmarks.length === 0) {
+    addNoBookMarksMessageToDOM();
+    return;
+  }
+  
   // Get the bookmarks element
   const bookmarksElement = document.querySelector('.bookmarks');
+
+  bookmarksElement.innerHTML = "";
 
   // Loop over bookmarks and add them to DOM
   bookmarks.forEach(bookmark => {
@@ -26,18 +35,29 @@ function addBookmarksToDOM(bookmarks) {
 
 function getBookmarksCardInner(bookmark) {
   return `
+    <div class="action-container">
+      <button id="${bookmark.id}" class="btn action__btn action__btn--share">
+        <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
+      </button>
+      <button id="${bookmark.id}" class="btn action__btn action__btn--delete-bookmark">
+        <ion-icon class="action__icon" name="trash-outline"></ion-icon>
+      </button>
+    </div>
     <a href="${bookmark.URL}" class="bookmarks__card__link">
       <div class="bookmarks__card__img-container">
-        <img src="${bookmark.imageURL}" alt="News image">
+        <img src="${bookmark.imageURL}"
+         alt="News image"
+         onerror="this.src='${newsImageFallbackURL}'"
+         >
       </div>
 
       <div class="bookmarks__card__text-container">
-        <span class="bookmarks__card__bookmarked-on">Bookmarked on 23 Sep 2022</span>
+        <span class="bookmarks__card__bookmarked-on">Bookmarked on ${bookmark.bookmarkedOn}</span>
         <h2 class="bookmarks__card__title">
           ${bookmark.title}
         </h2>
         <span class="bookmarks__card__author">By ${bookmark.author}</span>
-        <span class="bookmarks__card__publishedat">Published on ${bookmark.publishedAt}</span>
+        <span class="bookmarks__card__publishedat">Published on ${bookmark.date}</span>
       </div>
     </a>
   `;
@@ -81,6 +101,37 @@ function addNoBookMarksMessageToDOM() {
   `;
 }
 
+function shareBookmarkedArticle() {
+  document.body.addEventListener('click', function(e) {
+    if(e.target.closest('.action__btn--share') === null) return;
+
+    const shareBtn = e.target.closest('.action__btn--share');
+
+    // Get the target news article id
+    const targetId = shareBtn.id;
+
+    const targetNewsArticle = getBookmarksFromLocalStorage().find(bookmark => bookmark.id === targetId);
+
+    shareNewsArticle(targetNewsArticle);
+  })
+}
+
+function deleteBookmark() {
+  document.body.addEventListener('click', function(e) {
+    if(e.target.closest('.action__btn--delete-bookmark') === null) return;
+
+    const deleteBookmarkBtn = e.target.closest('.action__btn--delete-bookmark');
+
+    const targetId = deleteBookmarkBtn.id;
+
+    const updatedBookmarks = getBookmarksFromLocalStorage().filter(bookmark => bookmark.id !== targetId);
+
+    addBookmarksToLocalStorage(updatedBookmarks);
+
+    addBookmarksToDOM(updatedBookmarks);
+  })
+}
+
 function initBookmarks() {
   // Get bookmarks from local storage
   const bookmarks = getBookmarksFromLocalStorage();
@@ -89,6 +140,10 @@ function initBookmarks() {
 
   if(uniqueBookmarks.length) addBookmarksToDOM(uniqueBookmarks);
   else addNoBookMarksMessageToDOM();
+
+  shareBookmarkedArticle();
+
+  deleteBookmark();
 }
 
 export default initBookmarks;

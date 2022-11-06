@@ -130,7 +130,7 @@
 /* Search page filter section starts */
 
 .filter:hover {
-  color: var(--bg-primary);
+  color: var(--text-dark);
 }
 
 input[type="date"]:hover,
@@ -266,3 +266,15 @@ input[type="date"]:focus {
 }
 
 /* Action btn styles ends */
+
+
+/* Bookmarks styles starts */
+
+.bookmarks__card:hover .action-container {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+
+/* Bookmarks styles ends */

@@ -37,37 +37,70 @@
     <div class="page">
       <!-- Navbar starts -->
       <nav class="navbar">
-        <h1 class="navbar__logo">
-          <a href="/frontend/">NewsNow</a>
-        </h1>
-        <div class="navbar__datetime">
-          <span class="navbar__date"></span>
-          <span class="navbar__time"></span>
-        </div>
-        <div class="navbar__items">
-          <form class="navbar__search-container search-form">
-            <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
-            <input
-              type="text"
-              name="search-text"
-              autocomplete="off"
-              placeholder="Search"
-              required
-            />
-            <ion-icon
-              class="navbar__search__clear-icon search__clear-icon hide-clear-icon"
-              name="close-outline"
-            ></ion-icon>
-          </form>
-          <div class="navbar__links">
-            <a
-              href="frontend/pages/bookmarks/bookmarks.html"
-              class="navbar__bookmarks-link"
-            >
-              Bookmarks
-            </a>
+        <div class="navbar__top">
+          <h1 class="navbar__logo">
+            <a href="/frontend/">NewsNow</a>
+          </h1>
+          <div class="navbar__datetime">
+            <span class="navbar__date"></span>
+            <span class="navbar__time"></span>
+          </div>
+          <div class="navbar__items">
+            <form class="navbar__search-container search-form">
+              <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
+              <input type="text" name="search-text" autocomplete="off" placeholder="Search" required />
+              <ion-icon class="navbar__search__clear-icon search__clear-icon hide-clear-icon" name="close-outline">
+              </ion-icon>
+            </form>
+            <div class="navbar__links">
+              <a href="./pages/bookmarks/bookmarks.html" class="navbar__bookmarks-link">
+                Bookmarks
+              </a>
+            </div>
           </div>
         </div>
+  
+        <div class="navbar__categories">
+          <ul class="navbar__links__category-list category-list--hidden">
+            <li class="category-list__item category-list__item--home">
+              <a href="./index.html" class="category-list__item__link">Home</a>
+            </li>
+            <li class="category-list__item category-list__item--technology">
+              <a href="./pages/categories/technology.html" class="category-list__item__link">Technology</a>
+            </li>
+            <li class="category-list__item category-list__item--sports">
+              <a href="#sports-section" class="category-list__item__link">Sports</a>
+            </li>
+            <li class="category-list__item category-list__item--entertainment">
+              <a href="#entertainment-section" class="category-list__item__link">Entertainment</a>
+            </li>
+            <li class="category-list__item category-list__item--business">
+              <a href="#business-section" class="category-list__item__link">Business</a>
+            </li>
+            <li class="category-list__item category-list__item--health">
+              <a href="#health-section" class="category-list__item__link">Health</a>
+            </li>
+            <li class="category-list__item category-list__item--science">
+              <a href="#science-section" class="category-list__item__link">Science</a>
+            </li>
+            <li class="category-list__item category-list__item--investing">
+              <a href="#science-section" class="category-list__item__link">Investing</a>
+            </li>
+            <li class="category-list__item category-list__item--travel">
+              <a href="#science-section" class="category-list__item__link">Travel</a>
+            </li>
+            <li class="category-list__item category-list__item--videos">
+              <a href="#science-section" class="category-list__item__link">Videos</a>
+            </li>
+            <li class="category-list__item category-list__item--crypto">
+              <a href="#science-section" class="category-list__item__link">Crypto</a>
+            </li>
+            <li class="category-list__item category-list__item--economics">
+              <a href="#science-section" class="category-list__item__link">Economics</a>
+            </li>
+          </ul>
+        </div>
+        
       </nav>
       <!-- Navbar ends -->
 
@@ -343,7 +376,18 @@
             <div class="search-results">
               <!-- Loader -->
               <div class="loader-container loader-container--search">
-                <span class="loader "></span>
+                <!-- <span class="loader "></span> -->
+                <div class="sk-cube-grid">
+                  <div class="sk-cube sk-cube1"></div>
+                  <div class="sk-cube sk-cube2"></div>
+                  <div class="sk-cube sk-cube3"></div>
+                  <div class="sk-cube sk-cube4"></div>
+                  <div class="sk-cube sk-cube5"></div>
+                  <div class="sk-cube sk-cube6"></div>
+                  <div class="sk-cube sk-cube7"></div>
+                  <div class="sk-cube sk-cube8"></div>
+                  <div class="sk-cube sk-cube9"></div>
+                </div>
                 <span class="loader__text">Searching...</span>
               </div>
             </div>
