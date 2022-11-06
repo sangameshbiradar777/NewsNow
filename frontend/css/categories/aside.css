@@ -30,6 +30,7 @@ aside {
 .more-news__item {
   padding: var(--spacing-8px) 0;
   border-bottom: 1px solid #ddd;
+  border-radius: var(--spacing-4px);
 }
 
 .more-news__item__link {

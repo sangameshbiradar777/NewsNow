@@ -36,7 +36,7 @@
       <div class="sk-cube sk-cube8"></div>
       <div class="sk-cube sk-cube9"></div>
     </div>
-    <span class="loader__text">Getting Technology news for you...</span>
+    <span class="loader__text">Getting Health news for you...</span>
   </div>
 
 
@@ -71,7 +71,7 @@
           <li class="category-list__item category-list__item--home">
             <a href="./index.html" class="category-list__item__link">Home</a>
           </li>
-          <li class="category-list__item category-list__item--technology category-list__item--active">
+          <li class="category-list__item category-list__item--technology">
             <a href="./technology.html" class="category-list__item__link">Technology</a>
           </li>
           <li class="category-list__item category-list__item--sports">
@@ -83,7 +83,7 @@
           <li class="category-list__item category-list__item--business">
             <a href="./business.html" class="category-list__item__link">Business</a>
           </li>
-          <li class="category-list__item category-list__item--health">
+          <li class="category-list__item category-list__item--health category-list__item--active">
             <a href="./health.html" class="category-list__item__link">Health</a>
           </li>
           <li class="category-list__item category-list__item--science">
@@ -131,14 +131,14 @@
   <!-- page script starts -->
   <script type="module">
     import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
-    import initTechnologyCategory from "../../modules/categories/technology-category.js";
+    import initHealthCategory from "../../modules/categories/health-category.js";
 
     async function init() {
       // Add date and time to navbar
       addDateTimeToNavbar();
 
       // Initialize technology category
-      initTechnologyCategory();
+      initHealthCategory();
 
     }
 

@@ -71,7 +71,7 @@
           <li class="category-list__item category-list__item--home">
             <a href="./index.html" class="category-list__item__link">Home</a>
           </li>
-          <li class="category-list__item category-list__item--technology category-list__item--active">
+          <li class="category-list__item category-list__item--technology">
             <a href="./technology.html" class="category-list__item__link">Technology</a>
           </li>
           <li class="category-list__item category-list__item--sports">
@@ -86,7 +86,7 @@
           <li class="category-list__item category-list__item--health">
             <a href="./health.html" class="category-list__item__link">Health</a>
           </li>
-          <li class="category-list__item category-list__item--science">
+          <li class="category-list__item category-list__item--science category-list__item--active">
             <a href="./science.html" class="category-list__item__link">Science</a>
           </li>
           <li class="category-list__item category-list__item--investing">
@@ -131,14 +131,14 @@
   <!-- page script starts -->
   <script type="module">
     import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
-    import initTechnologyCategory from "../../modules/categories/technology-category.js";
+    import initScienceCategory from "../../modules/categories/science-category.js";
 
     async function init() {
       // Add date and time to navbar
       addDateTimeToNavbar();
 
       // Initialize technology category
-      initTechnologyCategory();
+      initScienceCategory();
 
     }
 

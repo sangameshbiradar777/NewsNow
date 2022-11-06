@@ -13,7 +13,7 @@ function getFeaturedSection(newsObjects, heading) {
       ${getFeaturedGridItemHTML(newsObjects.slice(0, 1), true).innerHTML}
 
       <div class="featured-grid__sub-items">
-        ${getFeaturedGridItemHTML(newsObjects.slice(1)).innerHTML};
+        ${getFeaturedGridItemHTML(newsObjects.slice(1)).innerHTML}
       </div>
     </div>
   `;
@@ -40,7 +40,7 @@ function getFeaturedGridItemHTML(newsObjects, isMainItem = false) {
       </div>
       <div class="featured-grid__item__text-container">
         <span class="featured-grid__item__author">${processTime(newsObject.created)}</span>
-        <h2 class="featured-grid__item__title">${isMainItem ? newsObject.title : compressText(newsObject.title, 50)}</h2> 
+        <h2 class="featured-grid__item__title">${isMainItem ? compressText(newsObject.title, 100) : compressText(newsObject.title, 50)}</h2> 
       </div>
       
     </a>
@@ -78,12 +78,12 @@ function getCategoryNewsCard(newsObjects) {
     categoryNewsCardElement.innerHTML = `
     <a href="${newsObject.url}" target="_blank" class="category-news__card__link">
       <div class="category-news__card__img-container">
-        <img src="${newsObject.media.content.url}" alt="News image">
+        <img src="${newsObject.media?.content.url ?? newsImageFallbackURL}" alt="News image">
       </div>
 
       <div class="category-news__card__text-container">
         <span class="featured-grid__item__author">${processTime(newsObject.created)}</span>
-        <h4>${compressText(newsObject.title, 100)}</h4>
+        <h4 class="category-news__card__title">${compressText(newsObject.title, 100)}</h4>
       </div>
     </a>
     `;

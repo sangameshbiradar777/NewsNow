@@ -21,7 +21,13 @@ main {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: var(--spacing-12px);
+  padding-bottom: var(--spacing-12px);
   /* max-height: var(--spacing-400px); */
+  border-bottom: 1px solid #ddd;
+}
+
+.featured-grid__item {
+  border-radius: var(--spacing-4px);
 }
 
 .featured-grid__sub-items {
@@ -124,6 +130,7 @@ main {
 .category-news__card {
   width: 100%;
   height: 100%;
+  border-radius: var(--spacing-4px);
 }
 
 .category-news__card__link {
