@@ -69,7 +69,7 @@
       <div class="navbar__categories">
         <ul class="navbar__links__category-list category-list--hidden">
           <li class="category-list__item category-list__item--home">
-            <a href="./index.html" class="category-list__item__link">Home</a>
+            <a href="../../index.html" class="category-list__item__link">Home</a>
           </li>
           <li class="category-list__item category-list__item--technology">
             <a href="./technology.html" class="category-list__item__link">Technology</a>
@@ -78,7 +78,7 @@
             <a href="./sports.html" class="category-list__item__link">Sports</a>
           </li>
           <li class="category-list__item category-list__item--entertainment">
-            <a href="./entertainment-category.html" class="category-list__item__link">Entertainment</a>
+            <a href="./entertainment.html" class="category-list__item__link">Entertainment</a>
           </li>
           <li class="category-list__item category-list__item--business">
             <a href="./business.html" class="category-list__item__link">Business</a>
@@ -131,14 +131,15 @@
   <!-- page script starts -->
   <script type="module">
     import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
-    import initHealthCategory from "../../modules/categories/health-category.js";
+    import {healthNewsRSSURL1, healthNewsRSSURL2, moreHealthNewsRSSURL} from '../../modules/categories/category-config.js'
+    import initCategory from "../../modules/categories/category-helper.js";
 
     async function init() {
       // Add date and time to navbar
       addDateTimeToNavbar();
 
       // Initialize technology category
-      initHealthCategory();
+      initCategory(healthNewsRSSURL1, healthNewsRSSURL2, moreHealthNewsRSSURL, 'Health');
 
     }
 

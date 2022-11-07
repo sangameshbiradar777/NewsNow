@@ -17,7 +17,7 @@ async function initTechnologyCategory() {
   const technologyNews = [...technologyNews1.items, ...technologyNews2.items];
 
   // Add main to DOM
-  const mainElement = getMainElement(technologyNews);
+  const mainElement = getMainElement(technologyNews, 'Technology News');
 
   // Add India tech news to DOM
   const indiaTechnologyNews = await fetchCategoryNews(indiaTechnologyNewsURL);

@@ -1,5 +1,8 @@
 import {addErrorMessageToDOM} from '../dom-helper.js';
 import {getFeaturedSection, getCategoryNewsSection} from './category-template.js';
+import {RSSToJSONConverterURL} from './category-config.js';
+import { hideLoaderAndDisplayContent} from '../dom-helper.js';
+import {getMoreNewsElement} from './category-template.js';
 
 async function fetchCategoryNews(URL) {
   try{
@@ -37,5 +40,40 @@ function getMainElement(newsObjects, heading) {
 
   return mainElement;
 }
+
+async function initCategory(categoryNewsRSSURL1, categoryNewsRSSURL2, moreCategoryNewsRSSURL, category) {
+  // Create a Category News URL
+  const categoryNewsURL1 = RSSToJSONConverterURL + categoryNewsRSSURL1;
+  const categoryNewsURL2 = RSSToJSONConverterURL + categoryNewsRSSURL2;
+  const moreCategoryNewsURL = RSSToJSONConverterURL + moreCategoryNewsRSSURL;
+
+  // Get Sports news
+  const categoryNews1 = await fetchCategoryNews(categoryNewsURL1);
+  const categoryNews2 = await fetchCategoryNews(categoryNewsURL2);
+
+  const categoryNews = [...categoryNews1.items, ...categoryNews2.items];
+
+  // Add main to DOM
+  const mainElement = getMainElement(categoryNews, `${category} News`);
+
+  // Get more technology news
+  const moreCategoryNews = await fetchCategoryNews(moreCategoryNewsURL);
+
+  // Add morenews to DOM
+  const moreNewsElement = getMoreNewsElement(moreCategoryNews.items, 'More News');
+
+  const asideElement = document.querySelector('aside');
+  asideElement.append(moreNewsElement);
+
+  // Get the main grid element
+  const mainGridElement = document.querySelector('.main-grid');
+
+  mainGridElement.append(mainElement, asideElement);
+
+  hideLoaderAndDisplayContent();
+  
+}
+
+export default initCategory;
 
 export {fetchCategoryNews, getMainElement}

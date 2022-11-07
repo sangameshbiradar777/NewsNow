@@ -35,7 +35,7 @@ function getFeaturedGridItemHTML(newsObjects, isMainItem = false) {
     <a href="${newsObject.url}" target="_blank" class="featured-grid__item__link">
       <div class="featured-grid__item__img-container">
         <img
-          src="${newsObject.media.content.url}" alt="
+          src="${newsObject.media?.content.url ?? newsImageFallbackURL}" alt="
           News image">
       </div>
       <div class="featured-grid__item__text-container">
@@ -112,7 +112,6 @@ function getMoreNewsItems(newsObjects) {
   const divElement = document.createElement('div');
 
   newsObjects.forEach(newsObject => {
-    console.log(newsObject.media?.content.url);
     const moreNewsItemElement = document.createElement('div');
     moreNewsItemElement.setAttribute('class', 'more-news__item');
 

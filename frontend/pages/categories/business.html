@@ -69,7 +69,7 @@
       <div class="navbar__categories">
         <ul class="navbar__links__category-list category-list--hidden">
           <li class="category-list__item category-list__item--home">
-            <a href="./index.html" class="category-list__item__link">Home</a>
+            <a href="../../index.html" class="category-list__item__link">Home</a>
           </li>
           <li class="category-list__item category-list__item--technology">
             <a href="./technology.html" class="category-list__item__link">Technology</a>
@@ -131,15 +131,15 @@
   <!-- page script starts -->
   <script type="module">
     import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
-    import initBusinessCategory from "../../modules/categories/business-category.js";
+    import {businessNewsRSSURL1, businessNewsRSSURL2, moreBusinessNewsRSSURL} from '../../modules/categories/category-config.js';
+    import initCategory from "../../modules/categories/category-helper.js";
 
     async function init() {
       // Add date and time to navbar
       addDateTimeToNavbar();
 
       // Initialize technology category
-      initBusinessCategory();
-
+      initCategory(businessNewsRSSURL1, businessNewsRSSURL2, moreBusinessNewsRSSURL, 'Business');
     }
 
     init();

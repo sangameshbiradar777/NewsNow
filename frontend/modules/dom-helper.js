@@ -30,4 +30,40 @@ function addErrorMessageToDOM(errorMessage) {
   mainElement.append(errorMessageElement);
 }
 
-export {hideLoaderAndDisplayContent, addErrorMessageToDOM};
+function stickCategoryToTop() {
+  // Get the category element
+  const categoriesElement = document.querySelector('.navbar__categories');
+  const mainElement = document.querySelector('main');
+
+  // Get the height of navbar categories
+  const {top, height} = categoriesElement.getBoundingClientRect();
+  
+  function stickyNavbar() {
+    if(this.scrollY >= top) {
+      categoriesElement.classList.add('sticky');
+      mainElement.style.paddingTop = height + 'px';
+    }
+    else {
+      categoriesElement.classList.remove('sticky');
+      mainElement.style.paddingTop = 0;
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    throttle(stickyNavbar, 200);
+  });
+
+  let timerId;
+
+  function throttle(func, delay) {
+    if(timerId) return;
+
+    timerId = setTimeout(function() {
+      func.call(this);
+      timerId = undefined;
+    }, delay)
+  }
+}
+
+
+export {hideLoaderAndDisplayContent, addErrorMessageToDOM, stickCategoryToTop};

@@ -27,6 +27,36 @@ const moreBusinessNewsRSSURL = 'https://flipboard.com/@nbcnews/nbc-business-n11c
 // Health category URLs
 const healthNewsRSSURL1 = 'https://flipboard.com/topic/healthindia.rss';
 const healthNewsRSSURL2 = 'https://flipboard.com/topic/health.rss';
-const moreHealthNewsRSSURL = 'https://flipboard.com/topic/healthcare.rss'
+const moreHealthNewsRSSURL = 'https://flipboard.com/topic/healthcare.rss';
 
-export {RSSToJSONConverterURL, technologyNewsRSSURL1, technologyNewsRSSURL2, moreTechnologyNewsRSSURL, indiaTechnologyNewsRSSURL, sportsNewsRSSURL1, sportsNewsRSSURL2, moreSportsNewsRSSURL, entertainmentNewsRSSURL1, entertainmentNewsRSSURL2, moreEntertainmentNewsRSSURL, businessNewsRSSURL1, businessNewsRSSURL2, moreBusinessNewsRSSURL, healthNewsRSSURL1, healthNewsRSSURL2, moreHealthNewsRSSURL};
+// Science category URLs
+const scienceNewsRSSURL1 = 'https://flipboard.com/topic/science.rss';
+const scienceNewsRSSURL2 = 'https://flipboard.com/topic/indianscience.rss';
+const moreScienceNewsRSSURL = 'https://flipboard.com/@SciMag.rss';
+
+// Investging category URLs
+const investingNewsRSSURL1 = 'https://flipboard.com/topic/stocks.rss';
+const investingNewsRSSURL2 = 'https://flipboard.com/topic/investingindia.rss';
+const moreInvestingNewsRSSURL = 'https://flipboard.com/@fortune.rss';
+
+// Travel category URLs
+const travelNewsRSSURL1 = 'https://flipboard.com/@travelleisure.rss'
+const travelNewsRSSURL2 = 'https://flipboard.com/section/travel-4um5cdhvomc6eejd.rss';
+const moreTravelNewsRSSURL = 'https://flipboard.com/topic/traveldeals.rss';
+
+// Videos category URLs
+const videoNewsRSSURL1 = 'https://flipboard.com/topic/viralvideo.rss';
+const videoNewsRSSURL2 = 'https://flipboard.com/topic/youtube.rss';
+const moreVideoNewsRSSURL = 'https://flipboard.com/topic/c:video.rss';
+
+// Crypto category URLs
+const cryptoNewsRSSURL1 = 'https://flipboard.com/topic/cryptocurrency.rss';
+const cryptoNewsRSSURL2 = 'https://flipboard.com/topic/blockchain.rss';
+const moreCryptoNewsRSSURL = 'https://flipboard.com/topic/forex.rss';
+
+// Economics category URLs
+const economicsNewsRSSURL1 = 'https://flipboard.com/topic/economics.rss';
+const economicsNewsRSSURL2 = 'https://flipboard.com/topic/worldeconomy.rss';
+const moreEconomicsNewsRSSURL = 'https://flipboard.com/topic/indianeconomy.rss';
+
+export {RSSToJSONConverterURL, technologyNewsRSSURL1, technologyNewsRSSURL2, moreTechnologyNewsRSSURL, indiaTechnologyNewsRSSURL, sportsNewsRSSURL1, sportsNewsRSSURL2, moreSportsNewsRSSURL, entertainmentNewsRSSURL1, entertainmentNewsRSSURL2, moreEntertainmentNewsRSSURL, businessNewsRSSURL1, businessNewsRSSURL2, moreBusinessNewsRSSURL, healthNewsRSSURL1, healthNewsRSSURL2, moreHealthNewsRSSURL, scienceNewsRSSURL1, scienceNewsRSSURL2, moreScienceNewsRSSURL, investingNewsRSSURL1, investingNewsRSSURL2, moreInvestingNewsRSSURL, travelNewsRSSURL1, travelNewsRSSURL2, moreTravelNewsRSSURL, videoNewsRSSURL1, videoNewsRSSURL2, moreVideoNewsRSSURL, cryptoNewsRSSURL1, cryptoNewsRSSURL2, moreCryptoNewsRSSURL, economicsNewsRSSURL1, economicsNewsRSSURL2, moreEconomicsNewsRSSURL};

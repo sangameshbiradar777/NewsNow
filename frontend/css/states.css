@@ -34,8 +34,10 @@
 }
 
 .category-list__item__link:hover {
-  transform: scale(1.05);
+  background-color: var(--bg-secondary);
 }
+
+
 
 /* Navbar ends */
 

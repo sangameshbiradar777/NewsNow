@@ -69,9 +69,9 @@
       <div class="navbar__categories">
         <ul class="navbar__links__category-list category-list--hidden">
           <li class="category-list__item category-list__item--home">
-            <a href="./index.html" class="category-list__item__link">Home</a>
+            <a href="../../index.html" class="category-list__item__link">Home</a>
           </li>
-          <li class="category-list__item category-list__item--technology category-list__item--active">
+          <li class="category-list__item category-list__item--technology">
             <a href="./technology.html" class="category-list__item__link">Technology</a>
           </li>
           <li class="category-list__item category-list__item--sports">
@@ -92,7 +92,7 @@
           <li class="category-list__item category-list__item--investing">
             <a href="./investing.html" class="category-list__item__link">Investing</a>
           </li>
-          <li class="category-list__item category-list__item--travel">
+          <li class="category-list__item category-list__item--travel category-list__item--active">
             <a href="./travel.html" class="category-list__item__link">Travel</a>
           </li>
           <li class="category-list__item category-list__item--videos">
@@ -131,14 +131,15 @@
   <!-- page script starts -->
   <script type="module">
     import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
-    import initTechnologyCategory from "../../modules/categories/technology-category.js";
+    import {travelNewsRSSURL1, travelNewsRSSURL2, moreTravelNewsRSSURL} from '../../modules/categories/category-config.js'
+    import initCategory from "../../modules/categories/category-helper.js";
 
     async function init() {
       // Add date and time to navbar
       addDateTimeToNavbar();
 
       // Initialize technology category
-      initTechnologyCategory();
+      initCategory(travelNewsRSSURL1, travelNewsRSSURL2, moreTravelNewsRSSURL, 'Travel');
 
     }
 

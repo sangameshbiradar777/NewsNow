@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="./css/homepage/carousel.css" />
   <link rel="stylesheet" href="./css/homepage/news-sections.css" />
   <link rel="stylesheet" href="./css/states.css" />
+  <link rel="stylesheet" href="./css/media-queries/homepage.css">
 </head>
 
 <body>
@@ -49,6 +50,9 @@
           <span class="navbar__date"></span>
           <span class="navbar__time"></span>
         </div>
+        <button class="navbar__hamburger">
+          <ion-icon name="reorder-two-outline"></ion-icon>
+        </button>
         <div class="navbar__items">
           <form class="navbar__search-container search-form">
             <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
@@ -66,7 +70,7 @@
 
       <div class="navbar__categories">
         <ul class="navbar__links__category-list category-list--hidden">
-          <li class="category-list__item category-list__item--home">
+          <li class="category-list__item category-list__item--home category-list__item--active">
             <a href="./index.html" class="category-list__item__link">Home</a>
           </li>
           <li class="category-list__item category-list__item--technology">
@@ -196,25 +200,30 @@
     import initSearch from "./modules/homepage/search.js";
     import initCategories from './modules/homepage/navbar.js';
     import {initShareNews} from './modules/share-news.js';
+    import {stickCategoryToTop} from './modules/dom-helper.js';
 
     async function init() {
       // Add date and time to navbar
       addDateTimeToNavbar();
 
       // Initialize trending section
-      initTrendingSection();
+      await initTrendingSection();
 
       // Initialize news sections
       initNewsSections();
+
+      stickCategoryToTop();
 
       // Initialize search functionality
       initSearch();
 
       // Initialize categories
-      initCategories();
+      // initCategories();
 
       // Initialize share news 
       initShareNews();
+
+      
     }
 
     init();

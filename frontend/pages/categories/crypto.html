@@ -69,9 +69,9 @@
       <div class="navbar__categories">
         <ul class="navbar__links__category-list category-list--hidden">
           <li class="category-list__item category-list__item--home">
-            <a href="./index.html" class="category-list__item__link">Home</a>
+            <a href="../../index.html" class="category-list__item__link">Home</a>
           </li>
-          <li class="category-list__item category-list__item--technology category-list__item--active">
+          <li class="category-list__item category-list__item--technology">
             <a href="./technology.html" class="category-list__item__link">Technology</a>
           </li>
           <li class="category-list__item category-list__item--sports">
@@ -98,7 +98,7 @@
           <li class="category-list__item category-list__item--videos">
             <a href="./videos.html" class="category-list__item__link">Videos</a>
           </li>
-          <li class="category-list__item category-list__item--crypto">
+          <li class="category-list__item category-list__item--crypto category-list__item--active">
             <a href="./crypto.html" class="category-list__item__link">Crypto</a>
           </li>
           <li class="category-list__item category-list__item--economics">
@@ -131,14 +131,15 @@
   <!-- page script starts -->
   <script type="module">
     import { addDateTimeToNavbar } from "../../modules/addDateTimeToNavbar.js";
-    import initTechnologyCategory from "../../modules/categories/technology-category.js";
+    import {cryptoNewsRSSURL1, cryptoNewsRSSURL2, moreCryptoNewsRSSURL} from '../../modules/categories/category-config.js'
+    import initCategory from "../../modules/categories/category-helper.js";
 
     async function init() {
       // Add date and time to navbar
       addDateTimeToNavbar();
 
       // Initialize technology category
-      initTechnologyCategory();
+      initCategory(cryptoNewsRSSURL1, cryptoNewsRSSURL2, moreCryptoNewsRSSURL, 'Crypto');
 
     }
 
