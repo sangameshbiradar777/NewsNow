@@ -1,2 +1,4 @@
 .vscode
-.node_modules
+
+# ignoring node module files
+node_modules

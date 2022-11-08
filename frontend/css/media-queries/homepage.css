@@ -119,23 +119,21 @@
 }
 
 @media screen and (max-width: 500px) {
-  :root,
-  ::after,
-  ::before {
-    font-size: 37.5%;
-  }
-
   .navbar__items {
     width: 60vw;
   }
 
   .trending-section__grid {
     grid-template-columns: repeat(4, 1fr);
-    max-height: 70rem;
-    height: 70rem;
+    max-height: 80rem;
+    height: 80rem;
   }
 
   .trending-section__grid__item:first-child {
+    grid-column: span 4;
+  }
+
+  .trending-section__grid__item:not(:first-child) {
     grid-column: span 4;
   }
 
@@ -150,11 +148,11 @@
 }
 
 @media screen and (max-width: 350px) {
-  :root,
+  /* :root,
   ::after,
   ::before {
     font-size: 31.25%;
-  }
+  } */
 
   .trending-section__card__title--carousel {
     font-size: var(--fs-19px);

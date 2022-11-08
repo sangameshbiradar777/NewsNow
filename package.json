@@ -1,0 +1,31 @@
+{
+  "name": "newsnow",
+  "version": "1.0.0",
+  "description": "News application where you get to know all the news happening over the world in real time.",
+  "source": "./frontend/index.html",
+  "type": "module",
+  "scripts": {
+    "start": "parcel", 
+    "build": "parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sangameshbiradar777/NewsNow.git"
+  },
+  "keywords": [
+    "NewsNow"
+  ],
+  "author": "Sangamesh Biradar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sangameshbiradar777/NewsNow/issues"
+  },
+  "homepage": "https://github.com/sangameshbiradar777/NewsNow#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "nanoid": "^4.0.0"
+  }
+}
