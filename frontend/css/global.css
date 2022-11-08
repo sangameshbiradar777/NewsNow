@@ -29,6 +29,11 @@ html, body {
   min-width: 100%;
 }
 
+.disable-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
 /* 
 * Color pallet
 * Primary color - #C1121F;

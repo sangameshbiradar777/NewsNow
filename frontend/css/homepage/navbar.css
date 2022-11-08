@@ -16,6 +16,7 @@
 .navbar__top {
   display: flex;
   position: relative;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   background-color: var(--bg-primary);
@@ -116,6 +117,14 @@
 
 .navbar__hamburger {
   display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__hamburger__icon {
+  color: var(--bg-secondary);
+  font-size: var(--fs-38px);
+
 }
 
 /* Categories style starts */

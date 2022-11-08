@@ -50,8 +50,8 @@
           <span class="navbar__date"></span>
           <span class="navbar__time"></span>
         </div>
-        <button class="navbar__hamburger">
-          <ion-icon name="reorder-two-outline"></ion-icon>
+        <button class="btn navbar__hamburger">
+          <ion-icon class="navbar__hamburger__icon" name="reorder-two-outline"></ion-icon>
         </button>
         <div class="navbar__items">
           <form class="navbar__search-container search-form">
@@ -201,6 +201,7 @@
     import initCategories from './modules/homepage/navbar.js';
     import {initShareNews} from './modules/share-news.js';
     import {stickCategoryToTop} from './modules/dom-helper.js';
+    import {initNavbarMedia} from './modules/media-queries/media.js'
 
     async function init() {
       // Add date and time to navbar
@@ -208,6 +209,9 @@
 
       // Initialize trending section
       await initTrendingSection();
+
+      // Add media queries
+      initNavbarMedia();
 
       // Initialize news sections
       initNewsSections();

@@ -36,14 +36,9 @@ async function fetchNews(newsURL) {
     console.log(error.message);
     return newsURLResponse;
   }
-
-  // TEMPORARY
-  // return topHeadlines;
 }
 
 async function getWorkingAPIKey(APIKeys) {
-
-  console.log("Im called")
 
   for(let APIKey = 0; APIKey < APIKeys.length; APIKey++) {
     // Create a news url object

@@ -26,6 +26,9 @@ function getFeaturedGridItemHTML(newsObjects, isMainItem = false) {
   const divElement = document.createElement('div');
 
   newsObjects.forEach((newsObject) => {
+    // Check for empty objects
+    if(!newsObject.title.length) return;
+    
     // Create a featured grid item
     const featuredGridItem = document.createElement('div');
     const className = isMainItem ? 'featured-grid__item featured-grid__item--main' : 'featured-grid__item';
@@ -72,6 +75,9 @@ function getCategoryNewsCard(newsObjects) {
   const divElement = document.createElement('div');
 
   newsObjects.forEach(newsObject => {
+    // Check for empty objects
+    if(!newsObject.title.length) return;
+
     const categoryNewsCardElement = document.createElement('div');
     categoryNewsCardElement.setAttribute('class', 'category-news__card');
 
@@ -112,8 +118,13 @@ function getMoreNewsItems(newsObjects) {
   const divElement = document.createElement('div');
 
   newsObjects.forEach(newsObject => {
+    // Check for empty objects
+    if(!newsObject.title.length) return;
+
     const moreNewsItemElement = document.createElement('div');
     moreNewsItemElement.setAttribute('class', 'more-news__item');
+
+    console.log(newsObject.description);
 
     moreNewsItemElement.innerHTML = `
     <a href="${newsObject.url}" target="_blank" class="more-news__item__link">
