@@ -1,3 +1,6 @@
+let intervalTimerId;
+let mouseOverOnCarousel, mouseLeaveOnCarousel;
+
 function putCarouselItemsSidebySide(carouselInnerElement) {
   // Get all the carousel elements
   const carouselItemElements = Array.from(carouselInnerElement.children);
@@ -17,36 +20,40 @@ function putCarouselItemsSidebySide(carouselInnerElement) {
   });
 }
 
+function getNextCarouselItem(carouselInnerElement) {
+  // Get the current carousel item
+  const currentCarouselItemElement =
+    carouselInnerElement.querySelector(".active");
+
+  // Get the next carousel item
+  const targetCarouselItemElement =
+    currentCarouselItemElement.nextElementSibling;
+
+  moveCarouselInner(
+    carouselInnerElement,
+    currentCarouselItemElement,
+    targetCarouselItemElement
+  );
+
+  // Update carousel btn elements
+  updateCarouselBtn(carouselInnerElement, targetCarouselItemElement);
+
+  // Find the index of target carousel item element
+  const targetIndex = getIndexOfTargetCarouselItem(
+    carouselInnerElement,
+    targetCarouselItemElement
+  );
+
+  // Update carousel nav dots
+  updateCarouselNav(targetIndex);
+}
+
 function goToNextCarouselItem(carouselInnerElement) {
   // Get the next carousel button from the DOM
   const btnCarouselNext = document.querySelector(".carousel__btn--right");
 
   btnCarouselNext.addEventListener("click", function () {
-    // Get the current carousel item
-    const currentCarouselItemElement =
-      carouselInnerElement.querySelector(".active");
-
-    // Get the next carousel item
-    const targetCarouselItemElement =
-      currentCarouselItemElement.nextElementSibling;
-
-    moveCarouselInner(
-      carouselInnerElement,
-      currentCarouselItemElement,
-      targetCarouselItemElement
-    );
-
-    // Update carousel btn elements
-    updateCarouselBtn(carouselInnerElement, targetCarouselItemElement);
-
-    // Find the index of target carousel item element
-    const targetIndex = getIndexOfTargetCarouselItem(
-      carouselInnerElement,
-      targetCarouselItemElement
-    );
-
-    // Update carousel nav dots
-    updateCarouselNav(targetIndex);
+    getNextCarouselItem(carouselInnerElement);
   });
 }
 
@@ -108,6 +115,8 @@ function moveCarouselInner(
 }
 
 function updateCarouselBtn(carouselInnerElement, targetCarouselItemElement) {
+  const carouselElement = document.querySelector('.carousel');
+
   // Find the index of targetCarouselItemElement
   const currentItemIndex = Array.from(carouselInnerElement.children).findIndex(
     (carouselItemElement) => {
@@ -131,6 +140,11 @@ function updateCarouselBtn(carouselInnerElement, targetCarouselItemElement) {
   if (currentItemIndex === carouselInnerElement.children.length - 1) {
     // Add the hiddren class to nextCarouselBtn
     nextCarouselBtn.classList.add("hidden");
+
+    // Clear the interval
+    clearInterval(intervalTimerId);
+    carouselElement.removeEventListener('mouseover', mouseOverOnCarousel);
+    carouselElement.removeEventListener('mouseleave', mouseLeaveOnCarousel);
   } else {
     nextCarouselBtn.classList.remove("hidden");
   }
@@ -152,10 +166,33 @@ function updateCarouselNav(targetIndex) {
   targetDotElement.classList.add("active");
 }
 
-export default function initCarousel() {
-  // Get the carousel element from the DOM
-  const carouselElement = document.querySelector(".carousel");
+function autoPlayCarousel(carouselInnerElement) {
+  const carouselElement = document.querySelector('.carousel');
 
+  intervalTimerId = setInterval(() => {
+    getNextCarouselItem(carouselInnerElement);
+  }, 5000); 
+
+  mouseOverOnCarousel = function() {
+    if(!intervalTimerId) return;
+
+    clearInterval(intervalTimerId);
+    intervalTimerId = undefined;
+  }
+
+  mouseLeaveOnCarousel = function() {
+    if(intervalTimerId) return;
+  
+    intervalTimerId = setInterval(() => {
+      getNextCarouselItem(carouselInnerElement);
+    }, 5000);
+  }
+
+  carouselElement.addEventListener('mouseover', mouseOverOnCarousel);
+  carouselElement.addEventListener('mouseleave', mouseLeaveOnCarousel);
+}
+
+export default function initCarousel() {
   // Get the carousel inner element
   const carouselInnerElement = document.querySelector(".carousel__inner");
 
@@ -167,4 +204,7 @@ export default function initCarousel() {
 
   // Add move to prev carousel item functionality
   goToPrevCarouselItem(carouselInnerElement);
+
+  // Auto play carousel
+  autoPlayCarousel(carouselInnerElement);
 }

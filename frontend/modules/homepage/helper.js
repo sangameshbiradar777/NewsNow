@@ -42,14 +42,15 @@ async function getWorkingAPIKey(APIKeys) {
 
   for(let APIKey = 0; APIKey < APIKeys.length; APIKey++) {
     // Create a news url object
-    let newsURL = new URL(`https://newsapi.org/v2/sources`);
+    let newsURL = new URL(`https://newsapi.org/v2/top-headlines`);
 
     // Create a new search url param object
     const serachParams = new URLSearchParams();
 
     // Append the api key to search params
+    serachParams.append('country', 'in');
     serachParams.append('apiKey', APIKeys[APIKey]);
-
+    
     // Add the apikey to URL
     newsURL.search = serachParams;
 

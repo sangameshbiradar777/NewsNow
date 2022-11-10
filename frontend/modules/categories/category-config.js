@@ -1,5 +1,6 @@
 // const RSSToJSONConverterURL = `https://www.toptal.com/developers/feed2json/convert?url=`;
-const RSSToJSONConverterURL = 'https://rss-to-json-serverless-api.vercel.app/api?feedURL=';
+// const RSSToJSONConverterURL = 'https://rss-to-json-serverless-api.vercel.app/api?feedURL=';
+const RSSToJSONConverterURL = 'https://rss-parser-sangamesh.herokuapp.com/';
 
 // Technology category URLs
 // const technologyNewsRSSURL = 'https://flipboard.com/@thenewsdesk/technology-shjum1jiz.rss';

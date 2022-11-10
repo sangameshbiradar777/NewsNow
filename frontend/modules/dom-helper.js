@@ -8,9 +8,17 @@ function hideLoaderAndDisplayContent() {
   pageElement.style.display = 'block';
 }
 
-function addErrorMessageToDOM(errorMessage) {
+function addErrorMessageToDOM(errorMessage, isMainGrid) {
+  let mainElement;
+
   // Get the main element
-  const mainElement = document.querySelector('main');
+  if(isMainGrid) {
+    mainElement = document.querySelector('.main-grid');
+    mainElement.style.display = 'block';
+  } 
+  else mainElement = document.querySelector('main');
+  
+  hideLoaderAndDisplayContent();
 
   // Set the main element to empty
   mainElement.innerHTML = "";

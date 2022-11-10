@@ -1,28 +1,9 @@
-@media screen and (max-width: 1200px) {
-  :root,
-  ::after,
-  ::before {
-    font-size: 56.25%;
-  }
-
-  .navbar__links__category-list {
-    overflow: auto;
-  }
-}
-
 @media screen and (max-width: 1100px) {
   .news-card {
     width: var(--spacing-260px);
   }
 }
 
-@media screen and (max-width: 1050px) {
-  :root,
-  ::after,
-  ::before {
-    font-size: 50%;
-  }
-}
 
 @media screen and (max-width: 900px) {
   .trending-section__grid {
@@ -39,13 +20,6 @@
   }
 }
 
-@media screen and (max-width: 800px) {
-  :root,
-  ::after,
-  ::before {
-    font-size: 43.75%;
-  }
-}
 
 @media screen and (max-width: 700px) {
   .trending-section__grid {
@@ -64,77 +38,33 @@
   .news__btn {
     display: none;
   }
-
-  .navbar__hamburger {
-    display: flex;
-  }
-
-  .navbar__hamburger--active {
-    transform: rotate(90deg);
-  }
-
-  .navbar__items {
-    position: fixed;
-    width: 40vw;
-    height: 100vh;
-    padding: var(--spacing-24px);
-    background-color: #fff;
-    flex-direction: column;
-    z-index: 100;
-    right: 0;
-    transform: translateX(100%);
-    transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
-  }
-
-  .show-navbar-items {
-    transform: translateX(0);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
-  }
-
-  .navbar__search-container {
-    width: 60%;
-    border: 1px solid var(--bg-primary-tint);
-    background-color: #fff;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
-    padding: 0 var(--spacing-8px);
-    font-size: var(--fs-19px);
-    border-radius: var(--spacing-4px);
-  }
-
-  .navbar__search-container:focus {
-    background-color: #fff;
-    border: none;
-  }
-
-  .navbar__search-icon {
-    font-size: var(--fs-15px);
-  }
-
-  .navbar__links > * {
-    color: var(--bg-secondary-tint);
-    background-color: var(--bg-primary-tint);
-    border-radius: var(--spacing-4px);
-    padding: var(--spacing-8px) var(--spacing-16px);
-  }
 }
 
 @media screen and (max-width: 500px) {
-  .navbar__items {
-    width: 60vw;
+  .section {
+    padding: var(--spacing-24px) var(--spacing-12px);
   }
 
   .trending-section__grid {
     grid-template-columns: repeat(4, 1fr);
-    max-height: 80rem;
-    height: 80rem;
+    grid-template-rows: repeat(6, minmax(0, 100%));
+    max-height: 70rem;
+    height: 70rem;
+    gap: var(--spacing-16px);
+  }
+
+  .trending-section__grid__item__link {
+    text-decoration: none;
   }
 
   .trending-section__grid__item:first-child {
     grid-column: span 4;
+    grid-row: span 2;
   }
 
   .trending-section__grid__item:not(:first-child) {
     grid-column: span 4;
+    grid-row: span 1;
   }
 
   .trending-section__grid__item:nth-child(4),
@@ -142,31 +72,55 @@
     display: block;
   }
 
-  .navbar__datetime {
-    display: none;
+  .trending-section__card {
+    background-color: #fff;
   }
-}
 
-@media screen and (max-width: 350px) {
-  /* :root,
-  ::after,
-  ::before {
-    font-size: 31.25%;
-  } */
+  .trending-section__grid__item:not(:first-child) .trending-section__card img{
+    flex-shrink: 0;
+    border-radius: var(--spacing-4px);
+    width: 40%;
+    height: 100%;
+  }
+
+  .trending-section__grid__item:not(:first-child) .trending-section__card {
+    display: flex;
+    gap: var(--spacing-12px);
+  }
+
+  .trending-section__grid__item:not(:first-child) .trending-section__card__author {
+    color: #666;
+  }
+
+  .trending-section__grid__item:not(:first-child) .trending-section__card__title {
+    color: #444;
+    font-weight: 600;
+  }
+
+  .trending-section__grid__item:not(:first-child) .trending-section__card::before {
+    background: transparent;
+  }
+
+  .trending-section__grid__item:not(:first-child) .trending-section__card .trending-section__card__text-container {
+    position: static;
+    
+  }
 
   .trending-section__card__title--carousel {
     font-size: var(--fs-19px);
   }
 
-  .section {
-    padding: var(--spacing-12px) var(--spacing-24px);
+  .trending-section__card__author {
+    font-size: var(--fs-12px);
   }
 
-  .navbar__search-container {
-    width: 90%;
+  .trending-section__card__text-container--carousel {
+    left: var(--spacing-12px);
   }
+}
 
-  .navbar__categories {
-    padding: var(--spacing-12px) var(--spacing-8px);
+@media screen and (max-width: 350px) {
+  .trending-section__card__title--carousel {
+    font-size: var(--fs-19px);
   }
 }

@@ -30,9 +30,31 @@
 
 .navbar__logo {
   font-size: var(--fs-24px);
-  font-family: "Inter Tight", sans-serif;
+  font-family: 'Inter', sans-serif;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.navbar__logo span {
+  letter-spacing: -1px;
+  /* animation-name: slide-in;
+  animation-duration: 1s;
+  animation-delay: 1s; */
+  animation: slide-in 1s ease;
+}
+
+.navbar__logo a {
+  text-decoration: none;
+  display: flex;
+  gap: var(--spacing-4px);
+  align-items: center;
+}
+
+.navbar__logo img {
+  width: var(--spacing-32px);
+  height: var(--spacing-32px);
+  border-radius: var(--spacing-4px);
+  animation: slide-in 1s ease;
 }
 
 .navbar__logo a {
@@ -136,8 +158,6 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-
-
 .navbar__categories.sticky {
   position: fixed;
   top: 0;
@@ -193,3 +213,15 @@
 /* Categories style ends */
 
 /* Navbar ends */
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

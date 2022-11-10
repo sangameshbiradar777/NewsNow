@@ -8,7 +8,7 @@
   <title>NewsNow | News from all over the world</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&&family=Inter:wght@700&display=swap"
     rel="stylesheet" />
 
   <link rel="stylesheet" href="../../css/global.css" />
@@ -19,6 +19,10 @@
   <link rel="stylesheet" href="../../css/categories/category-template.css">
   <link rel="stylesheet" href="../../css/categories/aside.css">
   <link rel="stylesheet" href="../../css/states.css" />
+  <link rel="stylesheet" href="../../css/media-queries/global.css">
+  <link rel="stylesheet" href="../../css/media-queries/category-template.css">
+  <link rel="stylesheet" href="../../css/media-queries/global.css">
+  <link rel="stylesheet" href="../../css/media-queries/category-template.css">
 </head>
 
 <body>
@@ -45,12 +49,18 @@
     <nav class="navbar">
       <div class="navbar__top">
         <h1 class="navbar__logo">
-          <a href="/frontend/">NewsNow</a>
+          <a href="../../">
+            <img src="../../src/images/logo.jpg" alt="Logo" >
+            <span>NewsNow</span>
+          </a>
         </h1>
         <div class="navbar__datetime">
           <span class="navbar__date"></span>
           <span class="navbar__time"></span>
         </div>
+        <button class="btn navbar__hamburger">
+          <ion-icon class="navbar__hamburger__icon" name="reorder-two-outline"></ion-icon>
+        </button>
         <div class="navbar__items">
           <form class="navbar__search-container search-form">
             <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
@@ -59,7 +69,7 @@
             </ion-icon>
           </form>
           <div class="navbar__links">
-            <a href="./pages/bookmarks/bookmarks.html" class="navbar__bookmarks-link">
+            <a href="../bookmarks/bookmarks.html" class="navbar__bookmarks-link">
               Bookmarks
             </a>
           </div>

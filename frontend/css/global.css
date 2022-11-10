@@ -165,15 +165,17 @@ html, body {
 
 ::-webkit-scrollbar-track {
   width: var(--spacing-8px);
-  background-color: #bbb;
+  background-color: #eee;
+  border-radius: var(--spacing-4px);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #777;
+  background-color: #ddd;
+  border-radius: var(--spacing-4px);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #444;
+  background-color: #999;
 }
 
 /* Curstom scrollbar ends */
@@ -425,12 +427,15 @@ main {
   width: 100px;
   height: 100px;
   margin: 0 auto;
+  border-radius: var(--spacing-4px);
+  overflow: hidden;
 }
 
 .sk-cube-grid .sk-cube {
   width: 33%;
   height: 33%;
   background-color: var(--bg-primary-tint);
+  
   float: left;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
           animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
@@ -482,3 +487,11 @@ main {
             transform: scale3D(0, 0, 1);
   } 
 }
+
+
+
+
+
+
+
+

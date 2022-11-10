@@ -38,11 +38,13 @@ function getFeaturedGridItemHTML(newsObjects, isMainItem = false) {
     <a href="${newsObject.url}" target="_blank" class="featured-grid__item__link">
       <div class="featured-grid__item__img-container">
         <img
-          src="${newsObject.media?.content.url ?? newsImageFallbackURL}" alt="
+          src="${newsObject['media:content']?.$.url ?? newsImageFallbackURL}" alt="
           News image">
       </div>
       <div class="featured-grid__item__text-container">
+        ${isMainItem ? `<span class="featured-grid__item__author">${compressText(newsObject.creator, 15)}</span> - ` : ""}
         <span class="featured-grid__item__author">${processTime(newsObject.created)}</span>
+        
         <h2 class="featured-grid__item__title">${isMainItem ? compressText(newsObject.title, 100) : compressText(newsObject.title, 50)}</h2> 
       </div>
       
@@ -84,11 +86,11 @@ function getCategoryNewsCard(newsObjects) {
     categoryNewsCardElement.innerHTML = `
     <a href="${newsObject.url}" target="_blank" class="category-news__card__link">
       <div class="category-news__card__img-container">
-        <img src="${newsObject.media?.content.url ?? newsImageFallbackURL}" alt="News image">
+        <img src="${newsObject['media:content']?.$.url ?? newsImageFallbackURL}" alt="News image">
       </div>
 
       <div class="category-news__card__text-container">
-        <span class="featured-grid__item__author">${processTime(newsObject.created)}</span>
+        <span class="featured-grid__item__author">${compressText(newsObject.creator, 15)} - ${processTime(newsObject.created)}</span>
         <h4 class="category-news__card__title">${compressText(newsObject.title, 100)}</h4>
       </div>
     </a>
@@ -124,8 +126,6 @@ function getMoreNewsItems(newsObjects) {
     const moreNewsItemElement = document.createElement('div');
     moreNewsItemElement.setAttribute('class', 'more-news__item');
 
-    console.log(newsObject.description);
-
     moreNewsItemElement.innerHTML = `
     <a href="${newsObject.url}" target="_blank" class="more-news__item__link">
       <div class="more-news__item__text-container">
@@ -134,7 +134,7 @@ function getMoreNewsItems(newsObjects) {
       </div>
       <div class="more-news__item__img-container">
         <img
-          src="${newsObject.media?.content.url ?? newsImageFallbackURL}" alt="
+          src="${newsObject['media:content']?.$.url ?? newsImageFallbackURL}" alt="
           News image">
       </div>
     </a>

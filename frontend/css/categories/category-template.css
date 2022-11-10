@@ -9,10 +9,10 @@ main {
 }
 
 .main-grid {
-  max-width: 90%;
+  max-width: 1600px;
   display: grid;
   grid-template-columns: minmax(0, 70%) minmax(0, 30%);
-  padding: var(--spacing-24px) 0;
+  padding: var(--spacing-24px) var(--spacing-48px);
   gap: var(--spacing-32px);
   margin: 0 auto;
 }
@@ -60,6 +60,7 @@ main {
 .featured-grid__item--main .featured-grid__item__link {
   flex-direction: column;
   text-decoration: none;
+  width: 100%;
 }
 
 .featured-grid__item--main .featured-grid__item__img-container {
