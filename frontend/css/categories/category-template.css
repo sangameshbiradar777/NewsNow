@@ -21,7 +21,7 @@ main {
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: var(--spacing-12px);
+  gap: var(--spacing-24px);
   padding-bottom: var(--spacing-12px);
   /* max-height: var(--spacing-400px); */
   border-bottom: 1px solid #ddd;

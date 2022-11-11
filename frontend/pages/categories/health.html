@@ -43,125 +43,112 @@
       <span class="loader__text">Getting Health news for you...</span>
     </div>
 
-    <div class="page" style="display: none">
-      <!-- Navbar starts -->
-      <nav class="navbar">
-        <div class="navbar__top">
-          <h1 class="navbar__logo">
-            <a href="../../">
-              <img src="../../src/images/logo.jpg" alt="Logo" />
-              <span>NewsNow</span>
-            </a>
-          </h1>
-          <div class="navbar__datetime">
-            <span class="navbar__date"></span>
-            <span class="navbar__time"></span>
-          </div>
-          <button class="btn navbar__hamburger">
+    <!-- Navbar starts -->
+    <nav class="navbar">
+      <div class="navbar__top">
+        <h1 class="navbar__logo">
+          <a href="../../">
+            <img src="../../src/images/logo.jpg" alt="Logo" />
+            <span>NewsNow</span>
+          </a>
+        </h1>
+        <div class="navbar__datetime">
+          <span class="navbar__date"></span>
+          <span class="navbar__time"></span>
+        </div>
+        <button class="btn navbar__hamburger">
+          <ion-icon
+            class="navbar__hamburger__icon"
+            name="reorder-two-outline"
+          ></ion-icon>
+        </button>
+        <div class="navbar__items">
+          <form class="navbar__search-container search-form">
+            <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
+            <input
+              type="text"
+              name="search-text"
+              autocomplete="off"
+              placeholder="Search"
+              required
+            />
             <ion-icon
-              class="navbar__hamburger__icon"
-              name="reorder-two-outline"
-            ></ion-icon>
-          </button>
-          <div class="navbar__items">
-            <form class="navbar__search-container search-form">
-              <ion-icon
-                class="icon navbar__search-icon"
-                name="search"
-              ></ion-icon>
-              <input
-                type="text"
-                name="search-text"
-                autocomplete="off"
-                placeholder="Search"
-                required
-              />
-              <ion-icon
-                class="navbar__search__clear-icon search__clear-icon hide-clear-icon"
-                name="close-outline"
-              >
-              </ion-icon>
-            </form>
-            <div class="navbar__links">
-              <a
-                href="../bookmarks/bookmarks.html"
-                class="navbar__bookmarks-link"
-              >
-                Bookmarks
-              </a>
-            </div>
+              class="navbar__search__clear-icon search__clear-icon hide-clear-icon"
+              name="close-outline"
+            >
+            </ion-icon>
+          </form>
+          <div class="navbar__links">
+            <a
+              href="../bookmarks/bookmarks.html"
+              class="navbar__bookmarks-link"
+            >
+              Bookmarks
+            </a>
           </div>
         </div>
+      </div>
 
-        <div class="navbar__categories">
-          <ul class="navbar__links__category-list category-list--hidden">
-            <li class="category-list__item category-list__item--home">
-              <a href="../../index.html" class="category-list__item__link"
-                >Home</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--technology">
-              <a href="./technology.html" class="category-list__item__link"
-                >Technology</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--sports">
-              <a href="./sports.html" class="category-list__item__link"
-                >Sports</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--entertainment">
-              <a href="./entertainment.html" class="category-list__item__link"
-                >Entertainment</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--business">
-              <a href="./business.html" class="category-list__item__link"
-                >Business</a
-              >
-            </li>
-            <li
-              class="category-list__item category-list__item--health category-list__item--active"
+      <div class="navbar__categories">
+        <ul class="navbar__links__category-list category-list--hidden">
+          <li class="category-list__item category-list__item--home">
+            <a href="../../index.html" class="category-list__item__link"
+              >Home</a
             >
-              <a href="./health.html" class="category-list__item__link"
-                >Health</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--science">
-              <a href="./science.html" class="category-list__item__link"
-                >Science</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--investing">
-              <a href="./investing.html" class="category-list__item__link"
-                >Investing</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--travel">
-              <a href="./travel.html" class="category-list__item__link"
-                >Travel</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--videos">
-              <a href="./videos.html" class="category-list__item__link"
-                >Videos</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--crypto">
-              <a href="./crypto.html" class="category-list__item__link"
-                >Crypto</a
-              >
-            </li>
-            <li class="category-list__item category-list__item--economics">
-              <a href="./economics.html" class="category-list__item__link"
-                >Economics</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- Navbar ends -->
+          </li>
+          <li class="category-list__item category-list__item--technology">
+            <a href="./technology.html" class="category-list__item__link"
+              >Technology</a
+            >
+          </li>
+          <li class="category-list__item category-list__item--sports">
+            <a href="./sports.html" class="category-list__item__link">Sports</a>
+          </li>
+          <li class="category-list__item category-list__item--entertainment">
+            <a href="./entertainment.html" class="category-list__item__link"
+              >Entertainment</a
+            >
+          </li>
+          <li class="category-list__item category-list__item--business">
+            <a href="./business.html" class="category-list__item__link"
+              >Business</a
+            >
+          </li>
+          <li
+            class="category-list__item category-list__item--health category-list__item--active"
+          >
+            <a href="./health.html" class="category-list__item__link">Health</a>
+          </li>
+          <li class="category-list__item category-list__item--science">
+            <a href="./science.html" class="category-list__item__link"
+              >Science</a
+            >
+          </li>
+          <li class="category-list__item category-list__item--investing">
+            <a href="./investing.html" class="category-list__item__link"
+              >Investing</a
+            >
+          </li>
+          <li class="category-list__item category-list__item--travel">
+            <a href="./travel.html" class="category-list__item__link">Travel</a>
+          </li>
+          <li class="category-list__item category-list__item--videos">
+            <a href="./videos.html" class="category-list__item__link">Videos</a>
+          </li>
+          <li class="category-list__item category-list__item--crypto">
+            <a href="./crypto.html" class="category-list__item__link">Crypto</a>
+          </li>
+          <li class="category-list__item category-list__item--economics">
+            <a href="./economics.html" class="category-list__item__link"
+              >Economics</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar ends -->
 
+    <div class="page" style="display: none">
       <div class="main-grid">
         <main></main>
 
@@ -198,6 +185,10 @@
         // Add date and time to navbar
         addDateTimeToNavbar();
 
+        initNavbarMedia();
+
+        stickCategoryToTop(true);
+
         // Initialize technology category
         await initCategory(
           healthNewsRSSURL1,
@@ -207,10 +198,6 @@
         );
 
         initSearch();
-
-        initNavbarMedia();
-
-        stickCategoryToTop(true);
       }
 
       init();

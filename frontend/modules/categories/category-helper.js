@@ -6,7 +6,6 @@ import {
 import { RSSToJSONConverterURL } from "./category-config.js";
 import { hideLoaderAndDisplayContent } from "../dom-helper.js";
 import { getMoreNewsElement } from "./category-template.js";
-import { stickCategoryToTop } from "../dom-helper.js";
 import lazyload from "../lazyload.js";
 
 async function fetchCategoryNews(URL) {
@@ -102,8 +101,6 @@ async function initCategory(
   mainElement.append(feauturedSectionElement);
 
   hideLoaderAndDisplayContent();
-
-  stickCategoryToTop(true);
 
   // Get more technology news
   const moreCategoryNews = await fetchCategoryNews(moreCategoryNewsURL);

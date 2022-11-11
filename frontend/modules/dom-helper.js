@@ -65,6 +65,8 @@ function stickCategoryToTop(isCategory = false) {
       if (isCategory) mainElement.style.paddingTop = "24px";
       else mainElement.style.paddingTop = 0;
     }
+
+    console.log("fired");
   }
 
   window.addEventListener("scroll", function () {

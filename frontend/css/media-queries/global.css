@@ -134,6 +134,12 @@
 }
 
 @media screen and (max-width: 400px) {
+  :root,
+  ::after,
+  ::before {
+    font-size: 56.25%;
+  }
+
   .featured-grid__item--main .featured-grid__item__title {
     font-size: var(--fs-19px);
   }
