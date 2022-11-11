@@ -89,6 +89,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: var(--spacing-4px);
 }
 
 .news-card__text-container {

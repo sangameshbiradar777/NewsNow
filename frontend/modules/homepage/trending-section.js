@@ -1,8 +1,11 @@
 import { trendingNewsURL, newsImageFallbackURL } from "../config.js";
-import { fetchNews} from "./helper.js";
+import { fetchNews } from "./helper.js";
 import { getProcessedData, compressText } from "../data-processor.js";
 import initCarousel from "../homepage/carousel.js";
-import {hideLoaderAndDisplayContent, addErrorMessageToDOM} from '../dom-helper.js';
+import {
+  hideLoaderAndDisplayContent,
+  addErrorMessageToDOM,
+} from "../dom-helper.js";
 
 // Implementation of the function getTop10TrendingNews
 function getTop10TrendingNews(trendingNews) {
@@ -122,10 +125,14 @@ function addTrendingNewsToDOM(trendingNewsObjects) {
 function getTrendingNewsItemInner(newsObject, forCarousel = false) {
   return `
       <div class="action-container">
-        <button id="${newsObject.id}" class="btn action__btn action__btn--share">
+        <button id="${
+          newsObject.id
+        }" class="btn action__btn action__btn--share">
           <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
         </button>
-        <button id="${newsObject.id}" class="btn action__btn action__btn--bookmark">
+        <button id="${
+          newsObject.id
+        }" class="btn action__btn action__btn--bookmark">
           <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
         </button>
       </div>
@@ -169,6 +176,7 @@ function getTrendingNewsItemInner(newsObject, forCarousel = false) {
 
 // Initiator function
 async function initTrendingSection() {
+  console.time("Execution time");
 
   let trendingNewsResponse;
 
@@ -177,18 +185,18 @@ async function initTrendingSection() {
     trendingNewsResponse = await fetchNews(trendingNewsURL);
 
     // If the status is not ok throw a new error
-    if(trendingNewsResponse.status !== 'ok') {
-      const errorMessage = 'Server is experiencing high traffic. Please try again later.'
+    if (trendingNewsResponse.status !== "ok") {
+      const errorMessage =
+        "Server is experiencing high traffic. Please try again later.";
       throw new Error(errorMessage);
     }
-  }
-  catch(error) {
+  } catch (error) {
     console.log(error.message);
     addErrorMessageToDOM(error.message);
 
     return;
   }
-  
+
   const trendingNews = trendingNewsResponse.articles;
 
   // Get the top 10 news from trending news
@@ -197,9 +205,7 @@ async function initTrendingSection() {
   // Get the clean version of top10trendingnews( without falsy values),
   // The response may have some irregular data so using this fucntion we can make
   // out data consistent
-  const processedTop10TrendingNews = getProcessedData(
-    top10TrendingNewsRaw
-  );
+  const processedTop10TrendingNews = getProcessedData(top10TrendingNewsRaw);
 
   // Add the trending news Carousel to DOM
   addTrendingNewsCarouselToDOM(processedTop10TrendingNews);
@@ -212,14 +218,16 @@ async function initTrendingSection() {
     next4TrendingNewsRaw
   );
 
-   // After getting the articles hide loader and display content
-   hideLoaderAndDisplayContent();
+  // After getting the articles hide loader and display content
+  hideLoaderAndDisplayContent();
 
   // Initialize carousel
   initCarousel();
 
   // Add the trending news to DOM
   addTrendingNewsToDOM(processedNext4TrendingNews);
+
+  console.timeEnd("Execution time");
 }
 
 export default initTrendingSection;

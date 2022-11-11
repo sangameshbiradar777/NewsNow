@@ -1,4 +1,4 @@
-import {newsAPIKeys, serverURL} from '../config.js';
+import { newsAPIKeys, serverURL } from "../config.js";
 
 // Implementation of the function fetchTrendingNews
 let newsURLResponse;
@@ -16,8 +16,8 @@ async function fetchNews(newsURL) {
     // Create a search param object to add api key to the search parameter
     const newsURLsearchParams = new URLSearchParams(newsURL.search);
 
-    // Append the 
-    newsURLsearchParams.append('apiKey', APIKey);
+    // Append the
+    newsURLsearchParams.append("apiKey", APIKey);
 
     newsURL.search = newsURLsearchParams;
 
@@ -39,8 +39,7 @@ async function fetchNews(newsURL) {
 }
 
 async function getWorkingAPIKey(APIKeys) {
-
-  for(let APIKey = 0; APIKey < APIKeys.length; APIKey++) {
+  for (let APIKey = 0; APIKey < APIKeys.length; APIKey++) {
     // Create a news url object
     let newsURL = new URL(`https://newsapi.org/v2/top-headlines`);
 
@@ -48,9 +47,9 @@ async function getWorkingAPIKey(APIKeys) {
     const serachParams = new URLSearchParams();
 
     // Append the api key to search params
-    serachParams.append('country', 'in');
-    serachParams.append('apiKey', APIKeys[APIKey]);
-    
+    serachParams.append("country", "in");
+    serachParams.append("apiKey", APIKeys[APIKey]);
+
     // Add the apikey to URL
     newsURL.search = serachParams;
 
@@ -63,32 +62,28 @@ async function getWorkingAPIKey(APIKeys) {
       // Make a GET request to the url
       const APIResponse = await fetch(fetchURL);
 
-      if(APIResponse.ok) {
+      if (APIResponse.ok) {
         // Conver the response to json
         const sourceData = await APIResponse.json();
 
         // If we get the source date from the API that mean this api key is working,
         // So return this api key
-        if(sourceData.status == 'ok') {
+        if (sourceData.status == "ok") {
           return APIKeys[APIKey];
-        }
-        else {
+        } else {
           const errorMessage = `⚡⚡🔑${APIKeys[APIKey]}🔑 API key respondend with a status of ${sourceData.status}, 
           error description - ${sourceData.code}⚡⚡`;
           throw new Error(errorMessage);
         }
       }
-    }
-    catch(error) {
+    } catch (error) {
       console.log(error.message);
     }
-  } 
+  }
 }
 
 async function fetchURL(URL) {
   return await fetchNews(URL);
 }
-
-
 
 export { fetchNews, fetchURL };

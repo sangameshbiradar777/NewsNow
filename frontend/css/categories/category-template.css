@@ -15,6 +15,7 @@ main {
   padding: var(--spacing-24px) var(--spacing-48px);
   gap: var(--spacing-32px);
   margin: 0 auto;
+  transition: none;
 }
 
 .featured-grid {
@@ -45,7 +46,6 @@ main {
 
 .featured-grid__sub-item {
   max-height: 100%;
-  
 }
 
 .featured-grid__sub-items .featured-grid__item__link {
@@ -161,4 +161,3 @@ main {
 }
 
 /* Category news sections styles starts */
-

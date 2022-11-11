@@ -6,10 +6,11 @@ import {
   businessNewsURL,
   healthNewsURL,
   scienceNewsURL,
-  newsImageFallbackURL
+  newsImageFallbackURL,
+  preLoadImage,
 } from "../config.js";
-import {fetchNews} from "./helper.js";
-import {getProcessedData, compressText} from "../data-processor.js";
+import { fetchNews } from "./helper.js";
+import { getProcessedData, compressText } from "../data-processor.js";
 
 // Implementation of the function addTopNewsCardsToDOM
 function addNewsCardsToDOM(elementToAppend, newsObjects) {
@@ -95,7 +96,9 @@ function getNewsCardInnerHTML(newsObject) {
       <button id="${newsObject.id}" class="btn action__btn action__btn--share">
         <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
       </button>
-      <button id="${newsObject.id}" class="btn action__btn action__btn--bookmark">
+      <button id="${
+        newsObject.id
+      }" class="btn action__btn action__btn--bookmark">
         <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
       </button>
     </div>
@@ -105,7 +108,8 @@ function getNewsCardInnerHTML(newsObject) {
           newsObject.imageURL
             ? `<img
           class="news-card__img"
-          src="${newsObject.imageURL}"
+          src='${preLoadImage}'
+          data-src="${newsObject.imageURL}"
           alt="News image"
           onerror="this.src='${newsImageFallbackURL}'"
           />`
@@ -129,17 +133,20 @@ function getNewsCardInnerHTML(newsObject) {
 
 function observeNewsSectons() {
   // Get all the news elements
-  const newsElements = document.querySelectorAll('.news');
+  const newsElements = document.querySelectorAll(".news");
 
   // Loop over all the newsElments and observer for intersections
-  newsElements.forEach(newsElement => {
+  newsElements.forEach((newsElement) => {
     // Create a new observer
-    const observer = new IntersectionObserver((intersectionEntries) => {
-      showOrHideScrollerBtns(intersectionEntries, newsElement);
-    }, {
-      root: newsElement,
-      threshold: 1
-    });
+    const observer = new IntersectionObserver(
+      (intersectionEntries) => {
+        showOrHideScrollerBtns(intersectionEntries, newsElement);
+      },
+      {
+        root: newsElement,
+        threshold: 1,
+      }
+    );
 
     // Get the first news card element
     const firstNewsCardElement = newsElement.querySelector(".news-card");
@@ -149,13 +156,13 @@ function observeNewsSectons() {
     observer.observe(firstNewsCardElement);
 
     // Get the last news card element of the news element
-    const newsCardElements = newsElement.querySelectorAll('.news-card')
+    const newsCardElements = newsElement.querySelectorAll(".news-card");
     const lastNewsCardElement = newsCardElements[newsCardElements.length - 1];
-    lastNewsCardElement.setAttribute('id', 'last-news-card')
+    lastNewsCardElement.setAttribute("id", "last-news-card");
 
     // Observer the last news card for intersections
     observer.observe(lastNewsCardElement);
-  })
+  });
 }
 
 function showOrHideScrollerBtns(intersectionEntries, newsElement) {
@@ -168,13 +175,13 @@ function showOrHideScrollerBtns(intersectionEntries, newsElement) {
   // Check for which card the intersection has fired
   if (interSectionEntry.target.id === "first-news-card") {
     if (interSectionEntry.isIntersecting) {
-      btnBackward.classList.add('hidden');
+      btnBackward.classList.add("hidden");
     } else {
-      btnBackward.classList.remove('hidden');
+      btnBackward.classList.remove("hidden");
     }
-  } 
-  
-  if(interSectionEntry.target.id === "last-news-card") {
+  }
+
+  if (interSectionEntry.target.id === "last-news-card") {
     if (interSectionEntry.isIntersecting) {
       btnForward.classList.add("hidden");
     } else {

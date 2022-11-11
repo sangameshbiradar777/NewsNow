@@ -8,7 +8,7 @@ const newsAPIKeys = [
   "9db544a55f824effa9d8c198caba01ee",
 ];
 const baseURL = `https://newsapi.org/v2/everything?`;
-const serverURL = 'https://newsnow-api.herokuapp.com/getnews/';
+const serverURL = "https://newsnow-api.herokuapp.com/getnews/";
 const trendingNewsURL = `https://newsapi.org/v2/top-headlines?language=en`;
 const topNewsURL = `https://newsapi.org/v2/top-headlines?country=in&language=en`;
 const technologyNewsURL = `https://newsapi.org/v2/top-headlines?language=en&category=technology`;
@@ -27,6 +27,9 @@ const searchResultsToDisplayPerPage = 10;
 // For developer/free plan only 100 search results are allowed
 const maximumSearchResultsAllowed = 100;
 
+const preLoadImage =
+  "https://images.unsplash.com/photo-1552324190-9e86fa095c4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1&q=80";
+
 const newsImageFallbackURL = `https://images.pexels.com/photos/10464454/pexels-photo-10464454.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`;
 
 export {
@@ -42,6 +45,7 @@ export {
   CONTENTCHARACTERLIMIT,
   AUTHORCHARACHTERLIMIT,
   MAXCHARACTERLIMIT,
+  preLoadImage,
   newsImageFallbackURL,
   newsAPIKeys,
   baseURL,

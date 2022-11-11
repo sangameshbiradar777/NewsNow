@@ -6,6 +6,8 @@ import {
 import { RSSToJSONConverterURL } from "./category-config.js";
 import { hideLoaderAndDisplayContent } from "../dom-helper.js";
 import { getMoreNewsElement } from "./category-template.js";
+import { stickCategoryToTop } from "../dom-helper.js";
+import lazyload from "../lazyload.js";
 
 async function fetchCategoryNews(URL) {
   try {
@@ -49,6 +51,26 @@ function getMainElement(newsObjects, heading) {
   return mainElement;
 }
 
+function getFeaturedSectionElement(newsObjects) {
+  // Get featured section
+  const featuredSectionElement = getFeaturedSection(
+    newsObjects.slice(0, 5),
+    "Featured"
+  );
+
+  return featuredSectionElement;
+}
+
+function getCategoryNewsSectionElement(newsObjects, heading) {
+  // Get Category news section
+  const categoryNewsSectionElement = getCategoryNewsSection(
+    newsObjects,
+    heading
+  );
+
+  return categoryNewsSectionElement;
+}
+
 async function initCategory(
   categoryNewsRSSURL1,
   categoryNewsRSSURL2,
@@ -67,13 +89,21 @@ async function initCategory(
   const categoryNews1 = await fetchCategoryNews(categoryNewsURL1);
   const categoryNews2 = await fetchCategoryNews(categoryNewsURL2);
 
+  // Get the main element
+  const mainElement = document.querySelector("main");
+
   // Get the main grid element
-  const mainGridElement = document.querySelector(".main-grid");
+  const asideElement = document.querySelector("aside");
 
-  const categoryNews = [...categoryNews1.items, ...categoryNews2.items];
+  const feauturedSectionElement = getFeaturedSectionElement(
+    categoryNews1.items
+  );
 
-  // Add main to DOM
-  const mainElement = getMainElement(categoryNews, `${category} News`);
+  mainElement.append(feauturedSectionElement);
+
+  hideLoaderAndDisplayContent();
+
+  stickCategoryToTop(true);
 
   // Get more technology news
   const moreCategoryNews = await fetchCategoryNews(moreCategoryNewsURL);
@@ -84,14 +114,28 @@ async function initCategory(
     "More News"
   );
 
-  const asideElement = document.querySelector("aside");
   asideElement.append(moreNewsElement);
 
-  mainGridElement.append(mainElement, asideElement);
+  const categoryNews = [
+    ...categoryNews1.items.slice(5),
+    ...categoryNews2.items,
+  ];
 
-  hideLoaderAndDisplayContent();
+  const categoryNewsSectionElement = getCategoryNewsSectionElement(
+    categoryNews,
+    `${category} News`
+  );
+
+  mainElement.append(categoryNewsSectionElement);
+
+  lazyload();
 }
 
 export default initCategory;
 
-export { fetchCategoryNews, getMainElement };
+export {
+  fetchCategoryNews,
+  getMainElement,
+  getFeaturedSectionElement,
+  getCategoryNewsSectionElement,
+};

@@ -1,242 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NewsNow | News from all over the world</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700&family=Inter:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NewsNow | News from all over the world</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700&family=Inter:wght@700&display=swap"
-    rel="stylesheet" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/homepage/navbar.css" />
+    <link rel="stylesheet" href="./css/homepage/trending-section.css" />
+    <link rel="stylesheet" href="./css/homepage/carousel.css" />
+    <link rel="stylesheet" href="./css/homepage/news-sections.css" />
+    <link rel="stylesheet" href="./css/states.css" />
+    <link rel="stylesheet" href="./css/media-queries/global.css" />
+    <link rel="stylesheet" href="./css/media-queries/homepage.css" />
+  </head>
 
-  <link rel="stylesheet" href="./css/global.css" />
-  <link rel="stylesheet" href="./css/homepage/navbar.css" />
-  <link rel="stylesheet" href="./css/homepage/trending-section.css" />
-  <link rel="stylesheet" href="./css/homepage/carousel.css" />
-  <link rel="stylesheet" href="./css/homepage/news-sections.css" />
-  <link rel="stylesheet" href="./css/states.css" />
-  <link rel="stylesheet" href="./css/media-queries/global.css">
-  <link rel="stylesheet" href="./css/media-queries/homepage.css">
-</head>
-
-<body>
-
-  <!-- Loader -->
-  <div class="loader-container">
-    <!-- <span class="loader"></span> -->
-    <div class="sk-cube-grid">
-      <div class="sk-cube sk-cube1"></div>
-      <div class="sk-cube sk-cube2"></div>
-      <div class="sk-cube sk-cube3"></div>
-      <div class="sk-cube sk-cube4"></div>
-      <div class="sk-cube sk-cube5"></div>
-      <div class="sk-cube sk-cube6"></div>
-      <div class="sk-cube sk-cube7"></div>
-      <div class="sk-cube sk-cube8"></div>
-      <div class="sk-cube sk-cube9"></div>
+  <body>
+    <!-- Loader -->
+    <div class="loader-container">
+      <!-- <span class="loader"></span> -->
+      <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+      <span class="loader__text">Getting news for you...</span>
     </div>
-    <span class="loader__text">Getting news for you...</span>
-  </div>
-  
-  <div class="page" style="display: none;">
-    <!-- Navbar starts -->
-    <nav class="navbar">
-      <div class="navbar__top">
-        <h1 class="navbar__logo">
-          <a href="/frontend/">
-            <img src="./src/images/logo.jpg" alt="Logo" >
-            <span>NewsNow</span>
-          </a>
-        </h1>
-        <div class="navbar__datetime">
-          <span class="navbar__date"></span>
-          <span class="navbar__time"></span>
-        </div>
-        <button class="btn navbar__hamburger">
-          <ion-icon class="navbar__hamburger__icon" name="reorder-two-outline"></ion-icon>
-        </button>
-        <div class="navbar__items">
-          <form class="navbar__search-container search-form">
-            <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
-            <input type="text" name="search-text" autocomplete="off" placeholder="Search" required />
-            <ion-icon class="navbar__search__clear-icon search__clear-icon hide-clear-icon" name="close-outline">
-            </ion-icon>
-          </form>
-          <div class="navbar__links">
-            <a href="./pages/bookmarks/bookmarks.html" class="navbar__bookmarks-link">
-              Bookmarks
+
+    <div class="page" style="display: none">
+      <!-- Navbar starts -->
+      <nav class="navbar">
+        <div class="navbar__top">
+          <h1 class="navbar__logo">
+            <a href="/frontend/">
+              <img src="./src/images/logo.jpg" alt="Logo" />
+              <span>NewsNow</span>
             </a>
+          </h1>
+          <div class="navbar__datetime">
+            <span class="navbar__date"></span>
+            <span class="navbar__time"></span>
+          </div>
+          <button class="btn navbar__hamburger">
+            <ion-icon
+              class="navbar__hamburger__icon"
+              name="reorder-two-outline"
+            ></ion-icon>
+          </button>
+          <div class="navbar__items">
+            <form class="navbar__search-container search-form">
+              <ion-icon
+                class="icon navbar__search-icon"
+                name="search"
+              ></ion-icon>
+              <input
+                type="text"
+                name="search-text"
+                autocomplete="off"
+                placeholder="Search"
+                required
+              />
+              <ion-icon
+                class="navbar__search__clear-icon search__clear-icon hide-clear-icon"
+                name="close-outline"
+              >
+              </ion-icon>
+            </form>
+            <div class="navbar__links">
+              <a
+                href="./pages/bookmarks/bookmarks.html"
+                class="navbar__bookmarks-link"
+              >
+                Bookmarks
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="navbar__categories">
-        <ul class="navbar__links__category-list category-list--hidden">
-          <li class="category-list__item category-list__item--home category-list__item--active">
-            <a href="./index.html" class="category-list__item__link">Home</a>
-          </li>
-          <li class="category-list__item category-list__item--technology">
-            <a href="./pages/categories/technology.html" class="category-list__item__link">Technology</a>
-          </li>
-          <li class="category-list__item category-list__item--sports">
-            <a href="#sports-section" class="category-list__item__link">Sports</a>
-          </li>
-          <li class="category-list__item category-list__item--entertainment">
-            <a href="#entertainment-section" class="category-list__item__link">Entertainment</a>
-          </li>
-          <li class="category-list__item category-list__item--business">
-            <a href="#business-section" class="category-list__item__link">Business</a>
-          </li>
-          <li class="category-list__item category-list__item--health">
-            <a href="#health-section" class="category-list__item__link">Health</a>
-          </li>
-          <li class="category-list__item category-list__item--science">
-            <a href="#science-section" class="category-list__item__link">Science</a>
-          </li>
-          <li class="category-list__item category-list__item--investing">
-            <a href="#science-section" class="category-list__item__link">Investing</a>
-          </li>
-          <li class="category-list__item category-list__item--travel">
-            <a href="#science-section" class="category-list__item__link">Travel</a>
-          </li>
-          <li class="category-list__item category-list__item--videos">
-            <a href="#science-section" class="category-list__item__link">Videos</a>
-          </li>
-          <li class="category-list__item category-list__item--crypto">
-            <a href="#science-section" class="category-list__item__link">Crypto</a>
-          </li>
-          <li class="category-list__item category-list__item--economics">
-            <a href="#science-section" class="category-list__item__link">Economics</a>
-          </li>
-        </ul>
-      </div>
-      
-    </nav>
-    <!-- Navbar ends -->
-
-    <!-- Main section starts -->
-    <main>
-      <!-- Header starts -->
-      <header class="section trending-section">
-        <h2 class="section-heading">Trending</h2>
-        <div class="trending-section__grid"></div>
-      </header>
-      <!-- Header ends -->
-
-      <!-- Top news section starts -->
-      <section id="top-news-section" class="section section--top-news">
-        <h2 class="section-heading section-heading--top-news">Top News</h2>
-        <div class="news-container news-container--top-news">
-          <div class="news news--top-news"></div>
+        <div class="navbar__categories">
+          <ul class="navbar__links__category-list category-list--hidden">
+            <li
+              class="category-list__item category-list__item--home category-list__item--active"
+            >
+              <a href="./index.html" class="category-list__item__link">Home</a>
+            </li>
+            <li class="category-list__item category-list__item--technology">
+              <a
+                href="./pages/categories/technology.html"
+                class="category-list__item__link"
+                >Technology</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--sports">
+              <a
+                href="./pages/categories/sports.html"
+                class="category-list__item__link"
+                >Sports</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--entertainment">
+              <a
+                href="./pages/categories/entertainment.html"
+                class="category-list__item__link"
+                >Entertainment</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--business">
+              <a
+                href="./pages/categories/business.html"
+                class="category-list__item__link"
+                >Business</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--health">
+              <a
+                href="./pages/categories/health.html"
+                class="category-list__item__link"
+                >Health</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--science">
+              <a
+                href="./pages/categories/science.html"
+                class="category-list__item__link"
+                >Science</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--investing">
+              <a
+                href="./pages/categories/investing.html"
+                class="category-list__item__link"
+                >Investing</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--travel">
+              <a
+                href="./pages/categories/travel.html"
+                class="category-list__item__link"
+                >Travel</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--videos">
+              <a
+                href="./pages/categories/videos.html"
+                class="category-list__item__link"
+                >Videos</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--crypto">
+              <a
+                href="./pages/categories/crypto.html"
+                class="category-list__item__link"
+                >Crypto</a
+              >
+            </li>
+            <li class="category-list__item category-list__item--economics">
+              <a
+                href="./pages/categories/economics.html"
+                class="category-list__item__link"
+                >Economics</a
+              >
+            </li>
+          </ul>
         </div>
-      </section>
-      <!-- Top news section ends -->
+      </nav>
+      <!-- Navbar ends -->
 
-      <!-- Technology news section starts -->
-      <section id="technology-section" class="section section--technology-news">
-        <h2 class="section-heading">Technology</h2>
-        <div class="news-container">
-          <div class="news news--technology-news"></div>
-        </div>
-      </section>
-      <!-- Technology news section ends -->
+      <!-- Main section starts -->
+      <main>
+        <!-- Header starts -->
+        <header class="section trending-section">
+          <h2 class="section-heading">Trending</h2>
+          <div class="trending-section__grid"></div>
+        </header>
+        <!-- Header ends -->
 
-      <!-- Sports news section starts -->
-      <section id="sports-section" class="section section--sports-news">
-        <h2 class="section-heading">Sports</h2>
-        <div class="news-container">
-          <div class="news news--sports-news"></div>
-        </div>
-      </section>
-      <!-- Sports news section ends -->
+        <!-- Top news section starts -->
+        <section id="top-news-section" class="section section--top-news">
+          <h2 class="section-heading section-heading--top-news">Top News</h2>
+          <div class="news-container news-container--top-news">
+            <div class="news news--top-news"></div>
+          </div>
+        </section>
+        <!-- Top news section ends -->
 
-      <!-- Entertainment news section starts -->
-      <section id="entertainment-section" class="section section--entertainment-news">
-        <h2 class="section-heading">Entertainment</h2>
-        <div class="news-container">
-          <div class="news news--entertainment-news"></div>
-        </div>
-      </section>
-      <!-- Entertainment news section ends -->
+        <!-- Technology news section starts -->
+        <section
+          id="technology-section"
+          class="section section--technology-news"
+        >
+          <h2 class="section-heading">Technology</h2>
+          <div class="news-container">
+            <div class="news news--technology-news"></div>
+          </div>
+        </section>
+        <!-- Technology news section ends -->
 
-      <!-- Business news section starts -->
-      <section id="business-section" class="section section--business-news">
-        <h2 class="section-heading">Business</h2>
-        <div class="news-container">
-          <div class="news news--business-news"></div>
-        </div>
-      </section>
-      <!-- Business news section ends -->
+        <!-- Sports news section starts -->
+        <section id="sports-section" class="section section--sports-news">
+          <h2 class="section-heading">Sports</h2>
+          <div class="news-container">
+            <div class="news news--sports-news"></div>
+          </div>
+        </section>
+        <!-- Sports news section ends -->
 
-      <!-- Health news section starts -->
-      <section id="health-section" class="section section--health-news">
-        <h2 class="section-heading">Health</h2>
-        <div class="news-container">
-          <div class="news news--health-news"></div>
-        </div>
-      </section>
-      <!-- Health news section ends -->
+        <!-- Entertainment news section starts -->
+        <section
+          id="entertainment-section"
+          class="section section--entertainment-news"
+        >
+          <h2 class="section-heading">Entertainment</h2>
+          <div class="news-container">
+            <div class="news news--entertainment-news"></div>
+          </div>
+        </section>
+        <!-- Entertainment news section ends -->
 
-      <!-- Science news section starts -->
-      <section id="science-section" class="section section--science-news">
-        <h2 class="section-heading">Science</h2>
-        <div class="news-container">
-          <div class="news news--science-news"></div>
-        </div>
-      </section>
-      <!-- Science news section ends -->
-    </main>
-    <!-- Main section ends -->
-  </div>
+        <!-- Business news section starts -->
+        <section id="business-section" class="section section--business-news">
+          <h2 class="section-heading">Business</h2>
+          <div class="news-container">
+            <div class="news news--business-news"></div>
+          </div>
+        </section>
+        <!-- Business news section ends -->
 
-  <!-- Ion icons scripts starts -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <!-- Ion icons scripts ends -->
+        <!-- Health news section starts -->
+        <section id="health-section" class="section section--health-news">
+          <h2 class="section-heading">Health</h2>
+          <div class="news-container">
+            <div class="news news--health-news"></div>
+          </div>
+        </section>
+        <!-- Health news section ends -->
 
-  <!-- page script starts -->
-  <script type="module">
-    import { addDateTimeToNavbar } from "./modules/addDateTimeToNavbar.js";
-    import initTrendingSection from "./modules/homepage/trending-section.js";
-    import initNewsSections from "./modules/homepage/news-sections.js";
-    import initSearch from "./modules/homepage/search.js";
-    import initCategories from './modules/homepage/navbar.js';
-    import {initShareNews} from './modules/share-news.js';
-    import {stickCategoryToTop} from './modules/dom-helper.js';
-    import {initNavbarMedia} from './modules/media-queries/media.js'
+        <!-- Science news section starts -->
+        <section id="science-section" class="section section--science-news">
+          <h2 class="section-heading">Science</h2>
+          <div class="news-container">
+            <div class="news news--science-news"></div>
+          </div>
+        </section>
+        <!-- Science news section ends -->
+      </main>
+      <!-- Main section ends -->
+    </div>
 
-    async function init() {
-      // Add date and time to navbar
-      addDateTimeToNavbar();
+    <!-- Ion icons scripts starts -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- Ion icons scripts ends -->
 
-      // Initialize trending section
-      await initTrendingSection();
+    <!-- page script starts -->
+    <script type="module">
+      import { addDateTimeToNavbar } from "./modules/addDateTimeToNavbar.js";
+      import initTrendingSection from "./modules/homepage/trending-section.js";
+      import initNewsSections from "./modules/homepage/news-sections.js";
+      import initSearch from "./modules/homepage/search.js";
+      import { initShareNews } from "./modules/share-news.js";
+      import { stickCategoryToTop } from "./modules/dom-helper.js";
+      import { initNavbarMedia } from "./modules/media-queries/media.js";
+      import lazyload from "./modules/lazyload.js";
 
-      // Add media queries
-      initNavbarMedia();
+      async function init() {
+        // Add date and time to navbar
+        addDateTimeToNavbar();
 
-      // Initialize news sections
-      initNewsSections();
+        // Initialize trending section
+        await initTrendingSection();
 
-      stickCategoryToTop();
+        // Add media queries
+        initNavbarMedia();
 
-      // Initialize search functionality
-      initSearch();
+        // Initialize news sections
+        await initNewsSections();
 
-      // Initialize categories
-      // initCategories();
+        stickCategoryToTop();
 
-      // Initialize share news 
-      initShareNews();
+        // Initialize search functionality
+        initSearch();
 
-      
-    }
+        // Lazy load images
+        lazyload();
 
-    init();
-  </script>
-  <!-- page script ends -->
-</body>
+        // Initialize share news
+        initShareNews();
+      }
 
+      init();
+    </script>
+    <!-- page script ends -->
+  </body>
 </html>
