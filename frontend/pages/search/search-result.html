@@ -30,30 +30,55 @@
       rel="stylesheet"
       href="../../css/search-results-page/pagination.css"
     />
+    <link rel="stylesheet" href="../../css/media-queries/global.css" />
+    <link rel="stylesheet" href="../../css/media-queries/search-results.css" />
   </head>
 
   <body>
-
     <div class="page">
       <!-- Navbar starts -->
       <nav class="navbar">
         <div class="navbar__top">
           <h1 class="navbar__logo">
-            <a href="/frontend/">NewsNow</a>
+            <a href="/frontend/">
+              <img src="../../src/images/logo.jpg" alt="Logo" />
+              <span>NewsNow</span>
+            </a>
           </h1>
           <div class="navbar__datetime">
             <span class="navbar__date"></span>
             <span class="navbar__time"></span>
           </div>
+          <button class="btn navbar__hamburger">
+            <ion-icon
+              class="navbar__hamburger__icon"
+              name="reorder-two-outline"
+            ></ion-icon>
+          </button>
           <div class="navbar__items">
             <form class="navbar__search-container search-form">
-              <ion-icon class="icon navbar__search-icon" name="search"></ion-icon>
-              <input type="text" name="search-text" autocomplete="off" placeholder="Search" required />
-              <ion-icon class="navbar__search__clear-icon search__clear-icon hide-clear-icon" name="close-outline">
+              <ion-icon
+                class="icon navbar__search-icon"
+                name="search"
+              ></ion-icon>
+              <input
+                type="text"
+                name="search-text"
+                autocomplete="off"
+                placeholder="Search"
+                required
+              />
+              <ion-icon
+                class="navbar__search__clear-icon search__clear-icon hide-clear-icon"
+                name="close-outline"
+              >
               </ion-icon>
             </form>
             <div class="navbar__links">
-              <a href="./pages/bookmarks/bookmarks.html" class="navbar__bookmarks-link">
+              <a
+                href="./pages/bookmarks/bookmarks.html"
+                class="navbar__bookmarks-link"
+              >
                 Bookmarks
               </a>
             </div>
@@ -244,90 +269,104 @@
         <section class="section section--search-results">
           <div class="search-content-grid">
             <div class="filters">
-              <div class="filters__section filters__section--date">
-                <div class="filters__header">
-                  <h2 class="filter__heading">Search by date</h2>
-                  <button class="btn filters__btn filters__btn--reset-date">
-                    Reset
-                  </button>
-                </div>
-
-                <form action="#" class="filters__body search-by-date-form">
-                  <label for="filter-from" class="filter filter--date">
-                    From
-                    <input
-                      id="filter-from"
-                      class="filter-date-input"
-                      required
-                      type="date"
-                    />
-                  </label>
-
-                  <label for="filter-to" class="filter filter--date">
-                    To
-                    <input
-                      id="filter-to"
-                      class="filter-date-input"
-                      type="date"
-                    />
-                  </label>
-
-                  <button type="submit" class="btn filter__date-btn">Go</button>
-                </form>
+              <div class="filters__grid-item">
+                <button class="btn btn--filter-switch">Date</button>
+                <button class="btn btn--filter-switch">Sort By</button>
+                <button class="btn btn--filter-switch">Sources</button>
               </div>
 
-              <div class="filters__section filters__section--sort-by">
-                <div class="filters__header">
-                  <h2 class="filter__heading">Sort by</h2>
-                  <button class="btn filters__btn filters__btn--reset-sort-by">
-                    Reset
-                  </button>
+              <div>
+                <div class="filters__section filters__section--date">
+                  <div class="filters__header">
+                    <h2 class="filter__heading">Search by date</h2>
+                    <button class="btn filters__btn filters__btn--reset-date">
+                      Reset
+                    </button>
+                  </div>
+
+                  <form action="#" class="filters__body search-by-date-form">
+                    <label for="filter-from" class="filter filter--date">
+                      From
+                      <input
+                        id="filter-from"
+                        class="filter-date-input"
+                        required
+                        type="date"
+                      />
+                    </label>
+
+                    <label for="filter-to" class="filter filter--date">
+                      To
+                      <input
+                        id="filter-to"
+                        class="filter-date-input"
+                        type="date"
+                      />
+                    </label>
+
+                    <button type="submit" class="btn filter__date-btn">
+                      Go
+                    </button>
+                  </form>
                 </div>
 
-                <div class="filters__body">
-                  <label for="filter-relevency" class="filter">
-                    <input
-                      id="filter-relevency"
-                      type="radio"
-                      name="sort-by"
-                      data-sort-by="relevency"
-                    />
-                    Relevency
-                  </label>
+                <div class="filters__section filters__section--sort-by">
+                  <div class="filters__header">
+                    <h2 class="filter__heading">Sort by</h2>
+                    <button
+                      class="btn filters__btn filters__btn--reset-sort-by"
+                    >
+                      Reset
+                    </button>
+                  </div>
 
-                  <label for="filter-popularity" class="filter">
-                    <input
-                      id="filter-popularity"
-                      type="radio"
-                      name="sort-by"
-                      data-sort-by="popularity"
-                    />
-                    Popularity
-                  </label>
+                  <div class="filters__body">
+                    <label for="filter-relevency" class="filter">
+                      <input
+                        id="filter-relevency"
+                        type="radio"
+                        name="sort-by"
+                        data-sort-by="relevency"
+                      />
+                      Relevency
+                    </label>
 
-                  <label for="filter-publishedat" class="filter">
-                    <input
-                      id="filter-publishedat"
-                      type="radio"
-                      name="sort-by"
-                      data-sort-by="publishedat"
-                    />
-                    Newest first
-                  </label>
+                    <label for="filter-popularity" class="filter">
+                      <input
+                        id="filter-popularity"
+                        type="radio"
+                        name="sort-by"
+                        data-sort-by="popularity"
+                      />
+                      Popularity
+                    </label>
+
+                    <label for="filter-publishedat" class="filter">
+                      <input
+                        id="filter-publishedat"
+                        type="radio"
+                        name="sort-by"
+                        data-sort-by="publishedat"
+                      />
+                      Newest first
+                    </label>
+                  </div>
                 </div>
-              </div>
 
-              <div class="filters__section filters__section--sources">
-                <div class="filters__header">
-                  <h2 class="filter__heading filter__heading--sources">
-                    Sources <span class="number-of-source-selected">0</span>
-                  </h2>
-                  <button class="btn filters__btn filters__btn--reset-sources">
-                    Reset
-                  </button>
+                <div class="filters__section filters__section--sources">
+                  <div class="filters__header">
+                    <h2 class="filter__heading filter__heading--sources">
+                      Sources <span class="number-of-source-selected">0</span>
+                    </h2>
+                    <button
+                      class="btn filters__btn filters__btn--reset-sources"
+                    >
+                      Reset
+                    </button>
+                  </div>
+
+                  <div class="filters__body"></div>
                 </div>
-
-                <div class="filters__body"></div>
               </div>
             </div>
 
@@ -378,6 +417,7 @@
       import { addSearchTextToDom } from "../../modules/search-results-page/search-bar.js";
       import { initSearchResults } from "../../modules/search-results-page/search-results.js";
       import initPaginaiton from "../../modules/search-results-page/pagination.js";
+      import { initNavbarMedia } from "../../modules/media-queries/media.js";
 
       async function init() {
         // Add date and time to navbar
@@ -400,6 +440,8 @@
 
         // Initialize pagination
         initPaginaiton();
+
+        initNavbarMedia();
       }
 
       init();

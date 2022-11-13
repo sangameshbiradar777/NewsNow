@@ -118,4 +118,8 @@ input[type="date"] {
   border-radius: var(--spacing-4px);
 }
 
+.filters__grid-item {
+  display: none;
+}
+
 /* Filters style ends */

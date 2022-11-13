@@ -1,0 +1,28 @@
+@media screen and (max-width: 800px) {
+  .search-content-grid {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .filters {
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    border: 1px solid #ccc;
+  }
+
+  .btn--filter-switch {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    font-size: var(--fs-19px);
+    padding: var(--spacing-8px) var(--spacing-16px);
+  }
+
+  .filters__grid-item {
+    display: flex;
+    flex-direction: column;
+  }
+}
