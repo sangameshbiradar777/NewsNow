@@ -1,28 +1,138 @@
 @media screen and (max-width: 800px) {
-  .search-content-grid {
-    grid-template-columns: 1fr;
+  .main {
     position: relative;
   }
 
+  .search__container {
+    width: 80%;
+    z-index: -1;
+  }
+
+  .search-content-grid {
+    grid-template-columns: 1fr;
+  }
+
   .filters {
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 40%;
+    height: 100%;
     background-color: #fff;
     z-index: 1;
     display: grid;
     grid-template-columns: 30% 70%;
+    gap: var(--spacing-16px);
     border: 1px solid #ccc;
+    transform: translateY(0);
+    padding: var(--spacing-48px) var(--spacing-12px) 0;
+    border-radius: var(--spacing-8px);
+    transition: transform 0.6s ease;
+  }
+
+  .filters--hidden {
+    transform: translateY(100%);
+  }
+
+  .filters__section {
+    display: none;
+  }
+
+  .filters__section--sort-by,
+  .filters__section--sources {
+    padding: var(--spacing-24px) !important;
+    background-color: #f3f3f4;
+  }
+
+  .filters__section--active {
+    display: flex;
   }
 
   .btn--filter-switch {
     width: 100%;
-    border-bottom: 1px solid #ccc;
     font-size: var(--fs-19px);
+    border: 1px solid var(--bg-primary-tint);
+    text-align: left;
     padding: var(--spacing-8px) var(--spacing-16px);
+  }
+
+  .btn--filter-switch:hover,
+  .btn--filter-switch:active,
+  .btn--filter-switch:focus {
+    background-color: var(--bg-primary-tint);
   }
 
   .filters__grid-item {
     display: flex;
     flex-direction: column;
+  }
+
+  .language-filter__heading {
+    display: none;
+  }
+
+  .btn--responsive-filter {
+    display: flex;
+    border: 1px solid var(--bg-secondary-shade);
+    border-radius: var(--spacing-4px);
+    font-size: var(--fs-15px);
+    padding: var(--spacing-8px) var(--spacing-12px);
+    align-items: center;
+    gap: var(--spacing-8px);
+  }
+
+  .filters-active {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    );
+  }
+
+  .filters__section--sources .filters__body {
+    overflow: auto;
+  }
+
+  .filters__content {
+    padding-right: var(--spacing-16px);
+  }
+
+  .btn--close-filters {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: var(--spacing-24px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pagination__pages {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .pagination__pages__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .search-results__card {
+    padding: var(--spacing-8px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root,
+  ::after,
+  ::before {
+    font-size: 50%;
+  }
+
+  .section--search-results {
+    padding: var(--spacing-16px);
+  }
+
+  .section--language-filter {
+    padding: 0 var(--spacing-16px);
   }
 }

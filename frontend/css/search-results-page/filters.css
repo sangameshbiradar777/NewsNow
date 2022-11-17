@@ -122,4 +122,8 @@ input[type="date"] {
   display: none;
 }
 
+.btn--responsive-filter {
+  display: none;
+}
+
 /* Filters style ends */

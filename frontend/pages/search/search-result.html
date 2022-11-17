@@ -119,6 +119,11 @@
             <ion-icon name="language-outline"></ion-icon>
             Language
           </h3>
+          <button class="btn btn--responsive-filter">
+            <span>Filters</span>
+            <ion-icon name="filter-outline"></ion-icon>
+          </button>
+
           <div class="language-filter__body">
             <button class="btn language-filter__selected" id="en">
               <span class="language-filter__selected__text">English</span>
@@ -127,6 +132,7 @@
                 name="caret-down-outline"
               ></ion-icon>
             </button>
+
             <div
               class="language-filter__dropdown language-filter__dropdown--hidden"
             >
@@ -268,15 +274,35 @@
 
         <section class="section section--search-results">
           <div class="search-content-grid">
-            <div class="filters">
+            <div class="filters filters--hidden">
               <div class="filters__grid-item">
-                <button class="btn btn--filter-switch">Date</button>
-                <button class="btn btn--filter-switch">Sort By</button>
-                <button class="btn btn--filter-switch">Sources</button>
+                <button
+                  class="btn btn--filter-switch"
+                  data-target="filters__section--date"
+                >
+                  Date
+                </button>
+                <button
+                  class="btn btn--filter-switch"
+                  data-target="filters__section--sort-by"
+                >
+                  Sort By
+                </button>
+                <button
+                  class="btn btn--filter-switch"
+                  data-target="filters__section--sources"
+                >
+                  Sources
+                </button>
               </div>
 
-              <div>
-                <div class="filters__section filters__section--date">
+              <div class="filters__content">
+                <button class="btn btn--close-filters">
+                  <ion-icon name="close-outline"></ion-icon>
+                </button>
+                <div
+                  class="filters__section filters__section--date filters__section--active"
+                >
                   <div class="filters__header">
                     <h2 class="filter__heading">Search by date</h2>
                     <button class="btn filters__btn filters__btn--reset-date">
@@ -417,7 +443,10 @@
       import { addSearchTextToDom } from "../../modules/search-results-page/search-bar.js";
       import { initSearchResults } from "../../modules/search-results-page/search-results.js";
       import initPaginaiton from "../../modules/search-results-page/pagination.js";
-      import { initNavbarMedia } from "../../modules/media-queries/media.js";
+      import {
+        initNavbarMedia,
+        initResponsiveFilters,
+      } from "../../modules/media-queries/media.js";
 
       async function init() {
         // Add date and time to navbar
@@ -442,6 +471,8 @@
         initPaginaiton();
 
         initNavbarMedia();
+
+        initResponsiveFilters();
       }
 
       init();

@@ -71,11 +71,6 @@
   .main-grid {
     padding: var(--spacing-24px) var(--spacing-16px);
   }
-
-  .category-news__card__title,
-  .more-news__item__title {
-    font-weight: 500;
-  }
 }
 
 @media screen and (max-width: 450px) {
