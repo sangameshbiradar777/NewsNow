@@ -126,4 +126,9 @@ input[type="date"] {
   display: none;
 }
 
+.btn--close-filters,
+.filters__responsive-heading {
+  display: none;
+}
+
 /* Filters style ends */

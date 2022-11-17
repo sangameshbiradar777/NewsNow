@@ -16,7 +16,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    top: 40%;
+    top: 20%;
     height: 100%;
     background-color: #fff;
     z-index: 1;
@@ -25,7 +25,7 @@
     gap: var(--spacing-16px);
     border: 1px solid #ccc;
     transform: translateY(0);
-    padding: var(--spacing-48px) var(--spacing-12px) 0;
+    padding: var(--spacing-64px) var(--spacing-12px) 0;
     border-radius: var(--spacing-8px);
     transition: transform 0.6s ease;
   }
@@ -42,6 +42,7 @@
   .filters__section--sources {
     padding: var(--spacing-24px) !important;
     background-color: #f3f3f4;
+    border-radius: var(--spacing-8px);
   }
 
   .filters__section--active {
@@ -49,22 +50,35 @@
   }
 
   .btn--filter-switch {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12px);
     width: 100%;
     font-size: var(--fs-19px);
-    border: 1px solid var(--bg-primary-tint);
     text-align: left;
     padding: var(--spacing-8px) var(--spacing-16px);
+    border-bottom: 1px solid #ccc;
+  }
+
+  .btn--filter-switch ion-icon {
+    color: #555;
   }
 
   .btn--filter-switch:hover,
   .btn--filter-switch:active,
   .btn--filter-switch:focus {
-    background-color: var(--bg-primary-tint);
+    background-color: #f3f3f4;
+  }
+
+  .btn--filter-active {
+    background-color: #f3f3f4;
   }
 
   .filters__grid-item {
     display: flex;
     flex-direction: column;
+    border-right: 1px solid #ccc;
+    padding-right: var(--spacing-16px);
   }
 
   .language-filter__heading {
@@ -97,11 +111,23 @@
     padding-right: var(--spacing-16px);
   }
 
-  .btn--close-filters {
+  .btn--close-filters,
+  .filters__responsive-heading {
+    display: block;
     position: absolute;
-    top: 10px;
-    right: 10px;
+
     font-size: var(--spacing-24px);
+  }
+
+  .btn--close-filters {
+    top: var(--spacing-16px);
+    right: var(--spacing-16px);
+  }
+
+  .filters__responsive-heading {
+    top: var(--spacing-16px);
+    left: var(--spacing-16px);
+    color: #444;
   }
 }
 
@@ -122,17 +148,36 @@
 }
 
 @media screen and (max-width: 500px) {
-  :root,
-  ::after,
-  ::before {
-    font-size: 50%;
-  }
-
   .section--search-results {
     padding: var(--spacing-16px);
   }
 
   .section--language-filter {
     padding: 0 var(--spacing-16px);
+  }
+
+  .search__icon,
+  .search__clear-icon {
+    transform: scale(1.3);
+  }
+
+  .search-results__card__link {
+    grid-template-columns: minmax(0, 25%) minmax(0, 75%);
+  }
+
+  .search-results__card__img-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-results__card__link img {
+    height: var(--spacing-64px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .btn--filter-switch {
+    padding: var(--spacing-12px) var(--spacing-8px);
+    font-size: var(--fs-15px);
   }
 }

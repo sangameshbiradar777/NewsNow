@@ -33,6 +33,7 @@ function initResponsiveFilters() {
   function toggleFilters() {
     const filtersElement = document.querySelector(".filters");
     const pageElement = document.querySelector(".page");
+
     filtersElement.classList.toggle("filters--hidden");
     pageElement.classList.toggle("filters-active");
   }
@@ -55,7 +56,15 @@ function initResponsiveFilters() {
         ".filters__section--active"
       );
 
+      // Get the current active filter button
+      const currentFilterSwitchBtn = document.querySelector(
+        ".btn--filter-active"
+      );
+
       if (activeFilterSection === targetFilterSection) return;
+
+      currentFilterSwitchBtn.classList.remove("btn--filter-active");
+      this.classList.add("btn--filter-active");
 
       activeFilterSection.classList.remove("filters__section--active");
       targetFilterSection.classList.add("filters__section--active");
