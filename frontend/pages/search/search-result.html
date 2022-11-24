@@ -447,6 +447,7 @@
       import { addSearchTextToDom } from "../../modules/search-results-page/search-bar.js";
       import { initSearchResults } from "../../modules/search-results-page/search-results.js";
       import initPaginaiton from "../../modules/search-results-page/pagination.js";
+      import { initShareNews } from "../../modules/share-news.js";
       import {
         initNavbarMedia,
         initResponsiveFilters,
@@ -473,6 +474,8 @@
 
         // Initialize pagination
         initPaginaiton();
+
+        initShareNews();
 
         initNavbarMedia();
 

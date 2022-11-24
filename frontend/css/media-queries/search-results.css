@@ -12,14 +12,18 @@
     grid-template-columns: 1fr;
   }
 
+  .page {
+    z-index: 99;
+  }
+
   .filters {
     position: fixed;
     left: 0;
     right: 0;
-    top: 20%;
+    top: 30%;
     height: 100%;
     background-color: #fff;
-    z-index: 1;
+    z-index: 999;
     display: grid;
     grid-template-columns: 30% 70%;
     gap: var(--spacing-16px);
@@ -144,6 +148,21 @@
 
   .search-results__card {
     padding: var(--spacing-8px);
+    position: relative;
+  }
+
+  .action-container {
+    position: absolute;
+    top: var(--spacing-4px);
+    right: var(--spacing-4px);
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0;
+    gap: var(--spacing-8px);
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
   }
 }
 

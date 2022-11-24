@@ -61,6 +61,7 @@ main {
   flex-direction: column;
   text-decoration: none;
   width: 100%;
+  height: max-content;
 }
 
 .featured-grid__item--main .featured-grid__item__img-container {

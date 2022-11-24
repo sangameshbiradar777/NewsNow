@@ -43,11 +43,28 @@ function getSearchResultCardHTML(searchResult) {
           />
       </div>
       <div class="search-results__card__text-container">
-        <span class="search-results__card__author">${searchResult.source}, ${searchResult.date}</span>
+        <span class="search-results__card__author">${searchResult.source}, ${
+    searchResult.date
+  }</span>
         <h3 class="search-results__card__title">
-          ${searchResult.title}
+          ${compressText(searchResult.title, 100)}
         </h3>
+
+        <div class="action-container">
+          <button id="${
+            searchResult.id
+          }" class="btn action__btn action__btn--share">
+            <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
+          </button>
+          <button id="${
+            searchResult.id
+          }" class="btn action__btn action__btn--bookmark">
+            <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
+          </button>
+        </div>
       </div>
+
+      
     </a>
   `;
 }
@@ -186,7 +203,7 @@ function updateSearchResultsOnFilterChange(searchText) {
       const filteredSearchResultsCount = await filterSearchResultsAndUpdateDOM(
         searchText
       );
-      
+
       // Initialize pagination
       initPagination(filteredSearchResultsCount);
     });
@@ -233,7 +250,7 @@ function addNumberOfSourceSelectedToDOM(sourcesSelectedCount) {
 }
 
 async function filterSearchResultsAndUpdateDOM(searchText, pageNumber) {
-  console.log('filtering');
+  console.log("filtering");
 
   // Add loader to DOM
   addLoaderToDom();
@@ -348,16 +365,16 @@ function hideSearchAndPaginationElements() {
 
 function hideLoaderAndDisplaySearchResults() {
   // Get the loader element
-  const loaderElement = document.querySelector('.loader-container');
-  const searchResultsElement = document.querySelector('.search-results');
-      
+  const loaderElement = document.querySelector(".loader-container");
+  const searchResultsElement = document.querySelector(".search-results");
+
   // On page load hide the loader and show body
-  loaderElement.style.display = 'none';
-  searchResultsElement.style.display = 'flex';
+  loaderElement.style.display = "none";
+  searchResultsElement.style.display = "flex";
 }
 
 function addLoaderToDom() {
-  const searchResultsElement = document.querySelector('.search-results');
+  const searchResultsElement = document.querySelector(".search-results");
   searchResultsElement.innerHTML = `
     <div class="loader-container loader-container--search">
       <div class="sk-cube-grid">
@@ -404,7 +421,9 @@ function addNoResultsFoundMessageToDOM(forFilterResults = false) {
   const searchText = getSearchText();
 
   const noResultsFoudElement = document.createElement("div");
-  const className = forFilterResults ? 'no-results-container no-results-container--filters' : 'no-results-container';
+  const className = forFilterResults
+    ? "no-results-container no-results-container--filters"
+    : "no-results-container";
   noResultsFoudElement.setAttribute("class", className);
 
   noResultsFoudElement.innerHTML = `
@@ -444,7 +463,7 @@ function addNoResultsFoundMessageToDOM(forFilterResults = false) {
   searchResultsElement.innerHTML = "";
 
   // Empty pagination
-  document.querySelector('.pagination').innerHTML = "";
+  document.querySelector(".pagination").innerHTML = "";
 
   searchResultsElement.append(noResultsFoudElement);
 }

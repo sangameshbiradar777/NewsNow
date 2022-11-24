@@ -37,8 +37,6 @@
   background-color: var(--bg-secondary);
 }
 
-
-
 /* Navbar ends */
 
 /* Trending section starts */
@@ -105,7 +103,7 @@
 
 .news__btn:hover,
 .news__btn:focus {
-  opacity: .9;
+  opacity: 0.9;
 }
 
 /* .news__btn--right:hover,
@@ -269,7 +267,6 @@ input[type="date"]:focus {
 
 /* Action btn styles ends */
 
-
 /* Bookmarks styles starts */
 
 .bookmarks__card:hover .action-container {
@@ -278,17 +275,9 @@ input[type="date"]:focus {
   pointer-events: all;
 }
 
-
 /* Bookmarks styles ends */
 
-
-
 /* Categories styles starts */
-
-.featured-grid__item:hover {
-  padding: var(--spacing-8px);
-  background-color: #eee;
-}
 
 .featured-grid__item:hover .featured-grid__item__title {
   text-decoration: underline;
@@ -296,11 +285,6 @@ input[type="date"]:focus {
 
 .featured-grid__item:hover img {
   filter: brightness(80%);
-}
-
-.category-news__card:hover {
-  padding: var(--spacing-8px);
-  background-color: #eee;
 }
 
 .category-news__card:hover .category-news__card__title {
@@ -311,11 +295,6 @@ input[type="date"]:focus {
   filter: brightness(80%);
 }
 
-.more-news__item:hover {
-  padding: var(--spacing-8px);
-  background-color: #eee;
-}
-
 .more-news__item:hover img {
   filter: brightness(80%);
 }
@@ -323,6 +302,5 @@ input[type="date"]:focus {
 .more-news__item:hover .more-news__item__title {
   text-decoration: underline;
 }
-
 
 /* Categories styles ends */
