@@ -86,8 +86,4 @@
     width: 40%;
     height: var(--spacing-96px);
   }
-
-  .category-news__card__title {
-    font-weight: 500;
-  }
 }

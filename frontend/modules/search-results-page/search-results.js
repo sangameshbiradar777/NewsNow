@@ -195,11 +195,14 @@ function updateSearchResultsOnFilterChange(searchText) {
   );
   filters.push(sourceFilters);
 
+  console.log(sourceFilters);
+
   // Flatten the array
   filters = filters.flat();
 
   filters.forEach((filter) => {
     filter.addEventListener("click", async (e) => {
+      console.log("source clikced");
       const filteredSearchResultsCount = await filterSearchResultsAndUpdateDOM(
         searchText
       );
@@ -264,6 +267,8 @@ async function filterSearchResultsAndUpdateDOM(searchText, pageNumber) {
   try {
     // Fetch search results
     filteredSearchResultsResponse = await fetchURL(filteredSearchURL);
+
+    console.log(filteredSearchResultsResponse);
 
     // Check if the response is successful or not
     if (filteredSearchResultsResponse.status !== "ok") {

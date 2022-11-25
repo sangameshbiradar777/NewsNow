@@ -310,7 +310,8 @@
                   <div class="filters__header">
                     <h2 class="filter__heading">Search by date</h2>
                     <button class="btn filters__btn filters__btn--reset-date">
-                      Reset
+                      <ion-icon name="refresh-outline"></ion-icon>
+                      clear
                     </button>
                   </div>
 
@@ -346,7 +347,8 @@
                     <button
                       class="btn filters__btn filters__btn--reset-sort-by"
                     >
-                      Reset
+                      <ion-icon name="refresh-outline"></ion-icon>
+                      clear
                     </button>
                   </div>
 
@@ -391,7 +393,8 @@
                     <button
                       class="btn filters__btn filters__btn--reset-sources"
                     >
-                      Reset
+                      <ion-icon name="refresh-outline"></ion-icon>
+                      clear
                     </button>
                   </div>
 
@@ -457,17 +460,17 @@
         // Add date and time to navbar
         addDateTimeToNavbar();
 
+        // Add search text to dom
+        addSearchTextToDom();
+
         // Initialize search functionality
         initSearch();
 
         // Initialize filters
-        initFilters();
+        await initFilters();
 
         // Initialize language filters
         initLanguageFilter();
-
-        // Add search text to dom
-        addSearchTextToDom();
 
         // Initialize search results
         await initSearchResults();

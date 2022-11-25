@@ -30,17 +30,13 @@
 
 .navbar__logo {
   font-size: var(--fs-24px);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 .navbar__logo span {
   letter-spacing: -1px;
-  /* animation-name: slide-in;
-  animation-duration: 1s;
-  animation-delay: 1s; */
-  animation: slide-in 1s ease;
 }
 
 .navbar__logo a {
@@ -146,7 +142,6 @@
 .navbar__hamburger__icon {
   color: var(--bg-secondary);
   font-size: var(--fs-38px);
-
 }
 
 /* Categories style starts */
@@ -193,7 +188,7 @@
 
 .category-list__item--active .category-list__item__link {
   color: var(--bg-primary);
-} 
+}
 
 .btn--navbar-link--categories {
   display: flex;
@@ -206,22 +201,11 @@
   
 } */
 
-.navbar__links:not(:has(.category-list--hidden)) .btn--navbar-link--categories__icon {
+.navbar__links:not(:has(.category-list--hidden))
+  .btn--navbar-link--categories__icon {
   transform: rotate(180deg);
 }
 
 /* Categories style ends */
 
 /* Navbar ends */
-
-@keyframes slide-in {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}

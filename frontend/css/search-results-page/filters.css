@@ -44,6 +44,9 @@
 
 .filters__btn {
   font-size: var(--fs-15px);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4px);
   padding: var(--spacing-4px) var(--spacing-12px);
   text-transform: lowercase;
   border-radius: var(--spacing-4px);
