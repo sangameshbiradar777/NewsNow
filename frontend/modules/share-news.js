@@ -38,8 +38,12 @@ function changeBookmarkIcon(bookmarkIcon) {
 function addBookmarkEventListener() {
   // Add an event listener to the body to capture all the share btns
   document.body.addEventListener("click", function (e) {
+    e.preventDefault();
+
     // Check for the target
     if (e.target.closest(".action__btn--bookmark") === null) return;
+
+    console.log(e.target);
 
     // Get the target share button
     const bookmarkBtn = e.target.closest(".action__btn--bookmark");

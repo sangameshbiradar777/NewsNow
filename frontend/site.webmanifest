@@ -1,0 +1,20 @@
+{
+    "name": "NewsNow",
+    "short_name": "NewsNow",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#c1121f",
+    "background_color": "#c1121f",
+    "start_url": "https://newsnow-sangamesh.netlify.app/",
+    "display": "standalone"
+}

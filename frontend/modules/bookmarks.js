@@ -93,7 +93,7 @@ function addNoBookMarksMessageToDOM() {
   bookmarksElement.innerHTML = `
     <div class="no-bookmarks-container">
       <div class="no-bookmarks-img-container">
-        <img src="/frontend/src/images/no-bookmarks.png" alt="No Bookmarks image">
+        <img src="../src/images/no-bookmarks.png" alt="No Bookmarks image">
       </div>
       <h2 class="no-bookmarks-title">No bookmarks found</h2>
     </div>

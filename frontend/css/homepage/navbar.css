@@ -47,10 +47,7 @@
 }
 
 .navbar__logo img {
-  width: var(--spacing-32px);
-  height: var(--spacing-32px);
-  border-radius: var(--spacing-4px);
-  animation: slide-in 1s ease;
+  height: var(--spacing-40px);
 }
 
 .navbar__logo a {

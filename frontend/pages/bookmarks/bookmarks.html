@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search resutls | NewsNow</title>
+  <title>Bookmarks | NewsNow</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700&display=swap"
@@ -26,7 +26,7 @@
       <nav class="navbar">
         <div class="navbar__top">
           <h1 class="navbar__logo">
-            <a href="/frontend/">
+            <a href="../../">
               <img src="../../src/images/logo.jpg" alt="Logo" />
               <span>NewsNow</span>
             </a>
@@ -62,7 +62,7 @@
             </form>
             <div class="navbar__links">
               <a
-                href="./pages/bookmarks/bookmarks.html"
+                href="./bookmarks.html"
                 class="navbar__bookmarks-link"
               >
                 Bookmarks
@@ -93,8 +93,18 @@
 
     <script type="module">
       import initBookmarks from '../../modules/bookmarks.js';
+      import { initNavbarMedia } from "../../modules/media-queries/media.js";
+      import initSearch from "../../modules/homepage/search.js";
 
-      initBookmarks();
+
+      function init() {
+        initBookmarks();
+        initSearch();
+        initNavbarMedia();
+      }
+
+      init();
+      
     </script>
 
 </body>

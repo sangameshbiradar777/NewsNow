@@ -7,6 +7,7 @@ import { fetchURL } from "../homepage/helper.js";
 import { getSearchText, addSearchResultsCountToDom } from "./search-bar.js";
 import { getProcessedData, compressText } from "../data-processor.js";
 import initPagination from "../search-results-page/pagination.js";
+import { checkIsBookmarked } from "../share-news.js";
 
 let searchResultsCount;
 
@@ -54,12 +55,14 @@ function getSearchResultCardHTML(searchResult) {
           <button id="${
             searchResult.id
           }" class="btn action__btn action__btn--share">
-            <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
+            <ion-icon class="action__icon action__icon--share" name="share-social-outline"></ion-icon>
           </button>
           <button id="${
             searchResult.id
           }" class="btn action__btn action__btn--bookmark">
-            <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
+            <ion-icon class="action__icon action__icon--bookmark" name=${
+              checkIsBookmarked(searchResult) ? "bookmark" : "bookmark-outline"
+            }></ion-icon>
           </button>
         </div>
       </div>
