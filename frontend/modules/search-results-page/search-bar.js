@@ -6,7 +6,7 @@ function getSearchText() {
   const searchText = urlParams.get("search") || "Nothing";
 
   // Change the document title
-  document.title = `${capitalizeText(searchText)} - NewsNow`;
+  document.title = `${capitalizeText(searchText)} - NewsNow Search Results`;
 
   return searchText;
 }

@@ -1,0 +1,24 @@
+@media screen and (max-width: 1100px) {
+  .bookmarks__card {
+    min-width: 30%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .bookmarks__card {
+    min-width: 48%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section--bookmarks {
+    padding: var(--spacing-24px) var(--spacing-12px);
+  }
+
+  .bookmarks {
+    gap: var(--spacing-24px);
+  }
+  .bookmarks__card {
+    min-width: 100%;
+  }
+}

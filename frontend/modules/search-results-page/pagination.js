@@ -26,7 +26,7 @@ let nextPageElement;
 
 function addPaginationToDOM() {
   // Get the pagination element
-  const paginationElement = document.querySelector('.pagination');
+  const paginationElement = document.querySelector(".pagination");
 
   paginationElement.innerHTML = `
     <div class="pagination__pages">
@@ -48,9 +48,7 @@ function addPaginationToDOM() {
     </div>
   `;
 
-  pageNumbersListElement = document.querySelector(
-    ".pagination__pages__list"
-  );
+  pageNumbersListElement = document.querySelector(".pagination__pages__list");
 
   prevPageElement = document.querySelector(".pagination__pages__prev");
   nextPageElement = document.querySelector(".pagination__pages__next");
@@ -99,8 +97,6 @@ function updateCurrentPage(targetPageNumber, targetPageElement) {
   ).filter((pageNumberElement) => {
     return pageNumberElement.classList.contains("pagination__current-page");
   });
-
-  console.log(targetPageElement);
 
   currentPageElement.classList.remove("pagination__current-page");
   targetPageElement.classList.add("pagination__current-page");
@@ -196,9 +192,7 @@ function initPagination(filteredSearchResults = searchResultsCount) {
   currentPageNumber = 1;
 
   // If there are no results just return
-  if(resultsCount === 0) return;
-
-  console.log(resultsCount);
+  if (resultsCount === 0) return;
 
   addPaginationToDOM();
 

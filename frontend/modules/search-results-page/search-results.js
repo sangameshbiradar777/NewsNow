@@ -173,8 +173,6 @@ function getSearchURL(searchText, pageNumber = 1) {
     `&page=${pageNumber}&pageSize=${searchResultsToDisplayPerPage}`
   );
 
-  console.log(searchURL);
-
   // // Finally concat the api key to the search url
   // return searchURL.concat(`&apiKey=${NEWSAPIKEY}`);
 
@@ -195,14 +193,11 @@ function updateSearchResultsOnFilterChange(searchText) {
   );
   filters.push(sourceFilters);
 
-  console.log(sourceFilters);
-
   // Flatten the array
   filters = filters.flat();
 
   filters.forEach((filter) => {
     filter.addEventListener("click", async (e) => {
-      console.log("source clikced");
       const filteredSearchResultsCount = await filterSearchResultsAndUpdateDOM(
         searchText
       );
@@ -253,8 +248,6 @@ function addNumberOfSourceSelectedToDOM(sourcesSelectedCount) {
 }
 
 async function filterSearchResultsAndUpdateDOM(searchText, pageNumber) {
-  console.log("filtering");
-
   // Add loader to DOM
   addLoaderToDom();
 
@@ -267,8 +260,6 @@ async function filterSearchResultsAndUpdateDOM(searchText, pageNumber) {
   try {
     // Fetch search results
     filteredSearchResultsResponse = await fetchURL(filteredSearchURL);
-
-    console.log(filteredSearchResultsResponse);
 
     // Check if the response is successful or not
     if (filteredSearchResultsResponse.status !== "ok") {
@@ -328,7 +319,6 @@ function resetFilters(searchText) {
   });
 
   async function resetInputs(searchText) {
-    console.log(this);
     const filtersSection = this.closest(".filters__section");
 
     const inputElements = filtersSection.querySelectorAll(

@@ -16,7 +16,6 @@ const navbarSearchClearBtn = document.querySelector(
 );
 
 function addSearchFunctionality() {
-  console.log("event fired");
   // Loop over all the search form elements and add event listeners
   searchFormElements.forEach((searchFormElement, index) => {
     // Prevent default form behavior
@@ -25,8 +24,9 @@ function addSearchFunctionality() {
 
       const searchText = searchElements[index].value;
 
-      window.location.href = `/frontend/pages/search/search-result.html?search=${searchText}`;
       // window.location.href = `../../pages/search/search-result.html?search=${searchText}`;
+      // window.location.href = `../../pages/search/search-result.html?search=${searchText}`;
+      window.location.href = `/frontend/pages/search/search-result.html?search=${searchText}`;
     });
   });
 }

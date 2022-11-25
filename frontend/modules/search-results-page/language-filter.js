@@ -25,15 +25,22 @@ function toggleLanguageFilterDropDown() {
     );
   });
 
-  document.body.addEventListener('click', function(e) {
-    if(e.target.closest('.language-filter__selected') === languageFilterSelectBtn) return "";
+  document.body.addEventListener("click", function (e) {
+    if (
+      e.target.closest(".language-filter__selected") === languageFilterSelectBtn
+    )
+      return "";
 
-    console.log(e.target)
-
-    if(!languageFilterDropDownElement.classList.contains('.language-filter__dropdown--hidden')) {
-      languageFilterDropDownElement.classList.add('language-filter__dropdown--hidden');
+    if (
+      !languageFilterDropDownElement.classList.contains(
+        ".language-filter__dropdown--hidden"
+      )
+    ) {
+      languageFilterDropDownElement.classList.add(
+        "language-filter__dropdown--hidden"
+      );
     }
-  })
+  });
 }
 
 function changeLanguage() {

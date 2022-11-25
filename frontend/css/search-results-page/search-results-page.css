@@ -98,4 +98,19 @@
   pointer-events: all;
 }
 
+.action__btn {
+  background-color: transparent;
+  border: 1px solid var(--bg-secondary-shade);
+}
+
+.action__icon {
+  color: var(--bg-secondary-shade);
+}
+
+.action__btn:hover .action__icon,
+.action__btn:active .action__icon,
+.action__btn:focus .action__icon {
+  color: #fff;
+}
+
 /* Search results page ends */

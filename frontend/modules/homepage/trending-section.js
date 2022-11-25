@@ -6,6 +6,7 @@ import {
   hideLoaderAndDisplayContent,
   addErrorMessageToDOM,
 } from "../dom-helper.js";
+import { checkIsBookmarked } from "../share-news.js";
 
 // Implementation of the function getTop10TrendingNews
 function getTop10TrendingNews(trendingNews) {
@@ -128,12 +129,14 @@ function getTrendingNewsItemInner(newsObject, forCarousel = false) {
         <button id="${
           newsObject.id
         }" class="btn action__btn action__btn--share">
-          <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
+          <ion-icon class="action__icon action__icon--share" name="share-social-outline"></ion-icon>
         </button>
         <button id="${
           newsObject.id
         }" class="btn action__btn action__btn--bookmark">
-          <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
+          <ion-icon class="action__icon action__icon--bookmark" name=${
+            checkIsBookmarked(newsObject) ? "bookmark" : "bookmark-outline"
+          }></ion-icon>
         </button>
       </div>
       <a class="trending-section__grid__item__link" href="${

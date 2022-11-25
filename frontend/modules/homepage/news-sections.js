@@ -11,6 +11,7 @@ import {
 } from "../config.js";
 import { fetchNews } from "./helper.js";
 import { getProcessedData, compressText } from "../data-processor.js";
+import { checkIsBookmarked } from "../share-news.js";
 
 // Implementation of the function addTopNewsCardsToDOM
 function addNewsCardsToDOM(elementToAppend, newsObjects) {
@@ -94,12 +95,14 @@ function getNewsCardInnerHTML(newsObject) {
   return `
     <div class="action-container">
       <button id="${newsObject.id}" class="btn action__btn action__btn--share">
-        <ion-icon class="action__icon" name="share-social-outline"></ion-icon>
+        <ion-icon class="action__icon action__icon--share" name="share-social-outline"></ion-icon>
       </button>
       <button id="${
         newsObject.id
       }" class="btn action__btn action__btn--bookmark">
-        <ion-icon class="action__icon" name="bookmark-outline"></ion-icon>
+        <ion-icon class="action__icon action__icon--bookmark" name=${
+          checkIsBookmarked(newsObject) ? "bookmark" : "bookmark-outline"
+        }></ion-icon>
       </button>
     </div>
     <a href="${newsObject.URL}" target="_blank">

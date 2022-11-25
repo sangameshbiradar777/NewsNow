@@ -6,7 +6,7 @@
 
 .section__bookmarks-title {
   font-size: var(--fs-30px);
-  color: var(--text-dark);
+  color: #444;
   margin-bottom: var(--spacing-24px);
 }
 
@@ -18,23 +18,19 @@
 }
 
 .bookmarks__card {
-  min-width: 23%;
+  min-width: 24%;
   position: relative;
   border-radius: var(--spacing-4px);
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   flex-basis: 200px;
   flex-shrink: 0;
   flex-grow: 0;
 }
 
-.bookmarks__card span {
-  display: block;
-}
-
 .bookmarks__card__link {
   text-decoration: none;
-
 }
 
 /* .bookmarks__card__img-container {
@@ -55,22 +51,36 @@
 }
 
 .bookmarks__card__bookmarked-on {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4px);
+
   font-size: var(--fs-15px);
-  margin-bottom: var(--spacing-4px);
+  margin-top: var(--spacing-8px);
   /* font-weight: 500; */
-  color: #444;
+  color: #555;
 }
 
 .bookmarks__card__title {
   font-size: var(--fs-19px);
   margin-bottom: var(--spacing-8px);
-  color: #333;
+  color: #444;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .bookmarks__card__author {
   font-size: var(--fs-15px);
-  margin-bottom: var(--spacing-2px);
+  margin-bottom: var(--spacing-4px);
   color: #555;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .bookmarks__card__publishedat {
@@ -84,7 +94,6 @@
 }
 
 .no-bookmarks-img-container {
-  
 }
 
 .no-bookmarks-img-container img {
@@ -94,5 +103,5 @@
 
 .no-bookmarks-title {
   font-size: var(--fs-38px);
-  color: var(--bg-primary);
+  color: #888;
 }

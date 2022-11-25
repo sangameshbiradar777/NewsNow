@@ -2,35 +2,35 @@ import { newsImageFallbackURL } from "./config.js";
 import { shareNewsArticle, addBookmarksToLocalStorage } from "./share-news.js";
 
 function getBookmarksFromLocalStorage() {
-  if(!localStorage.getItem('bookmarks')) {
+  if (!localStorage.getItem("bookmarks")) {
     return [];
   }
 
-  return JSON.parse(localStorage.getItem('bookmarks'));
+  return JSON.parse(localStorage.getItem("bookmarks"));
 }
 
 function addBookmarksToDOM(bookmarks) {
-  if(bookmarks.length === 0) {
+  if (bookmarks.length === 0) {
     addNoBookMarksMessageToDOM();
     return;
   }
-  
+
   // Get the bookmarks element
-  const bookmarksElement = document.querySelector('.bookmarks');
+  const bookmarksElement = document.querySelector(".bookmarks");
 
   bookmarksElement.innerHTML = "";
 
   // Loop over bookmarks and add them to DOM
-  bookmarks.forEach(bookmark => {
+  bookmarks.forEach((bookmark) => {
     // Create a bookmark card element
-    const bookmarkCardElement = document.createElement('div');
-    bookmarkCardElement.setAttribute('class', 'bookmarks__card')
+    const bookmarkCardElement = document.createElement("div");
+    bookmarkCardElement.setAttribute("class", "bookmarks__card");
 
     // Get the inner html of bookmark card element
     bookmarkCardElement.innerHTML = getBookmarksCardInner(bookmark);
 
     bookmarksElement.append(bookmarkCardElement);
-  })
+  });
 }
 
 function getBookmarksCardInner(bookmark) {
@@ -52,12 +52,12 @@ function getBookmarksCardInner(bookmark) {
       </div>
 
       <div class="bookmarks__card__text-container">
-        <span class="bookmarks__card__bookmarked-on">Bookmarked on ${bookmark.bookmarkedOn}</span>
+
+        <span class="bookmarks__card__author">By ${bookmark.author}, ${bookmark.date}</span>
         <h2 class="bookmarks__card__title">
           ${bookmark.title}
         </h2>
-        <span class="bookmarks__card__author">By ${bookmark.author}</span>
-        <span class="bookmarks__card__publishedat">Published on ${bookmark.date}</span>
+        <span class="bookmarks__card__bookmarked-on"><ion-icon name="bookmark"></ion-icon> ${bookmark.bookmarkedOn}</span>
       </div>
     </a>
   `;
@@ -66,30 +66,29 @@ function getBookmarksCardInner(bookmark) {
 function getUniqueBookmarks(bookmarks) {
   const bookmarksMap = new Map();
 
-  bookmarks.forEach(bookmark => {
-    if(bookmarksMap.get(bookmark.title)) {
+  bookmarks.forEach((bookmark) => {
+    if (bookmarksMap.get(bookmark.title)) {
       bookmarksMap.set(bookmark.title, bookmarksMap.get(bookmark.title) + 1);
-    }
-    else {
+    } else {
       bookmarksMap.set(bookmark.title, 1);
     }
-  })
+  });
 
   let uniqueObjects = [];
 
-  bookmarks.forEach(bookmark => {
-    if(bookmarksMap.get(bookmark.title)) {
+  bookmarks.forEach((bookmark) => {
+    if (bookmarksMap.get(bookmark.title)) {
       uniqueObjects.push(bookmark);
       bookmarksMap.delete(bookmark.title);
     }
-  })
+  });
 
   return uniqueObjects;
 }
 
 function addNoBookMarksMessageToDOM() {
   // Get bookmarks element
-  const bookmarksElement = document.querySelector('.bookmarks');
+  const bookmarksElement = document.querySelector(".bookmarks");
 
   bookmarksElement.innerHTML = `
     <div class="no-bookmarks-container">
@@ -102,43 +101,47 @@ function addNoBookMarksMessageToDOM() {
 }
 
 function shareBookmarkedArticle() {
-  document.body.addEventListener('click', function(e) {
-    if(e.target.closest('.action__btn--share') === null) return;
+  document.body.addEventListener("click", function (e) {
+    if (e.target.closest(".action__btn--share") === null) return;
 
-    const shareBtn = e.target.closest('.action__btn--share');
+    const shareBtn = e.target.closest(".action__btn--share");
 
     // Get the target news article id
     const targetId = shareBtn.id;
 
-    const targetNewsArticle = getBookmarksFromLocalStorage().find(bookmark => bookmark.id === targetId);
+    const targetNewsArticle = getBookmarksFromLocalStorage().find(
+      (bookmark) => bookmark.id === targetId
+    );
 
     shareNewsArticle(targetNewsArticle);
-  })
+  });
 }
 
 function deleteBookmark() {
-  document.body.addEventListener('click', function(e) {
-    if(e.target.closest('.action__btn--delete-bookmark') === null) return;
+  document.body.addEventListener("click", function (e) {
+    if (e.target.closest(".action__btn--delete-bookmark") === null) return;
 
-    const deleteBookmarkBtn = e.target.closest('.action__btn--delete-bookmark');
+    const deleteBookmarkBtn = e.target.closest(".action__btn--delete-bookmark");
 
     const targetId = deleteBookmarkBtn.id;
 
-    const updatedBookmarks = getBookmarksFromLocalStorage().filter(bookmark => bookmark.id !== targetId);
+    const updatedBookmarks = getBookmarksFromLocalStorage().filter(
+      (bookmark) => bookmark.id !== targetId
+    );
 
     addBookmarksToLocalStorage(updatedBookmarks);
 
     addBookmarksToDOM(updatedBookmarks);
-  })
+  });
 }
 
 function initBookmarks() {
   // Get bookmarks from local storage
   const bookmarks = getBookmarksFromLocalStorage();
 
-  const uniqueBookmarks = getUniqueBookmarks(bookmarks)
+  const uniqueBookmarks = getUniqueBookmarks(bookmarks);
 
-  if(uniqueBookmarks.length) addBookmarksToDOM(uniqueBookmarks);
+  if (uniqueBookmarks.length) addBookmarksToDOM(uniqueBookmarks);
   else addNoBookMarksMessageToDOM();
 
   shareBookmarkedArticle();
