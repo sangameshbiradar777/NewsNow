@@ -5,7 +5,7 @@
   "source": "./frontend/index.html",
   "type": "module",
   "scripts": {
-    "start": "parcel", 
+    "start": "parcel",
     "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,9 +23,14 @@
   },
   "homepage": "https://github.com/sangameshbiradar777/NewsNow#readme",
   "devDependencies": {
+    "@parcel/transformer-webmanifest": "^2.7.0",
     "parcel": "^2.7.0"
   },
   "dependencies": {
-    "nanoid": "^4.0.0"
-  }
+    "nanoid": "^4.0.0",
+    "netlify": "^13.0.1"
+  },
+  "browserslist": [
+    "last 1 chrome version"
+  ]
 }

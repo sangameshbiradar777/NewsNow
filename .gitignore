@@ -2,3 +2,5 @@
 
 # ignoring node module files
 node_modules
+# Local Netlify folder
+.netlify

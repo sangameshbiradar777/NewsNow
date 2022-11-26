@@ -1,30 +1,28 @@
 import express from 'express'; 
-import parse from 'rss-to-json';
-
-console.log(parse);
+import Parser from 'rss-parser';
+import cors from 'cors';
 
 const app = express();
-
-app.get('/', (req, res) => {
-  // (async () => {
-  //   const rss = await parse('https://flipboard.com/topic/investing.rss');
-
-  //   res.send(rss);
-  // })();
-
-  // (async () => {
-
-  //   // var rss = await parse('https://blog.ethereum.org/feed.xml');
-
-  //   // console.log(JSON.stringify(rss, null, 3));
-
-
-
-  // })();
-
-  Parse('https://blog.ethereum.org/feed.xml').then(rss => {
-    console.log(JSON.stringify(rss, null, 3));
+app.use(cors());
+const parser = new Parser({
+  customFields: {
+    item: ['media:content', ['media:content.$.url', 'imageURL'], ['link', 'url'], ['pubDate', 'created']]
+  }
 });
+
+app.get('/:url', (req, res, next) => {
+  console.log(req.params.url);
+  (async () => {
+    let rss;
+    try{
+      rss = await parser.parseURL(req.params.url);
+    }
+    catch(error) {
+      next(error);
+    }
+
+    res.json(rss);
+  })();
 })
 
 app.listen(process.env.PORT || 3000, () => {
