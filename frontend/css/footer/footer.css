@@ -1,0 +1,93 @@
+footer {
+  background-color: #28282b;
+  margin-top: var(--spacing-40px);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-grid__col-heading {
+  font-size: var(--fs-15px);
+  color: var(--bg-secondary);
+  margin-bottom: var(--spacing-12px);
+}
+
+.footer__logo-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12px);
+}
+
+.footer__github-text {
+  color: #fff;
+  font-size: var(--fs-15px);
+  display: flex;
+  align-items: center;
+}
+
+.footer__github-text a {
+  color: #fff;
+}
+
+[name="logo-github"] {
+  margin-left: var(--spacing-4px);
+  margin-right: var(--spacing-2px);
+}
+
+.footer__logo img {
+  height: var(--spacing-40px);
+  border-radius: var(--spacing-4px);
+}
+
+.footer__category-links ul,
+.footer__quick-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8px);
+}
+
+.footer__category-links li,
+.footer__quick-links li {
+  list-style-type: none;
+  font-size: var(--fs-15px);
+}
+
+.footer__category-links li a,
+.footer__quick-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__search__container {
+  background-color: var(--bg-secondary-tint);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-12px) var(--spacing-4px);
+  border-radius: var(--spacing-4px);
+}
+
+.footer__search__container input {
+  outline: none;
+  border: none;
+  background-color: var(--bg-secondary-tint);
+  flex-grow: 3;
+  font-size: var(--fs-15px);
+}
+
+.footer__search__container .icon {
+  font-size: var(--fs-19px);
+}
+
+.footer__text {
+  color: #fff;
+  font-size: var(--fs-15px);
+  margin-top: var(--spacing-32px);
+  text-align: center;
+}
+
+.footer__text a {
+  color: inherit;
+}

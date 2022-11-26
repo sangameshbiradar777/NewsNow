@@ -304,3 +304,16 @@ input[type="date"]:focus {
 }
 
 /* Categories styles ends */
+
+/* Footer starts */
+
+.footer__category-links li a:hover,
+.footer__category-links li a:active,
+.footer__category-links li a:focus,
+.footer__quick-links li a:hover,
+.footer__quick-links li a:active,
+.footer__quick-links li a:focus {
+  text-decoration: underline;
+}
+
+/* Footer ends */

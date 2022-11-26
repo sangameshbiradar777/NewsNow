@@ -11,6 +11,28 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../site.webmanifest" />
+    <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#c1121f" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#c1121f" />
+
     <link rel="stylesheet" href="../../css/global.css" />
     <link rel="stylesheet" href="../../css/homepage/navbar.css" />
     <link rel="stylesheet" href="../../css/homepage/trending-section.css" />
@@ -18,6 +40,8 @@
     <link rel="stylesheet" href="../../css/homepage/news-sections.css" />
     <link rel="stylesheet" href="../../css/categories/category-template.css" />
     <link rel="stylesheet" href="../../css/categories/aside.css" />
+    <link rel="stylesheet" href="../../css/footer/footer.css" />
+
     <link rel="stylesheet" href="../../css/states.css" />
     <link rel="stylesheet" href="../../css/media-queries/global.css" />
     <link
@@ -48,8 +72,7 @@
       <div class="navbar__top">
         <h1 class="navbar__logo">
           <a href="../../">
-            <img src="../../src/images/logo.jpg" alt="Logo" />
-            <span>NewsNow</span>
+            <img src="../../src/images/navbar-logo.png" alt="Logo" />
           </a>
         </h1>
         <div class="navbar__datetime">
@@ -154,6 +177,93 @@
 
         <aside></aside>
       </div>
+
+      <footer class="section section--footer">
+        <div class="footer-grid">
+          <div class="footer__logo-container">
+            <a href="../../" class="footer__logo">
+              <img src="../../src/images/navbar-logo.png" alt="logo" />
+            </a>
+            <span class="footer__github-text"
+              >See on <ion-icon name="logo-github"></ion-icon>
+              <a
+                target="_blank"
+                href="https://github.com/sangameshbiradar777/NewsNow"
+                >Github</a
+              ></span
+            >
+          </div>
+
+          <div class="footer__category-links">
+            <h4 class="footer-grid__col-heading">Categories</h4>
+            <ul>
+              <li>
+                <a href="../../pages/categories/technology.html">Technology</a>
+              </li>
+              <li><a href="../../pages/categories/sports.html">Sports</a></li>
+              <li>
+                <a href="../../pages/categories/entertainment.html"
+                  >Entertainment</a
+                >
+              </li>
+              <li>
+                <a href="../../pages/categories/business.html">Business</a>
+              </li>
+              <li><a href="../../pages/categories/health.html">Health</a></li>
+              <li><a href="../../pages/categories/science.html">Science</a></li>
+              <li>
+                <a href="../../pages/categories/investing.html">Investing</a>
+              </li>
+              <li><a href="../../pages/categories/travel.html">Travel</a></li>
+              <li><a href="../../pages/categories/videos.html">Videos</a></li>
+              <li><a href="../../pages/categories/crypto.html">Crypto</a></li>
+              <li>
+                <a href="../../pages/categories/economics.html">Economy</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__quick-links">
+            <h4 class="footer-grid__col-heading">Quick links</h4>
+            <ul>
+              <li><a href="../../">Home</a></li>
+              <li>
+                <a href="../../pages/bookmarks/bookmarks.html">Bookmarks</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__search">
+            <h4 class="footer-grid__col-heading">Search</h4>
+            <form class="footer__search__container search-form">
+              <ion-icon
+                class="icon navbar__search-icon"
+                name="search"
+              ></ion-icon>
+              <input
+                type="text"
+                name="search-text"
+                autocomplete="off"
+                placeholder="Search"
+                required
+              />
+              <ion-icon
+                class="icon navbar__search__clear-icon search__clear-icon"
+                name="close-circle"
+              >
+              </ion-icon>
+            </form>
+          </div>
+        </div>
+        <h5 class="footer__text">
+          Designed and Developed by
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/sangamesh-biradar-b10493202/"
+            >Sangamesh Biradar</a
+          >
+        </h5>
+      </footer>
     </div>
 
     <!-- Ion icons scripts starts -->

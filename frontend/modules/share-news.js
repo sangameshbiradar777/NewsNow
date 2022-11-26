@@ -38,8 +38,6 @@ function changeBookmarkIcon(bookmarkIcon) {
 function addBookmarkEventListener() {
   // Add an event listener to the body to capture all the share btns
   document.body.addEventListener("click", function (e) {
-    e.preventDefault();
-
     // Check for the target
     if (e.target.closest(".action__btn--bookmark") === null) return;
 
@@ -123,12 +121,22 @@ function getTargetNewsArticle(articleId) {
   return newsArticles.find((newsArticle) => newsArticle.id === articleId);
 }
 
+function preventRedirectOnBookmark() {
+  document.querySelectorAll(".action__btn--bookmark").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+  });
+}
+
 function initShareNews() {
   // Add event listener to share btn
   addShareEventListener();
 
   // Add event listener for bookmark
   addBookmarkEventListener();
+
+  preventRedirectOnBookmark();
 }
 
 export {
